@@ -42,7 +42,7 @@ const ProductDetails = ({ product, products }) => {
                     </div>
                     <h4>Details:</h4>
                     <p>{details}</p>
-                    <p className='price'>${price}</p>
+                    <p className='price'>€{price}</p>
                     <div className='quantity'>
                         <h3>Quantity:</h3>
                         <p className='quantity-desc'>
@@ -114,7 +114,7 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({ params: { slug } }) => {
-    const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
+    const query = `*[_type == "product" && slug.current == '€{slug}'][0]`;
     const productsQuery = '*[_type == "product"]';
 
     const product = await client.fetch(query);
