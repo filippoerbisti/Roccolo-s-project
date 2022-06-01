@@ -2,12 +2,15 @@ import React from 'react'; // To import to use .jsx
 
 import { Layout } from '../components';
 import '../styles/globals.css';
+import { StateContext } from '../context/StateContext';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <StateContext>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </StateContext>
   )
 }
 
