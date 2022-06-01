@@ -23,6 +23,7 @@
     "stripe": "^9.5.0"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.17.12",
     "eslint": "8.16.0",
     "eslint-config-next": "12.1.6"
   }
