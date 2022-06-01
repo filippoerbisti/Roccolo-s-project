@@ -2,7 +2,7 @@
 
 # dependencies
 node_modules
-.env
+#.env ## uncomment this line for security
 /.pnp
 .pnp.js
 
