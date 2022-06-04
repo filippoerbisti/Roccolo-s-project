@@ -11,8 +11,13 @@ const Navbar = () => {
 
   return (
     <div className='navbar-container'>
-      <Link href="/">
-        <img src="https://www.roccolodellago.it/wp-content/uploads/2019/02/logo.jpg" width='auto' height='80px' />
+      <Link href="/" className='cursor-pointer'>
+        <img 
+          src="https://www.roccolodellago.it/wp-content/uploads/2019/02/logo.jpg" 
+          width='auto' 
+          height='80px' 
+          className='cursor-pointer'
+        />
       </Link>
       <ul className={styles.menu}>
         <li>
