@@ -683,8 +683,8 @@ margin-top: 160px;
     height: 350px;
   }
   .cart-container{
-    width: 415px;
-  padding: 4px;
+    width: 100vw;
+    padding: 4px;
   }
   .cart-heading{
     margin-top: 35px;
