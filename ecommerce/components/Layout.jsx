@@ -3,6 +3,7 @@ import Head from 'next/head';
 
 import Navbar from './Navbar';
 import Footer from './Footer';
+import ScrollToTop from './ScrollToTop';
 
 const Layout = ({ children }) => {
   return (
@@ -14,6 +15,7 @@ const Layout = ({ children }) => {
         <Navbar />
       </header>
       <main className='main-container'>
+        <ScrollToTop />
         {children}
       </main>
       <footer>
