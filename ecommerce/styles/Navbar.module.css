@@ -1,0 +1,25 @@
+
+.menu {
+    display: none;
+}
+
+@media only screen and (min-width: 1025px) {
+    .menu {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 70%;
+    }
+    
+    .menu li {
+        border-bottom: 2px solid transparent ;
+        padding: 5px 3px;
+        cursor: pointer;
+    }
+    
+    .menu li:hover {
+        border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+        opacity: 0.6;
+    }
+}
