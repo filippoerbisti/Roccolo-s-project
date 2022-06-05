@@ -27,13 +27,13 @@ const Navbar = () => {
 
       <ul className={styles.menu}>
         <li>
-          <a>{t('navShop')}</a>
-          <a>{t('navFarm')}</a>
-          <a>{t('navWineShop')}</a>
-          <a>{t('navEvents')}</a>
-          <a>{t('navWines')}</a>
-          <a>{t('navGallery')}</a>
-          <a>{t('navAbout')}</a>
+          <a href='/wine'>{t('navShop')}</a>
+          <a href='/farm'>{t('navFarm')}</a>
+          <a href='/wineshop'>{t('navWineShop')}</a>
+          <a href='/event'>{t('navEvents')}</a>
+          <a href='/wine'>{t('navWines')}</a>
+          <a href='/gallery'>{t('navGallery')}</a>
+          <a href='/about'>{t('navAbout')}</a>
         </li>
       </ul>
 
