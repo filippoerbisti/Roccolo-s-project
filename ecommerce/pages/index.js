@@ -2,15 +2,24 @@ import React from 'react';
 import Link from 'next/link';
 import { client } from '../lib/client';
 import { Product, FooterBanner, HeroBanner } from '../components';
+import useTranslation from 'next-translate/useTranslation';
 
 const Home = ({ products, bannerData }) => {
+  const { t } = useTranslation('common');
+
   return (
     <div>
+      <Link href="/" locale="en">
+          <h2>English</h2>
+        </Link>
+        <Link href="/" locale="it">
+          <h2>Italiano</h2>
+        </Link>
       {/* <HeroBanner heroBanner={bannerData.length && bannerData[0]} /> */}
 
       <Link href="/wine">
         <button>
-          VEDI TUTTI I VINI
+          {t('viewAllWine')}
         </button>
       </Link>
 

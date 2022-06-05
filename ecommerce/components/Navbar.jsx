@@ -1,12 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 import { AiOutlineShopping } from 'react-icons/ai';
+import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../styles/Navbar.module.css';
 import { Cart } from './';
 import { useStateContext } from '../context/StateContext';
 
 const Navbar = () => {
+  const { t } = useTranslation('common');
   const { showCart, setShowCart, totalQuantities } = useStateContext();
 
   return (
@@ -21,7 +23,7 @@ const Navbar = () => {
       </Link>
       <ul className={styles.menu}>
         <li>
-          <a>SHOP</a>
+          <a>{t('navShop')}</a>
           <a>AZ. AGRICOLA</a>
           <a>WINESHOP</a>
         {/* 
@@ -29,7 +31,7 @@ const Navbar = () => {
          */}
           <a>EVENTI</a>
           <a>ORGANIC</a>
-          <a>WEDDING</a>
+          <a>{t('navWedding')}</a>
           <a>VINI</a>
           <a>GALLERY</a>
           <a>CONTATTI</a>
