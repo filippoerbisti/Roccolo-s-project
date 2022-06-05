@@ -3,22 +3,46 @@
     display: none;
 }
 
+.menu li {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    flex-grow: 2;
+}
+
+.menu li a {
+    padding: 10px;
+}
+
+.langContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.langIcons {
+    width: 24px;
+    height: 24px;
+    margin: 0 6px;
+    cursor: pointer;
+}
+
 @media only screen and (min-width: 1025px) {
     .menu {
         list-style: none;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 70%;
     }
     
-    .menu li {
+    .menu li a {
         border-bottom: 2px solid transparent ;
-        padding: 5px 3px;
+        padding: 5px 15px;
         cursor: pointer;
     }
     
-    .menu li:hover {
+    .menu li a:hover {
         border-bottom: 2px solid rgba(0, 0, 0, 0.6);
         opacity: 0.6;
     }

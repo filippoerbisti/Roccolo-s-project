@@ -1,5 +1,10 @@
 {
     "viewAllWine": "Vedi Tutti i Vini",
     "navShop": "SHOP",
-    "navWedding": "MATRIMONIO"
+    "navFarm": "AZ. AGRICOLA",
+    "navWineShop": "WINESHOP",
+    "navEvents": "EVENTI",
+    "navWines": "VINI",
+    "navGallery": "GALLERIA",
+    "navAbout": "ABOUT"
 }

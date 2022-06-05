@@ -1,5 +1,10 @@
 {
-    "viewAllWine": "View All Wine",
+    "viewAllWine": "View All Wines",
     "navShop": "SHOP",
-    "navWedding": "WEDDING"
+    "navFarm": "FARM",
+    "navWineShop": "WINESHOP",
+    "navEvents": "EVENTS",
+    "navWines": "WINES",
+    "navGallery": "GALLERY",
+    "navAbout": "ABOUT"
 }

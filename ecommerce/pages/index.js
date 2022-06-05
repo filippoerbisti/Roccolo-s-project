@@ -9,12 +9,7 @@ const Home = ({ products, bannerData }) => {
 
   return (
     <div>
-      <Link href="/" locale="en">
-          <h2>English</h2>
-        </Link>
-        <Link href="/" locale="it">
-          <h2>Italiano</h2>
-        </Link>
+      
       {/* <HeroBanner heroBanner={bannerData.length && bannerData[0]} /> */}
 
       <Link href="/wine">
