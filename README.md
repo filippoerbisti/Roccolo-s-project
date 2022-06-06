@@ -61,3 +61,4 @@ Classic, basic Payment with PayPal, one of the largest payment methods
 
 Compliance test result for pr1-smoky.vercel.app
 <img src="./assets_readme/report-cookie-website.jpg" target="_blank>
+![alt text](https://github.com/filippoerbisti/pr1/blob/master/assets_readme/report-cookie-website.jpg?raw=true)
