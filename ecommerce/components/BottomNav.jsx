@@ -17,13 +17,10 @@ const BottomNav = props => {
     useEffect(() => {
         switch (activeTabs) {
             case 'home':
-                router.push('/')
                 break;
             case 'wine':
-                router.push('/wine')
                 break;
             default:
-                router.push('/')
                 break;
         }
     }, [activeTabs, router]);
