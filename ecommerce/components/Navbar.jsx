@@ -3,12 +3,13 @@ import Link from 'next/link';
 import { AiOutlineShopping } from 'react-icons/ai';
 import useTranslation from 'next-translate/useTranslation';
 import { IT, GB, FR, DE } from 'country-flag-icons/react/3x2';
+import { AiOutlineHome } from "react-icons/ai";
 
 import styles from '../styles/Navbar.module.css';
 import { Cart } from './';
 import { useStateContext } from '../context/StateContext';
 
-const Navbar = () => {
+const Navbar = props => {
   const { t } = useTranslation('common');
   const { showCart, setShowCart, totalQuantities } = useStateContext();
 
@@ -27,13 +28,13 @@ const Navbar = () => {
 
       <ul className={styles.menu}>
         <li>
-          <a href='/wine'>{t('navShop')}</a>
-          <a href='/farm'>{t('navFarm')}</a>
-          <a href='/wineshop'>{t('navWineShop')}</a>
-          <a href='/event'>{t('navEvents')}</a>
-          <a href='/wine'>{t('navWines')}</a>
-          <a href='/gallery'>{t('navGallery')}</a>
-          <a href='/about'>{t('navAbout')}</a>
+          <Link href={'/wine'}>{t('navShop')}</Link>
+          <Link href={'/farm'}>{t('navFarm')}</Link>
+          <Link href={'/wineshop'}>{t('navWineShop')}</Link>
+          <Link href={'/event'}>{t('navEvents')}</Link>
+          <Link href={'/wine'}>{t('navWines')}</Link>
+          <Link href={'/gallery'}>{t('navGallery')}</Link>
+          <Link href={'/about'}>{t('navAbout')}</Link>
         </li>
       </ul>
 
@@ -62,6 +63,7 @@ const Navbar = () => {
       </button>
 
       {showCart && <Cart />}
+
     </div>
   )
 }
