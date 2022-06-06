@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { AiOutlineShopping } from 'react-icons/ai';
 import useTranslation from 'next-translate/useTranslation';
 import { IT, GB, FR, DE } from 'country-flag-icons/react/3x2';
-import { AiOutlineHome } from "react-icons/ai";
 
 import styles from '../styles/Navbar.module.css';
 import { Cart } from './';
@@ -23,8 +22,6 @@ const Navbar = props => {
           className='cursor-pointer'
         />
       </Link>
-
-      
 
       <ul className={styles.menu}>
         <li>
