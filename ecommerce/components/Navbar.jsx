@@ -44,6 +44,7 @@ const Navbar = props => {
           width='auto' 
           height='80px' 
           className='cursor-pointer'
+          onClick={() => setActiveTabs('')}
         />
       </Link>
 
