@@ -8,9 +8,9 @@ import BottomNav from './BottomNav';
 
 const Layout = ({ children }) => {
   return (
-    <div className='layout'>
+    <div>
       <Head>
-        <title>WINE SIUM STORE</title>
+        <title>ROCCOLO DEL GARDA WINE SHOP</title>
       </Head>
       <header>
         <Navbar />
