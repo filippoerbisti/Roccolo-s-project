@@ -10,7 +10,7 @@ const Product = ({
       slug,
       price
     } 
-  }) => {
+}) => {
   return (
     <div>
       <Link href={`/product/${slug.current}`}>
