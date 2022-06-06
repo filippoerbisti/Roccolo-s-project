@@ -59,39 +59,39 @@ const Navbar = () => {
       <ul className={styles.menu}>
         <li>
           <Link href='/wine'>
-            <a className={activeTabs === 'wine' ? `${styles.active}` : ''} onClick={() => setActiveTabs('wine')}>
+            {/* <a className={activeTabs === 'wine' ? `${styles.active}` : ''} onClick={() => setActiveTabs('wine')}> */}
               {t('navShop')}
-            </a>
+            {/* </a> */}
           </Link>
           <Link href='/farm'>
-            <a className={activeTabs === 'farm' ? `${styles.active}` : ''} onClick={() => setActiveTabs('farm')}>
+            {/* <a className={activeTabs === 'farm' ? `${styles.active}` : ''} onClick={() => setActiveTabs('farm')}> */}
               {t('navFarm')}
-            </a>
+            {/* </a> */}
           </Link>
           <Link href='/wineshop'>
-            <a className={activeTabs === 'wineshop' ? `${styles.active}` : ''} onClick={() => setActiveTabs('wineshop')}>
+            {/* <a className={activeTabs === 'wineshop' ? `${styles.active}` : ''} onClick={() => setActiveTabs('wineshop')}> */}
               {t('navWineShop')}
-            </a>
+            {/* </a> */}
           </Link>
           <Link href='/event'>
-            <a className={activeTabs === 'event' ? `${styles.active}` : ''} onClick={() => setActiveTabs('event')}>
+            {/* <a className={activeTabs === 'event' ? `${styles.active}` : ''} onClick={() => setActiveTabs('event')}> */}
               {t('navEvents')}
-            </a>
+            {/* </a> */}
           </Link>
           <Link href='/wine'>
-            <a className={activeTabs === 'wine' ? `${styles.active}` : ''} onClick={() => setActiveTabs('wine')}>
+            {/* <a className={activeTabs === 'wine' ? `${styles.active}` : ''} onClick={() => setActiveTabs('wine')}> */}
               {t('navWines')}
-            </a>
+            {/* </a> */}
           </Link>
           <Link href='/gallery'>
-            <a className={activeTabs === 'gallery' ? `${styles.active}` : ''} onClick={() => setActiveTabs('gallery')}>
+            {/* <a className={activeTabs === 'gallery' ? `${styles.active}` : ''} onClick={() => setActiveTabs('gallery')}> */}
               {t('navGallery')}
-            </a>
+            {/* </a> */}
           </Link>
           <Link href='/about'>
-            <a className={activeTabs === 'about' ? `${styles.active}` : ''} onClick={() => setActiveTabs('about')}>
+            {/* <a className={activeTabs === 'about' ? `${styles.active}` : ''} onClick={() => setActiveTabs('about')}> */}
               {t('navAbout')}
-            </a>
+            {/* </a> */}
           </Link>
         </li>
       </ul>
