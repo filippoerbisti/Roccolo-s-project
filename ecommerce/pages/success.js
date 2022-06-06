@@ -7,7 +7,7 @@ import { useStateContext } from '../context/StateContext';
 import { runFireworks } from '../lib/utils';
 
 const Success = () => {
-    const { t } = useTranslation('common');
+    const { t } = useTranslation('success');
     const { setCartItems, setTotalPrice, setTotalQuantities } = useStateContext();
 
     useEffect(() => {
@@ -24,10 +24,10 @@ const Success = () => {
                 <p className='icon'>
                     <BsBagCheckFill />
                 </p>
-                <h2>{t('success:thxOrder')}</h2>
-                <p className='email-msg'>{t('success:checkEmail')}</p>
+                <h2>{t('thxOrder')}</h2>
+                <p className='email-msg'>{t('checkEmail')}</p>
                 <p className='description'>
-                    {t('success:anyQuestion')}
+                    {t('anyQuestion')}
                     <a className='email' href='mailto:filippo.erbisti@gmail.com'>
                         filippo.erbisti@gmail.com   
                     </a>
