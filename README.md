@@ -1,10 +1,11 @@
-## Project Ecommerce Wine Shop
+## PROJECT ECOMMERCE WINE SHOP
 
 ## DEMAND
 
 **Tenute Francesco Righetti**
 
 **Azienda:**
+<br />
 Tenute Francesco Righetti in collaborazione con Giuseppe
 Campagnola (due famiglie che collaborano insieme da
 generazioni), danno vita negli ultimi 10 anni all'Azienda Agricola
@@ -19,6 +20,7 @@ Possiedono uno shop sia fisico in tenuta, che online dove è
 possibile ordinare sia i vini che l'olio di produzione della tenuta.
 
 **La sfida progettuale:**
+<br />
 La sfida progettuale propone la creazione di tour vituale dei vigneti biologici e della cantina.
 L'obiettivo è quello di far conoscere e apprezzare al massimo tutti gli aspetti della
 produzione vinicola, andando ad esaltare le caratteristiche dei vigleti e la qualità del vino
@@ -29,7 +31,7 @@ prodotto.
 ## STRUCTURE
 Projects:
 > Ecommerce
- </br>
+> </br>
 > Virtual Tour
 
 ----------------------------------------------------------------
@@ -37,8 +39,7 @@ Projects:
 ### Ecommerce
 
 [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
-with [Sanity.io](https://sanity.io)
-with [Vercel](https://vercel.com/)
+with [Sanity.io](https://sanity.io) and [Vercel](https://vercel.com/) for Deploy
 
 ----------------------------------------------------------------
 
