@@ -1,20 +1,22 @@
 import React from 'react';
 import { client } from '../lib/client';
 import { Product } from '../components';
+import useTranslation from 'next-translate/useTranslation';
 
 const Wine = ({ products }) => {
-  return (
-        <div>
-            <div className="products-heading">
-                <h2>Best Selling Products</h2>
-                <p>Try all our wine!</p>
-            </div>
+    const { t } = useTranslation('common');
 
-            <div className="products-container">
-                {products?.map((product) => <Product key={product._id} product={product} />)}
+    return (
+            <div>
+                <div className="products-heading">
+                    <h2>{t('ourWines')}</h2>
+                </div>
+
+                <div className="products-container">
+                    {products?.map((product) => <Product key={product._id} product={product} />)}
+                </div>
             </div>
-        </div>
-    )
+        )
 }
 
 export const getServerSideProps = async () => {
