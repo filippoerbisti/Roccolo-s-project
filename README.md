@@ -1,10 +1,10 @@
-b# Project Ecommerce Wine Shop
+## Project Ecommerce Wine Shop
 
-## Demand
+## DEMAND
 
-Tenute Francesco Righetti
+**Tenute Francesco Righetti**
 
-Azienda:
+**Azienda:**
 Tenute Francesco Righetti in collaborazione con Giuseppe
 Campagnola (due famiglie che collaborano insieme da
 generazioni), danno vita negli ultimi 10 anni all'Azienda Agricola
@@ -18,7 +18,7 @@ come location per eventi, matrimoni e degustazioni organizzate.
 Possiedono uno shop sia fisico in tenuta, che online dove è
 possibile ordinare sia i vini che l'olio di produzione della tenuta.
 
-La sfida progettuale:
+**La sfida progettuale:**
 La sfida progettuale propone la creazione di tour vituale dei vigneti biologici e della cantina.
 L'obiettivo è quello di far conoscere e apprezzare al massimo tutti gli aspetti della
 produzione vinicola, andando ad esaltare le caratteristiche dei vigleti e la qualità del vino
@@ -26,17 +26,25 @@ prodotto.
 
 ----------------------------------------------------------------
 
-## Structure
-2 projects:
+## STRUCTURE
+Projects:
 > Ecommerce
-> </br>
+ </br>
 > Virtual Tour
 
 ----------------------------------------------------------------
 
-## Payment Methods
+### Ecommerce
 
-2 types of Payment:
+[Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
+with [Sanity.io](https://sanity.io)
+with [Vercel](https://vercel.com/)
+
+----------------------------------------------------------------
+
+## PAYMENT METHODS
+
+Types of Payment:
 - [Stripe](#stripe)
 - [PayPal](#paypal)
 
@@ -46,7 +54,7 @@ Software, that allows individuals and companies to send and receive payments via
 > <a href="https://stripe.com/it">Stripe</a>
 
 Receipt template
-![alt text](https://github.com/filippoerbisti/pr1/blob/master/assets_readme/model-receive.PNG?raw=true)
+![Receipt template](https://github.com/filippoerbisti/pr1/blob/master/assets_readme/model-receive.PNG?raw=true)
 
 ### PayPal
 
@@ -55,9 +63,9 @@ Classic, basic Payment with PayPal, one of the largest payment methods
 
 ----------------------------------------------------------------
 
-## Cookie / Policy Privacy
+## COOKIE / POLICY PRIVACY
 
 Compliance test result for pr1-smoky.vercel.app
 > <a href="https://www.cookiebot.com/it/">CookieBot</a>
 
-![alt text](https://github.com/filippoerbisti/pr1/blob/master/assets_readme/report-cookie-website.jpg?raw=true)
+![Report Cookie](https://github.com/filippoerbisti/pr1/blob/master/assets_readme/report-cookie-website.jpg?raw=true)
