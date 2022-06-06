@@ -2,7 +2,9 @@ import React from 'react'
 
 const Farm = () => {
   return (
-    <div>Farm</div>
+    <div>
+      <h1>Farm</h1>
+    </div>
   )
 }
 
