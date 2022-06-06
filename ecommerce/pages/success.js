@@ -25,16 +25,16 @@ const Success = () => {
                     <BsBagCheckFill />
                 </p>
                 <h2>{t('success:thxOrder')}</h2>
-                <p className='email-msg'>Check your email inbox for the receipt.</p>
+                <p className='email-msg'>{t('success:checkEmail')}</p>
                 <p className='description'>
-                    If you have any questions, please mail
+                    {t('success:anyQuestion')}
                     <a className='email' href='mailto:filippo.erbisti@gmail.com'>
                         filippo.erbisti@gmail.com   
                     </a>
                 </p>
                 <Link href='/'>
                     <button type='button' width="300px" className='btn'>
-                        Continue Shopping
+                        {t('contShopping')}
                     </button>
                 </Link>
             </div>
