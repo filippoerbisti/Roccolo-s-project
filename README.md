@@ -63,7 +63,7 @@ Software, that allows individuals and companies to send and receive payments via
 > <a href="https://stripe.com/it">Stripe</a>
 
 Receipt template
-![Receipt template](https://github.com/filippoerbisti/pr1/blob/master/assets_readme/model-receive.PNG?raw=true)
+![Receipt template](https://github.com/filippoerbisti/pr1/blob/master/docs/readme/assets/model-receive.PNG?raw=true)
 
 ### PayPal
 
@@ -77,4 +77,4 @@ Classic, basic Payment with PayPal, one of the largest payment methods
 Compliance test result for pr1-smoky.vercel.app
 > <a href="https://www.cookiebot.com/it/">CookieBot</a>
 
-![Report Cookie](https://github.com/filippoerbisti/pr1/blob/master/assets_readme/report-cookie-website.jpg?raw=true)
+![Report Cookie](https://github.com/filippoerbisti/pr1/blob/master/docs/readme/assets/report-cookie-website.jpg?raw=true)
