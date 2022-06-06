@@ -2,12 +2,13 @@
 
 const nextTranslate = require('next-translate');
 
-// const nextConfig = nextTranslate({
-//   reactStrictMode: true,
-// });
-
-// module.exports = nextConfig
-
-module.exports = nextTranslate({
+const nextConfig = nextTranslate({
   reactStrictMode: true,
 });
+
+module.exports = nextConfig
+
+// Equal way, work
+// module.exports = nextTranslate({
+//   reactStrictMode: true,
+// });
