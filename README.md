@@ -28,6 +28,14 @@ prodotto.
 
 ----------------------------------------------------------------
 
+# Guide
+* [License guidelines for this project](LICENSE)
+* [Security guidelines for this project](docs/SECURITY.md)
+* [Contribution guidelines for this project](docs/CONTRIBUTING.md)
+* [Conduct guidelines for this project](docs/CODE_OF_CONDUCT.md)
+
+----------------------------------------------------------------
+
 ## STRUCTURE
 Projects:
 > Ecommerce
