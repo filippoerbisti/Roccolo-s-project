@@ -114,7 +114,7 @@ const Navbar = props => {
 
         {showCart && <Cart />}
 
-        <button 
+        {/* <button 
           type='button' 
           className='cart-icon'
           onClick={() => setShowMenu(true)}
@@ -122,7 +122,7 @@ const Navbar = props => {
           <FiMenu />
         </button>
 
-        {showMenu && <Cart />}
+        {showMenu && <Cart />} */}
 
       </div>
 
