@@ -1,6 +1,7 @@
 import React, { useState, useEffect }  from 'react';
 import Link from 'next/link';
 import { AiOutlineShopping } from 'react-icons/ai';
+import { FiMenu } from 'react-icons/fi';
 import useTranslation from 'next-translate/useTranslation';
 import { IT, GB, FR, DE } from 'country-flag-icons/react/3x2';
 
@@ -10,7 +11,7 @@ import { useStateContext } from '../context/StateContext';
 
 const Navbar = props => {
   const { t } = useTranslation('common');
-  const { showCart, setShowCart, totalQuantities } = useStateContext();
+  const { showCart, setShowCart, showMenu, setShowMenu, totalQuantities } = useStateContext();
 
   const [activeTabs, setActiveTabs] = useState(props.name);
 
@@ -86,31 +87,44 @@ const Navbar = props => {
         </li>
       </ul>
 
-      <div className={styles.langContainer}>
-        <Link href="/" locale="it">
-          <IT title="Italiano" className={styles.langIcons}/>
-        </Link>
-        <Link href="/" locale="en">
-          <GB title="English" className={styles.langIcons}/>
-        </Link>
-        <Link href="/" locale="de">
-          <DE title="Deutsch" className={styles.langIcons}/>
-        </Link>
-        <Link href="/" locale="fr">
-          <FR title="Français" className={styles.langIcons}/>
-        </Link>
+      <div className={styles.navIcon}>
+        <div className={styles.langContainer}>
+          <Link href="/" locale="it">
+            <IT title="Italiano" className={styles.langIcons}/>
+          </Link>
+          <Link href="/" locale="en">
+            <GB title="English" className={styles.langIcons}/>
+          </Link>
+          <Link href="/" locale="de">
+            <DE title="Deutsch" className={styles.langIcons}/>
+          </Link>
+          <Link href="/" locale="fr">
+            <FR title="Français" className={styles.langIcons}/>
+          </Link>
+        </div>
+
+        <button 
+          type='button' 
+          className='cart-icon'
+          onClick={() => setShowCart(true)}
+        >
+          <AiOutlineShopping />
+          <span className='cart-item-qty'>{totalQuantities}</span>
+        </button>
+
+        {showCart && <Cart />}
+
+        <button 
+          type='button' 
+          className='cart-icon'
+          onClick={() => setShowMenu(true)}
+        >
+          <FiMenu />
+        </button>
+
+        {showMenu && <Cart />}
+
       </div>
-
-      <button 
-        type='button' 
-        className='cart-icon'
-        onClick={() => setShowCart(true)}
-      >
-        <AiOutlineShopping />
-        <span className='cart-item-qty'>{totalQuantities}</span>
-      </button>
-
-      {showCart && <Cart />}
 
     </div>
   )
