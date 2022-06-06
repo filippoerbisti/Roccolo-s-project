@@ -60,4 +60,4 @@ Classic, basic Payment with PayPal, one of the largest payment methods
 Compliance test result for pr1-smoky.vercel.app
 > <a href="https://www.cookiebot.com/it/">CookieBot</a>
 
-<img src="./assets_readme/report-cookie-website.jpg" target="_blank>
+<img src="./assets_readme/model-receive.PNG" target="_blank>
