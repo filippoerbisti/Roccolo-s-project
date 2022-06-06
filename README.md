@@ -4,3 +4,7 @@
 > Ecommerce
 > </br>
 > Virtual Tour
+
+
+## Payment Methods
+<img src="model-receive.PNG" target="_blank">
