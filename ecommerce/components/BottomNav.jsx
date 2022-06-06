@@ -1,6 +1,5 @@
 import styles from '../styles/BottomNav.module.css';
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
 import { RiHomeSmile2Line, RiHomeSmile2Fill, RiSearchEyeFill } from 'react-icons/ri';
 import { BiSearchAlt } from 'react-icons/bi';
 import { AiOutlineShopping } from 'react-icons/ai';
@@ -9,7 +8,6 @@ import { Cart } from './';
 import { useStateContext } from '../context/StateContext';
 
 const BottomNav = props => {
-    const router = useRouter();
     const [activeTabs, setActiveTabs] = useState(props.name);
 
     const { showCart, setShowCart } = useStateContext();
@@ -23,7 +21,7 @@ const BottomNav = props => {
             default:
                 break;
         }
-    }, [activeTabs, router]);
+    }, [activeTabs]);
 
     return (
         <div className={`${styles.bottomNav}`}>
