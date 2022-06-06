@@ -236,7 +236,7 @@ span.text-red {
   font-weight: 500;
   cursor: pointer;
   gap: 2px;
-  margin-left: 10px;
+  margin-left: 20px;
   border: none;
   background-color: transparent;
 }
@@ -246,7 +246,7 @@ span.text-red {
 }
 
 .cart-heading .heading{
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
 .cart-num-items{
@@ -255,8 +255,12 @@ span.text-red {
 }
 
 .empty-cart{
-  margin:40px;
-  text-align:center;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
 }
 
 .empty-cart h3{
