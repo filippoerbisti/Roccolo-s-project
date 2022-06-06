@@ -14,5 +14,11 @@
     "contShopping": "CONTINUE SHOPPING",
 
     "viewAllWine": "View All Wines",
-    "ourWines": "The wines of our Farms"
+    "ourWines": "The wines of our Farms",
+        
+    "details": "Details",
+    "quantity": "Quantity",
+    "addCart" : "Add to Cart",
+    "buyNow": "Buy Now",
+    "alosLike": "You may also like"
 }

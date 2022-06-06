@@ -14,5 +14,11 @@
     "contShopping": "CONTINUA GLI ACQUISTI",
 
     "viewAllWine": "Vedi Tutti i Vini",
-    "ourWines": "I Vini delle nostre Aziende Agricole"
+    "ourWines": "I Vini delle nostre Aziende Agricole",
+        
+    "details": "Dettagli",
+    "quantity": "Quantità",
+    "addCart" : "Aggiungi al Carrello",
+    "buyNow": "Compra Ora",
+    "alosLike": "Ti potrebbe piacere"
 }

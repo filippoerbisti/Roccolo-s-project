@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai';
+import useTranslation from 'next-translate/useTranslation';
 
 import { client, urlFor } from '../../lib/client';
 import { Product } from '../../components';
 import { useStateContext } from '../../context/StateContext';
 
 const ProductDetails = ({ product, products }) => {
+    const { t } = useTranslation('common');
     const { image, name, details, price } = product;
     const [index, setIndex] = useState(0);
     const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
@@ -46,11 +48,11 @@ const ProductDetails = ({ product, products }) => {
                         </div>
                         <p>(20)</p>
                     </div>
-                    <h4>Details:</h4>
+                    <h4>{t('details')}:</h4>
                     <p>{details}</p>
                     <p className='price'>€{price}</p>
                     <div className='quantity'>
-                        <h3>Quantity:</h3>
+                        <h3>{t('quantity')}:</h3>
                         <p className='quantity-desc'>
                             <span className='minus' onClick={decQty}>
                                 <AiOutlineMinus />
@@ -69,14 +71,14 @@ const ProductDetails = ({ product, products }) => {
                             className='add-to-cart' 
                             onClick={() => onAdd(product, qty)}
                         >
-                            Add to Cart
+                            {t('addCart')}
                         </button>
                         <button 
                             type="button" 
                             className='buy-now' 
                             onClick={handleBuyNow}
                         >
-                            Buy Now
+                            {t('buyNow')}
                         </button>
                     </div>
                 </div>
@@ -84,7 +86,7 @@ const ProductDetails = ({ product, products }) => {
             
 
             <div className='maylike-products-wrapper'>
-                <h2>You may also like</h2>
+                <h2>{t('alsoLike')}</h2>
                 <div className='marquee'>
                     <div className='maylike-products-container track'>
                         {products.map((item) => (

@@ -14,5 +14,11 @@
     "contShopping": "CONTINUER VOS ACHATS",
 
     "viewAllWine": "Voir Tous Les Vins",
-    "ourWines": "Les Vins de nos Exploitations"
+    "ourWines": "Les Vins de nos Exploitations",
+        
+    "details": "Details",
+    "quantity": "Quantity",
+    "addCart" : "Add to Cart",
+    "buyNow": "Buy Now",
+    "alosLike": "You may also like"
 }
