@@ -327,6 +327,10 @@ text-align: end;
   background-color: transparent;
 }
 
+.heading:hover {
+  text-decoration: underline;
+}
+
 .cart-heading .heading{
   margin-left: 10px;
 }
