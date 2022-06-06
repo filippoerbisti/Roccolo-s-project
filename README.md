@@ -48,15 +48,15 @@ Software, that allows individuals and companies to send and receive payments via
 Receipt template
 <img src="./assets_readme/model-receive.PNG" target="_blank">
 
-
 ### PayPal
 
 Classic, basic Payment with PayPal, one of the largest payment methods
 > <a href="https://developer.paypal.com/home">PayPal Developer</a>
 
+----------------------------------------------------------------
 
 ## Cookie / Policy Privacy
+
 > [CookieBot](https://www.cookiebot.com/it/)
 Compliance test result for pr1-smoky.vercel.app
-<img src="./assets_readme/report-cookie-website.jpg" target="_blank>
-<img src="./assets_readme/report-cookie-website.pdf" target="_blank>
+<img src="assets_readme/report-cookie-website.jpg" target="_blank>
