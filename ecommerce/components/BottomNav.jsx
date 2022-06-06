@@ -3,8 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { RiHomeSmile2Line, RiHomeSmile2Fill, RiSearchEyeFill } from 'react-icons/ri';
 import { BiSearchAlt } from 'react-icons/bi';
-import { AiOutlineHeart, AiFillHeart, AiOutlineShopping } from 'react-icons/ai';
-import { RiUser5Line, RiUser5Fill } from 'react-icons/ri';
+import { AiOutlineShopping } from 'react-icons/ai';
 
 import { Cart } from './';
 import { useStateContext } from '../context/StateContext';
@@ -13,7 +12,7 @@ const BottomNav = props => {
     const router = useRouter();
     const [activeTabs, setActiveTabs] = useState(props.name);
 
-    const { showCart, setShowCart, totalQuantities } = useStateContext();
+    const { showCart, setShowCart } = useStateContext();
 
     useEffect(() => {
         switch (activeTabs) {
