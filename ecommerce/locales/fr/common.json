@@ -1,10 +1,17 @@
 {
-    "viewAllWine": "Voir Tous Les Vins",
     "navShop": "SHOP", 
     "navFarm": "CULTIVER",
     "navWineShop": "CAVE À VINS",
     "navEvents": "ÉVÉNEMENTS",
     "navWines": "VINS",
     "navGallery": "GALERIE",
-    "navAbout": "ABOUT"
+    "navAbout": "ABOUT",
+
+    "yourCart": "Votre Panier",
+    "item": "Élément",
+    "items": "Éléments",
+    "shopBagEmpty": "Votre panier est vide",
+    "contShopping": "CONTINUER VOS ACHATS",
+
+    "viewAllWine": "Voir Tous Les Vins"
 }

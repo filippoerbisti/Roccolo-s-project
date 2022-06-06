@@ -1,10 +1,17 @@
 {
-    "viewAllWine": "View All Wines",
     "navShop": "SHOP",
     "navFarm": "FARM",
     "navWineShop": "WINESHOP",
     "navEvents": "EVENTS",
     "navWines": "WINES",
     "navGallery": "GALLERY",
-    "navAbout": "ABOUT"
+    "navAbout": "ABOUT",
+
+    "yourCart": "Your Cart",
+    "item": "Item",
+    "items": "Items",
+    "shopBagEmpty": "Your shopping bag is empty",
+    "contShopping": "CONTINUE SHOPPING",
+
+    "viewAllWine": "View All Wines"
 }

@@ -1,10 +1,17 @@
 {
-    "viewAllWine": "Alle Weine Ansehen",
     "navShop": "SHOP", 
     "navFarm": "BAUERNHOF",
     "navWineShop": "WEINLADEN",
     "navEvents": "VERANSTALTUNGEN",
     "navWines": "WEINE",
     "navGallery": "GALERIE",
-    "navAbout": "ABOUT"
+    "navAbout": "ABOUT",
+
+    "yourCart": "Ihr Warenkorb",
+    "item": "Artikel",
+    "items": "Artikel",
+    "shopBagEmpty": "Deine Einkaufstasche ist leer",
+    "contShopping": "MIT DEM EINKAUFEN FORTFAHREN",
+
+    "viewAllWine": "Alle Weine Ansehen"
 }
