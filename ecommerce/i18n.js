@@ -7,6 +7,7 @@ module.exports = {
     defaultLocale: 'en', // Default language of your website
     pages: {
       '*': ['common'], // Namespaces that you want to import per page
+      '/': ['home'],
       '/success': ['success'],
       '/privacy-policy': ['policy']
     },
