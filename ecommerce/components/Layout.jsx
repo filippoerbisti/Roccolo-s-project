@@ -4,7 +4,6 @@ import Head from 'next/head';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import ScrollToTop from './ScrollToTop';
-import BottomNav from './BottomNav';
 
 const Layout = ({ children }) => {
   return (
@@ -18,11 +17,10 @@ const Layout = ({ children }) => {
       <main className='main-container'>
         <ScrollToTop />
         {children}
-        {/* <BottomNav /> */}
       </main>
-      {/* <footer>
+      <footer>
         <Footer />
-      </footer> */}
+      </footer>
     </div>
   )
 }
