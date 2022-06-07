@@ -20,8 +20,16 @@ const Main = () => {
 
   return (
     <div className={styles.mx20}>     {/* TODO -> mx20 all pages */}
-      <div>
-      <Slider imageList={images} width={1200} height={600} showArrowControls={false} showDotControls={true} />
+      <Slider 
+        imageList={images} 
+        width={1200} 
+        height={600} 
+        showArrowControls={false} 
+        showDotControls={true} 
+        loop={true}
+        autoPlay={true}
+        autoPlayInterval={5000}
+      />
 
       <div className={styles.btnContainer}>
         <button className={styles.btn} type='button'> 
@@ -31,7 +39,6 @@ const Main = () => {
       </div>
 
       <hr className={styles.hr} />
-      </div>
 
       <div className={styles.textContainer}>
         <div className={styles.w50mx40}>
@@ -39,14 +46,15 @@ const Main = () => {
             <Link href='/wineshop'>{t('wineshopTitle')}</Link>
           </h1>
           <p className={styles.paragraph}>{t('wineshopParagraph')}</p>
+          <button></button>
         </div>
         <div className={styles.w50mx40}>
           <Image 
             src={img1} 
             className={styles.img} 
             alt="wineshop_img" 
-            width={800} 
-            height={500} 
+            width={700} 
+            height={400} 
             layout="responsive" 
             objectFit="cover"
           />
@@ -61,8 +69,8 @@ const Main = () => {
             src={img1} 
             className={styles.img} 
             alt="event_img" 
-            width={800} 
-            height={500} 
+            width={700} 
+            height={400} 
             layout="responsive" 
             objectFit="cover"
           />
