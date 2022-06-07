@@ -7,3 +7,4 @@ export {default as FooterBanner } from './FooterBanner';
 export {default as Cart } from './Cart';
 export {default as BottomNav} from './BottomNav';
 export {default as ScrollToTop} from './ScrollToTop';
+export {default as Main} from './Main';
