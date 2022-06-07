@@ -9,6 +9,9 @@ const withTM = require("next-transpile-modules")(["@madzadev/image-slider"]);
 
 const nextConfig = nextTranslate({
   reactStrictMode: true,
+  images: {
+    domains: ["res.cloudinary.com"],
+  },
 });
 
 module.exports = withImages(withTM(nextConfig));
