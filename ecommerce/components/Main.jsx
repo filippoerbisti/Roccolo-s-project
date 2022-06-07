@@ -43,7 +43,7 @@ const Main = () => {
       <div className={styles.btnContainer}>
         <button className={styles.btn} type='button'> 
         {/* //TODO -> link to virtual tour, click, set loader, when ok, load page ((  onClick={() => setActiveTabs('tour')} )) */}
-          <Link href='https://www.spindox.it/it/blog/react-360-una-libreria-vr-per-il-web/#gref'>{t('takeTour')}</Link>
+          <Link href='https://www.spindox.it/it/blog/react-360-una-libreria-vr-per-il-web/#gref'>{t('virtualTour')}</Link>
         </button>
       </div>
 
@@ -57,7 +57,7 @@ const Main = () => {
           <p className={styles.paragraph}>{pWineshopParagraph}</p>
           <div className={styles.btnContainer}>
             <button className={styles.btn} type='button'> 
-              <Link href='https://www.spindox.it/it/blog/react-360-una-libreria-vr-per-il-web/#gref'>{t('takeTour')}</Link>
+              <Link href='/wineshop'>{t('wineshopButton')}</Link>
             </button>
           </div>
         </div>
@@ -93,6 +93,11 @@ const Main = () => {
             <Link href='/tasting'>{t('tastingTitle')}</Link>
           </h1>
           <p className={styles.paragraph}>{pTastingParagraph}</p>
+          <div className={styles.btnContainer}>
+            <button className={styles.btn} type='button'> 
+              <Link href='/tasting'>{t('tastingButton')}</Link>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -104,7 +109,11 @@ const Main = () => {
             <Link href='/wedding'>{t('weddingTitle')}</Link>
           </h1>
           <p className={styles.paragraph}>{pWeddingParagraph}</p>
-          <button></button>
+          <div className={styles.btnContainer}>
+            <button className={styles.btn} type='button'> 
+              <Link href='/wedding'>{t('weddingButton')}</Link>
+            </button>
+          </div>
         </div>
         <div className={styles.w50mx40}>
           <Image 
