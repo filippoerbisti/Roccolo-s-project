@@ -28,7 +28,7 @@ const Main = () => {
     { url: "https://picsum.photos/seed/c/1366/768" },
   ];
 
-  const img1 = "/../public/degustazioni.png";
+  const img1 = "https://res.cloudinary.com/dl38nyo08/image/upload/v1654615348/Roccolo%20del%20Lago/degustazioni_zs5pmi.png";
 
   return (
     <div className={styles.mx20}>     {/* TODO -> mx20 all pages */}
