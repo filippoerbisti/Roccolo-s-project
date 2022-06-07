@@ -10,6 +10,15 @@ import styles from '../styles/Main.module.css';
 const Main = () => {
   const { t } = useTranslation('home');
 
+  const pWineshop = `${t('wineshopParagraph')}`;
+  const pWineshopParagraph = pWineshop.replace(/xxx/gi, '\n\r');
+
+  const pTasting = `${t('tastingParagraph')}`;
+  const pTastingParagraph = pTasting.replace(/xxx/gi, '\n\r');
+
+  const pWedding = `${t('weddingParagraph')}`;
+  const pWeddingParagraph = pWedding.replace(/xxx/gi, '\n\r');
+
   const images = [
     { url: "https://picsum.photos/seed/a/1600/900" },
     { url: "https://picsum.photos/seed/b/1920/1080" },
@@ -45,8 +54,12 @@ const Main = () => {
           <h1 className={styles.title}>
             <Link href='/wineshop'>{t('wineshopTitle')}</Link>
           </h1>
-          <p className={styles.paragraph}>{t('wineshopParagraph')}</p>
-          <button></button>
+          <p className={styles.paragraph}>{pWineshopParagraph}</p>
+          <div className={styles.btnContainer}>
+            <button className={styles.btn} type='button'> 
+              <Link href='https://www.spindox.it/it/blog/react-360-una-libreria-vr-per-il-web/#gref'>{t('takeTour')}</Link>
+            </button>
+          </div>
         </div>
         <div className={styles.w50mx40}>
           <Image 
@@ -68,7 +81,7 @@ const Main = () => {
           <Image 
             src={img1} 
             className={styles.img} 
-            alt="event_img" 
+            alt="tasting_img" 
             width={700} 
             height={400} 
             layout="responsive" 
@@ -77,9 +90,32 @@ const Main = () => {
         </div>
         <div className={styles.w50mx40}>
           <h1 className={styles.title}>
-            <Link href='/event'>{t('eventTitle')}</Link>
+            <Link href='/tasting'>{t('tastingTitle')}</Link>
           </h1>
-          <p className={styles.paragraph}>{t('eventParagraph')}</p>
+          <p className={styles.paragraph}>{pTastingParagraph}</p>
+        </div>
+      </div>
+
+      <hr className={styles.hr} />
+
+      <div className={styles.textContainer}>
+        <div className={styles.w50mx40}>
+          <h1 className={styles.title}>
+            <Link href='/wedding'>{t('weddingTitle')}</Link>
+          </h1>
+          <p className={styles.paragraph}>{pWeddingParagraph}</p>
+          <button></button>
+        </div>
+        <div className={styles.w50mx40}>
+          <Image 
+            src={img1} 
+            className={styles.img} 
+            alt="wineshop_img" 
+            width={700} 
+            height={400} 
+            layout="responsive" 
+            objectFit="cover"
+          />
         </div>
       </div>
       
