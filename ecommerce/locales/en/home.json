@@ -7,15 +7,13 @@
 
     "tastingTitle": "Tastings",
     "tastingParagraph": "Free guided tasting in our modern and comfortable Wineshop.",
-    "tastingUl1": "",
-    "tastingUlLi1": "",
-    "tastingUlLi2": "",
-    "tastingUlLi3": "",
-    "tastingUlLi4": "",
-    "tastingFooter": "",
-    "tastingUl2": "",
-    "tastingUlLi4More": "",
+    "tastingPromo1": "Premium Roccolo",
+    "tastingPromo2": "Exclusive Roccolo",
+    "tastingPromo2More": "combined with an accurate selection of local typical produce",
+    "tastingFooter": "(For more information and booking: info@roccolodellago.it)",
+    "tastingButton": "Book tasting",
     
     "weddingTitle": "Weddings",
-    "weddingParagraph": ""
+    "weddingParagraph": "Wine and Love are a combination that is historically considered a winner.xxxRoccolo del Lago is a special place, a location of striking beauty where you can celebrate the most important day of your life, making it unforgettable.xxxWhat better location than an organic wine estate surrounded by nature where style, simplicity and elegance are the setting for the magic of your love?",
+    "weddingButton": "Contact for information"
 }

@@ -7,17 +7,13 @@
 
     "tastingTitle": "Degustazioni",
     "tastingParagraph": "Gratuita degustazione guidata all’interno del nostro moderno e accogliente Wineshop.",
-    "tastingUl1": "Premium Roccolo",
-    "tastingUlLi1": "",
-    "tastingUlLi2": "",
-    "tastingUlLi3": "",
-    "tastingUlLi4": "",
-    "tastingFooter": "",
-    "tastingUl2": "Exclusive Roccolo",
-    "tastingUlLi4More": "",
-    "tastingButton": "",
+    "tastingPromo1": "Premium Roccolo",
+    "tastingPromo2": "Exclusive Roccolo",
+    "tastingPromo2More": "abbinato ad un'accurata selezione di prodotti tipici locali",
+    "tastingFooter": "(Per maggiori informazioni e prenotazioni: info@roccolodellago.it)",
+    "tastingButton": "Prenota degustazione",
     
     "weddingTitle": "Matrimoni",
-    "weddingParagraph": "",
-    "weddingButton": ""
+    "weddingParagraph": "Vino ed Amore sono un connubio che storicamente viene considerato vincente.xxxRoccolo del Lago è un luogo speciale, una location di suggestiva bellezza dove celebrare il giorno più importante della vostra vita rendendolo indimenticabile.xxxQuale location migliore di una tenuta vinicola biologica immersa nella natura dove stile, semplicità ed eleganza fanno da cornice alla magia del vostro amore?",
+    "weddingButton": "Contattaci per informazioni"
 }
