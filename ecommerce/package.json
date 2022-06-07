@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.18.2",
+    "@madzadev/image-slider": "^1.0.9",
     "@sanity/client": "^3.3.1",
     "@sanity/image-url": "^1.0.1",
     "@stripe/stripe-js": "^1.31.0",
