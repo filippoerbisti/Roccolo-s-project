@@ -1,7 +1,7 @@
 import React, { useState, useEffect }  from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { AiOutlineShopping } from 'react-icons/ai';
-import { FiMenu } from 'react-icons/fi';
 import useTranslation from 'next-translate/useTranslation';
 import { IT, GB, FR, DE } from 'country-flag-icons/react/3x2';
 
@@ -39,10 +39,11 @@ const Navbar = props => {
   return (
     <div className='navbar-container'>
       <Link href="/" className='cursor-pointer'>
-        <img 
-          src="https://www.roccolodellago.it/wp-content/uploads/2019/02/logo.jpg" 
-          width='auto' 
-          height='80px' 
+        <Image 
+          src="https://res.cloudinary.com/dl38nyo08/image/upload/v1654615358/Roccolo%20del%20Lago/logo_dyyyvx.jpg"
+          width={240} 
+          height={100} 
+          objectFit="cover"
           className='cursor-pointer'
           onClick={() => setActiveTabs('')}
         />
