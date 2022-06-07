@@ -18,11 +18,11 @@ const Layout = ({ children }) => {
       <main className='main-container'>
         <ScrollToTop />
         {children}
-        <BottomNav />
+        {/* <BottomNav /> */}
       </main>
-      <footer>
+      {/* <footer>
         <Footer />
-      </footer>
+      </footer> */}
     </div>
   )
 }

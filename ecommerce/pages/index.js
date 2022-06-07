@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { client } from '../lib/client';
-import { Product, FooterBanner, HeroBanner } from '../components';
+import { Product, FooterBanner, HeroBanner, Main } from '../components';
 import useTranslation from 'next-translate/useTranslation';
 
 const Home = ({ products, bannerData }) => {
@@ -9,14 +9,14 @@ const Home = ({ products, bannerData }) => {
 
   return (
     <div>
-      
+      <Main />
       {/* <HeroBanner heroBanner={bannerData.length && bannerData[0]} /> */}
 
-      <Link href="/wine">
+      {/* <Link href="/wine">
         <button>
           {t('viewAllWine')}
         </button>
-      </Link>
+      </Link> */}
 
       {/* <FooterBanner footerBanner={bannerData && bannerData[0]} /> */}
 
