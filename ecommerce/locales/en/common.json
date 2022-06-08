@@ -1,11 +1,10 @@
 {
     "navShop": "SHOP",
-    "navFarm": "FARM",
     "navWineShop": "WINESHOP",
     "navEvents": "EVENTS",
     "navWines": "WINES",
     "navGallery": "GALLERY",
-    "navAbout": "ABOUT",
+    "navContact": "CONTACTS",
 
     "yourCart": "Your Cart",
     "item": "Item",

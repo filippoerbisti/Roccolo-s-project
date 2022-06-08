@@ -1,11 +1,10 @@
 {
     "navShop": "SHOP", 
-    "navFarm": "CULTIVER",
     "navWineShop": "CAVE À VINS",
     "navEvents": "ÉVÉNEMENTS",
     "navWines": "VINS",
     "navGallery": "GALERIE",
-    "navAbout": "ABOUT",
+    "navContact": "CONTACTS",
 
     "yourCart": "Votre Panier",
     "item": "Élément",

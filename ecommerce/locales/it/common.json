@@ -1,11 +1,10 @@
 {
     "navShop": "SHOP",
-    "navFarm": "AZ. AGRICOLA",
     "navWineShop": "WINESHOP",
     "navEvents": "EVENTI",
     "navWines": "VINI",
     "navGallery": "GALLERIA",
-    "navAbout": "ABOUT",
+    "navContact": "CONTATTI",
 
     "yourCart": "Tuo Carrello",
     "item": "Elemento",
