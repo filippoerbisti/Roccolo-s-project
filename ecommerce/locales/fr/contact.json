@@ -1,0 +1,18 @@
+{
+    "title": "Contacts",
+    "info": "Contactez-nous pour demander des informations, la disponibilité pour votre réservation, les directions pour nous rejoindre.",
+    "firstName": "Prénom",
+    "lastName": "Nom de famille",
+    "email": "Email",
+    "objectEmail": {
+        "option1": "Vins",
+        "option2": "Dégustation",
+        "option3": "Mariage"
+    },
+    "message": "Message",
+    "newsletter": "Newsletter",
+    "newsletterPromo": "Je souhaite recevoir des informations commerciales par email",
+    "privacy": "Privacy",
+    "acceptPrivacy": "",
+    "button": "Soumettre"
+}

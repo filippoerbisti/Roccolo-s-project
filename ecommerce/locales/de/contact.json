@@ -1,0 +1,18 @@
+{
+    "title": "Kontakte",
+    "info": "Kontaktieren Sie uns, um Informationen, die Verfügbarkeit für Ihre Reservierung und eine Wegbeschreibung anzufordern.",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "email": "Email",
+    "objectEmail": {
+        "option1": "Weine",
+        "option2": "Verkostung",
+        "option3": "Hochzeit"
+    },
+    "message": "Nachricht",
+    "newsletter": "Newsletter",
+    "newsletterPromo": "Ich möchte kommerzielle Informationen per email erhalten",
+    "privacy": "Privacy",
+    "acceptPrivacy": "",
+    "button": "Senden"
+}
