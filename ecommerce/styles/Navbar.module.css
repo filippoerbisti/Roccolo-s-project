@@ -48,18 +48,17 @@
     
     .link {
         border-bottom: 2px solid transparent;
-        
         cursor: pointer;
     }
     
     .link:hover {
-        border-bottom: 2px solid rgba(137, 35, 49, 0.6);
-        opacity: 0.6;
+        border-bottom: 2px solid rgba(137, 35, 49, 0.8);
+        opacity: 0.8;
     }
 
     .active {
-        border-bottom: 2px solid rgba(137, 35, 49, 0.8);
-        color: rgba(137, 35, 49, 0.8);
+        border-bottom: 2px solid #892331;
+        color: #892331;
     }
 }
 
