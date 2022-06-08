@@ -25,6 +25,7 @@
     "react-dom": "18.1.0",
     "react-hot-toast": "^2.2.0",
     "react-icons": "^4.4.0",
+    "react-spring": "^9.4.5",
     "stripe": "^9.5.0"
   },
   "devDependencies": {
