@@ -9,7 +9,7 @@ const Tasting = () => {
   const tTasting = t('event:tasting', { count: 150 }, { returnObjects: true });
 
   return (
-    <div className={styles.mx20}>
+    <div className={styles.mx60}>
       <h1 className={styles.title}>{tTasting.title}</h1>
       <p className={styles.paragraph}>{tTasting.p}</p>
     </div>
