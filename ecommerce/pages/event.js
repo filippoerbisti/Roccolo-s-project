@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import Tasting from '../components/Tasting';
+import Wedding from '../components/Wedding';
 
 const Event = () => {
   return (
