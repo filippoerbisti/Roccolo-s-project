@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { AiOutlineShopping } from 'react-icons/ai';
 import useTranslation from 'next-translate/useTranslation';
 import { IT, GB, FR, DE } from 'country-flag-icons/react/3x2';
+import { useRouter } from 'next/router';
 
 import styles from '../styles/Navbar.module.css';
 import { Cart } from './';
@@ -11,6 +12,11 @@ import { useStateContext } from '../context/StateContext';
 
 const Navbar = props => {
   const { t } = useTranslation('common');
+
+  const router = useRouter();
+  const currentRoute = router.route;
+  console.log(currentRoute)
+
   const { showCart, setShowCart, showMenu, setShowMenu, totalQuantities } = useStateContext();
 
   const [activeTabs, setActiveTabs] = useState(props.name);
@@ -91,16 +97,16 @@ const Navbar = props => {
 
       <div className={styles.navIcon}>
         <div className={styles.langContainer}>
-          <Link href="/" locale="it">
+          <Link href={currentRoute} locale="it">
             <IT title="Italiano" className={styles.langIcons}/>
           </Link>
-          <Link href="/" locale="en">
+          <Link href={currentRoute} locale="en">
             <GB title="English" className={styles.langIcons}/>
           </Link>
-          <Link href="/" locale="de">
+          <Link href={currentRoute} locale="de">
             <DE title="Deutsch" className={styles.langIcons}/>
           </Link>
-          <Link href="/" locale="fr">
+          <Link href={currentRoute} locale="fr">
             <FR title="Français" className={styles.langIcons}/>
           </Link>
         </div>
