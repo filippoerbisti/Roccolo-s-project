@@ -15,7 +15,6 @@ const Navbar = props => {
 
   const router = useRouter();
   const currentRoute = router.route;
-  console.log(currentRoute)
 
   const { showCart, setShowCart, showMenu, setShowMenu, totalQuantities } = useStateContext();
 
