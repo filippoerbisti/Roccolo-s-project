@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import styles from '../styles/Gallery.module.css';
 import useMeasure from 'react-use-measure';
 import { useTransition, a } from '@react-spring/web';
 import shuffle from 'lodash.shuffle';
+import useTranslation from 'next-translate/useTranslation';
+
+import styles from '../styles/Gallery.module.css';
 
 const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState({
@@ -28,6 +30,7 @@ const useWindowSize = () => {
 }
 
 const Galleries = () => {
+  const { t } = useTranslation('common');
 
   const data = [
     { css: 'https://images.pexels.com/photos/416430/pexels-photo-416430.jpeg', height: 150 },
@@ -95,6 +98,7 @@ const Galleries = () => {
   // Render the grid
   return (
     <div ref={ref} className={styles.list} style={{ height: Math.max(...heights) }}>
+      <h1 className={styles.title}>{t('navGallery')}</h1>
       {transitions((style, item) => (
         <a.div style={style}>
           <div style={{ backgroundImage: `url(${item.css}?auto=compress&dpr=2&h=500&w=500)` }} />
