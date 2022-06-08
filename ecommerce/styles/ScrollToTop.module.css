@@ -8,17 +8,13 @@
     bottom: 40px;
     right: 25px;
     z-index: 20;
-    background-color: #551B54;
+    background-color: #892331;;
     border: 2px solid #fff;
     border-radius: 50%;
     height: 50px;
     width: 50px;
     color: #fff;
     cursor: pointer;
-    /* animation: bounce 3s ease-in-out infinite; */
-    /* transition: all .5s ease-in-out; */
-    animation-delay: 5s;
-    transition-delay: 5s;
     -moz-animation: bounce 4s ease-in-out infinite;
     -webkit-animation: bounce 4s ease-in-out infinite;
     animation: bounce 4s ease-in-out infinite;
