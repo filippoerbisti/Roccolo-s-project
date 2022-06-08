@@ -1,0 +1,26 @@
+.mx20 {
+    margin: 0 20px;
+}
+
+.title {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.paragraph {
+    height: auto;
+    line-break: normal;
+    line-height: 1.6;
+}
+
+  @media screen and (max-width: 1024px) {
+    .title {
+        font-size: 28px;
+    }
+
+    .paragraph {
+        text-align: center;
+    }
+  }
