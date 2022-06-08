@@ -93,12 +93,12 @@ const Main = () => {
         </div>
         <div className={styles.w50mx40}>
           <h1 className={styles.title}>
-            <Link href='/tasting'>{t('tastingTitle')}</Link>
+            <Link href='/event#tasting'>{t('tastingTitle')}</Link>
           </h1>
           <p className={styles.paragraph}>{pTastingParagraph}</p>
           <div className={styles.btnContainer}>
             <button className={styles.btn} type='button'> 
-              <Link href='/tasting'>{t('tastingButton')}</Link>
+              <Link href='/event#tasting'>{t('tastingButton')}</Link>
             </button>
           </div>
         </div>
@@ -109,12 +109,12 @@ const Main = () => {
       <div className={styles.textContainerLeft}>
         <div className={styles.w50mx40}>
           <h1 className={styles.title}>
-            <Link href='/wedding'>{t('weddingTitle')}</Link>
+            <Link href='/event#wedding'>{t('weddingTitle')}</Link>
           </h1>
           <p className={styles.paragraph}>{pWeddingParagraph}</p>
           <div className={styles.btnContainer}>
             <button className={styles.btn} type='button'> 
-              <Link href='/wedding'>{t('weddingButton')}</Link>
+              <Link href='/event#wedding'>{t('weddingButton')}</Link>
             </button>
           </div>
         </div>
