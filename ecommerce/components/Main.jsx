@@ -52,7 +52,7 @@ const Main = () => {
 
       <hr className={styles.hr} />
 
-      <div className={styles.textContainer}>
+      <div className={styles.textContainerLeft}>
         <div className={styles.w50mx40}>
           <h1 className={styles.title}>
             <Link href='/wineshop'>{t('wineshopTitle')}</Link>
@@ -79,7 +79,7 @@ const Main = () => {
 
       <hr className={styles.hr} />
 
-      <div className={styles.textContainer}>
+      <div className={styles.textContainerRight}>
         <div className={styles.w50mx40}>
           <Image 
             src={img1} 
@@ -106,7 +106,7 @@ const Main = () => {
 
       <hr className={styles.hr} />
 
-      <div className={styles.textContainer}>
+      <div className={styles.textContainerLeft}>
         <div className={styles.w50mx40}>
           <h1 className={styles.title}>
             <Link href='/wedding'>{t('weddingTitle')}</Link>
