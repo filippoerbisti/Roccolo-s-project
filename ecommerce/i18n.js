@@ -10,6 +10,7 @@ const i18nConfig = {
       '/success': ['success'],
       '/privacy-policy': ['policy'],
       'rgx:^/event': ['event'],
+      '/contact': ['contact'],
     },
   };
 
