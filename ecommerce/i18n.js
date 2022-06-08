@@ -1,24 +1,14 @@
-// 2 equal ways:
-
 // Creating i18n.js (exports with module)
 
 module.exports = {
-    locales: ['en', 'it', 'de', 'fr'], // Array with the languages that you want to use
-    defaultLocale: 'en', // Default language of your website
+    locales: ['__default', 'en', 'it', 'de', 'fr'], // Array with the languages that you want to use
+    defaultLocale: '__default', // Default language of your website
+    localesToIgnore: ['__default'],
     pages: {
       '*': ['common'], // Namespaces that you want to import per page
       '/': ['home'],
       '/success': ['success'],
-      '/privacy-policy': ['policy']
+      '/privacy-policy': ['policy'],
+      'rgx:^/event': ['event'],
     },
   };
-
-
-// Creating i18n.json
-// {
-//   "locales": ["en", "it", "de", "fr"], // Array with the languages that you want to use
-//   defaultLocale: "en", // Default language of your website
-//   pages: {
-//     "*": ["common"] // Namespaces that you want to import per page
-//   }
-// };
