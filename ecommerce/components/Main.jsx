@@ -6,6 +6,7 @@ import "@madzadev/image-slider/dist/index.css";
 import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../styles/Main.module.css';
+import dataMainImgSlider from '../store/dataMainImgSlider';
 
 const Main = () => {
   const { t } = useTranslation('home');
@@ -19,14 +20,7 @@ const Main = () => {
   const pWedding = `${t('weddingParagraph')}`;
   const pWeddingParagraph = pWedding.replace(/xxx/gi, '\n\r');
 
-  const images = [
-    { url: "https://picsum.photos/seed/a/1600/900" },
-    { url: "https://picsum.photos/seed/b/1920/1080" },
-    { url: "https://picsum.photos/seed/c/1366/768" },
-    { url: "https://picsum.photos/seed/a/1600/900" },
-    { url: "https://picsum.photos/seed/b/1920/1080" },
-    { url: "https://picsum.photos/seed/c/1366/768" },
-  ];
+  const images = dataMainImgSlider;
 
   const img1 = "https://res.cloudinary.com/dl38nyo08/image/upload/v1654615348/Roccolo%20del%20Lago/degustazioni_zs5pmi.png";
 
