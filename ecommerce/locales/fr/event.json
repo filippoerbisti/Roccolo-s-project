@@ -1,0 +1,11 @@
+{
+    "tasting": {
+        "title": "Dégustations",
+        "p": "paragraph"
+    },
+    
+    "wedding": {
+        "title": "Mariages",
+        "p": "paragraph"
+    }
+}
