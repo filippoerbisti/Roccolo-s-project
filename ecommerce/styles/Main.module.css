@@ -54,6 +54,7 @@
 .paragraph {
     height: auto;
     line-break: normal;
+    line-height: 1.6;
 }
 
 .hr {
