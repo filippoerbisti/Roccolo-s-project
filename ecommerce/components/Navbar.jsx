@@ -27,15 +27,13 @@ const Navbar = props => {
         break;
       case 'wine':
         break;
-      case 'farm':
-        break;
       case 'wineshop':
         break;
       case 'event':
         break;
       case 'gallery':
         break;
-      case 'about':
+      case 'contact':
         break;
       default:
         break;
@@ -62,11 +60,6 @@ const Navbar = props => {
               {t('navShop')}
             </a>
           </Link>
-          <Link href='/farm'>
-            <a className={activeTabs === 'farm' ? `${styles.active}` : `${styles.link}`} onClick={() => setActiveTabs('farm')}>
-              {t('navFarm')}
-            </a>
-          </Link>
           <Link href='/wineshop'>
             <a className={activeTabs === 'wineshop' ? `${styles.active}` : `${styles.link}`} onClick={() => setActiveTabs('wineshop')}>
               {t('navWineShop')}
@@ -87,9 +80,9 @@ const Navbar = props => {
               {t('navGallery')}
             </a>
           </Link>
-          <Link href='/about'>
-            <a className={activeTabs === 'about' ? `${styles.active}` : `${styles.link}`} onClick={() => setActiveTabs('about')}>
-              {t('navAbout')}
+          <Link href='/contact'>
+            <a className={activeTabs === 'contact' ? `${styles.active}` : `${styles.link}`} onClick={() => setActiveTabs('contact')}>
+              {t('navContact')}
             </a>
           </Link>
         </li>
