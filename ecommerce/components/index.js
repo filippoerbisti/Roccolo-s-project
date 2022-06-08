@@ -7,6 +7,9 @@ export {default as Footer } from './Footer';
 
 export {default as Galleries } from './Galleries';
 export {default as Product } from './Product';
+export {default as Tasting } from './Tasting';
+export {default as Wedding } from './Wedding';
+export {default as About } from './About';
 
 export {default as HeroBanner } from './old/HeroBanner';
 export {default as FooterBanner } from './old/FooterBanner';
