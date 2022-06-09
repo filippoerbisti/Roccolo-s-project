@@ -40,6 +40,11 @@
 
 .endFooter {
     margin-top: 10px;
+    font-size: small;
+}
+
+.privacyPolicy {
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 768px) {
