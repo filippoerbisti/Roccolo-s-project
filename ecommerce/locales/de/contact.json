@@ -15,6 +15,7 @@
     "newsletter": "Newsletter",
     "newsletterPromo": "Ich möchte kommerzielle Informationen per email erhalten",
     "privacy": "Privacy",
-    "acceptPrivacy": "",
+    "acceptPrivacy": "Ich habe gelesen und akzeptiere",
+    "infoPrivacy": " die datenschutzerklärung",
     "button": "Senden"
 }
