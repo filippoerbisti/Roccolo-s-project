@@ -12,7 +12,14 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content={t('navContact')} /> {/* TODO */}
+        <meta name="description" content={t('navContact')} /> {/* TODO */}
+        <meta name="author" content="Filippo Erbisti" />
+
         <title>Roccolo del Lago - {t('navContact')}</title>
+
       </Head>
       <div>
       <header>
