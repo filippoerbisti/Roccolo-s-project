@@ -2,8 +2,22 @@
     margin: 0 20px;
 }
 
-.mx60 {
-    margin: 0 60px;
+.mx60aic {
+    margin: 0 auto;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    gap: 10%;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
 }
 
 .title {
@@ -17,11 +31,79 @@
     height: auto;
     line-break: normal;
     line-height: 1.6;
+    text-align: center;
 }
 
-.hr {
-    width: 50%;
-    margin: 40px auto;
+.label {
+    font-size: 16px;
+    padding: 20px 5px 10px 5px;
+    color: #892331;
+    font-weight: bold;
+}
+
+.input {
+    height: 40px;
+    min-width: 300px;
+    padding: 5px 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.input[type=email] {
+    width: 40%;
+}
+
+.select {
+    height: 40px;
+    width: 40%;
+    min-width: 300px;
+    padding: 5px 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: #F4F4F4;
+}
+
+.textarea {
+    min-width: 300px;
+    padding: 5px 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.input:focus,
+.textarea:focus {
+    outline: none !important;
+    border: 2px solid #892331;
+}
+
+.btnContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.btn {
+    width: 25%;
+    max-width: 300px;
+    padding: 10px 5px;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    background-color: #892331;
+    color: #fff;
+    cursor: pointer;
+    transform: scale(1, 1);
+    transition: transform 0.5s ease;
+}
+
+.btn:hover {
+    transform: scale(1.1, 1.1);
 }
 
   @media screen and (max-width: 1024px) {
@@ -29,11 +111,43 @@
         font-size: 28px;
     }
 
-    .paragraph {
-        text-align: center;
-    }
-
     .mx60 {
         margin: 0;
     }
+
+    .row {
+        gap: 50px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+      .row {
+          flex-direction: column;
+          gap: 0;
+      }
+
+      .col {
+          width: 90%;
+          margin-left: auto;
+          margin-right: auto;
+      }
+
+      .input,
+      .select {
+          height: 30px;
+      }
+
+      .btn {
+          width: 50%;
+      }
+
+      .select {
+          width: 100%;
+      }
+  }
+
+  @media screen and (min-width: 1025px) {
+      .row {
+          gap: 150px;
+      }
   }
