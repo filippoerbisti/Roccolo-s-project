@@ -20,11 +20,15 @@ const Footer = () => {
         
 
         <div className={styles.left}>
-          <p>Localita Saline, 9 <br /> 37017 Lazise(VR)</p>
+          <p>Località Saline, 9 -
+            37017 Lazise(VR)</p>
+          <br />
           <p>Tel. <a href="tel:+390457581077">+39 045 7581077</a></p>
+          <br />
           <p>Email: <a href="mailto:info@roccolodellago.it">info@roccolodellago.it</a></p>
-          <p>Orari di apertura: 
-          tutti i giorni dalle 9:00 alle 18:00 
+          <br />
+          <p>Orari: 
+          tutti i giorni dalle 9:00 alle 18:00 <br />
           (Domenica chiuso)</p>
         </div>
 
@@ -42,7 +46,9 @@ const Footer = () => {
       </div>
 
       <p className={styles.endFooter}>© 2022 Roccolo del Lago. All Rights Reserved - 
-        <Link href="/privacy-policy"> Privacy/Policy</Link>
+        <span className={styles.privacyPolicy}>
+          <Link href="/privacy-policy"> Privacy/Policy</Link>
+        </span>
       </p>
     </div>
   )
