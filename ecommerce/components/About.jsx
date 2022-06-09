@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../styles/Contact.module.css';
@@ -8,6 +9,7 @@ const About = () => {
 
   const tOption = t('contact:objectEmail', { count: 150 }, { returnObjects: true });
   const [optionValue, setOptionValue] = useState('');
+  const space = ' ';
 
   function logValue() {
     console.log(optionValue)
@@ -50,10 +52,25 @@ const About = () => {
         </div>
 
         <div className={styles.col}>
-          <label className={styles.label} htmlFor={t('newsletter')}>Sium</label>
-          <div className={styles.row}>
-            <input type="checkbox" className={styles.input} name={t('newsletter')} id={t('newsletter')} />
+          <label className={styles.label} htmlFor={t('newsletter')}>{t('newsletter')}</label>
+          <div className={styles.rowNewslet}>
+            <input type="checkbox" className={styles.checkbox} name={t('newsletter')} id={t('newsletter')} />
             <label htmlFor={t('newsletter')}>{t('newsletterPromo')}</label>
+          </div>
+        </div>
+
+        <div className={styles.col}>
+          <label className={styles.label} htmlFor={t('privacy')}>{t('privacy')}</label>
+          <div className={styles.rowPrivacy}>
+            <input type="checkbox" checked disabled className={styles.checkbox} name={t('privacy')} id={t('privacy')} />
+            <label htmlFor={t('privacy')} className={styles.labelPrivacy}>
+              <p>
+                {t('acceptPrivacy')}
+                <span className={styles.infoPrivacy}>
+                  <Link href="/privacy-policy" className={styles.infoPrivacy}>{t('infoPrivacy')}</Link> *
+                </span>
+              </p>
+            </label>
           </div>
         </div>
 
