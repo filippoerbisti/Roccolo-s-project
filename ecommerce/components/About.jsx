@@ -14,29 +14,29 @@ const About = () => {
   }
 
   return (
-    <div className={styles.mx60}>
+    <div className={styles.mx60aic}>
       <h1 className={styles.title}>{t('title')}</h1>
       <p className={styles.paragraph}>{t('info')}</p>
-      <div>
-        <div>
-          <div>
-            <label htmlFor={t('firstName')}>{t('firstName')}</label>
-            <input type="text" placeholder={t('firstName')} name={t('firstName')} id={t('firstName')} />
+      <div className={styles.center}>
+        <div className={styles.row}>
+          <div className={styles.col}>
+            <label htmlFor={t('firstName')} className={styles.label}>{t('firstName')}</label>
+            <input type="text" required placeholder={t('firstName')} className={styles.input} name={t('firstName')} id={t('firstName')} />
           </div>
-          <div>
-            <label htmlFor={t('lastName')}>{t('lastName')}</label>
-            <input type="text" placeholder={t('lastName')} name={t('lastName')} id={t('lastName')} />
+          <div className={styles.col}>
+            <label htmlFor={t('lastName')} className={styles.label}>{t('lastName')}</label>
+            <input type="text" required placeholder={t('lastName')} className={styles.input} name={t('lastName')} id={t('lastName')} />
           </div>
         </div>
 
-        <div>
-          <label htmlFor={t('email')}>{t('email')}</label>
-          <input type="text" placeholder={t('email')} name={t('email')} id={t('email')} />
+        <div className={styles.col}>
+          <label htmlFor={t('email')} className={styles.label}>{t('email')}</label>
+          <input type="email" required placeholder={t('email')} className={styles.input} name={t('email')} id={t('email')} />
         </div>
 
-        <div>
-          <label htmlFor={t('object')}>{t('object')}</label>
-          <select defaultValue={tOption.option0} onChange={(e) => {setOptionValue(e.target.value)}} name={t('object')} id={t('object')}>
+        <div className={styles.col}>
+          <label htmlFor={t('object')} className={styles.label}>{t('object')}</label>
+          <select defaultValue={tOption.option0} onChange={(e) => {setOptionValue(e.target.value)}} className={styles.select} name={t('object')} id={t('object')}>
             <option disabled>{tOption.option0}</option>
             <option value={tOption.option1}>{tOption.option1}</option>
             <option value={tOption.option2}>{tOption.option2}</option>
@@ -44,13 +44,22 @@ const About = () => {
           </select>
         </div>
 
-        <div>
-          <label htmlFor={t('message')}></label>
-          <textarea placeholder={t('message')} name={t('message')} id={t('message')} cols="30" rows="5"></textarea>
+        <div className={styles.col}>
+          <label htmlFor={t('message')} className={styles.label}>{t('message')}</label>
+          <textarea required placeholder={t('message')} className={styles.textarea} name={t('message')} id={t('message')} cols="30" rows="10"></textarea>
         </div>
 
-        
-        <button onClick={logValue}>{t('button')}</button>
+        <div className={styles.col}>
+          <label className={styles.label} htmlFor={t('newsletter')}>Sium</label>
+          <div className={styles.row}>
+            <input type="checkbox" className={styles.input} name={t('newsletter')} id={t('newsletter')} />
+            <label htmlFor={t('newsletter')}>{t('newsletterPromo')}</label>
+          </div>
+        </div>
+
+        <div className={styles.btnContainer}>
+          <button onClick={logValue} className={styles.btn}>{t('button')}</button>
+        </div>
       </div>
     </div>
   )
