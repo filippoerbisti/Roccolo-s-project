@@ -4,7 +4,9 @@
     "firstName": "Prénom",
     "lastName": "Nom de famille",
     "email": "Email",
+    "object": "Objet",
     "objectEmail": {
+        "option0": "Sélectionnez l'objet",
         "option1": "Vins",
         "option2": "Dégustation",
         "option3": "Mariage"
