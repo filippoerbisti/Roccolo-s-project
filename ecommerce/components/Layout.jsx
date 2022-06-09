@@ -7,7 +7,7 @@ import Footer from './Footer';
 import ScrollToTop from './ScrollToTop';
 
 const Layout = ({ children }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('meta');
 
   return (
     <div>
@@ -15,10 +15,10 @@ const Layout = ({ children }) => {
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="keywords" content={t('navContact')} /> {/* TODO */}
-        <meta name="description" content={t('navContact')} /> {/* TODO */}
+        <meta name="description" content={t('sium')} /> {/* TODO */}
         <meta name="author" content="Filippo Erbisti" />
 
-        <title>Roccolo del Lago - {t('navContact')}</title>
+        <title>Roccolo del Lago - {t('sium')}</title>
 
       </Head>
       <div>
