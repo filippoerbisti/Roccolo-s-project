@@ -5,7 +5,7 @@ const i18nConfig = {
     defaultLocale: '__default', // Default language of your website
     localesToIgnore: ['__default'],
     pages: {
-      '*': ['common'], // Namespaces that you want to import per page
+      '*': ['common', 'meta'], // Namespaces that you want to import per page
       '/': ['home'],
       '/success': ['success'],
       '/privacy-policy': ['policy'],
