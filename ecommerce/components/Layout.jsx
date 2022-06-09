@@ -11,6 +11,7 @@ const Layout = ({ children }) => {
       <Head>
         <title>ROCCOLO DEL GARDA WINE SHOP</title>
       </Head>
+      <div>
       <header>
         <Navbar />
       </header>
@@ -21,6 +22,7 @@ const Layout = ({ children }) => {
       <footer>
         <Footer />
       </footer>
+      </div>
     </div>
   )
 }
