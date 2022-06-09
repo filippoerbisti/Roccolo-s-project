@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import useTranslation from 'next-translate/useTranslation';
-import Select from 'react-select';
 
 import styles from '../styles/Contact.module.css';
 
