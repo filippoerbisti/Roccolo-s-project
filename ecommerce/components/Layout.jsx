@@ -13,13 +13,12 @@ const Layout = ({ children }) => {
     <div>
       <Head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="keywords" content={t('navContact')} /> {/* TODO */}
-        <meta name="description" content={t('sium')} /> {/* TODO */}
-        <meta name="author" content="Filippo Erbisti" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1" />
+        <meta name="keywords" content={t('keywords')} />
+        <meta name="description" content={t('description')} />
+        <meta name="author" content={t('author')} />
 
-        <title>Roccolo del Lago - {t('sium')}</title>
-
+        <title>Roccolo del Lago - {t('title')}</title>
       </Head>
       <div>
       <header>
