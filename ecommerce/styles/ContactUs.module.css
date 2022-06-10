@@ -47,7 +47,7 @@
     padding: 5px 5px;
     font-size: 14px;
     border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.2);
 }
 
 .input[type=email] {
@@ -61,7 +61,7 @@
     padding: 5px 5px;
     font-size: 14px;
     border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.2);
     background-color: #F4F4F4;
 }
 
@@ -70,7 +70,7 @@
     padding: 5px 5px;
     font-size: 14px;
     border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.2);
 }
 
 .input:focus,
