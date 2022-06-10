@@ -61,7 +61,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <p className={styles.endFooter}>© 2022 Roccolo del Lago. All Rights Reserved - 
+      <p className={styles.endFooter}>© 2022 Roccolo del Lago. All Rights Reserved <br />
         <span className={styles.privacyPolicy}>
           <Link href="/privacy-policy"> Privacy/Policy</Link>
         </span>
