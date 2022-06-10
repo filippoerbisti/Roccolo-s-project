@@ -38,9 +38,21 @@ const Main = () => {
       />
 
       <div className={styles.btnContainer}>
+        {/* <button className={styles.btn} type='button'> 
+        //TODO -> link to virtual tour, click, set loader, when ok, load page ((  onClick={() => setActiveTabs('tour')} ))
+          <Link href='https://www.spindox.it/it/blog/react-360-una-libreria-vr-per-il-web/#gref'>{t('virtualTour')}</Link>
+        </button> */}
         <button className={styles.btn} type='button'> 
         {/* //TODO -> link to virtual tour, click, set loader, when ok, load page ((  onClick={() => setActiveTabs('tour')} )) */}
-          <Link href='https://www.spindox.it/it/blog/react-360-una-libreria-vr-per-il-web/#gref'>{t('virtualTour')}</Link>
+          <Link href='/wine'>{t('wine')}</Link>
+        </button>
+        <button className={styles.btn} type='button'> 
+        {/* //TODO -> link to virtual tour, click, set loader, when ok, load page ((  onClick={() => setActiveTabs('tour')} )) */}
+          <Link href='/gallery'>{t('gallery')}</Link>
+        </button>
+        <button className={styles.btn} type='button'> 
+        {/* //TODO -> link to virtual tour, click, set loader, when ok, load page ((  onClick={() => setActiveTabs('tour')} )) */}
+          <Link href='/contact'>{t('contact')}</Link>
         </button>
       </div>
 
