@@ -5,9 +5,13 @@
 Check:
 
 > <a href="https://trello.com/roccolodellago/home">TRELLO</a>
+<br />
 > <a href="https://stackoverflow.com/c/roccolo-del-lago">STACKOVERFLOW</a>
+<br />
 > <a href="https://cloudinary.com/console/c-c242171c7ae8312eee9e57ab68f449/media_library/folders/c09f610ad7892531aad5f842988800494c">CLAUDINARY</a>
+<br />
 > <a href="https://www.sanity.io/">SANITY</a>
+<br />
 > <a href="https://stripe.com/it">STRIPE</a>
  
 
