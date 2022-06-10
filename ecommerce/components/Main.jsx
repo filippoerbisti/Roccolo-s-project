@@ -61,7 +61,7 @@ const Main = () => {
         <div className={styles.w50mx40}>
           <Image 
             src={img1} 
-            className={styles.img} 
+            // className={styles.img} 
             alt="wineshop_img" 
             width={700} 
             height={400} 
@@ -77,7 +77,7 @@ const Main = () => {
         <div className={styles.w50mx40}>
           <Image 
             src={img1} 
-            className={styles.img} 
+            // className={styles.img} 
             alt="tasting_img" 
             width={700} 
             height={400} 
@@ -115,7 +115,7 @@ const Main = () => {
         <div className={styles.w50mx40}>
           <Image 
             src={img1} 
-            className={styles.img} 
+            // className={styles.img} 
             alt="wineshop_img" 
             width={700} 
             height={400} 
