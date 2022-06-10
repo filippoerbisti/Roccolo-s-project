@@ -5,9 +5,11 @@ import styles from '../styles/Footer.module.css';
 import { AiFillInstagram, AiOutlineFacebook } from 'react-icons/ai';
 
 const Footer = () => {
+  const img1 = 'https://res.cloudinary.com/dl38nyo08/image/upload/v1654848968/Roccolo%20del%20Lago/loghi-bio-footer_tud0sw.png';
+
   return (
     <div className={styles.footerContainer}>
-      <p>Seguici su</p>
+      <p className={styles.followUs}>Seguici su</p>
       <p className={styles.icons}>
         <a href="https://it-it.facebook.com/roccolodellago/" className='cursor-pointer' target="_blank">
           <AiOutlineFacebook />
@@ -19,26 +21,26 @@ const Footer = () => {
       
       <div className={styles.row}>
         
-
         <div className={styles.left}>
-          <p>Dove: <a href='https://goo.gl/maps/Pgp5XzNNhqQoMqVa6' target='_blank'>Località Saline, 9 -
-            37017 Lazise(VR)</a></p>
-          <br />
-          <p>Tel: <a href="tel:+390457581077">+39 045 7581077</a></p>
-          <br />
-          <p>Email: <a href="mailto:info@roccolodellago.it" target='_blank'>info@roccolodellago.it</a></p>
-          <br />
-          <p className={styles.workHour}>Orari: 
-          tutti i giorni dalle 9:00 alle 18:00 <br />
-          (Domenica chiuso)</p>
-
           <div>
+            <p>Dove: <a href='https://goo.gl/maps/Pgp5XzNNhqQoMqVa6' target='_blank'>Località Saline, 9 -
+              37017 Lazise (VR)</a></p>
+            <br />
+            <p>Tel: <a href="tel:+390457581077">+39 045 7581077</a></p>
+            <br />
+            <p>Email: <a href="mailto:info@roccolodellago.it" target='_blank'>info@roccolodellago.it</a></p>
+            <br />
+            <p className={styles.workHour}>Orari: 
+            tutti i giorni dalle 9:00 alle 18:00 <br />
+            (Domenica chiuso)</p>
+          </div>
+
+          <div className={styles.imgContainer}>
             <Image 
-              src='/../public/loghi-bio-footer.png' 
-              className={styles.img} 
+              src={img1} 
               alt="loghi-bio-footer_img" 
-              width='100px' 
-              height='50px' 
+              width={300}
+              height={100}
             />
           </div>
         </div>
