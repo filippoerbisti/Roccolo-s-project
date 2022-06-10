@@ -22,7 +22,7 @@ export default function handler(req, res) {
     )
   }
   catch(e) {
-    res.status(400).end(JSON.stringify({ message:'ok' }))
+    res.status(400).end(JSON.stringify({ message:'errore diocane' }))
     return;
   }
  
