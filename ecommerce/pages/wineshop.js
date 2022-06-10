@@ -1,8 +1,11 @@
 import React from 'react'
+import Slider from '../components/Slider'
 
 const Wineshop = () => {
   return (
-    <div>Wineshop</div>
+    <div>
+      <Slider />
+    </div>
   )
 }
 
