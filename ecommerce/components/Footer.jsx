@@ -3,8 +3,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/Footer.module.css';
 import { AiFillInstagram, AiOutlineFacebook } from 'react-icons/ai';
+import useTranslation from 'next-translate/useTranslation';
 
 const Footer = () => {
+  const { t } = useTranslation('common');
+  const space = ' ';
+
   const img1 = 'https://res.cloudinary.com/dl38nyo08/image/upload/v1654848968/Roccolo%20del%20Lago/loghi-bio-footer_tud0sw.png';
 
   return (
@@ -23,16 +27,16 @@ const Footer = () => {
         
         <div className={styles.left}>
           <div>
-            <p>Dove: <a href='https://goo.gl/maps/Pgp5XzNNhqQoMqVa6' target='_blank'>Località Saline, 9 -
+            <p>{t('where')}: <a href='https://goo.gl/maps/Pgp5XzNNhqQoMqVa6' target='_blank'>Località Saline, 9 -
               37017 Lazise (VR)</a></p>
             <br />
             <p>Tel: <a href="tel:+390457581077">+39 045 7581077</a></p>
             <br />
             <p>Email: <a href="mailto:info@roccolodellago.it" target='_blank'>info@roccolodellago.it</a></p>
             <br />
-            <p className={styles.workHour}>Orari: 
-            tutti i giorni dalle 9:00 alle 18:00 <br />
-            (Domenica chiuso)</p>
+            <p className={styles.workHour}>{t('when')}: {space}
+            {t('workHours')} <br />
+            ({t('close')})</p>
           </div>
 
           <div className={styles.imgContainer}>
