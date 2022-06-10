@@ -6,7 +6,7 @@ import { runSlider } from '../lib/slider'
 
 const Slider = () => {
 
-    runSlider();
+    // runSlider();
     
     return (
         <div>
