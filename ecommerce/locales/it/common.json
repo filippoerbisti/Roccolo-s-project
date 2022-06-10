@@ -19,5 +19,11 @@
     "quantity": "Quantità",
     "addCart" : "Aggiungi al Carrello",
     "buyNow": "Compra Ora",
-    "alsoLike": "Ti potrebbe anche piacere"
+    "alsoLike": "Ti potrebbe anche piacere",
+
+    "followUs": "Seguici su",
+    "where": "Dove",
+    "when": "Orario",
+    "workHours": "tutti i giorni dalle 9:00 alle 18:00",
+    "close": "Domenica chiuso"
 }

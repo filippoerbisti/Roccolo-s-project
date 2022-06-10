@@ -19,5 +19,11 @@
     "quantity": "Quantity",
     "addCart" : "Add to Cart",
     "buyNow": "Buy Now",
-    "alsoLike": "You may also like"
+    "alsoLike": "You may also like",
+
+    "followUs": "Follow us on",
+    "where": "Where",
+    "when": "Hours",
+    "workHours": "every day from 9:00 to 18:00",
+    "close": "Closed on Sunday"
 }
