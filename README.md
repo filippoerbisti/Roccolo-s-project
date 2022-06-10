@@ -1,5 +1,16 @@
 ## PROJECT ECOMMERCE WINE SHOP
 
+## MAIN STRUMENTS
+
+Check:
+<ul>
+  <li><a href=">TRELLO</a></li>
+  <li><a href="https://stackoverflow.com/c/roccolo-del-lago">STACKOVERFLOW</a></li>
+  <li><a href=">CLAUDINARY</a></li>
+  <li><a href="></a></li>
+  <li><a href="></a></li>
+ </ul>
+
 ## DEMAND
 
 **Tenute Francesco Righetti**
