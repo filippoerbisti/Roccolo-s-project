@@ -4,7 +4,6 @@
     left: 0;
     color: #fff;
     background-color: #892331;
-    text-align: center;
     margin-top: 20px;
     padding: 15px 50px;
     font-weight: 700;
@@ -13,6 +12,7 @@
     align-items: center;
     gap: 10px;
     justify-content: center;
+    line-height: 1.6;
 }
 
 .paragraph {
@@ -28,14 +28,26 @@
 .row {
     display: flex;
     width: 100%;
+    flex-direction: row-reverse;
 }
 
 .left {
-    width: 60%;
+    width: 50%;
+    padding-left: 50px;
+}
+
+.left > p > a:hover {
+    text-decoration: underline;
 }
 
 .right {
-    width: 40%;
+    width: 50%;
+    padding-right: 50px;
+}
+
+.workHour {
+    text-align: center;
+    display: flex;
 }
 
 .endFooter {
@@ -58,9 +70,30 @@
 
     .left {
         width: 100%;
+        padding-left: 0px;
+        text-align: center;
     }
 
     .right {
         width: 100%;
+        padding-right: 0px;
+    }
+
+    .workHour {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    .footerContainer {
+        padding: 20px;
+    }
+
+    .left {
+        padding-left: 20px;
+    }
+
+    .right {
+        padding-right: 20px;
     }
 }
