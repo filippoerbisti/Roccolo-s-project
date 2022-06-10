@@ -9,9 +9,8 @@ Check:
   <li><a href=">CLAUDINARY</a></li>
   <li><a href="></a></li>
   <li><a href="></a></li>
- </ul>
+</ul>
  
-<br />
 
 ## DEMAND
 
