@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import useTranslation from 'next-translate/useTranslation';
 
-import styles from '../styles/Contact.module.css';
+import styles from '../styles/ContactUs.module.css';
 
-const About = () => {
+const ContactUs = () => {
   const { t } = useTranslation('contact');
 
   const tOption = t('contact:objectEmail', { count: 150 }, { returnObjects: true });
@@ -82,4 +82,4 @@ const About = () => {
   )
 }
 
-export default About
+export default ContactUs

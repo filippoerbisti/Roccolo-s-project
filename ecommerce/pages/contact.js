@@ -1,12 +1,12 @@
 import React from 'react';
-import About from '../components/About';
+import ContactUs from '../components/ContactUs';
 
-import styles from '../styles/Contact.module.css';
+import styles from '../styles/ContactUs.module.css';
 
 const Contact = () => {
   return (
     <div className={styles.mx20}>
-        <About />
+        <ContactUs />
     </div>
   )
 }

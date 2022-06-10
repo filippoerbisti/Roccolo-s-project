@@ -9,7 +9,7 @@ export {default as Galleries } from './Galleries';
 export {default as Product } from './Product';
 export {default as Tasting } from './Tasting';
 export {default as Wedding } from './Wedding';
-export {default as About } from './About';
+export {default as ContactUs } from './ContactUs';
 
 export {default as Slider } from './Slider';
 
