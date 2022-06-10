@@ -13,7 +13,7 @@ const Footer = () => {
 
   return (
     <div className={styles.footerContainer}>
-      <p className={styles.followUs}>Seguici su</p>
+      <p className={styles.followUs}>{t('followUs')}</p>
       <p className={styles.icons}>
         <a href="https://it-it.facebook.com/roccolodellago/" className='cursor-pointer' target="_blank">
           <AiOutlineFacebook />
