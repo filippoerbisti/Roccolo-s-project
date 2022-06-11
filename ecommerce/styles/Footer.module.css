@@ -41,7 +41,7 @@
     justify-content: space-around;
 }
 
-.left > p > a:hover {
+.tag:hover {
     text-decoration: underline;
 }
 

@@ -27,12 +27,12 @@ const Footer = () => {
         
         <div className={styles.left}>
           <div>
-            <p>{t('where')}: <a href='https://goo.gl/maps/Pgp5XzNNhqQoMqVa6' target='_blank'>Località Saline, 9 -
+            <p>{t('where')}: <a href='https://goo.gl/maps/Pgp5XzNNhqQoMqVa6' className={styles.tag} target='_blank'>Località Saline, 9 -
               37017 Lazise (VR)</a></p>
             <br />
-            <p>Tel: <a href="tel:+390457581077">+39 045 7581077</a></p>
+            <p>Tel: <a href="tel:+390457581077" className={styles.tag}>+39 045 7581077</a></p>
             <br />
-            <p>Email: <a href="mailto:info@roccolodellago.it" target='_blank'>info@roccolodellago.it</a></p>
+            <p>Email: <a href="mailto:info@roccolodellago.it" className={styles.tag} target='_blank'>info@roccolodellago.it</a></p>
             <br />
             <p className={styles.workHour}>{t('when')}: {space}
             {t('workHours')} <br />
