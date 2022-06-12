@@ -11,6 +11,7 @@ const i18nConfig = {
       '/privacy-policy': ['policy'],
       'rgx:^/event': ['event'],
       '/contact': ['contact'],
+      '/tour': ['tour'],
     },
   };
 
