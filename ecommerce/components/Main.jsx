@@ -42,14 +42,21 @@ const Main = () => {
         {/* //TODO -> link to virtual tour, click, set loader, when ok, load page ((  onClick={() => setActiveTabs('tour')} )) */}
           <Link href='/tour'>{t('virtualTour')}</Link>
         </button>
+      </div>
+      <div className={styles.btnContainer}>
         <button className={styles.btn} type='button'> 
         {/* //TODO -> link to virtual tour, click, set loader, when ok, load page ((  onClick={() => setActiveTabs('tour')} )) */}
           <Link href='/wine'>{t('wine')}</Link>
         </button>
+      </div>
+
+      <div className={styles.btnContainer}>
         <button className={styles.btn} type='button'> 
         {/* //TODO -> link to virtual tour, click, set loader, when ok, load page ((  onClick={() => setActiveTabs('tour')} )) */}
           <Link href='/gallery'>{t('gallery')}</Link>
         </button>
+      </div>
+      <div className={styles.btnContainer}>
         <button className={styles.btn} type='button'> 
         {/* //TODO -> link to virtual tour, click, set loader, when ok, load page ((  onClick={() => setActiveTabs('tour')} )) */}
           <Link href='/contact'>{t('contact')}</Link>
