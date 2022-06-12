@@ -1,0 +1,73 @@
+.mx20 {
+    margin: 0 20px;
+}
+
+.mx60 {
+    margin: 0 60px;
+}
+
+.colmx20 {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+}
+
+.row {
+    display: flex;
+}
+
+.w100 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.title {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.title2 {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.paragraph {
+    height: auto;
+    line-break: normal;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1024px) {
+    .title {
+        font-size: 28px;
+    }
+
+    .paragraph {
+        text-align: center;
+    }
+
+    .mx60 {
+        margin: 0;
+    }
+
+    .center {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+  }
