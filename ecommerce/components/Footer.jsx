@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/Footer.module.css';
+import iconStyles from '../styles/IconFooter.module.css';
 import { AiFillInstagram, AiOutlineFacebook } from 'react-icons/ai';
 import useTranslation from 'next-translate/useTranslation';
 
@@ -14,14 +15,36 @@ const Footer = () => {
   return (
     <div className={styles.footerContainer}>
       <p className={styles.followUs}>{t('followUs')}</p>
-      <p className={styles.icons}>
+      {/* <p className={styles.icons}>
         <a href="https://it-it.facebook.com/roccolodellago/" className='cursor-pointer' target="_blank">
           <AiOutlineFacebook />
         </a>
         <a href="https://www.instagram.com/roccolodellago/" className='cursor-pointer' target="_blank">
           <AiFillInstagram />
         </a>
-      </p>
+      </p> */}
+
+
+      <ul className={iconStyles.ul}>
+        <li>
+            <a href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span className="fa fa-facebook"></span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span className="fa fa-instagram"></span>
+            </a>
+        </li>
+      </ul>
       
       <div className={styles.row}>
         
