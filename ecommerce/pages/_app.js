@@ -12,6 +12,7 @@ function MyApp({ Component, pageProps }) {
         <Toaster />
         <Component {...pageProps} />
       </Layout>
+      <script src="https://kit.fontawesome.com/60aa6b5946.js" crossorigin="anonymous"></script>
     </StateContext>
   )
 }
