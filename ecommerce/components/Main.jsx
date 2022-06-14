@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Slider from "@madzadev/image-slider";
-import "@madzadev/image-slider/dist/index.css";
+    import "@madzadev/image-slider/dist/index.css";
 import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../styles/Main.module.css';
@@ -26,16 +26,19 @@ const Main = () => {
 
   return (
     <div className={styles.mx20}>     {/* TODO -> mx20 all pages */}
-      <Slider 
-        imageList={images} 
-        width={1200} 
-        height={600} 
-        showArrowControls={false} 
-        showDotControls={true} 
-        loop={true}
-        autoPlay={true}
-        autoPlayInterval={5000}
-      />
+      <div className={styles.slider}>
+        <Slider 
+          imageList={images} 
+          width={1200} 
+          height={600} 
+          showArrowControls={true} 
+          showDotControls={true} 
+          loop={true}
+          autoPlay={true}
+          autoPlayInterval={5000}
+          bgColor="black"
+        />
+      </div>
 
       <div className={styles.btnContainer}>
       <Link href='/tour'>
