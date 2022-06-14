@@ -661,7 +661,7 @@ class React360Viewer extends Component {
                                 />
                             </abbr>
 
-                            {this.state.panmode 
+                            {/* {this.state.panmode 
                                 ? 
                                 <abbr title="360 °">
                                     <VRButton clicked={this.togglePanMode} text="360&deg;"/> 
@@ -670,7 +670,7 @@ class React360Viewer extends Component {
                                 <abbr title="Drag">
                                     <VRButton clicked={this.togglePanMode} icon="fa fa-hand-paper"/>
                                 </abbr>
-                            }
+                            } */}
 
                             <abbr title="Spin Prev">
                                 <VRButton 
