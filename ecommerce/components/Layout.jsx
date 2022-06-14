@@ -14,9 +14,10 @@ const Layout = ({ children }) => {
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1" />
+        <meta name="author" content={t('author')} />
         <meta name="keywords" content={t('keywords')} />
         <meta name="description" content={t('description')} />
-        <meta name="author" content={t('author')} />
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
         <title>Roccolo del Lago - {t('title')}</title>
       </Head>
