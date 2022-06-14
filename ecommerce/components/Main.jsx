@@ -38,29 +38,33 @@ const Main = () => {
       />
 
       <div className={styles.btnContainer}>
-        <button className={styles.btn} type='button'> 
-        {/* //TODO -> link to virtual tour, click, set loader, when ok, load page ((  onClick={() => setActiveTabs('tour')} )) */}
-          <Link href='/tour'>{t('virtualTour')}</Link>
-        </button>
+      <Link href='/tour'>
+          <button className={styles.btn} type='button'> 
+            {t('virtualTour')}
+          </button>
+        </Link>
       </div>
       <div className={styles.btnContainer}>
-        <button className={styles.btn} type='button'> 
-        {/* //TODO -> link to virtual tour, click, set loader, when ok, load page ((  onClick={() => setActiveTabs('tour')} )) */}
-          <Link href='/wine'>{t('wine')}</Link>
-        </button>
+      <Link href='/wine'>
+          <button className={styles.btn} type='button'> 
+            {t('wine')}
+          </button>
+        </Link>
       </div>
 
       <div className={styles.btnContainer}>
-        <button className={styles.btn} type='button'> 
-        {/* //TODO -> link to virtual tour, click, set loader, when ok, load page ((  onClick={() => setActiveTabs('tour')} )) */}
-          <Link href='/gallery'>{t('gallery')}</Link>
-        </button>
+        <Link href='/gallery'>
+          <button className={styles.btn} type='button'> 
+            {t('gallery')}
+          </button>
+        </Link>
       </div>
       <div className={styles.btnContainer}>
-        <button className={styles.btn} type='button'> 
-        {/* //TODO -> link to virtual tour, click, set loader, when ok, load page ((  onClick={() => setActiveTabs('tour')} )) */}
-          <Link href='/contact'>{t('contact')}</Link>
-        </button>
+      <Link href='/contact'>
+          <button className={styles.btn} type='button'> 
+            {t('contact')}
+          </button>
+        </Link>
       </div>
 
       <hr className={styles.hr} />
@@ -72,15 +76,16 @@ const Main = () => {
           </h1>
           <p className={styles.paragraph}>{pWineshopParagraph}</p>
           <div className={styles.btnContainer}>
-            <button className={styles.btn} type='button'> 
-              <Link href='/wineshop'>{t('wineshopButton')}</Link>
-            </button>
+            <Link href='/wineshop'>
+              <button className={styles.btn} type='button'> 
+                {t('wineshopButton')}
+              </button>
+            </Link>
           </div>
         </div>
         <div className={styles.w50mx40}>
           <Image 
             src={img1} 
-            // className={styles.img} 
             alt="wineshop_img" 
             width={700} 
             height={400} 
@@ -96,7 +101,6 @@ const Main = () => {
         <div className={styles.w50mx40}>
           <Image 
             src={img1} 
-            // className={styles.img} 
             alt="tasting_img" 
             width={700} 
             height={400} 
@@ -110,9 +114,11 @@ const Main = () => {
           </h1>
           <p className={styles.paragraph}>{pTastingParagraph}</p>
           <div className={styles.btnContainer}>
-            <button className={styles.btn} type='button'> 
-              <Link href='/event#tasting'>{t('tastingButton')}</Link>
-            </button>
+            <Link href='/event#tasting'>
+              <button className={styles.btn} type='button'> 
+                {t('tastingButton')}
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -126,15 +132,16 @@ const Main = () => {
           </h1>
           <p className={styles.paragraph}>{pWeddingParagraph}</p>
           <div className={styles.btnContainer}>
-            <button className={styles.btn} type='button'> 
-              <Link href='/event#wedding'>{t('weddingButton')}</Link>
-            </button>
+            <Link href='/event#wedding'>
+              <button className={styles.btn} type='button'> 
+                {t('weddingButton')}
+              </button>
+            </Link>
           </div>
         </div>
         <div className={styles.w50mx40}>
           <Image 
             src={img1} 
-            // className={styles.img} 
             alt="wineshop_img" 
             width={700} 
             height={400} 
