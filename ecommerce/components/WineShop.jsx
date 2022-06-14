@@ -19,7 +19,10 @@ const WineShop = () => {
             <h1 className={styles.title}>{t('title')}</h1>
             <h3 className={styles.title2}>{t('intro')}</h3>
             <div className={styles.row}>
-                <div>
+                <div className={styles.left}>
+                    <p className={styles.paragraph}>{pWineshopParagraph}</p>
+                </div>
+                <div className={styles.right}>
                     <div className={styles.slider}>
                         <Slider 
                         imageList={images} 
@@ -33,9 +36,6 @@ const WineShop = () => {
                         bgColor="white"
                         />
                     </div>
-                </div>
-                <div>
-                    <p className={styles.paragraph}>{pWineshopParagraph}</p>
                 </div>
             </div>
         </div>
