@@ -83,11 +83,24 @@ const Footer = () => {
         </div>
       </div>
 
-      <p className={styles.endFooter}>© 2022 Roccolo del Lago. All Rights Reserved <br />
-        <span className={styles.privacyPolicy}>
-          <Link href="/privacy-policy"> Privacy/Policy</Link>
-        </span>
-      </p>
+      <div className={styles.endFooter}>
+        <p>
+          <span className={styles.tag}>
+            <a href='#'>Società Agricola Roccolo del Lago S.r.l. </a>
+          </span> 
+          -
+          <span className={styles.tag}>
+            <a href='https://goo.gl/maps/Pgp5XzNNhqQoMqVa6'> Località Saline, 9 - 37017 Lazise (VR)</a>
+          </span>
+          <br />
+          REAVR-366731 - P. Iva 03802970230 - Cap. Sociale 100.000.00 €
+          </p>
+        <p>2022 © Roccolo del Lago. All Rights Reserved <br />
+          <span className={styles.privacyPolicy}>
+            <Link href="/privacy-policy"> Privacy/Policy</Link>
+          </span>
+        </p>
+      </div>
     </div>
   )
 }
