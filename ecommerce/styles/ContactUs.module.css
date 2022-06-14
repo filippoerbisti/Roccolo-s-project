@@ -63,6 +63,7 @@
     border-radius: 5px;
     border: 2px solid rgba(0, 0, 0, 0.2);
     background-color: #F4F4F4;
+    color: black;
 }
 
 .textarea {
@@ -147,15 +148,17 @@
       }
 
       .col {
-          width: 90%;
-          margin-left: auto;
-          margin-right: auto;
+          width: 100%;
       }
 
       .input,
       .select {
           height: 30px;
       }
+
+      .input[type=email] {
+        width: 100%;
+      }   
 
       .btn {
           width: 50%;
