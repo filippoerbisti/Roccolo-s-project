@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import VRButton from './VRButton';
-// import '../styles/global.css';
-
 import Hammer from 'react-hammerjs';
+
+import VRButton from './VRButton';
 
 class React360Viewer extends Component {
 
