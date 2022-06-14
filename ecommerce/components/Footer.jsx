@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/Footer.module.css';
 import iconStyles from '../styles/IconFooter.module.css';
-import { AiFillInstagram, AiOutlineFacebook } from 'react-icons/ai';
+// import { AiFillInstagram, AiOutlineFacebook } from 'react-icons/ai';
 import useTranslation from 'next-translate/useTranslation';
 
 const Footer = () => {
@@ -15,6 +15,7 @@ const Footer = () => {
   return (
     <div className={styles.footerContainer}>
       <p className={styles.followUs}>{t('followUs')}</p>
+
       {/* <p className={styles.icons}>
         <a href="https://it-it.facebook.com/roccolodellago/" className='cursor-pointer' target="_blank">
           <AiOutlineFacebook />
@@ -24,10 +25,9 @@ const Footer = () => {
         </a>
       </p> */}
 
-
       <ul className={iconStyles.ul}>
         <li>
-            <a href="#">
+            <a href="https://it-it.facebook.com/roccolodellago/" target="_blank">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -36,7 +36,7 @@ const Footer = () => {
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="https://www.instagram.com/roccolodellago/" target="_blank">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -47,7 +47,6 @@ const Footer = () => {
       </ul>
       
       <div className={styles.row}>
-        
         <div className={styles.left}>
           <div>
             <p>{t('where')}: <a href='https://goo.gl/maps/Pgp5XzNNhqQoMqVa6' className={styles.tag} target='_blank'>Località Saline, 9 -
