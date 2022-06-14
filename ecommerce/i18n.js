@@ -8,10 +8,12 @@ const i18nConfig = {
       '*': ['common', 'meta'], // Namespaces that you want to import per page
       '/': ['home'],
       '/success': ['success'],
-      '/privacy-policy': ['policy'],
+      // Shop / Product
+      '/wineshop': ['wineshop'],
       'rgx:^/event': ['event'],
-      '/contact': ['contact'],
       '/tour': ['tour'],
+      '/contact': ['contact'],
+      '/privacy-policy': ['policy'],
     },
   };
 
