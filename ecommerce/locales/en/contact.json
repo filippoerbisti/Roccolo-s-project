@@ -1,6 +1,7 @@
 {
     "title": "Contacts",
     "info": "Contact us to request information, availability for your reservation, directions to reach us.",
+    "infoStaff": "Our Staff is at your disposal.",
     "firstName": "First Name",
     "lastName": "Last Name",
     "email": "Email",

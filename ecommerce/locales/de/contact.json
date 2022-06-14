@@ -1,6 +1,7 @@
 {
     "title": "Kontakte",
     "info": "Kontaktieren Sie uns, um Informationen, die Verfügbarkeit für Ihre Reservierung und eine Wegbeschreibung anzufordern.",
+    "infoStaff": "Unser Personal steht Ihnen zur Verfügung.",
     "firstName": "Vorname",
     "lastName": "Nachname",
     "email": "Email",
