@@ -11,7 +11,5 @@ export {default as Tasting } from './Tasting';
 export {default as Wedding } from './Wedding';
 export {default as ContactUs } from './ContactUs';
 
-export {default as Slider } from './Slider';
-
 export {default as HeroBanner } from './old/HeroBanner';
 export {default as FooterBanner } from './old/FooterBanner';
