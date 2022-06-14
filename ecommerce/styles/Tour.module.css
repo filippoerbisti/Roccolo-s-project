@@ -16,18 +16,6 @@
     display: flex;
 }
 
-.w100 {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-}
-
-.center {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-}
-
 .title {
     text-transform: uppercase;
     letter-spacing: 5px;
@@ -65,11 +53,6 @@
 
     .mx60 {
         margin: 0;
-    }
-
-    .center {
-        width: 100%;
-        padding: 0 20px;
     }
 
     .row {
