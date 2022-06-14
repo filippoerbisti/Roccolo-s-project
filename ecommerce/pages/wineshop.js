@@ -12,6 +12,8 @@ const Wineshop = ({ products }) => {
     <div className={styles.mx20}>
       <WineShop />
 
+      <hr className={styles.hr} />
+
       <div className='maylike-products-wrapper'>
         <h2>{t('ourWines')}</h2>
         <div className='marquee'>
