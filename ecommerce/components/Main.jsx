@@ -25,7 +25,7 @@ const Main = () => {
   const img1 = "https://res.cloudinary.com/dl38nyo08/image/upload/v1654615348/Roccolo%20del%20Lago/degustazioni_zs5pmi.png";
 
   return (
-    <div className={styles.mx20}>     {/* TODO -> mx20 all pages */}
+    <div className={styles.mx20}>
       <div className={styles.slider}>
         <Slider 
           imageList={images} 
@@ -36,7 +36,7 @@ const Main = () => {
           loop={true}
           autoPlay={true}
           autoPlayInterval={5000}
-          bgColor="black"
+          bgColor="white"
         />
       </div>
 
