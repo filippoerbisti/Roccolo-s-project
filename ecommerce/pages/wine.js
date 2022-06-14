@@ -7,16 +7,16 @@ const Wine = ({ products }) => {
     const { t } = useTranslation('common');
 
     return (
-            <div>
-                <div className="products-heading">
-                    <h2>{t('ourWines')}</h2>
-                </div>
-
-                <div className="products-container">
-                    {products?.map((product) => <Product key={product._id} product={product} />)}
-                </div>
+        <div>
+            <div className="products-heading">
+                <h2>{t('ourWines')}</h2>
             </div>
-        )
+
+            <div className="products-container">
+                {products?.map((product) => <Product key={product._id} product={product} />)}
+            </div>
+        </div>
+    )
 }
 
 export const getServerSideProps = async () => {
