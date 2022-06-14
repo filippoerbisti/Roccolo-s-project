@@ -57,7 +57,8 @@
 
 .endFooter {
     margin-top: 10px;
-    font-size: small;
+    font-size: smaller;
+    text-align: center;
 }
 
 .privacyPolicy {
