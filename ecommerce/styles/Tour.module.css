@@ -27,6 +27,27 @@
     text-align: center;
 }
 
+/* Spin Img */
+.spinContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.spin3D {
+    animation-name: spinner3D;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spinner3D {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg) }
+}
+
 .title2 {
     text-transform: uppercase;
     text-align: center;
@@ -63,26 +84,3 @@
         flex-direction: column;
     }
   }
-
-
-/* Spin Img */
-
-.spinContainer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.spin3D {
-    animation-name: spinner3D;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
-
-@keyframes spinner3D {
-    from { transform: rotateY(0deg); }
-    to { transform: rotateY(360deg) }
-}
