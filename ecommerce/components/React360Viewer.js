@@ -69,7 +69,7 @@ class React360Viewer extends Component {
     }
 
     fetchData() {
-        for(let i=1; i <= this.props.amount; i++) {
+        for(let i = 1; i <= this.props.amount; i++) {
             const imageIndex = (this.props.paddingIndex) ? this.lpad(i, "0", 2) : i;
             const fileName = this.props.fileName.replace('{index}', imageIndex);
             const filePath = `${this.props.imagePath}/${fileName}`;
@@ -610,7 +610,7 @@ class React360Viewer extends Component {
         
         return (
             <div>
-                <div className="v360-viewer-container" ref={(inputEl) => {this.viewerContainerRef = inputEl}} id="identifier"> {/* onWheel={(e) => this.zoomImage(e)} */}
+                <div className="v360-viewer-container" ref={(inputEl) => {this.viewerContainerRef = inputEl}} id="identifier"> 
 
                     {!this.state.imagesLoaded ? 
                     <div className="v360-viewport">
@@ -628,48 +628,74 @@ class React360Viewer extends Component {
                             <canvas 
                                 className="v360-image-container" 
                                 ref={(inputEl) => {this.imageContainerRef = inputEl}} 
+                                
                             ></canvas>
-                            {this.props.boxShadow ? <div className="v360-product-box-shadow"></div> : ''}
+                            {/* onWheel={(e) => this.zoomImage(e)} --> zoom mouse => BUG */}
                         </div>
                     </Hammer>
 
-                    <abbr title="Fullscreen Toggle">
-                        <div className="v360-fullscreen-toggle text-center" onClick={this.toggleFullScreen}>
-                            <div className={this.props.buttonClass === 'dark' ? 'v360-fullscreen-toggle-btn text-light' : 'v360-fullscreen-toggle-btn text-dark'}>
-                                <i className={!this.state.isFullScreen ? 'fas fa-expand text-lg' : 'fas fa-compress text-lg'}></i>
-                            </div>
-                        </div>
-                    </abbr>
+                    {/* FootBanner, 
+                        if in tour.js buttonClass="light" -> bg:white, icon:black 
+                        if in tour.js buttonClass="dark" -> bg:black, icon:white
+                        default: light
+                    */}
                     
                     <div id="v360-menu-btns" className={this.props.buttonClass}>
                         <div className="v360-navigate-btns">
-                            <VRButton 
-                                clicked={this.togglePlay} 
-                                icon={this.state.playing ? 'fa fa-pause' : 'fa fa-play'} 
-                            />
-                            <VRButton 
-                                clicked={this.zoomIn} 
-                                icon="fa fa-search-plus" 
-                            />
-                            <VRButton 
-                                clicked={this.zoomOut} 
-                                icon="fa fa-search-minus" 
-                            />
+                            <abbr title="Play/Stop">
+                                <VRButton 
+                                    clicked={this.togglePlay} 
+                                    icon={this.state.playing ? 'fa fa-pause' : 'fa fa-play'} 
+                                />
+                            </abbr>
+                            <abbr title="Zoom In">
+                                <VRButton 
+                                    clicked={this.zoomIn} 
+                                    icon="fa fa-search-plus" 
+                                />
+                            </abbr>
+                            <abbr title="Zoom Out">
+                                <VRButton 
+                                    clicked={this.zoomOut} 
+                                    icon="fa fa-search-minus" 
+                                />
+                            </abbr>
 
-                            {this.state.panmode ? <VRButton clicked={this.togglePanMode} text="360&deg;"/> : <VRButton clicked={this.togglePanMode} icon="fa fa-hand-paper"/>}
+                            {this.state.panmode 
+                                ? 
+                                <abbr title="360 °">
+                                    <VRButton clicked={this.togglePanMode} text="360&deg;"/> 
+                                </abbr>
+                                : 
+                                <abbr title="Drag">
+                                    <VRButton clicked={this.togglePanMode} icon="fa fa-hand-paper"/>
+                                </abbr>
+                            }
 
-                            <VRButton 
-                                clicked={this.prev} 
-                                icon="fa fa-chevron-left" 
-                            />
-                            <VRButton 
-                                clicked={this.next} 
-                                icon="fa fa-chevron-right" 
-                            />
-                            <VRButton 
-                                clicked={this.resetPosition} 
-                                icon="fa fa-sync" 
-                            />
+                            <abbr title="Spin Prev">
+                                <VRButton 
+                                    clicked={this.prev} 
+                                    icon="fa fa-chevron-left" 
+                                />
+                            </abbr>
+                            <abbr title="Spin Next">
+                                <VRButton 
+                                    clicked={this.next} 
+                                    icon="fa fa-chevron-right" 
+                                />
+                            </abbr>
+                            <abbr title="Reset">
+                                <VRButton 
+                                    clicked={this.resetPosition} 
+                                    icon="fa fa-sync" 
+                                />
+                            </abbr>
+                            <abbr title="Fullscreen">
+                                <VRButton 
+                                    clicked={this.toggleFullScreen} 
+                                    icon={!this.state.isFullScreen ? 'fas fa-expand' : 'fas fa-compress'} 
+                                />
+                            </abbr>
                         </div>
                     </div>
                 </div>
