@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+
+import styles from '../styles/WineShop.module.css';
 
 const WineShop = () => {
   return (
