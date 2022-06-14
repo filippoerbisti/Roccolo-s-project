@@ -1,5 +1,6 @@
 import React from 'react'; // To import to use .jsx
 import { Toaster } from 'react-hot-toast';
+import Script from 'next/script';
 
 import { Layout } from '../components';
 import '../styles/globals.css';
@@ -12,7 +13,7 @@ function MyApp({ Component, pageProps }) {
         <Toaster />
         <Component {...pageProps} />
       </Layout>
-      <script src="https://kit.fontawesome.com/60aa6b5946.js" crossOrigin="anonymous"></script>
+      <Script src="https://kit.fontawesome.com/60aa6b5946.js" crossOrigin="anonymous"></Script>
     </StateContext>
   )
 }
