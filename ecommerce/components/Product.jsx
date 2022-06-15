@@ -16,14 +16,18 @@ const Product = ({
     <div>
       <Link href={`/product/${slug.current}`}>
         <div className={styles['product-card']}>
-          <img 
-            src={urlFor(image && image[0])} 
-            alt="product_img" 
-            objectFit="cover"
-            className={styles['product-image']}
-          />
+          <div className={styles['product-flex']}>
+            <img 
+              src={urlFor(image && image[0])} 
+              alt="product_img" 
+              objectFit="cover"
+              className={styles['product-image']}
+            />
+          </div>
           <p className={styles['product-name']}>{name}</p>
-          <p className={styles['product-price']}>€{price}</p>
+          <p className={styles['product-price']}>
+            <span>€ {price}</span>
+          </p>
         </div>
       </Link>
     </div>
