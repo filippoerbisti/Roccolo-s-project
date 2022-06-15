@@ -6,8 +6,12 @@ import { client, urlFor } from '../../lib/client';
 import { Product } from '../../components';
 import { useStateContext } from '../../context/StateContext';
 
+import styles from '../../styles/Product.module.css';
+import marquee from '../../styles/Marquee.module.css';
+
 const ProductDetails = ({ product, products }) => {
     const { t } = useTranslation('common');
+
     const { image, name, details, price } = product;
     const [index, setIndex] = useState(0);
     const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
@@ -19,26 +23,26 @@ const ProductDetails = ({ product, products }) => {
 
     return (
         <div>
-            <div className='product-detail-container'>
+            <div className={styles['product-detail-container']}>
                 <div>
-                    <div className='image-container'>
-                        <img src={urlFor(image && image[index])} className="product-detail-image" />
+                    <div>
+                        <img src={urlFor(image && image[index])} className={styles['product-detail-image']}/>
                     </div>
-                    <div className='small-images-container'>
+                    <div className={styles['small-images-container']}>
                         {image?.map((item, i) => (
                             <img
                                 key={i}
                                 src={urlFor(item)}
-                                className={i === index ? 'small-image selected-image' : 'small-image'}
+                                className={i === index ? `${styles['small-image']} ${styles['selected-image']}` : `${styles['small-image']}`}
                                 onMouseEnter={() => setIndex(i)}
                             />
                         ))}
                     </div>
                 </div>
 
-                <div className='product-detail-desc'>
+                <div className={styles['product-detail-desc']}>
                     <h1>{name}</h1>
-                    <div className='reviews'>
+                    <div className={styles.reviews}>
                         <div>
                             <AiFillStar />
                             <AiFillStar />
@@ -50,32 +54,32 @@ const ProductDetails = ({ product, products }) => {
                     </div>
                     <h4>{t('details')}:</h4>
                     <p>{details}</p>
-                    <p className='price'>€{price}</p>
-                    <div className='quantity'>
+                    <p className={styles.price}>€{price}</p>
+                    <div className={styles.quantity}>
                         <h3>{t('quantity')}:</h3>
-                        <p className='quantity-desc'>
-                            <span className='minus' onClick={decQty}>
+                        <p className={styles['quantity-desc']}>
+                            <span className={styles.minus} onClick={decQty}>
                                 <AiOutlineMinus />
                             </span>
-                            <span className='num'>
+                            <span className={styles.num}>
                                 {qty}
                             </span>
-                            <span className='plus' onClick={incQty}>
+                            <span className={styles.plus} onClick={incQty}>
                                 <AiOutlinePlus />
                             </span>
                         </p>
                     </div>
-                    <div className='buttons'>
+                    <div className={styles.buttons}>
                         <button 
                             type="button" 
-                            className='add-to-cart' 
+                            className={styles['add-to-cart']} 
                             onClick={() => onAdd(product, qty)}
                         >
                             {t('addCart')}
                         </button>
                         <button 
                             type="button" 
-                            className='buy-now' 
+                            className={styles['buy-now']} 
                             onClick={handleBuyNow}
                         >
                             {t('buyNow')}
@@ -83,15 +87,16 @@ const ProductDetails = ({ product, products }) => {
                     </div>
                 </div>
             </div>
-            
 
-            <div className='maylike-products-wrapper'>
-                <h2>{t('alsoLike')}</h2>
-                <div className='marquee'>
-                    <div className='maylike-products-container track'>
-                        {products.map((item) => (
-                            <Product key={item._id} 
-                            product={item} />
+            <div className={marquee['maylike-products-wrapper']}>
+                <h2 className={styles.title}>{t('alsoLike')}</h2>
+                <div className={marquee['marquee']}>
+                    <div className={`${marquee['maylike-products-container']} ${marquee.track}`}>
+                        {products.map((product) => (
+                            <Product 
+                                key={product._id} 
+                                product={product} 
+                            />
                         ))}
                     </div>
                 </div>
