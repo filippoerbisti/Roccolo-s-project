@@ -1,0 +1,53 @@
+.maylike-products-wrapper h2 {
+    text-align: center;
+    margin: 30px 0;
+}
+  
+.maylike-products-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.marquee {
+    position: relative;
+    min-height: 340px;
+    width: 100%;
+    overflow-x: hidden;
+}
+  
+.track {
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 15s linear infinite;
+    width: 180%;
+}
+  
+.track:hover {
+    animation-play-state: paused;
+}
+  
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@media screen and (max-width:800px) {
+    .maylike-products-wrapper h2{
+        text-align: center;
+        margin: 30px 0 10px 0;
+        color: #892331;
+    }
+    
+    .track {
+        animation: marquee 10s linear infinite;
+        width: 550%;
+    }
+
+    @keyframes marquee {
+        from { transform: translateX(0); }
+        to { transform: translateX(-90%); }
+    }
+}
