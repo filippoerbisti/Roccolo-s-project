@@ -1,0 +1,111 @@
+.v360-main {
+    width: 100%;
+    height: 100%;
+    max-width: 1024px;
+    margin: 20px auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    align-content: stretch;
+  }
+  
+  /* VIEWER */
+  .v360-viewport {
+    background-color: #FFF;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* FULLSCREEN & MENU TOGGLE BUTTONS */
+  .v360-fullscreen {
+    z-index: 10;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  /* MENU BUTTONS */
+  #v360-menu-btns {
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 150;
+  }
+  
+  .light {
+    background-color: #fff !important;
+  }
+  
+  .dark {
+    background-color: #000 !important;
+  }
+  
+  .v360-menu-btns {
+    width: auto;
+    min-height: 20px;
+    margin: 5px 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1.3em;
+    text-align: center;
+    line-height: 1em;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    display: inline-block;
+    opacity: 1;
+  }
+  
+  .light .v360-menu-btns {
+    color: #000;
+  }
+  
+  .dark .v360-menu-btns {
+    color: #fff;
+  }
+  
+  .light .v360-menu-btns:hover {
+    color: #fff;
+    background-color: #000;
+  }
+  
+  .dark .v360-menu-btns:hover {
+    color: #000;
+    background-color: #fff;
+  }
+  
+  .v360-image-container {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: relative;
+  }
+  
+  .v360-spinner-grow {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    vertical-align: text-bottom;
+    background-color: rgb(33, 37, 41);
+    border-radius: 50%;
+    opacity: 0;
+    -webkit-animation: spinner-grow .75s linear infinite;
+    animation: spinner-grow .75s linear infinite;
+  }
