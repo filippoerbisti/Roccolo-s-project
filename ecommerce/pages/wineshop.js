@@ -14,8 +14,6 @@ const Wineshop = ({ products }) => {
     <div>
       <WineShop />
 
-      <hr className={styles.hr} />
-
       <div className={marquee['maylike-products-wrapper']}>
         <h2 className={styles.title}>{t('ourWines')}</h2>
         <div className={styles.btnContainer}>
