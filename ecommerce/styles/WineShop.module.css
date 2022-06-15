@@ -2,8 +2,9 @@
     margin: 0 20px;
 }
 
-.mx60 {
-    margin: 0 60px;
+.w50 {
+    width: 100%;
+    height: auto;
 }
 
 .title {
@@ -16,24 +17,16 @@
 .title2 {
     text-transform: uppercase;
     letter-spacing: 5px;
-    margin-bottom: 30px;
     text-align: center;
     color: #892331;
 }
 
-.row {
+.col {
+    height: auto;
+    width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-}
-
-.left {
-    width: 50%;
-    padding: 0 10px;
-}
-
-.right {
-    width: 50%;
-    padding: 0 10px;
 }
 
 .paragraph {
@@ -41,50 +34,41 @@
     line-break: normal;
     line-height: 1.6;
     text-align: center;
+    width: 80%;
+    margin: 30px auto;
 }
 
 .hr {
     width: 50%;
-    margin: 40px auto -70px auto;
+    margin: 0px auto -70px auto;
 }
 
-/* .slider {
-    margin: 0 20%;
-} */
-
-@media screen and (min-width: 1025px) and (max-width: 1300px) {
-    .slider {
-        margin: 0 5%;
-    }
-}
-
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1201px) {
     .title {
         font-size: 28px;
     }
 
     .paragraph {
         text-align: center;
-        padding-bottom: 20px;
+        width: 100%;
+        padding: 0 20px;
     }
 
-    .mx60 {
-        margin: 0;
+    .w50 {
+        width: 100%;
     }
 
     .left {
+        flex-direction: column;
         width: 100%;
     }
 
     .right {
         width: 100%;
+        flex-direction: column-reverse;
     }
 
-    .slider {
-        margin: 0;
-    }
-
-    .row {
+    .col {
         flex-direction: column;
     }
 }
