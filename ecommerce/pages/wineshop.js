@@ -9,7 +9,7 @@ const Wineshop = ({ products }) => {
   const { t } = useTranslation('wineshop');
 
   return (
-    <div className={styles.mx20}>
+    <div>
       <WineShop />
 
       <hr className={styles.hr} />
