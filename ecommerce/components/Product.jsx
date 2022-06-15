@@ -18,9 +18,7 @@ const Product = ({
         <div className={styles['product-card']}>
           <img 
             src={urlFor(image && image[0])} 
-            alt="" 
-            width={250}
-            height={250}
+            alt="product_img" 
             objectFit="cover"
             className={styles['product-image']}
           />
