@@ -1,22 +1,13 @@
 import React from 'react';
-import Link from 'next/link';
 import { client } from '../lib/client';
-import { Product, FooterBanner, HeroBanner, Main } from '../components';
-import useTranslation from 'next-translate/useTranslation';
+import Main from '../components/Main';
 
-const Home = ({ products, bannerData }) => {
-  const { t } = useTranslation('common');
+const Home = ({ products }) => {
 
   return (
     <div>
       <Main />
       {/* <HeroBanner heroBanner={bannerData.length && bannerData[0]} /> */}
-
-      {/* <Link href="/wine">
-        <button>
-          {t('viewAllWine')}
-        </button>
-      </Link> */}
 
       {/* <FooterBanner footerBanner={bannerData && bannerData[0]} /> */}
 
@@ -24,16 +15,13 @@ const Home = ({ products, bannerData }) => {
   )
 }
 
-// export const getServerSideProps = async () => {
-//   const query = '*[_type == "product"]';
-//   const products = await client.fetch(query);
+export const getServerSideProps = async () => {
+  const query = '*[_type == "product"]';
+  const products = await client.fetch(query);
 
-//   const bannerQuery = '*[_type == "banner"]';
-//   const bannerData = await client.fetch(bannerQuery);
-
-//   return {
-//     props: { products, bannerData }
-//   }
-// }
+  return {
+    props: { products }
+  }
+}
 
 export default Home
