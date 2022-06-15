@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
+import styles from '../styles/Product.module.css';
 import { urlFor } from '../lib/client';
 
 const Product = ({ 
@@ -14,16 +15,17 @@ const Product = ({
   return (
     <div>
       <Link href={`/product/${slug.current}`}>
-        <div className='product-card'>
+        <div className={styles['product-card']}>
           <img 
             src={urlFor(image && image[0])} 
             alt="" 
             width={250}
             height={250}
-            className='product-image'
+            objectFit="cover"
+            className={styles['product-image']}
           />
-          <p className='product-name'>{name}</p>
-          <p className='product-price'>€{price}</p>
+          <p className={styles['product-name']}>{name}</p>
+          <p className={styles['product-price']}>€{price}</p>
         </div>
       </Link>
     </div>
