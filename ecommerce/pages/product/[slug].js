@@ -23,67 +23,69 @@ const ProductDetails = ({ product, products }) => {
 
     return (
         <div>
-            <div className={styles['product-detail-container']}>
-                <div>
+            <div className={styles.container}>
+                <div className={styles['product-detail-container']}>
                     <div>
-                        <img src={urlFor(image && image[index])} className={styles['product-detail-image']}/>
-                    </div>
-                    <div className={styles['small-images-container']}>
-                        {image?.map((item, i) => (
-                            <img
-                                key={i}
-                                src={urlFor(item)}
-                                className={i === index ? `${styles['small-image']} ${styles['selected-image']}` : `${styles['small-image']}`}
-                                onMouseEnter={() => setIndex(i)}
-                            />
-                        ))}
-                    </div>
-                </div>
-
-                <div className={styles['product-detail-desc']}>
-                    <h1>{name}</h1>
-                    <div className={styles.reviews}>
-                        <div>
-                            <AiFillStar />
-                            <AiFillStar />
-                            <AiFillStar />
-                            <AiFillStar />
-                            <AiOutlineStar />
+                        <div className={styles['product-detail-box']}>
+                            <img src={urlFor(image && image[index])} className={styles['product-detail-image']}/>
                         </div>
-                        <p>(20)</p>
+                        <div className={styles['small-images-container']}>
+                            {image?.map((item, i) => (
+                                <img
+                                    key={i}
+                                    src={urlFor(item)}
+                                    className={styles['small-image']}
+                                    onMouseEnter={() => setIndex(i)}
+                                />
+                            ))}
+                        </div>
                     </div>
-                    <h4>{t('details')}:</h4>
-                    <p>{details}</p>
-                    <p className={styles.price}>€{price}</p>
-                    <div className={styles.quantity}>
-                        <h3>{t('quantity')}:</h3>
-                        <p className={styles['quantity-desc']}>
-                            <span className={styles.minus} onClick={decQty}>
-                                <AiOutlineMinus />
-                            </span>
-                            <span className={styles.num}>
-                                {qty}
-                            </span>
-                            <span className={styles.plus} onClick={incQty}>
-                                <AiOutlinePlus />
-                            </span>
-                        </p>
-                    </div>
-                    <div className={styles.buttons}>
-                        <button 
-                            type="button" 
-                            className={styles['add-to-cart']} 
-                            onClick={() => onAdd(product, qty)}
-                        >
-                            {t('addCart')}
-                        </button>
-                        <button 
-                            type="button" 
-                            className={styles['buy-now']} 
-                            onClick={handleBuyNow}
-                        >
-                            {t('buyNow')}
-                        </button>
+
+                    <div className={styles['product-detail-desc']}>
+                        <h1 className={styles['product-title']}>{name}</h1>
+                        <div className={styles.reviews}>
+                            <div>
+                                <AiFillStar />
+                                <AiFillStar />
+                                <AiFillStar />
+                                <AiFillStar />
+                                <AiFillStar />
+                                {/* <AiOutlineStar /> */}
+                            </div>
+                        </div>
+                        <h4>{t('details')}:</h4>
+                        <p>{details}</p>
+                        <p className={styles.price}>€{price}</p>
+                        <div className={styles.quantity}>
+                            <h3>{t('quantity')}:</h3>
+                            <p className={styles['quantity-desc']}>
+                                <span className={styles.minus} onClick={decQty}>
+                                    <AiOutlineMinus />
+                                </span>
+                                <span className={styles.num}>
+                                    {qty}
+                                </span>
+                                <span className={styles.plus} onClick={incQty}>
+                                    <AiOutlinePlus />
+                                </span>
+                            </p>
+                        </div>
+                        <div className={styles.buttons}>
+                            <button 
+                                type="button" 
+                                className={styles['add-to-cart']} 
+                                onClick={() => onAdd(product, qty)}
+                            >
+                                {t('addCart')}
+                            </button>
+                            <button 
+                                type="button" 
+                                className={styles['buy-now']} 
+                                onClick={handleBuyNow}
+                            >
+                                {t('buyNow')}
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
