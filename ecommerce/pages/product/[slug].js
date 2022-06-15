@@ -91,7 +91,7 @@ const ProductDetails = ({ product, products }) => {
             </div>
 
             <div className={marquee['maylike-products-wrapper']}>
-                <h2 className={styles.title}>{t('alsoLike')}</h2>
+                <h2 className={styles.marqueeTitle}>{t('alsoLike')}</h2>
                 <div className={marquee['marquee']}>
                     <div className={`${marquee['maylike-products-container']} ${marquee.track}`}>
                         {products.map((product) => (

@@ -46,11 +46,6 @@
     cursor: pointer;
   }
 
-  .title {
-    text-transform: uppercase;
-
-  }
-
   .product-title {
     text-transform: uppercase;
     font-size: 32px;
@@ -157,6 +152,12 @@
   
   .quantity-desc .plus {
     color: rgb(49, 168, 49);
+  }
+  
+  .marqueeTitle {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
   }
 
 @media screen and (max-width: 1201px) {
