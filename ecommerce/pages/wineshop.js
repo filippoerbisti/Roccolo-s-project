@@ -5,6 +5,7 @@ import { Product, WineShop } from '../components';
 import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../styles/WineShop.module.css';
+import marquee from '../styles/Marquee.module.css';
 
 const Wineshop = ({ products }) => {
   const { t } = useTranslation('wineshop');
@@ -15,18 +16,17 @@ const Wineshop = ({ products }) => {
 
       <hr className={styles.hr} />
 
-      <div className='maylike-products-wrapper'>
+      <div className={marquee['maylike-products-wrapper']}>
         <h2 className={styles.title}>{t('ourWines')}</h2>
         <div className={styles.btnContainer}>
             <Link href='/wine'>
               <button className={styles.btn} type='button'> 
-                {/* {t('tastingButton')} */}
-                shop
+                SHOP
               </button>
             </Link>
           </div>
-        <div className='marquee'>
-          <div className='maylike-products-container track'>
+        <div className={marquee['marquee']}>
+          <div className={`${marquee['maylike-products-container']} ${marquee.track}`}>
             {products.map((product) => (
               <Product key={product._id} 
                 product={product} />
