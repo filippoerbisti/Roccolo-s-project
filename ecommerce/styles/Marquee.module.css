@@ -1,5 +1,10 @@
+.maylike-products-wrapper {
+    margin: 0 10px;
+}
+
 .maylike-products-wrapper h2 {
     text-align: center;
+    padding: 0 30px;
 }
   
 .maylike-products-container {
