@@ -16,7 +16,7 @@
 
 .marquee {
     position: relative;
-    min-height: 340px;
+    min-height: 370px;
     width: 100%;
     overflow-x: hidden;
 }
@@ -46,7 +46,7 @@
     }
     
     .track {
-        animation: marquee 10s linear infinite;
+        animation: marquee 15s linear infinite;
         width: 550%;
     }
 
