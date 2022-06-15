@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { client } from '../lib/client';
 import { Product, WineShop } from '../components';
 import useTranslation from 'next-translate/useTranslation';
@@ -15,7 +16,15 @@ const Wineshop = ({ products }) => {
       <hr className={styles.hr} />
 
       <div className='maylike-products-wrapper'>
-        <h2>{t('ourWines')}</h2>
+        <h2 className={styles.title}>{t('ourWines')}</h2>
+        <div className={styles.btnContainer}>
+            <Link href='/wine'>
+              <button className={styles.btn} type='button'> 
+                {/* {t('tastingButton')} */}
+                shop
+              </button>
+            </Link>
+          </div>
         <div className='marquee'>
           <div className='maylike-products-container track'>
             {products.map((product) => (
