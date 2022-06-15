@@ -67,7 +67,7 @@
 
 .hr {
     width: 50%;
-    margin: 0px auto -70px auto;
+    margin: 0px auto;
 }
 
 @media screen and (max-width: 1201px) {
