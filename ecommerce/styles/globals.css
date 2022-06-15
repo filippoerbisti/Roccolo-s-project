@@ -83,15 +83,6 @@ span.text-red {
   font-weight: 600;
 }
 
-.products-container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-  width: 100%;
-}
-
 .desc{
   position: absolute;
   right: 10%;

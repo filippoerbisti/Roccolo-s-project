@@ -3,17 +3,21 @@ import { client } from '../lib/client';
 import { Product } from '../components';
 import useTranslation from 'next-translate/useTranslation';
 
+import styles from '../styles/Product.module.css';
+
 const Wine = ({ products }) => {
     const { t } = useTranslation('common');
 
     return (
-        <div>
-            <div className="products-heading">
-                <h2>{t('ourWines')}</h2>
-            </div>
+        <div className={styles.mx20}>
+            <h1 className={styles.title}>{t('ourWines')}</h1>
 
-            <div className="products-container">
-                {products?.map((product) => <Product key={product._id} product={product} />)}
+            <div className={styles['products-container']}>
+                    {products?.map((product) => 
+                    <div className={styles.py}>
+                        <Product key={product._id} product={product} />
+                    </div>
+                    )}
             </div>
         </div>
     )
