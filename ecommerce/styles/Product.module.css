@@ -11,25 +11,23 @@
   .title {
     text-transform: uppercase;
     letter-spacing: 5px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-align: center;
   }
 
   .products-container {
     display: flex;
-    width: 80%;
-    margin: 20px auto 0px auto;
-    /* margin-top: 20px; */
+    justify-content: center;
+    width: 100%;
+    margin: 0px auto;
     flex-wrap: wrap;
-  }
-
-  .py:first-child {
-    padding: 20px 0 30px 0;
+    gap: 20px 30px; /* row-gap column gap */
+    margin-bottom: 15px;
   }
   
   .py {
     margin: 0 0 30px 0;
-    padding: 40px 0 30px 0;
+    padding: 40px 0px;
   }
 
   .product-card {
@@ -122,6 +120,7 @@
 
   .small-images-container {
     display: flex;
+    justify-content: flex-end;
     gap: 40px;
     margin-top: 20px;
   }
@@ -249,10 +248,24 @@
     margin-bottom: 20px;
   }
 
+@media screen and (min-width: 1501px) {
+  .products-container {
+    width: 80%;
+  }
+}
+
 @media screen and (max-width: 1201px) {
 
   .title {
     font-size: 28px;
+  }
+
+  .products-container {
+    gap: 20px 15px;
+  }
+
+  .py {
+    padding: 30px 10px;
   }
 
   .product-detail-container {
@@ -262,6 +275,18 @@
 }
 
 @media screen and (max-width: 1024px) {
+
+  .title {
+    margin-bottom: 10px;
+  }
+
+  .products-container {
+    gap: 20px 10px;
+  }
+
+  .py {
+    padding: 30px 10px;
+  }
 
   .product-detail-container {
     display: flex;
@@ -287,6 +312,14 @@
 }
 
 @media screen and (max-width: 768px) {
+
+  .products-container {
+    gap: 20px 10px;
+  }
+
+  .py {
+    padding: 30px 0;
+  }
   
   .product-detail-container {
     display: flex;
