@@ -74,7 +74,7 @@
   .product-price span {
     padding: 3px 10px;
     border-radius: 15px;
-    border: 2px solid #324d67;
+    border-bottom: 2px solid #324d67;
   }
   
   
@@ -158,10 +158,10 @@
   }
 
   .product-detail-desc .price {
-    font-weight: 700 ;
+    font-weight: 700;
     font-size: 26px;
     margin-top: 30px;
-    color:#892331;
+    color: #892331;
   }
 
   .product-detail-desc .quantity {
