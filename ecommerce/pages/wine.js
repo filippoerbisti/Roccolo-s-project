@@ -14,8 +14,8 @@ const Wine = ({ products }) => {
 
             <div className={styles['products-container']}>
                     {products?.map((product) => 
-                    <div className={styles.py}>
-                        <Product key={product._id} product={product} />
+                    <div className={styles.py} key={product._id}>
+                        <Product product={product} />
                     </div>
                     )}
             </div>
