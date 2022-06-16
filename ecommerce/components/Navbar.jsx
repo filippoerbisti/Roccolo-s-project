@@ -16,6 +16,14 @@ const Navbar = props => {
   const router = useRouter();
   const currentRoute = router.route;
 
+  // const current = () => {
+  //   if (router.route === '/product') {
+  //     currentRoute = 
+  //   }
+  // }
+
+  // console.log(currentRoute);
+
   const { showCart, setShowCart, showMenu, setShowMenu, totalQuantities } = useStateContext();
 
   const [activeTabs, setActiveTabs] = useState(props.name);
