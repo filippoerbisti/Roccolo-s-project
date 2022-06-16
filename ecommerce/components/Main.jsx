@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Slider from "@madzadev/image-slider";
@@ -7,6 +7,27 @@ import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../styles/Main.module.css';
 import dataMainImgSlider from '../store/dataMainImgSlider';
+
+const ReadMore = ({ children }) => {
+  const text = children;
+  const [isReadMore, setIsReadMore] = useState(true);
+
+  const toggleReadMore = () => {
+    setIsReadMore(!isReadMore);
+  };
+
+  return (
+    <span className={styles.readMore}>
+      {isReadMore ? text.slice(0, 200) : text}
+      
+      {text.length >= 200 && (
+        <span onClick={toggleReadMore}>
+          {isReadMore ? "...read more" : "(show less)"}
+        </span>
+      )}
+    </span>
+  );
+};
 
 const Main = () => {
   const { t } = useTranslation('home');
@@ -19,7 +40,7 @@ const Main = () => {
 
   const pWedding = `${t('weddingParagraph')}`;
   const pWeddingParagraph = pWedding.replace(/xxx/gi, '\n\r');
-
+  
   const images = dataMainImgSlider;
 
   const img1 = "https://res.cloudinary.com/dl38nyo08/image/upload/v1654615348/Roccolo%20del%20Lago/degustazioni_zs5pmi.png";
@@ -30,7 +51,7 @@ const Main = () => {
         <Slider 
           imageList={images} 
           width={1200} 
-          height={600} 
+          height={500} 
           showArrowControls={true} 
           showDotControls={true} 
           loop={true}
@@ -41,14 +62,14 @@ const Main = () => {
       </div>
 
       <div className={styles.btnContainer}>
-      <Link href='/tour'>
+        <Link href='/tour'>
           <button className={styles.btn} type='button'> 
             {t('virtualTour')}
           </button>
         </Link>
       </div>
       <div className={styles.btnContainer}>
-      <Link href='/wine'>
+        <Link href='/wine'>
           <button className={styles.btn} type='button'> 
             {t('wine')}
           </button>
@@ -63,7 +84,7 @@ const Main = () => {
         </Link>
       </div>
       <div className={styles.btnContainer}>
-      <Link href='/contact'>
+        <Link href='/contact'>
           <button className={styles.btn} type='button'> 
             {t('contact')}
           </button>
@@ -77,7 +98,11 @@ const Main = () => {
           <h1 className={styles.title}>
             <Link href='/wineshop'>{t('wineshopTitle')}</Link>
           </h1>
-          <p className={styles.paragraph}>{pWineshopParagraph}</p>
+          <p className={styles.paragraph}>
+            <ReadMore>
+              {pWineshopParagraph}
+            </ReadMore>
+          </p>
           <div className={styles.btnContainer}>
             <Link href='/wineshop'>
               <button className={styles.btn} type='button'> 
@@ -115,7 +140,11 @@ const Main = () => {
           <h1 className={styles.title}>
             <Link href='/event#tasting'>{t('tastingTitle')}</Link>
           </h1>
-          <p className={styles.paragraph}>{pTastingParagraph}</p>
+          <p className={styles.paragraph}>
+            <ReadMore>
+              {pTastingParagraph}
+            </ReadMore>
+          </p>
           <div className={styles.btnContainer}>
             <Link href='/event#tasting'>
               <button className={styles.btn} type='button'> 
@@ -133,7 +162,11 @@ const Main = () => {
           <h1 className={styles.title}>
             <Link href='/event#wedding'>{t('weddingTitle')}</Link>
           </h1>
-          <p className={styles.paragraph}>{pWeddingParagraph}</p>
+          <p className={styles.paragraph}>
+            <ReadMore>
+              {pWeddingParagraph}
+            </ReadMore>
+          </p>
           <div className={styles.btnContainer}>
             <Link href='/event#wedding'>
               <button className={styles.btn} type='button'> 
