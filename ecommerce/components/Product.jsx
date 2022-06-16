@@ -20,7 +20,7 @@ const Product = ({
             <img 
               src={urlFor(image && image[0])} 
               alt="product_img" 
-              objectFit="cover"
+              objectfit="cover"
               className={styles['product-image']}
             />
           </div>
