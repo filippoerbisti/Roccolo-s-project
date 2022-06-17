@@ -36,9 +36,9 @@ const Tasting = () => {
     <div className={styles.mx60}>
       <h1 className={styles.title}>{tTasting.title}</h1>
       <p className={styles.paragraph}>
-        <ReadMore>
+        {/* <ReadMore>
           {tTasting.p}
-        </ReadMore>
+        </ReadMore> */}
       </p>
     </div>
   )

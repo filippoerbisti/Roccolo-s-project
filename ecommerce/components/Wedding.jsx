@@ -36,9 +36,9 @@ const Wedding = () => {
     <div className={styles.mx60}>
       <h1 className={styles.title}>{tWedding.title}</h1>
       <p className={styles.paragraph}>
-        <ReadMore>
+        {/* <ReadMore>
           {tWedding.p}
-        </ReadMore>
+        </ReadMore> */}
       </p>
     </div>
   )
