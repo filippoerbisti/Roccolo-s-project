@@ -14,7 +14,13 @@ const Product = ({
 }) => {
   return (
     <div>
-      <Link href={`/product/${slug.current}`}>
+      <Link 
+        // href={`/product/${slug.current}`}
+        href={{
+          pathname: '/product/[slug]',
+          query: { slug: slug.current }
+        }}
+      >
         <div className={styles['product-card']}>
           <div className={styles['product-flex']}>
             <img 
