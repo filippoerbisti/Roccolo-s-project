@@ -48,9 +48,9 @@ const WineShopGalleries = () => {
   // Hook3: Hold items
   const [items, set] = useState(data);
 
-  // Hook4: shuffle data every 10 seconds
+  // Hook4: shuffle data every 5 seconds
   useEffect(() => {
-    const t = setInterval(() => set(shuffle), 10000)
+    const t = setInterval(() => set(shuffle), 5000)
     return () => clearInterval(t)
   }, []);
 
