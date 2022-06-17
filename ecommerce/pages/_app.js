@@ -9,7 +9,9 @@ import '../styles/globals.css';
 import { StateContext } from '../context/StateContext';
 
 function MyApp({ Component, pageProps }) {
-  Cookies.set("RoccoloCookie", "accepted");
+
+  const cookieName = "RoccoloCookie";
+  Cookies.set(cookieName, "accepted");
 
   const { t } = useTranslation('common');
 
@@ -22,7 +24,7 @@ function MyApp({ Component, pageProps }) {
         <CookieConsent
           location="bottom"
           buttonText={t('cookieBtn')}
-          cookieName="RoccoloCookie"
+          cookieName={cookieName}
           style={{ 
             background: "#2B373B", 
             display: "flex", 
@@ -46,7 +48,7 @@ function MyApp({ Component, pageProps }) {
             } else {
               console.log("Accept was triggered by clicking the Accept button");
             }
-            console.log(getCookieConsentValue("RoccoloCookie"));
+            console.log(getCookieConsentValue(cookieName));
           }}
           debug={true}
           acceptOnScroll
