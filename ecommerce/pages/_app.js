@@ -10,10 +10,9 @@ import { StateContext } from '../context/StateContext';
 
 function MyApp({ Component, pageProps }) {
 
-  const cookieName = "RoccoloCookie";
-  Cookies.set(cookieName, "accepted");
-
   const { t } = useTranslation('common');
+
+  const cookieName = "RoccoloCookieConsent";
 
   return (
     <StateContext>
@@ -21,6 +20,7 @@ function MyApp({ Component, pageProps }) {
         <Toaster />
         <Component {...pageProps} />
 
+        {/* https://www.npmjs.com/package/react-cookie-consent */}
         <CookieConsent
           location="bottom"
           buttonText={t('cookieBtn')}
@@ -40,19 +40,23 @@ function MyApp({ Component, pageProps }) {
             backgroundColor: "#892331",
             fontSize: "14px"
           }}
-          expires={150}
-          onAccept={(acceptedByScrolling) => {
-            if (acceptedByScrolling) {
-              // triggered if user scrolls past threshold
-              console.log("Accept was triggered by user scrolling");
-            } else {
-              console.log("Accept was triggered by clicking the Accept button");
-            }
+          overlay
+          expires={30} // 30 days before expired
+          debug={true} // To show bar
+          onAccept={() => {
             console.log(getCookieConsentValue(cookieName));
           }}
-          debug={true}
-          acceptOnScroll
-          acceptOnScrollPercentage={80}
+          // onAccept={(acceptedByScrolling) => {
+          //   if (acceptedByScrolling) {
+          //     // triggered if user scrolls past threshold
+          //     console.log("Accept was triggered by user scrolling");
+          //   } else {
+          //     console.log("Accept was triggered by clicking the Accept button");
+          //   }
+          //   console.log(getCookieConsentValue(cookieName));
+          // }}
+          // acceptOnScroll
+          // acceptOnScrollPercentage={80}
         >
           {t('cookieText')}
         </CookieConsent>
