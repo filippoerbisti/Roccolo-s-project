@@ -86,7 +86,7 @@ const Footer = () => {
       <div className={styles.endFooter}>
         <p>
           <span className={styles.tag}>
-            <a href='#'>Società Agricola Roccolo del Lago S.r.l. </a>
+            <a href='/'>Società Agricola Roccolo del Lago S.r.l. </a>
           </span> 
           -
           <span className={styles.tag}>
