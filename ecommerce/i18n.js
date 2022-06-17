@@ -10,7 +10,7 @@ const i18nConfig = {
       '/success': ['success'],
       // Shop / Product
       '/wineshop': ['wineshop'],
-      'rgx:^/event': ['event'],
+      '/event': ['event'],
       '/tour': ['tour'],
       '/contact': ['contact'],
       '/privacy-policy': ['policy'],
