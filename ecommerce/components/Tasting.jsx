@@ -2,6 +2,7 @@ import React from 'react';
 import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../styles/Event.module.css';
+import ReadMore from './ReadMore';
 
 const Tasting = () => {
   const { t } = useTranslation('event');
@@ -11,7 +12,11 @@ const Tasting = () => {
   return (
     <div className={styles.mx60}>
       <h1 className={styles.title}>{tTasting.title}</h1>
-      <p className={styles.paragraph}>{tTasting.p}</p>
+      <p className={styles.paragraph}>
+        <ReadMore>
+          {tTasting.p}
+        </ReadMore>
+      </p>
     </div>
   )
 }

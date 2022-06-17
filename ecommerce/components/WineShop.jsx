@@ -3,6 +3,7 @@ import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../styles/WineShop.module.css';
 import WineShopGalleries from './WineShopGalleries';
+import ReadMore from './ReadMore';
 
 const WineShop = () => {
     const { t } = useTranslation('wineshop');
@@ -16,7 +17,11 @@ const WineShop = () => {
             <h3 className={styles.title2}>{t('intro')}</h3>
             <div className={styles.col}>
                 <div className={styles.w50}>
-                    <p className={styles.paragraph}>{pWineshopParagraph}</p>
+                    <p className={styles.paragraph}>
+                        <ReadMore>
+                            {pWineshopParagraph}
+                        </ReadMore>
+                    </p>
                 </div>
                 <div className={styles.w50}>
                     <WineShopGalleries />
