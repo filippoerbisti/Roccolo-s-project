@@ -1,11 +1,16 @@
 {
-    "tasting": {
-        "title": "Verkostungen",
-        "p": "paragraph"
-    },
-    
-    "wedding": {
-        "title": "Hochzeiten",
-        "p": "paragraph"
-    }
+    "tastingTitle": "Verkostungen",
+    "tastingParagraph": "Kostenlose geführte Verkostung in unserem modernen und einladenden Wineshop.",
+    "tastingIntro": "Genießen Sie die Vorschläge von Roccolo del Lago",
+    "tastingIntro2": "Weine und Kombinationen, die hervorragende lokale Traditionen repräsentieren",
+    "tastingPromo1": "Premium Roccolo",
+    "tastingPromo2": "Exclusive Roccolo",
+    "tastingPromo2More": "kombiniert mit einer sorgfältigen Auswahl lokaler typischer Produkte",
+    "tastingFooter": "(Für weitere Informationen und Buchung: info@roccolodellago.it)",
+    "tastingButton": "Buchverkostung",
+
+    "weddingTitle": "Hochzeiten",
+    "weddingParagraph": "Wein und Liebe sind eine Kombination, die historisch als Sieger gilt.xxxRoccolo del Lago ist ein besonderer Ort, ein Ort von beeindruckender Schönheit, an dem Sie den wichtigsten Tag Ihres Lebens feiern und ihn unvergesslich machen können.xxxWelcher bessere Ort als ein Bio-Weingut umgeben von Natur, wo Stil, Schlichtheit und Eleganz den Rahmen für den Zauber Ihrer Liebe bilden?",
+    "weddingIntro": "Die perfekte Location für Ihren besonderen Tag",
+    "weddingButton": "Besuchen Sie das Gericht"
 }
