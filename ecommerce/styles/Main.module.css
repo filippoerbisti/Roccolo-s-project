@@ -67,18 +67,6 @@
     margin: 0 20%;
 }
 
-.readMore span {
-    cursor: pointer;
-    color: #892331;
-    font-size: smaller;
-}
-
-.readMore span:hover {
-    color: #892331;
-    opacity: 0.8;
-    text-decoration: underline;
-}
-
 @media screen and (min-width: 1025px) and (max-width: 1300px) {
     .slider {
         margin: 0 5%;
