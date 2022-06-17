@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../styles/Event.module.css';
