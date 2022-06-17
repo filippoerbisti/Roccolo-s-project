@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Slider from "@madzadev/image-slider";
@@ -7,27 +7,7 @@ import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../styles/Main.module.css';
 import dataMainImgSlider from '../store/dataMainImgSlider';
-
-const ReadMore = ({ children }) => {
-  const text = children;
-  const [isReadMore, setIsReadMore] = useState(true);
-
-  const toggleReadMore = () => {
-    setIsReadMore(!isReadMore);
-  };
-
-  return (
-    <span className={styles.readMore}>
-      {isReadMore ? text.slice(0, 200) : text}
-      
-      {text.length >= 200 && (
-        <span onClick={toggleReadMore}>
-          {isReadMore ? "...read more" : "(show less)"}
-        </span>
-      )}
-    </span>
-  );
-};
+import ReadMore from './ReadMore';
 
 const Main = () => {
   const { t } = useTranslation('home');
@@ -42,8 +22,6 @@ const Main = () => {
   const pWeddingParagraph = pWedding.replace(/xxx/gi, '\n\r');
   
   const images = dataMainImgSlider;
-
-  const img1 = "https://res.cloudinary.com/dl38nyo08/image/upload/v1654615348/Roccolo%20del%20Lago/degustazioni_zs5pmi.png";
 
   return (
     <div className={styles.mx20}>
