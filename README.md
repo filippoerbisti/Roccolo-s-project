@@ -48,6 +48,7 @@ prodotto.
 * [Security guidelines for this project](docs/SECURITY.md)
 * [Contribution guidelines for this project](docs/CONTRIBUTING.md)
 * [Conduct guidelines for this project](docs/CODE_OF_CONDUCT.md)
+* [Privacy/Policy for this project](docs/PRIVACY_POLICY.md)
 
 ----------------------------------------------------------------
 
@@ -88,6 +89,8 @@ Classic, basic Payment with PayPal, one of the largest payment methods
 ----------------------------------------------------------------
 
 ## COOKIE / POLICY PRIVACY
+
+![Privacy/Policy for this project](docs/PRIVACY_POLICY.md)
 
 Compliance test result for pr1-smoky.vercel.app
 > <a href="https://www.cookiebot.com/it/">CookieBot</a>
