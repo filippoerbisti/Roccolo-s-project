@@ -427,7 +427,19 @@ span.text-red {
   cursor: pointer;
 }
 
+/* Styles ReadMore */
 
+.showMore {
+  cursor: pointer;
+  color: #892331;
+  font-size: smaller;
+}
+
+.showMore:hover {
+  color: #892331;
+  opacity: 0.8;
+  text-decoration: underline;
+}
 
 
 /* 
