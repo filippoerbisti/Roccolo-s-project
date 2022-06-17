@@ -28,5 +28,8 @@
     "where": "Where",
     "when": "Hours",
     "workHours": "every day from 9:00 to 18:00",
-    "close": "Closed on Sunday"
+    "close": "Closed on Sunday",
+
+    "cookieText": "This website uses cookies to enhance the user experience.",
+    "cookieBtn": "I understand!"
 }
