@@ -1,11 +1,7 @@
 {
-    "tasting": {
-        "title": "Degustazioni",
-        "p": "paragraph"
-    },
+    "tastingTitle": "Degustazioni",
+    "tastingParagraph": "paragraph",
     
-    "wedding": {
-        "title": "Matrimoni",
-        "p": "paragraph"
-    }
+    "weddingTitle": "Matrimoni",
+    "weddingParagraph": "paragraph"
 }

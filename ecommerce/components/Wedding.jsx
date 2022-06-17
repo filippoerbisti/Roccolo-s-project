@@ -30,14 +30,12 @@ const ReadMore = ({ children }) => {
 const Wedding = () => {
   const { t } = useTranslation('event');
 
-  const tWedding = t('event:wedding', { count: 150 }, { returnObjects: true });
-
   return (
     <div className={styles.mx60}>
-      <h1 className={styles.title}>{tWedding.title}</h1>
+      <h1 className={styles.title}>{t('weddingTitle')}</h1>
       <p className={styles.paragraph}>
         <ReadMore>
-          {tWedding.p}
+        {t('weddingParagraph')}
         </ReadMore>
       </p>
     </div>
