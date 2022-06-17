@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from "next/image";
 import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../styles/Event.module.css';
@@ -30,14 +31,40 @@ const ReadMore = ({ children }) => {
 const Wedding = () => {
   const { t } = useTranslation('event');
 
+  const pWedding = `${t('weddingParagraph')}`;
+  const pWeddingParagraph = pWedding.replace(/xxx/gi, '\n\r');
+
   return (
     <div className={styles.mx60}>
       <h1 className={styles.title}>{t('weddingTitle')}</h1>
+      <h3 className={styles.title2}>
+        {t('weddingIntro')}
+      </h3>
       <p className={styles.paragraph}>
         <ReadMore>
-        {t('weddingParagraph')}
+          {pWeddingParagraph}
         </ReadMore>
       </p>
+      <div className={styles.imagesContWedding}>
+        <Image 
+          width={500} 
+          height={250} 
+          objectFit="cover" 
+          src="https://res.cloudinary.com/dl38nyo08/image/upload/v1655394713/Roccolo%20del%20Lago/casual%20img/pexels-duan%C3%A9-viljoen-12412480_xryskx.jpg" 
+        />
+        <Image 
+          width={500} 
+          height={250} 
+          objectFit="cover" 
+          src="https://res.cloudinary.com/dl38nyo08/image/upload/v1655394260/Roccolo%20del%20Lago/casual%20img/pexels-elina-sazonova-1850595_jeaeks.jpg" 
+        />
+        <Image 
+          width={500} 
+          height={250} 
+          objectFit="cover" 
+          src="https://res.cloudinary.com/dl38nyo08/image/upload/v1655394843/Roccolo%20del%20Lago/casual%20img/pexels-nicole-michalou-5775055_lemko8.jpg" 
+        />
+      </div>
     </div>
   )
 }
