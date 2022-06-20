@@ -110,6 +110,7 @@
 .imagesContWedding {
     display: flex;
     justify-content: space-evenly;
+    gap: 10px;
 }
 
 @media screen and (max-width: 1201px) {
