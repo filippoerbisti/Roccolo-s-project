@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import useTranslation from 'next-translate/useTranslation';
+import * as emailjs from '@emailjs/browser';
+// import Recaptcha from 'react-recaptcha';
 import axios from 'axios';
 
 import styles from '../styles/ContactUs.module.css';
@@ -15,48 +17,90 @@ const ContactUs = () => {
   const [message, setMessage] = useState("");
   const fullname = firstname + " " + lastname;
 
+  // const nameRef = useRef(null)
+  // const emailRef = useRef(null)
+  // const messageRef = useRef(null)
+
   const tOption = t('contact:objectEmail', { count: 150 }, { returnObjects: true });
 
-  const handleSubmit = async (e) => { 
+  // const handleSubmit = async (e) => { 
+  //   e.preventDefault();
+  //   console.log('Sending')
+
+  //   let data = {
+  //     fullname,
+  //     email,
+  //     subject,
+  //     message
+  //   }
+
+  //   axios.post('http://localhost:3000/api/mail', data, {
+  //     headers: {
+  //       'Accept': 'application/json, text/plain, */*',
+  //       'Content-Type': 'application/json'
+  //     },
+  //     // body: JSON.stringify(data)
+  //   })
+  //   // fetch('/api/mail', {
+  //   //   method: 'POST',
+  //   //   headers: {
+  //   //     'Accept': 'application/json, text/plain, */*',
+  //   //     'Content-Type': 'application/json'
+  //   //   },
+  //   //   body: JSON.stringify(data)
+  //   // })
+  //   .then((res) => {
+  //     console.log('Response received')
+  //     if (res.status === 200) {
+  //       console.log('Response succeeded!')
+  //       setFirstname('');
+  //       setLastname('');
+  //       setEmail('');
+  //       setSubject(`${tOption.option0}`);
+  //       setMessage('');
+  //     }
+  //   })
+  //   .catch(
+  //     (e) => console.log(e),
+  //   );
+  // }
+
+    // const [recaptchaLoad, setRecaptchaLoad] = useState(false);
+    // const [isVerified, setIsVerified] = useState(false);
+    
+    // const recaptchaLoaded = () => {
+    //     setRecaptchaLoad(true);
+    // }
+    
+    // const verifiedRecaptcha = (response) => {
+    //     if (response)
+    //       setIsVerified(true);
+    // }
+
+  function sendEmail(e) {
     e.preventDefault();
-    console.log('Sending')
-
-    let data = {
-      fullname,
-      email,
-      subject,
-      message
+    const templateParams = {
+      from_name: fullname,
+      from_email: email,
+      to_name: 'Roccolo del Lago',
+      subject: subject,
+      message: message,
     }
-
-    axios.post('http://localhost:3000/api/mail', data, {
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
-      },
-      // body: JSON.stringify(data)
-    })
-    // fetch('/api/mail', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Accept': 'application/json, text/plain, */*',
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(data)
-    // })
-    .then((res) => {
-      console.log('Response received')
-      if (res.status === 200) {
-        console.log('Response succeeded!')
-        setFirstname('');
-        setLastname('');
-        setEmail('');
-        setSubject(`${tOption.option0}`);
-        setMessage('');
-      }
-    })
-    .catch(
-      (e) => console.log(e),
-    );
+    // if (recaptchaLoad && isVerified) {
+        emailjs.send(
+          process.env.NEXT_PUBLIC_SERVICE_ID,
+          process.env.NEXT_PUBLIC_TEMPLATE_ID,
+          templateParams,
+          process.env.NEXT_PUBLIC_EMAILJS_USER_ID
+        )
+        .then((result) => {
+          console.log('OK'+result.text);
+        }, (error) => {
+          console.log(error.text);
+        });
+    // } else {
+    //     console.error('Please check reCaptcha and try again.')
+    // }
   }
 
   return (
@@ -64,7 +108,7 @@ const ContactUs = () => {
       <h1 className={styles.title}>{t('title')}</h1>
       <p className={styles.paragraph}>{t('info')}</p>
       <p className={styles.paragraph}>{t('infoStaff')}</p>
-      <form method="post" onSubmit={handleSubmit} className={styles.mx60aic}>
+      <form method="post" onSubmit={sendEmail} className={styles.mx60aic}>
         <div className={styles.center}>
           <div className={styles.row}>
             <div className={styles.col}>
@@ -98,6 +142,13 @@ const ContactUs = () => {
               />
             </div>
           </div>
+
+          {/* <Recaptcha
+                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                    render='explicit'
+                    onloadCallback={recaptchaLoaded}
+                    verifyCallback={verifiedRecaptcha}
+          /> */}
 
           <div className={styles.col}>
             <label htmlFor={t('email')} className={styles.label}>{t('email')}</label>
@@ -173,7 +224,7 @@ const ContactUs = () => {
           </div>
 
           <div className={styles.btnContainer}>
-            <button type="submit" onClick={(e)=>{handleSubmit(e)}} className={styles.btn}>{t('button')}</button>
+            <button type="submit" onClick={(e)=>{sendEmail(e)}} className={styles.btn}>{t('button')}</button>
           </div>
         </div>
       </form>
