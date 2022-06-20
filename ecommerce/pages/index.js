@@ -1,10 +1,15 @@
 import React from 'react';
 import { client } from '../lib/client';
 import Main from '../components/Main';
+import DeviceDetector from "device-detector-js";
 
 const Home = ({ ip, products }) => {
 
-  console.log(ip)
+  const deviceDetector = new DeviceDetector();
+  const userAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36";
+  const device = deviceDetector.parse(userAgent);
+
+  console.dir(device, ip);
 
   return (
     <div>
@@ -28,8 +33,6 @@ export const getServerSideProps = async ({ req }) => {
   } else {
     ip = req.connection.remoteAddress
   }
-
-  // const ip = req.headers['x-real-ip'] || req.connection.remoteAddress;
 
   const query = '*[_type == "product"]';
   const products = await client.fetch(query);
