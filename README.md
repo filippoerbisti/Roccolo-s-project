@@ -104,6 +104,7 @@ Classic, basic Payment with PayPal, one of the largest payment methods
 
 Emailjs
 --> Email Services: Gmail - Roccolo del Lago
+<br />
 --> Email Templates: Template - Roccolo del Lago
 
 ----------------------------------------------------------------
