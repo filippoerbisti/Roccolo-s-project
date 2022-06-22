@@ -13,6 +13,8 @@ Check:
 > <a href="https://www.sanity.io/">SANITY</a>
 > 
 > <a href="https://stripe.com/it">STRIPE</a>
+> 
+> <a href="https://dashboard.emailjs.com">EMAILJS</a>
  
 
 ## DEMAND
@@ -48,6 +50,7 @@ prodotto.
 * [Security guidelines for this project](docs/SECURITY.md)
 * [Contribution guidelines for this project](docs/CONTRIBUTING.md)
 * [Conduct guidelines for this project](docs/CODE_OF_CONDUCT.md)
+
 * [Privacy/Policy for this project](docs/PRIVACY_POLICY.md)
 
 ----------------------------------------------------------------
@@ -64,6 +67,15 @@ Projects:
 
 [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
 with [Sanity.io](https://sanity.io) and [Vercel](https://vercel.com/) for Deploy
+
+----------------------------------------------------------------
+
+### Virtual Tour
+
+[Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
+with [Sanity.io](https://sanity.io) and [Vercel](https://vercel.com/) for Deploy
+
+Custom use of React-360
 
 ----------------------------------------------------------------
 
@@ -85,6 +97,14 @@ Receipt template
 
 Classic, basic Payment with PayPal, one of the largest payment methods
 > <a href="https://developer.paypal.com/home">PayPal Developer</a>
+
+----------------------------------------------------------------
+
+## CONTACT US SERVICE
+
+Emailjs
+--> Email Services: Gmail - Roccolo del Lago
+--> Email Templates: Template - Roccolo del Lago
 
 ----------------------------------------------------------------
 
