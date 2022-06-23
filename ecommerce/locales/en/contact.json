@@ -18,5 +18,11 @@
     "privacy": "Privacy",
     "acceptPrivacy": "I have read and accept",
     "infoPrivacy": " the privacy policy",
-    "button": "Send"
+    "button": "Send",
+
+    "emailSend": "Invio email in corso...",
+    "emailOk": "Email inviata!",
+    "emailErr": "Errore d'invio, riprovare",
+    "emailCompiled": "Compilare tutti i campi!",
+    "emailRecaptcha": "Convalidare reCAPTCHA!"
 }

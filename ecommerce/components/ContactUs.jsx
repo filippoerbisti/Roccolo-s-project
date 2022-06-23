@@ -39,7 +39,7 @@ const ContactUs = () => {
           message: message,
         }
 
-        const toastLoading = toast.loading('Invio email in corso...');
+        const toastLoading = toast.loading(`${t('sendMail')}`);
 
         emailjs.send(
           process.env.NEXT_PUBLIC_SERVICE_ID,
@@ -55,15 +55,15 @@ const ContactUs = () => {
           setMessage('');
           
           toast.dismiss(toastLoading);
-          toast.success('Email inviata!');
+          toast.success(`${t('emailOk')}`);
         }, (error) => {
-          toast.error("Errore d'invio, riprovare");
+          toast.error(`${t('emailErr')}`);
         });
       } else {
-        toast.error('Compilare tutti i campi!');
+        toast.error(`${t('emailCompiled')}`);
       }
     } else {
-      toast.error('Convalidare reCAPTCHA')
+      toast.error(`${t('emailRecaptcha')}`)
     }
   }
 
