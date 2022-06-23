@@ -1,21 +1,15 @@
 import React from 'react';
-import styles from '../styles/Policy.module.css'
 import useTranslation from 'next-translate/useTranslation';
+import PrivacyPolicyCookie from '../components/PrivacyPolicyCookie';
+
+import styles from '../styles/Policy.module.css';
 
 const PrivacyPolicy = () => {
     const { t } = useTranslation('policy');
 
     return (
-        <div>
-            <h1>Privacy Policy & Cookie</h1>
-            <div>
-                <div>
-                    <h3 className={styles.policyTitle}>POLICY PRIVACY & COOKIES</h3>
-                    <p className={styles.policyParagraph}>
-                    {t('paragraph1A')}
-                    </p>
-                </div>
-            </div>
+        <div className={styles.mx20}>
+            <PrivacyPolicyCookie />
         </div>
     )
 }
