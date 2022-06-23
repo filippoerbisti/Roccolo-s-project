@@ -20,9 +20,9 @@
     "infoPrivacy": " the privacy policy",
     "button": "Send",
 
-    "emailSend": "Invio email in corso...",
-    "emailOk": "Email inviata!",
-    "emailErr": "Errore d'invio, riprovare",
-    "emailCompiled": "Compilare tutti i campi!",
-    "emailRecaptcha": "Convalidare reCAPTCHA!"
+    "emailSend": "Sending email...",
+    "emailOk": "Email sent!",
+    "emailErr": "Sending error, try again",
+    "emailCompiled": "Fill in all fields!",
+    "emailRecaptcha": "Validate reCAPTCHA!"
 }
