@@ -11,6 +11,7 @@ export {default as Tasting } from './Tasting';
 export {default as Wedding } from './Wedding';
 export {default as Galleries } from './Galleries';
 export {default as ContactUs } from './ContactUs';
+export {default as PrivacyPolicyCookie } from './PrivacyPolicyCookie';
 
 export {default as HeroBanner } from './old/HeroBanner';
 export {default as FooterBanner } from './old/FooterBanner';
