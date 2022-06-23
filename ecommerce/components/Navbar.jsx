@@ -34,6 +34,8 @@ const Navbar = props => {
         break;
       case 'wine':
         break;
+      case 'tour':
+        break;
       case 'wineshop':
         break;
       case 'event':
@@ -67,6 +69,11 @@ const Navbar = props => {
               {t('navShop')}
             </a>
           </Link>
+          <Link href='/tour'>
+            <a className={activeTabs === 'tour' ? `${styles.active}` : `${styles.link}`} onClick={() => setActiveTabs('tour')}>
+              {t('navTour')}
+            </a>
+          </Link>
           <Link href='/wineshop'>
             <a className={activeTabs === 'wineshop' ? `${styles.active}` : `${styles.link}`} onClick={() => setActiveTabs('wineshop')}>
               {t('navWineShop')}
@@ -75,11 +82,6 @@ const Navbar = props => {
           <Link href='/event'>
             <a className={activeTabs === 'event' ? `${styles.active}` : `${styles.link}`} onClick={() => setActiveTabs('event')}>
               {t('navEvents')}
-            </a>
-          </Link>
-          <Link href='/wine'>
-            <a className={activeTabs === 'wine' ? `${styles.active}` : `${styles.link}`} onClick={() => setActiveTabs('wine')}>
-              {t('navWines')}
             </a>
           </Link>
           <Link href='/gallery'>
