@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../styles/Policy.module.css';
@@ -178,7 +179,7 @@ const PrivacyPolicyCookie = () => {
               <p>By email: <a href="mailto:filippo.erbisti@gmail.com" class="__cf_email__">filippo.erbisti@gmail.com</a></p>
             </li>
             <li>
-              <p>By visiting this page on our website: <a href="https://roccolodellago.vercel.app/contact" rel="external nofollow noopener" target="_blank">https://roccolodellago.vercel.app/contact</a></p>
+              <p>By visiting this page on our website: <Link href="/contact"  target="_blank">https://roccolodellago.vercel.app/contact</Link></p>
             </li>
           </ul>
         </div>
