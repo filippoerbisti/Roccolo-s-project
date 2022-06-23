@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import useTranslation from 'next-translate/useTranslation';
+
 import styles from '../styles/Footer.module.css';
 import iconStyles from '../styles/IconFooter.module.css';
-// import { AiFillInstagram, AiOutlineFacebook } from 'react-icons/ai';
-import useTranslation from 'next-translate/useTranslation';
 
 const Footer = () => {
   const { t } = useTranslation('common');
@@ -15,16 +15,6 @@ const Footer = () => {
   return (
     <div className={styles.footerContainer}>
       <p className={styles.followUs}>{t('followUs')}</p>
-
-      {/* <p className={styles.icons}>
-        <a href="https://it-it.facebook.com/roccolodellago/" className='cursor-pointer' target="_blank">
-          <AiOutlineFacebook />
-        </a>
-        <a href="https://www.instagram.com/roccolodellago/" className='cursor-pointer' target="_blank">
-          <AiFillInstagram />
-        </a>
-      </p> */}
-
       <ul className={iconStyles.ul}>
         <li>
             <a href="https://it-it.facebook.com/roccolodellago/" target="_blank">
@@ -96,6 +86,7 @@ const Footer = () => {
           REAVR-366731 - P. Iva 03802970230 - Cap. Sociale 100.000.00 €
           </p>
         <p>2022 © Roccolo del Lago. All Rights Reserved <br />
+          Powered by <a href="https://filippoerbisti.netlify.app" target="_blank" className={styles.poweredBy}>Filippo Erbisti</a>
           <span className={styles.privacyPolicy}>
             <Link href="/privacy-policy"> Privacy/Policy</Link>
           </span>
