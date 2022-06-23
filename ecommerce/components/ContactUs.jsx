@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Script from 'next/script';
 import useTranslation from 'next-translate/useTranslation';
 import * as emailjs from '@emailjs/browser';
 import { toast } from 'react-hot-toast';
@@ -9,6 +10,8 @@ import styles from '../styles/ContactUs.module.css';
 
 const ContactUs = () => {
   const { t } = useTranslation('contact');
+
+  const recaptchaSiteKey = '6LeMZpMgAAAAAJ5-lSPvpnxjY12C1GzG1desXnaW';
 
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -22,37 +25,45 @@ const ContactUs = () => {
   const sendEmail = async (e) => {
     e.preventDefault();
 
-    if (fullname !== '' && email !== '' && subject !== '' && message !== '') {    
-      const templateParams = {
-        from_name: fullname,
-        from_email: email,
-        to_name: 'Roccolo del Lago',
-        subject: subject,
-        message: message,
+    const isCaptchaChecked = () => {
+      return grecaptcha && grecaptcha.getResponse().length !== 0;
+    }
+
+    if (isCaptchaChecked()) {
+      if (fullname !== '' && email !== '' && subject !== '' && message !== '') {    
+        const templateParams = {
+          from_name: fullname,
+          from_email: email,
+          to_name: 'Roccolo del Lago',
+          subject: subject,
+          message: message,
+        }
+
+        const toastLoading = toast.loading('Invio email in corso...');
+
+        emailjs.send(
+          process.env.NEXT_PUBLIC_SERVICE_ID,
+          process.env.NEXT_PUBLIC_TEMPLATE_ID,
+          templateParams,
+          process.env.NEXT_PUBLIC_EMAILJS_USER_ID
+        )
+        .then((result) => {
+          setFirstname('');
+          setLastname('');
+          setEmail('');
+          setSubject('');
+          setMessage('');
+          
+          toast.dismiss(toastLoading);
+          toast.success('Email inviata!');
+        }, (error) => {
+          toast.error("Errore d'invio, riprovare");
+        });
+      } else {
+        toast.error('Compilare tutti i campi!');
       }
-
-      const toastLoading = toast.loading('Invio email in corso...');
-
-      emailjs.send(
-        process.env.NEXT_PUBLIC_SERVICE_ID,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID,
-        templateParams,
-        process.env.NEXT_PUBLIC_EMAILJS_USER_ID
-      )
-      .then((result) => {
-        setFirstname('');
-        setLastname('');
-        setEmail('');
-        setSubject(`${tOption.option0}`);
-        setMessage('');
-        
-        toast.dismiss(toastLoading);
-        toast.success('Email inviata!');
-      }, (error) => {
-        toast.error("Errore d'invio, riprovare");
-      });
     } else {
-      toast.error('Compilare tutti i campi!');
+      toast.error('Convalidare reCAPTCHA')
     }
   }
 
@@ -95,13 +106,6 @@ const ContactUs = () => {
               />
             </div>
           </div>
-
-          {/* <Recaptcha
-                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                    render='explicit'
-                    onloadCallback={recaptchaLoaded}
-                    verifyCallback={verifiedRecaptcha}
-          /> */}
 
           <div className={styles.col}>
             <label htmlFor={t('email')} className={styles.label}>{t('email')}</label>
@@ -176,11 +180,22 @@ const ContactUs = () => {
             </div>
           </div>
 
-          <div className={styles.btnContainer}>
-            <button type="submit" onClick={(e)=>{sendEmail(e)}} className={styles.btn}>{t('button')}</button>
+          {/* Google reCAPTCHA v2 checkbox  */}
+          <div className={styles.recaptcha}>
+            <div 
+              className='g-recaptcha'
+              data-sitekey={recaptchaSiteKey} 
+              data-theme="light"
+              data-size="normal"
+            ></div> 
+
+            <div className={styles.btnContainer}>
+              <button type="submit" onClick={(e)=>{sendEmail(e)}} className={styles.btn}>{t('button')}</button>
+            </div>
           </div>
         </div>
       </form>
+      <Script src="https://www.google.com/recaptcha/api.js" async defer></Script>
     </div>
   )
 }
