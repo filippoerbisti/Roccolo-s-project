@@ -32,5 +32,7 @@
     "close": "Closed on Sunday",
 
     "cookieText": "This website uses cookies to enhance the user experience.",
-    "cookieBtn": "I understand!"
+    "cookieBtn": "I understand!",
+
+    "poweredBy": "Powered by"
 }

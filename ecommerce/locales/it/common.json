@@ -32,5 +32,7 @@
     "close": "Domenica chiuso",
 
     "cookieText": "Questo sito web utilizza i cookie per migliorare l'esperienza dell'utente.",
-    "cookieBtn": "Ho capito!"
+    "cookieBtn": "Ho capito!",
+
+    "poweredBy": "Offerto da"
 }
