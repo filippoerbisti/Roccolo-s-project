@@ -61,6 +61,11 @@
     text-align: center;
 }
 
+.poweredBy {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .privacyPolicy {
     text-decoration: underline;
     display: flex;
