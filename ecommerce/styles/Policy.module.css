@@ -1,4 +1,4 @@
-.policy {
+.mx60 {
   margin: 0 60px;
 }
 
@@ -13,6 +13,7 @@
   text-align: center;
 }
 
+.policy h1,
 .policy h2, 
 .policy h3 {
   margin: 10px 0;
@@ -26,10 +27,14 @@
   list-style-type: none;
 }
 
+.policy a:hover {
+  text-decoration: underline;
+}
+
 
 @media screen and (max-width: 1201px) {
 
-  .policy {
+  .mx60 {
     margin: 0;
   }
 
