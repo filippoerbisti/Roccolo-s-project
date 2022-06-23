@@ -104,9 +104,13 @@ Classic, basic Payment with PayPal, one of the largest payment methods
 
 > <a href="https://emailjs.com/">EmailJs</a>
 
---> Email Services: Gmail - Roccolo del Lago
+Email Services: Gmail - Roccolo del Lago
 <br />
---> Email Templates: Template - Roccolo del Lago
+Email Templates: Template - Roccolo del Lago
+<br />
+
+When user contact us, we receive:
+![Template Email](https://github.com/filippoerbisti/pr1/blob/master/docs/readme/assets/template_email.png?raw=true)
 
 ----------------------------------------------------------------
 
