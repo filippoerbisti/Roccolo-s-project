@@ -1,5 +1,7 @@
 export {default as Layout } from './Layout';
 export {default as Navbar } from './Navbar';
+export {default as Nav } from './Nav';
+export {default as NavItem } from './NavItem';
 export {default as Main} from './Main';
 export {default as Cart } from './Cart';
 export {default as ScrollToTop } from './ScrollToTop';

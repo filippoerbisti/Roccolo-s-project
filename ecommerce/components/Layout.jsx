@@ -2,7 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import useTranslation from 'next-translate/useTranslation';
 
-import Navbar from './Navbar';
+import Nav from './Nav';
+// import Navbar from './Navbar';
 import Footer from './Footer';
 import ScrollToTop from './ScrollToTop';
 
@@ -22,16 +23,17 @@ const Layout = ({ children }) => {
         <title>Roccolo del Lago - {t('title')}</title>
       </Head>
       <div>
-      <header>
-        <Navbar />
-      </header>
-      <main className='main-container'>
-        <ScrollToTop />
-        {children}
-      </main>
-      <footer>
-        <Footer />
-      </footer>
+        <header>
+          {/* <Navbar /> */}
+          <Nav />
+        </header>
+        <main className='main-container'>
+          <ScrollToTop />
+          {children}
+        </main>
+        <footer>
+          <Footer />
+        </footer>
       </div>
     </div>
   )
