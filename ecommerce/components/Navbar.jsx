@@ -5,6 +5,7 @@ import { AiOutlineShopping } from 'react-icons/ai';
 import useTranslation from 'next-translate/useTranslation';
 import { IT, GB, FR, DE } from 'country-flag-icons/react/3x2';
 import { useRouter } from 'next/router';
+import { slide as Menu } from 'react-burger-menu';
 
 import styles from '../styles/Navbar.module.css';
 import { Cart } from './';
@@ -49,6 +50,55 @@ const Navbar = props => {
     }
   }, [activeTabs]);
 
+  var style = {
+    bmBurgerButton: {
+      position: 'relative',
+      width: '30px',
+      height: '24px',
+      right: '36px',
+      top: '36px'
+    },
+    bmBurgerBars: {
+      background: '#373a47'
+    },
+    bmBurgerBarsHover: {
+      background: '#a90000'
+    },
+    bmCrossButton: {
+      height: '24px',
+      width: '24px'
+    },
+    bmCross: {
+      background: '#bdc3c7'
+    },
+    bmMenuWrap: {
+      position: 'fixed',
+      height: '100%'
+    },
+    bmMenu: {
+      background: '#373a47',
+      padding: '2.5em 1.5em 0',
+      fontSize: '1.15em'
+    },
+    bmMorphShape: {
+      fill: '#373a47'
+    },
+    bmItemList: {
+      color: '#b8b7ad',
+      padding: '0.8em',
+      display: 'flex',
+      flexDirection: 'column'
+    },
+    bmItem: {
+      display: 'inline-block'
+    },
+    bmOverlay: {
+      background: 'rgba(0, 0, 0, 0.3)',
+      width: '100%',
+      zIndex: '999'
+    }
+  }
+
   return (
     <div className='navbar-container'>
       <Link href="/" className='cursor-pointer'>
@@ -61,6 +111,12 @@ const Navbar = props => {
           onClick={() => setActiveTabs('')}
         />
       </Link>
+
+      <Menu styles={ style } right >
+        <a id="home" className="menu-item" href="/">Home</a>
+        <a id="about" className="menu-item" href="/about">About</a>
+        <a id="contact" className="menu-item" href="/contact">Contact</a>
+      </Menu>
 
       <ul className={styles.menu}>
         <li>

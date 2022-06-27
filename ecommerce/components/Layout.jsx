@@ -3,7 +3,7 @@ import Head from 'next/head';
 import useTranslation from 'next-translate/useTranslation';
 
 import Nav from './Nav';
-// import Navbar from './Navbar';
+import Navbar from './Navbar';
 import Footer from './Footer';
 import ScrollToTop from './ScrollToTop';
 
@@ -24,8 +24,8 @@ const Layout = ({ children }) => {
       </Head>
       <div>
         <header>
-          {/* <Navbar /> */}
-          <Nav />
+          <Navbar />
+          {/* <Nav /> */}
         </header>
         <main className='main-container'>
           <ScrollToTop />

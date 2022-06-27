@@ -1,39 +1,60 @@
-import React, { useState } from "react";
-import Link from "next/link";
-import Image from 'next/image';
-
-import styles from '../styles/Nav.module.css';
+import React from 'react';
+import { slide as Menu } from 'react-burger-menu';
 
 const Nav = () => {
-
-    const data = [
-        {
-            name: "Home",
-            link: "/"
+    var styles = {
+        bmBurgerButton: {
+          position: 'fixed',
+          width: '36px',
+          height: '30px',
+          left: '36px',
+          top: '36px'
         },
-        {
-            name: "Wineshop",
-            link: "/"
+        bmBurgerBars: {
+          background: '#373a47'
         },
-        {
-            name: "Wines",
-            link: "/"
+        bmBurgerBarsHover: {
+          background: '#a90000'
         },
-        {
-            name: "Events",
-            link: "/"
+        bmCrossButton: {
+          height: '24px',
+          width: '24px'
         },
-        {
-            name: "Contact",
-            link: "/"
+        bmCross: {
+          background: '#bdc3c7'
+        },
+        bmMenuWrap: {
+          position: 'fixed',
+          height: '100%'
+        },
+        bmMenu: {
+          background: '#373a47',
+          padding: '2.5em 1.5em 0',
+          fontSize: '1.15em'
+        },
+        bmMorphShape: {
+          fill: '#373a47'
+        },
+        bmItemList: {
+          color: '#b8b7ad',
+          padding: '0.8em'
+        },
+        bmItem: {
+          display: 'inline-block'
+        },
+        bmOverlay: {
+          background: 'rgba(0, 0, 0, 0.3)'
         }
-    ];
+      }
 
-    const [isNavExpanded, setIsNavExpanded] = useState(false);
-
+    // NOTE: You also need to provide styles, see https://github.com/negomi/react-burger-menu#styling
     return (
-        <div></div>
-    )
+      <Menu styles={ styles } right >
+        <a id="home" className="menu-item" href="/">Home</a>
+        <a id="about" className="menu-item" href="/about">About</a>
+        <a id="contact" className="menu-item" href="/contact">Contact</a>
+      </Menu>
+    );
 }
 
 export default Nav
