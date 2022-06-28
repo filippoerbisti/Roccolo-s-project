@@ -4,7 +4,6 @@ import Script from 'next/script';
 import useTranslation from 'next-translate/useTranslation';
 import * as emailjs from '@emailjs/browser';
 import { toast } from 'react-hot-toast';
-// import Recaptcha from 'react-recaptcha';
 
 import styles from '../styles/ContactUs.module.css';
 
@@ -15,10 +14,11 @@ const ContactUs = () => {
 
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
+  const fullname = firstname + " " + lastname;
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-  const fullname = firstname + " " + lastname;
+  const [newsletter, setNewsletter] = useState(false);
 
   const tOption = t('contact:objectEmail', { count: 150 }, { returnObjects: true });
 
@@ -30,6 +30,23 @@ const ContactUs = () => {
     }
 
     if (isCaptchaChecked()) {
+      if (email !== '' && newsletter == true) {
+        console.log('cio');
+        try {
+          const res = await fetch("/api/newsletter", {
+            method: "POST",
+            body: email,
+          });
+    
+          const data = await res.json();
+          if (data.error !== null) {
+            throw data.error;
+          }
+          console.log('end')
+        } catch (e) {
+        }
+      }
+
       if (fullname !== '' && email !== '' && subject !== '' && message !== '') {    
         const templateParams = {
           from_name: fullname,
@@ -39,7 +56,7 @@ const ContactUs = () => {
           message: message,
         }
 
-        const toastLoading = toast.loading(`${t('sendMail')}`);
+        const toastLoading = toast.loading(`${t('emailSend')}`);
 
         emailjs.send(
           process.env.NEXT_PUBLIC_SERVICE_ID,
@@ -53,6 +70,7 @@ const ContactUs = () => {
           setEmail('');
           setSubject('');
           setMessage('');
+          setNewsletter(false);
           
           toast.dismiss(toastLoading);
           toast.success(`${t('emailOk')}`);
@@ -160,7 +178,16 @@ const ContactUs = () => {
           <div className={styles.col}>
             <label className={styles.label} htmlFor={t('newsletter')}>{t('newsletter')}</label>
             <div className={styles.rowNewslet}>
-              <input type="checkbox" className={styles.checkbox} name={t('newsletter')} id={t('newsletter')} />
+              <input 
+                value={newsletter}
+                onChange={(e) => {
+                  setNewsletter(e.target.checked);
+                }}
+                type="checkbox" 
+                className={styles.checkbox} 
+                name={t('newsletter')} 
+                id={t('newsletter')} 
+              />
               <label htmlFor={t('newsletter')}>{t('newsletterPromo')}</label>
             </div>
           </div>
