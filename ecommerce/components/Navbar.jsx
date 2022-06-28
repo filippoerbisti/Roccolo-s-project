@@ -101,7 +101,7 @@ const Navbar = props => {
 
   return (
     <div className='navbar-container'>
-      <Link href="/" className='cursor-pointer'>
+      <Link href={"/"} className='cursor-pointer'>
         <Image 
           src="https://res.cloudinary.com/dl38nyo08/image/upload/v1654615358/Roccolo%20del%20Lago/logo_dyyyvx.jpg"
           width={240} 
