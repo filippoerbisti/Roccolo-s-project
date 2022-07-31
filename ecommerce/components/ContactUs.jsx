@@ -33,7 +33,7 @@ const ContactUs = () => {
       if (email !== '' && newsletter == true) {
         console.log('cio');
         try {
-          const res = await fetch("/api/newsletter", {
+          const res = await fetch("/api/mail", {
             method: "POST",
             body: email,
           });
@@ -85,12 +85,21 @@ const ContactUs = () => {
     }
   }
 
+  const send = async (e) => {
+    const res = await fetch("/api/mail", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    });
+  }
+
   return (
     <div className={styles.mx20}>
       <h1 className={styles.title}>{t('title')}</h1>
       <p className={styles.paragraph}>{t('info')}</p>
       <p className={styles.paragraph}>{t('infoStaff')}</p>
-      <form method="post" onSubmit={sendEmail} className={styles.mx60aic}>
+      <form method="post" onSubmit={send} className={styles.mx60aic}>
         <div className={styles.center}>
           <div className={styles.row}>
             <div className={styles.col}>
@@ -217,7 +226,7 @@ const ContactUs = () => {
             ></div> 
 
             <div className={styles.btnContainer}>
-              <button type="submit" onClick={(e)=>{sendEmail(e)}} className={styles.btn}>{t('button')}</button>
+              <button type="submit" onClick={(e)=>{send(e)}} className={styles.btn}>{t('button')}</button>
             </div>
           </div>
         </div>

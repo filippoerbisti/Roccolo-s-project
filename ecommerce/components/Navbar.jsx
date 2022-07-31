@@ -112,11 +112,11 @@ const Navbar = props => {
         />
       </Link>
 
-      <Menu styles={ style } right >
+      {/* <Menu styles={ style } right >
         <a id="home" className="menu-item" href="/">Home</a>
         <a id="about" className="menu-item" href="/about">About</a>
         <a id="contact" className="menu-item" href="/contact">Contact</a>
-      </Menu>
+      </Menu> */}
 
       <ul className={styles.menu}>
         <li>
