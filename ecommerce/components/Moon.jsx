@@ -29,7 +29,7 @@ const Moon = () => {
 
             <div className={styles.card}>
                 <div className={styles.imgBox}>
-                    <Image className={styles.img} src={img} objectFit='contain' width={100} height={500} alt="" />
+                    <Image src={img} objectFit='contain' width={100} height={500} alt="" />
                 </div>
                 <div className={styles.contentBox}>
                     <h2 className={styles.h2}>roccolo del lago</h2>
