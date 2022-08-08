@@ -13,8 +13,6 @@ Check:
 > <a href="https://www.sanity.io/">SANITY</a>
 > 
 > <a href="https://stripe.com/it">STRIPE</a>
-> 
-> <a href="https://dashboard.emailjs.com">EMAILJS</a>
  
 
 ## DEMAND
