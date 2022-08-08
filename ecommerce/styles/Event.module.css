@@ -90,7 +90,7 @@
 
 .footerTastingButton {
     margin: 10px 15px 0 15px;
-    padding: 10px 12px;
+    padding: 15px;
     border-radius: 50%;
     border: none;
     font-size: 20px;
@@ -101,6 +101,10 @@
     cursor: pointer;
     transform: scale(1, 1);
     transition: transform 0.5s ease;
+}
+
+.footerTastingButton:nth-child(1) {
+    padding: 15px 13px;
 }
 
 .footerTastingButton:hover {
@@ -121,9 +125,13 @@
     .left,
     .right {
         width: 100%;
-        border: none;
         padding: 0;
     } 
+
+    .left {
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
 
     .title {
         font-size: 28px;
