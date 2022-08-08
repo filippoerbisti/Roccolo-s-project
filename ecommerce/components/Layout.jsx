@@ -9,6 +9,16 @@ import ScrollToTop from './ScrollToTop';
 const Layout = ({ children }) => {
   const { t } = useTranslation('meta');
 
+  if (typeof window !== 'undefined') {
+    // progressbar
+    let progress = document.getElementById('progressbar');
+    let totalHeight = document.body.scrollHeight - window.innerHeight;
+    window.onscroll = function() {
+      let progressHeight = (window.scrollY / totalHeight) * 100;
+      progress.style.height = progressHeight + "%";
+    }
+  }
+
   return (
     <div>
       <Head>
@@ -46,6 +56,8 @@ const Layout = ({ children }) => {
           <Navbar />
         </header>
         <main className='main-container'>
+          <div id='progressbar'></div>
+          <div id='scrollPath'></div>
           <ScrollToTop />
           {children}
         </main>
