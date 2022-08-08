@@ -4,6 +4,7 @@
 ![Palette](https://github.com/filippoerbisti/pr1/blob/master/docs/readme/assets/palette.PNG?raw=true)
 
 Source: [HD Rainbow](https://www.hdrainbow.com/)
+
 <table>
     <tr>
         <th>HEX</th>
@@ -12,55 +13,64 @@ Source: [HD Rainbow](https://www.hdrainbow.com/)
         <th>Example</th>
     </tr>
     <tr>
-        <td>`#b9ac8e`</td>
+        <td>#b9ac8e</td>
         <td>r:185, g:172, b:142</td>
         <td>h:41, s:23, l:64</td>
+        <td>$$\textcolor{#b9ac8e}{\text{Example}}$$</td>
     </tr>
     <tr>
-        <td>`#901427`</td>
+        <td>#901427</td>
         <td>r:144, g:20, b:39</td>
         <td>h:350, s:75, l:32</td>
+        <td>$$\textcolor{#901427}{\text{Example}}$$</td>
     </tr>
     <tr>
-        <td>`#f5f4f1`</td>
+        <td>#f5f4f1</td>
         <td>r:245, g:244, b:241</td>
         <td>h:45, s:16, l:95</td>
+        <td>$$\textcolor{#f5f4f1}{\text{Example}}$$</td>
     </tr>
     <tr>
-        <td>`#1c1c1c`</td>
+        <td>#1c1c1c</td>
         <td>r:28, g:28, b:28</td>
         <td>h:0, s:0, l:10</td>
+        <td>$$\textcolor{#1c1c1c}{\text{Example}}$$</td>
     </tr>
     <tr>
-        <td>`#6bac40`</td>
+        <td>#6bac40</td>
         <td>r:107, g:172, b:64</td>
         <td>h:96, s:45, l:46</td>
+        <td>$$\textcolor{#6bac40}{\text{Example}}$$</td>
     </tr>
     <tr>
-        <td>`#97676b`</td>
+        <td>#97676b</td>
         <td>r:151, g:103, b:107</td>
         <td>h:355, s:18, l:49</td>
+        <td>$$\textcolor{#97676b}{\text{Example}}$$</td>
     </tr>
     <tr>
-        <td>`#7ba05f`</td>
+        <td>#7ba05f</td>
         <td>r:123, g:160, b:95</td>
         <td>h:94, s:25, l:50</td>
+        <td>$$\textcolor{#7ba05f}{\text{Example}}$$</td>
     </tr>
     <tr>
-        <td>`#d4e1bf`</td>
+        <td>#d4e1bf</td>
         <td>r:212, g:225, b:191</td>
         <td>h:82, s:36, l:81</td>
+        <td>$$\textcolor{#d4e1bf}{\text{Example}}$$</td>
     </tr>
     <tr>
-        <td>`#ac4c64`</td>
+        <td>#ac4c64</td>
         <td>r:172, g:76, b:100</td>
         <td>h:345, s:38, l:48</td>
+        <td>$$\textcolor{#ac4c64}{\text{Example}}$$</td>
     </tr>
 </table>
 
-> ATTENTION! Actually we only use white (#fff), black (#000) and red (#892331) + opacity
+> ATTENTION! Actually we only use white (`#fff`), black (`#000`) and red (`#892331`) + opacity
 >
-> To do: choose between "my red" (#892331) and red (#901427)
+> To do: choose between "my red", actually in use (`#892331`) or the other red (`#901427`)
 
 
 ## MAIN STRUMENTS
