@@ -3,15 +3,19 @@ import Link from 'next/link';
 
 import styles from '../styles/Product.module.css';
 import { urlFor } from '../lib/client';
+import { useStateContext } from '../context/StateContext';
 
-const Product = ({ 
-    product: {
-      image,
-      name,
-      slug,
-      price
-    } 
-}) => {
+const Product = ({ product}) => {
+
+  const { image, name, price, slug } = product;
+
+  const { qty, onAdd, setShowCart } = useStateContext();
+
+  const handleBuyNow = () => {
+    onAdd(product, qty);
+    setShowCart(true);
+  }
+  
   return (
     <div>
       <Link 
@@ -21,7 +25,29 @@ const Product = ({
           query: { slug: slug.current }
         }}
       >
-        <div className={styles['product-card']}>
+        <div className={styles.card}>
+          <div className={styles.imgBox}>
+            <img 
+              src={urlFor(image && image[0])} 
+              alt="product_img" 
+              objectfit="cover"
+              className={styles['product-image']}
+            />
+          </div>
+          <div className={styles.contentBox}>
+              <h2 className={styles.h2}>{name}</h2>
+              <div className={styles.priceBox}>
+                  <h3 className={styles.h3}>Price:
+                    <span className={styles.span}> € {price}</span>
+                  </h3>
+              </div>
+              <button className={styles.btn} onClick={handleBuyNow}>Buy Now</button>
+          </div>
+        </div>
+
+
+      {/* Other style for product card (recommended to keep the current style) */}
+        {/* <div className={styles['product-card']}>
           <div className={styles['product-flex']}>
             <img 
               src={urlFor(image && image[0])} 
@@ -34,7 +60,8 @@ const Product = ({
           <p className={styles['product-price']}>
             <span>€ {price}</span>
           </p>
-        </div>
+        </div> */}
+
       </Link>
     </div>
   )
