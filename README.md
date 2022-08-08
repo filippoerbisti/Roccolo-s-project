@@ -12,58 +12,49 @@ Source: [HD Rainbow](https://www.hdrainbow.com/)
         <th>Example</th>
     </tr>
     <tr>
-        <td>#b9ac8e</td>
+        <td>`#b9ac8e`</td>
         <td>r:185, g:172, b:142</td>
         <td>h:41, s:23, l:64</td>
-        <td style="color: #b9ac8e">Example</td>
     </tr>
     <tr>
-        <td>#901427</td>
+        <td>`#901427`</td>
         <td>r:144, g:20, b:39</td>
         <td>h:350, s:75, l:32</td>
-        <td style="color: #901427">Example</td>
     </tr>
     <tr>
-        <td>#f5f4f1</td>
+        <td>`#f5f4f1`</td>
         <td>r:245, g:244, b:241</td>
         <td>h:45, s:16, l:95</td>
-        <td style="color: #f5f4f1">Example</td>
     </tr>
     <tr>
-        <td>#1c1c1c</td>
+        <td>`#1c1c1c`</td>
         <td>r:28, g:28, b:28</td>
         <td>h:0, s:0, l:10</td>
-        <td style="color: #1c1c1c">Example</td>
     </tr>
     <tr>
-        <td>#6bac40</td>
+        <td>`#6bac40`</td>
         <td>r:107, g:172, b:64</td>
         <td>h:96, s:45, l:46</td>
-        <td style="color: #6bac40">Example</td>
     </tr>
     <tr>
-        <td>#97676b</td>
+        <td>`#97676b`</td>
         <td>r:151, g:103, b:107</td>
         <td>h:355, s:18, l:49</td>
-        <td style="color: #97676b">Example</td>
     </tr>
     <tr>
-        <td>#7ba05f</td>
+        <td>`#7ba05f`</td>
         <td>r:123, g:160, b:95</td>
         <td>h:94, s:25, l:50</td>
-        <td style="color: #7ba05f">Example</td>
     </tr>
     <tr>
-        <td>#d4e1bf</td>
+        <td>`#d4e1bf`</td>
         <td>r:212, g:225, b:191</td>
         <td>h:82, s:36, l:81</td>
-        <td style="color: #d4e1bf">Example</td>
     </tr>
     <tr>
-        <td>#ac4c64</td>
+        <td>`#ac4c64`</td>
         <td>r:172, g:76, b:100</td>
         <td>h:345, s:38, l:48</td>
-        <td><p style="color: #ac4c64">Example</p></td>
     </tr>
 </table>
 
