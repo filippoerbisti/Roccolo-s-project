@@ -51,7 +51,7 @@ const Cart = () => {
           <div className='empty-cart'>
             <AiOutlineShopping size={150} />
             <h3>{t('shopBagEmpty')}</h3>
-            <Link href={"/"}>
+            <Link href={"/wine"}>
               <button
                 type='button'
                 onClick={() => setShowCart(false)}
