@@ -19,7 +19,6 @@
     "axios": "^0.27.2",
     "canvas-confetti": "^1.5.1",
     "country-flag-icons": "^1.5.5",
-    "device-detector-js": "^3.0.3",
     "emailjs": "^4.0.0",
     "lodash.shuffle": "^4.2.0",
     "next": "12.1.6",
