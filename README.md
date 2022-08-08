@@ -63,11 +63,12 @@ Source: [HD Rainbow](https://www.hdrainbow.com/)
         <td>#ac4c64</td>
         <td>r:172, g:76, b:100</td>
         <td>h:345, s:38, l:48</td>
-        <td style="color: #ac4c64">Example</td>
+        <td><p style="color: #ac4c64">Example</p></td>
     </tr>
 </table>
 
 > ATTENTION! Actually we only use white (#fff), black (#000) and red (#892331) + opacity
+>
 > To do: choose between "my red" (#892331) and red (#901427)
 
 
