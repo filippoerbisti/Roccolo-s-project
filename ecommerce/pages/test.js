@@ -3,7 +3,7 @@ import Moon from '../components/Moon';
 
 import styles from '../styles/Moon.module.css';
 
-const Event = () => {
+const Test = () => {
   return (
     <div className={styles.mx20}>
       <Moon />
@@ -11,4 +11,4 @@ const Event = () => {
   )
 }
 
-export default Event
+export default Test
