@@ -83,12 +83,12 @@ const Tasting = () => {
         <div className={styles.footerTastingBtnCont}>
           <button className={styles.footerTastingButton}>
             <a href="mailto:info@roccolodellago.it" target="_blank">
-              <i className="fa-solid fa-envelope"></i>
+              <i className="fa-solid fa-envelope fa-xl"></i>
             </a>
           </button>
           <button className={styles.footerTastingButton}>
             <a href="https://wa.me/3482359226?text=Salve%20sarei%20interessato%20a">
-              <i className="fa-brands fa-whatsapp"></i>
+              <i className="fa-brands fa-whatsapp fa-xl"></i>
             </a>
           </button>
         </div>
