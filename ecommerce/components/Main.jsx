@@ -49,7 +49,9 @@ const Main = () => {
 
   return (
     <div className={styles.mx20}>
-      {/* <div className={styles.slider}>
+      <BackImage />
+
+      <div className={styles.slider}>
         <Slider 
           imageList={images} 
           width={1200} 
@@ -61,9 +63,8 @@ const Main = () => {
           autoPlayInterval={5000}
           bgColor="white"
         />
-      </div> */}
+      </div>
 
-      <BackImage />
 
       <div className={styles.btnContainer}>
         <Link href='/tour'>
