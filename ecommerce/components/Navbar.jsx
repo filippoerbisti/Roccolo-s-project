@@ -1,19 +1,19 @@
 import React, { useState, useEffect }  from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { AiOutlineShopping } from 'react-icons/ai';
+import { AiOutlineShopping, AiOutlineMenu } from 'react-icons/ai';
 import useTranslation from 'next-translate/useTranslation';
 import { IT, GB, FR, DE } from 'country-flag-icons/react/3x2';
 import { useRouter } from 'next/router';
 
 import styles from '../styles/Navbar.module.css';
-import { Cart } from './';
+import { Cart, HamburgerMenu } from './';
 import { useStateContext } from '../context/StateContext';
 
 const Navbar = props => {
   const { t } = useTranslation('common');
 
-  const currentRoute = useRouter().route;
+  const currentRoute = useRouter().asPath;
 
   const { showCart, setShowCart, showMenu, setShowMenu, totalQuantities } = useStateContext();
 
@@ -114,15 +114,15 @@ const Navbar = props => {
 
         {showCart && <Cart />}
 
-        {/* <button 
+        <button 
           type='button' 
           className='cart-icon'
-          onClick={() => setShowMenu(true)}
+          onClick={() => setShowMenu(!showMenu)}
         >
-          <FiMenu />
+          <AiOutlineMenu />
         </button>
 
-        {showMenu && <Cart />} */}
+        {showMenu && <HamburgerMenu />}
 
       </div>
 
