@@ -1,0 +1,88 @@
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.navigation ul {
+    position: relative;
+}
+
+.navigation ul li {
+    text-align: center;
+    list-style: none;
+}
+
+.navigation ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 3em;
+    padding: 5px 20px;
+    display: inline-flex;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.navigation ul:hover li a {
+    color: #0002;
+}
+
+.navigation ul li:hover a {
+    color: #000;
+    background: #fff;
+}
+
+.navigation ul li a:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 500px;
+    transition: letter-spacing 0.5s, left 0.5s;
+}
+
+.navigation ul li a:hover:before {
+    content: attr(data-text);
+    opacity: 1;
+    left: 50%;
+    letter-spacing: 10px;
+    width: 1800px;
+    height: 1800px;
+}
+
+.navigation ul li:nth-child(6n+1) a:before {
+    background: #f5f4f1;
+}
+
+.navigation ul li:nth-child(6n+2) a:before {
+    background: #b9ac8e;
+}
+
+.navigation ul li:nth-child(6n+3) a:before {
+    background: #6bac40;
+}
+
+.navigation ul li:nth-child(6n+4) a:before {
+    background: #97676b;
+}
+
+.navigation ul li:nth-child(6n+5) a:before {
+    background: #7ba05f;
+}
+
+.navigation ul li:nth-child(6n+6) a:before {
+    background: #d4e1bf;
+}
