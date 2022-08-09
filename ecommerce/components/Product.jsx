@@ -25,7 +25,7 @@ const Product = ({ product}) => {
           query: { slug: slug.current }
         }}
       >
-        <div className={styles.card}>
+        <div className={styles.card} data-text={name}>
           <div className={styles.imgBox}>
             <img 
               src={urlFor(image && image[0])} 

@@ -60,7 +60,7 @@
   }
   
   .card:after {
-    content: 'WINE';
+    content: attr(data-text);
     position: absolute;
     top: 3%;
     left: 3%;
