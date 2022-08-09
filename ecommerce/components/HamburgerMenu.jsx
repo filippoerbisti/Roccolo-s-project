@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 
 import styles from '../styles/Hamburger.module.css';
 
-const HamburgerMenu = props => {
+const HamburgerMenu = () => {
   const { t } = useTranslation('common');
 
   const currentRoute = useRouter().route;
