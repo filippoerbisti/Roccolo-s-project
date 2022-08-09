@@ -1,0 +1,13 @@
+.mainBackImage {
+    margin: 0;
+    padding: 0;
+    height: 2600px;
+}
+
+.mainBackImage section {
+    position: relative;
+    width: 100%;
+    height: 1600px;
+    background: url(../public/background.jpg);
+    background-attachment: fixed;
+}
