@@ -16,3 +16,7 @@ export {default as PrivacyPolicyCookie } from './PrivacyPolicyCookie';
 
 export {default as HeroBanner } from './old/HeroBanner';
 export {default as FooterBanner } from './old/FooterBanner';
+
+
+export {default as Moon } from './Moon';
+export {default as BackImage } from './BackImage';
