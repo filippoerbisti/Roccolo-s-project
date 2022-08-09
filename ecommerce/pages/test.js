@@ -1,4 +1,5 @@
 import React from 'react';
+import BackImage from '../components/BackImage';
 import HamburgerMenu from '../components/HamburgerMenu';
 import Moon from '../components/Moon';
 
@@ -9,6 +10,7 @@ const Test = () => {
     <div className={styles.mx20}>
       <Moon />
       <HamburgerMenu />
+      <BackImage />
     </div>
   )
 }
