@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { AiOutlineShopping } from 'react-icons/ai';
 import useTranslation from 'next-translate/useTranslation';
 import { IT, GB, FR, DE } from 'country-flag-icons/react/3x2';
+import { useRouter } from 'next/router';
 import { slide as Menu } from 'react-burger-menu';
 
 import styles from '../styles/Navbar.module.css';
@@ -13,10 +14,11 @@ import { useStateContext } from '../context/StateContext';
 const Navbar = props => {
   const { t } = useTranslation('common');
 
+  const currentRoute = useRouter().route;
+
   const { showCart, setShowCart, showMenu, setShowMenu, totalQuantities } = useStateContext();
 
   const [activeTabs, setActiveTabs] = useState(props.name);
-
   useEffect(() => {
     switch (activeTabs) {
       case 'home':
