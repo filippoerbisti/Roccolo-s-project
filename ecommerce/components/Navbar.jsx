@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { AiOutlineShopping } from 'react-icons/ai';
 import useTranslation from 'next-translate/useTranslation';
 import { IT, GB, FR, DE } from 'country-flag-icons/react/3x2';
-import { useRouter } from 'next/router';
 import { slide as Menu } from 'react-burger-menu';
 
 import styles from '../styles/Navbar.module.css';
@@ -13,17 +12,6 @@ import { useStateContext } from '../context/StateContext';
 
 const Navbar = props => {
   const { t } = useTranslation('common');
-
-  const router = useRouter();
-  const currentRoute = router.route;
-
-  // const current = () => {
-  //   if (router.route === '/product') {
-  //     currentRoute = 
-  //   }
-  // }
-
-  // console.log(currentRoute);
 
   const { showCart, setShowCart, showMenu, setShowMenu, totalQuantities } = useStateContext();
 
