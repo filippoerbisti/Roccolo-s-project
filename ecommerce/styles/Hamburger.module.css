@@ -1,13 +1,16 @@
 .navigation {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     overflow: hidden;
+    z-index: 99999;
 }
 
 .navigation ul {
     position: relative;
+    margin-top: 20px;
 }
 
 .navigation ul li {
@@ -18,7 +21,7 @@
 .navigation ul li a {
     color: #333;
     text-decoration: none;
-    font-size: 3em;
+    font-size: 2em;
     padding: 5px 20px;
     display: inline-flex;
     font-weight: 500;
@@ -85,4 +88,18 @@
 
 .navigation ul li:nth-child(6n+6) a:before {
     background: #d4e1bf;
+}
+
+.langContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 30px;
+}
+
+.langIcons {
+    width: 28px;
+    height: 28px;
+    margin: 20px 10px;
+    cursor: pointer;
 }
