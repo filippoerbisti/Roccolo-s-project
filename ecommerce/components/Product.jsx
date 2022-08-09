@@ -35,10 +35,10 @@ const Product = ({ product}) => {
             />
           </div>
           <div className={styles.contentBox}>
-              <h2 className={styles.h2}>{name}</h2>
+              <h2>{name}</h2>
               <div className={styles.priceBox}>
-                  <h3 className={styles.h3}>Price:
-                    <span className={styles.span}> € {price}</span>
+                  <h3>Price:
+                    <span> € {price}</span>
                   </h3>
               </div>
               <button className={styles.btn} onClick={handleBuyNow}>Buy Now</button>
