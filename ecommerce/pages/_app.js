@@ -1,17 +1,32 @@
-import React from 'react'; // To import to use .jsx
+import React, { useEffect } from 'react'; // To import to use .jsx
 import { Toaster } from 'react-hot-toast';
 import Script from 'next/script';
 import Link from "next/link";
 import useTranslation from 'next-translate/useTranslation';
 import CookieConsent, { Cookies, getCookieConsentValue  } from "react-cookie-consent"; // Cookies
+import { useRouter } from 'next/router';
 
 import { Layout } from '../components';
 import '../styles/globals.css';
 import { StateContext } from '../context/StateContext';
+import * as gtag from '../lib/gtag';
 
 function MyApp({ Component, pageProps }) {
 
   const { t } = useTranslation('common');
+
+  const router = useRouter();
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageview(url);
+    }
+    router.events.on('routeChangeComplete', handleRouteChange)
+    router.events.on('hashChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+      router.events.off('hashChangeComplete', handleRouteChange)
+    }
+  }, [router.events]);
 
   const cookieName = "RoccoloCookieConsent";
   const isSetCookie = getCookieConsentValue(cookieName);
@@ -19,6 +34,25 @@ function MyApp({ Component, pageProps }) {
   return (
     <StateContext>
       <Layout>
+        {/* Global Site Tag (gtag.js) - Google Analytics */}
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+        />
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${gtag.GA_TRACKING_ID}', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
         <Toaster />
         <Component {...pageProps} />
 
@@ -68,23 +102,6 @@ function MyApp({ Component, pageProps }) {
           </CookieConsent>
         )}
       </Layout>
-
-      {/* Google Analytics */}
-      <Script
-        strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-      />
-
-      <Script id="google-analytics" strategy="lazyOnload">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-            page_path: window.location.pathname,
-          });
-        `}
-      </Script>
 
       {/* Font Awesome */}
       <Script src="https://kit.fontawesome.com/60aa6b5946.js" crossOrigin="anonymous"></Script>
