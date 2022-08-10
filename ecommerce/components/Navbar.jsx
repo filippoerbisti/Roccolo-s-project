@@ -1,7 +1,7 @@
 import React, { useState, useEffect }  from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { AiOutlineShopping, AiOutlineMenu } from 'react-icons/ai';
+import { AiOutlineShopping, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import useTranslation from 'next-translate/useTranslation';
 import { IT, GB, FR, DE } from 'country-flag-icons/react/3x2';
 import { useRouter } from 'next/router';
@@ -103,24 +103,38 @@ const Navbar = props => {
           </Link>
         </div>
 
-        <button 
-          type='button' 
-          className='cart-icon'
-          onClick={() => setShowCart(true)}
-        >
-          <AiOutlineShopping />
-          <span className='cart-item-qty'>{totalQuantities}</span>
-        </button>
+        {totalQuantities > 0 &&
+          <button 
+            type='button' 
+            className='cart-icon'
+            onClick={() => setShowCart(true)}
+          >
+            <AiOutlineShopping />
+            <span className='cart-item-qty'><span>{totalQuantities}</span></span>
+          </button>
+        }
 
         {showCart && <Cart />}
 
-        <button 
-          type='button' 
-          className='cart-icon'
-          onClick={() => setShowMenu(!showMenu)}
-        >
-          <AiOutlineMenu />
-        </button>
+        {!showMenu && 
+          <button 
+            type='button' 
+            className={styles.menuHamburgerIcon}
+            onClick={() => setShowMenu(!showMenu)}
+          >
+            <AiOutlineMenu />
+          </button>
+        }
+
+        {showMenu && 
+          <button 
+            type='button' 
+            className={styles.menuHamburgerIcon}
+            onClick={() => setShowMenu(!showMenu)}
+          >
+            <AiOutlineClose />
+          </button>
+        }
 
         {showMenu && <HamburgerMenu />}
 
