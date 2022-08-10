@@ -63,6 +63,9 @@
     position: fixed;
     right: 30px;
     display: flex;
+    background: #fff;
+    border-radius: 50%;
+    padding: 5px;
 }
 
 @media only screen and (min-width: 1200px) {
