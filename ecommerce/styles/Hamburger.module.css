@@ -2,30 +2,38 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     min-height: 100vh;
     overflow: hidden;
     z-index: 99999;
+    transition: all 1s ease-in-out;
+    width: 100vw;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 30px;
 }
 
 .navigation ul {
     position: relative;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .navigation ul li {
     text-align: center;
     list-style: none;
+    padding: 5px 0;
 }
 
 .navigation ul li a {
     color: #333;
     text-decoration: none;
     font-size: 2em;
-    padding: 5px 20px;
+    padding: 5px 0;
     display: inline-flex;
     font-weight: 500;
     transition: 0.5s;
+    letter-spacing: 2px;
 }
 
 .navigation ul:hover li a {
@@ -47,7 +55,7 @@
     align-items: center;
     justify-content: center;
     font-size: 1.5em;
-    color: rgba(0, 0, 0, 0.1);
+    color: #892331;
     border-radius: 50%;
     z-index: -1;
     opacity: 0;
@@ -59,7 +67,7 @@
 
 .navigation ul li a:hover:before {
     content: attr(data-text);
-    opacity: 1;
+    opacity: 0.3;
     left: 50%;
     letter-spacing: 10px;
     width: 1800px;
@@ -94,12 +102,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 30px;
+    margin: 20px 30px;
 }
 
 .langIcons {
-    width: 28px;
-    height: 28px;
-    margin: 20px 10px;
+    width: 30px;
+    height: 30px;
+    margin: 20px;
     cursor: pointer;
 }
