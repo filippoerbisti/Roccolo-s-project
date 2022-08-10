@@ -11,7 +11,7 @@ import * as gtag from '../lib/gtag';
 const ContactUs = () => {
   const { t } = useTranslation('contact');
 
-  const recaptchaSiteKey = '6LeMZpMgAAAAAJ5-lSPvpnxjY12C1GzG1desXnaW';
+  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
