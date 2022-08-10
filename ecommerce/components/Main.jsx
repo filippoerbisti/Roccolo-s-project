@@ -49,7 +49,7 @@ const Main = () => {
 
   return (
     <div className={styles.mx20}>
-      <BackImage />
+      {/* <BackImage /> */}
 
       <div className={styles.slider}>
         <Slider 
