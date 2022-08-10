@@ -86,6 +86,8 @@ Check:
 > <a href="https://www.sanity.io/">SANITY</a>
 > 
 > <a href="https://stripe.com/it">STRIPE</a>
+> 
+> <a href="https://paypal.com/it">PAYPAL</a>
  
 
 ## DEMAND
@@ -148,6 +150,8 @@ with [Sanity.io](https://sanity.io) and [Vercel](https://vercel.com/) for Deploy
 
 Custom use of React-360
 
+*In progress...*
+
 ----------------------------------------------------------------
 
 ## PAYMENT METHODS
@@ -164,14 +168,14 @@ Software, that allows individuals and companies to send and receive payments via
 Receipt template
 ![Receipt template](https://github.com/filippoerbisti/pr1/blob/master/docs/readme/assets/model-receive.PNG?raw=true)
 
-### PayPal
+### PayPal *In progress...*
 
 Classic, basic Payment with PayPal, one of the largest payment methods
 > <a href="https://developer.paypal.com/home">PayPal Developer</a>
 
 ----------------------------------------------------------------
 
-## CONTACT US SERVICE
+## CONTACT US SERVICE *In progress...*
 
 > <a href="https://emailjs.com/">EmailJs</a>
 
@@ -182,6 +186,14 @@ Email Templates: Template - Roccolo del Lago
 
 When user contact us, we receive:
 ![Template Email](https://github.com/filippoerbisti/pr1/blob/master/docs/readme/assets/template_email.png?raw=true)
+
+----------------------------------------------------------------
+
+## GOOGLE ANALYTICS *In progress...*
+
+> Use of cookies
+
+!!! To be integrated with Google ADS !!!
 
 ----------------------------------------------------------------
 
