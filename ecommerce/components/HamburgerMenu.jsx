@@ -17,8 +17,8 @@ const HamburgerMenu = () => {
       <Link href={"/"} className='cursor-pointer'>
         <Image 
           src="https://res.cloudinary.com/dl38nyo08/image/upload/v1654615358/Roccolo%20del%20Lago/logo_dyyyvx.jpg"
-          width={240} 
-          height={100} 
+          width={360} 
+          height={150} 
           objectFit="cover"
           className='cursor-pointer'
         />
