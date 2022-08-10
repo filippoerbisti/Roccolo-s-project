@@ -64,7 +64,8 @@ span.text-red {
   transition: transform .4s ease;
   border: none;
   background-color: transparent;
-  margin: 0 50px;
+  margin-right: 50px;
+  margin-left: 10px;
   display: flex;
 }
 
