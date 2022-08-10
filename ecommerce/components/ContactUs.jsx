@@ -6,6 +6,7 @@ import * as emailjs from '@emailjs/browser';
 import { toast } from 'react-hot-toast';
 
 import styles from '../styles/ContactUs.module.css';
+import * as gtag from '../lib/gtag';
 
 const ContactUs = () => {
   const { t } = useTranslation('contact');
@@ -22,6 +23,7 @@ const ContactUs = () => {
 
   const tOption = t('contact:objectEmail', { count: 150 }, { returnObjects: true });
 
+  // TODO invio email
   const sendEmail = async (e) => {
     e.preventDefault();
 
@@ -86,12 +88,14 @@ const ContactUs = () => {
   }
 
   const send = async (e) => {
-    const res = await fetch("/api/mail", {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-    });
+    e.preventDefault()
+
+    gtag.event({
+      action: 'submit_form',
+      category: 'Contact',
+      label: email,
+    })
+    // console.log(gtag)
   }
 
   return (
