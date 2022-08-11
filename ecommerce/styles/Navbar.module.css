@@ -65,8 +65,6 @@
     transition: transform .4s ease;
     border: none;
     background-color: transparent;
-    position: fixed;
-    right: 30px;
     display: flex;
 }
 
