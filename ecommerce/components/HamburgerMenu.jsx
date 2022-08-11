@@ -104,19 +104,20 @@ const HamburgerMenu = () => {
         </li>
       </ul>
       <div className={styles.langContainer}>
-          <Link href={currentRoute} locale="it">
-            <IT title="Italiano" className={styles.langIcons}/>
-          </Link>
-          <Link href={currentRoute} locale="en">
-            <GB title="English" className={styles.langIcons}/>
-          </Link>
-          <Link href={currentRoute} locale="de">
-            <DE title="Deutsch" className={styles.langIcons}/>
-          </Link>
-          <Link href={currentRoute} locale="fr">
-            <FR title="Français" className={styles.langIcons}/>
-          </Link>
-        </div>
+        <Link href={currentRoute} locale="it">
+          <IT title="Italiano" className={styles.langIcons}/>
+        </Link>
+        <Link href={currentRoute} locale="en">
+          <GB title="English" className={styles.langIcons}/>
+        </Link>
+        <Link href={currentRoute} locale="de">
+          <DE title="Deutsch" className={styles.langIcons}/>
+        </Link>
+        <Link href={currentRoute} locale="fr">
+          <FR title="Français" className={styles.langIcons}/>
+        </Link>
+      </div>
+      <p className={styles.credit}>{t('poweredBy')} <a href="https://filippoerbisti.netlify.app" target="_blank" className={styles.poweredBy}>Filippo Erbisti</a></p>
     </div>
   )
 }
