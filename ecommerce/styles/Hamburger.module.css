@@ -114,10 +114,10 @@
 
 .credit {
     text-align: center;
+    font-size: smaller;
     margin-bottom: 10px;
-    border-bottom: 1px solid transparent;
 }
 
-.credit a:hover {
+.poweredBy {
     border-bottom: 1px solid #892331;
 }
