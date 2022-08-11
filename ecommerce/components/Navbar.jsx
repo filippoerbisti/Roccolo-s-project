@@ -1,13 +1,13 @@
 import React, { useState, useEffect }  from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { AiOutlineShopping, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { AiOutlineShopping } from 'react-icons/ai';
 import useTranslation from 'next-translate/useTranslation';
 import { IT, GB, FR, DE } from 'country-flag-icons/react/3x2';
 import { useRouter } from 'next/router';
 
 import styles from '../styles/Navbar.module.css';
-import { Cart, HamburgerMenu } from './';
+import { Cart, HamburgerMenu, HamburgerIcon } from './';
 import { useStateContext } from '../context/StateContext';
 
 const Navbar = props => {
@@ -15,7 +15,7 @@ const Navbar = props => {
 
   const currentRoute = useRouter().asPath;
 
-  const { showCart, setShowCart, showMenu, setShowMenu, totalQuantities } = useStateContext();
+  const { showCart, setShowCart, showMenu, changeIconHamburgerMenu, setChangeIconHamburgerMenu, totalQuantities } = useStateContext();
 
   const [activeTabs, setActiveTabs] = useState(props.name);
   useEffect(() => {
@@ -116,27 +116,13 @@ const Navbar = props => {
 
         {showCart && <Cart />}
 
-        {!showMenu && 
-          <button 
-            type='button' 
-            className={styles.menuHamburgerIcon}
-            onClick={() => setShowMenu(!showMenu)}
-          >
-            <AiOutlineMenu />
-          </button>
-        }
-
-        {showMenu && 
-          <button 
-            type='button' 
-            className={styles.menuHamburgerIcon}
-            onClick={() => setShowMenu(!showMenu)}
-          >
-            <AiOutlineClose />
-          </button>
-        }
-
         {showMenu && <HamburgerMenu />}
+
+        <div className={styles.menuHamburgerIcon}>
+          <HamburgerIcon onClick={() => {
+            setChangeIconHamburgerMenu(!changeIconHamburgerMenu)
+          }}/>
+        </div>
 
       </div>
 
