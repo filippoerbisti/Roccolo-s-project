@@ -9,6 +9,7 @@
 
 .menu li {
     display: flex;
+    align-items: center;
     list-style: none;
     margin: 0 20px;
     transition: 0.5s;
@@ -51,6 +52,10 @@
     cursor: pointer;
 }
 
+.langIcons:last-child {
+    margin-right: 50px;
+}
+
 .menuHamburgerIcon {
     z-index: 999999999999;
     font-size: 30px;
@@ -63,9 +68,6 @@
     position: fixed;
     right: 30px;
     display: flex;
-    background: #fff;
-    border-radius: 50%;
-    padding: 5px;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -98,6 +100,10 @@
 
     .menuHamburgerIcon {
         display: none;
+    }
+
+    .langIcons:last-child {
+        margin-right: 20px;
     }
 }
 
