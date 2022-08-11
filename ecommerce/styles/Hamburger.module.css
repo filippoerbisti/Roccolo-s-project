@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 100vh;
     overflow: hidden;
     z-index: 99999;
@@ -11,7 +12,6 @@
     position: fixed;
     top: 0;
     left: 0;
-    padding-top: 30px;
 }
 
 .navigation ul {
@@ -108,6 +108,16 @@
 .langIcons {
     width: 30px;
     height: 30px;
-    margin: 20px;
+    margin: 10px 20px;
     cursor: pointer;
+}
+
+.credit {
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid transparent;
+}
+
+.credit a:hover {
+    border-bottom: 1px solid #892331;
 }
