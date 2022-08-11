@@ -64,13 +64,9 @@ span.text-red {
   transition: transform .4s ease;
   border: none;
   background-color: transparent;
-  margin-right: 50px;
+  margin-right: 100px;
   margin-left: 10px;
   display: flex;
-}
-
-.cart-icon:hover{
-  transform: scale(1.1, 1.1);
 }
 
 .cart-item-qty{
@@ -341,6 +337,12 @@ span.text-red {
   margin-top: 10px;
 }
 
+@media screen and (min-width: 1200px) {
+  .cart-icon {
+    margin-right: 20px;
+  }
+}
+
 /* MEDIA SCREEN MAX 768px */
 
 @media screen and (max-width: 768px) {
@@ -488,6 +490,90 @@ span.text-red {
   text-decoration: underline;
 }
 
+/* Styles Hamburger Menu ICON */
+
+.hamburger-menu {
+  z-index: 99999999;
+}
+.svg,
+.burger,
+.x {
+  height: 80px;
+  position: absolute;
+  width: 80px;
+  color: #892331;
+}
+
+.plate {
+  height: 80px;
+  width: 80px;
+}
+.burger {
+  filter: url(#gooeyness);
+}
+.x {
+  transform: scale(0);
+  transition: transform 400ms;
+}
+.line {
+  fill: none;
+  stroke: black;
+  stroke-width: 6px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transform-origin: 50%;
+  transition: stroke-dasharray 500ms 200ms, stroke-dashoffset 500ms 200ms, transform 500ms 200ms;
+}
+.x .line {
+  stroke-width: 5.5px;
+}
+.active .line {
+  transition: stroke-dasharray 500ms, stroke-dashoffset 500ms, transform 500ms;
+}
+.active .x {
+  transform: scale(1);
+  transition: transform 400ms 350ms;
+}
+.plate5 .line {
+  transition: stroke-dasharray 400ms 100ms, stroke-dashoffset 400ms 100ms, transform 400ms 100ms;
+}
+.plate5 .line1 {
+  stroke-dasharray: 40 40;
+}
+.plate5 .line2 {
+  stroke-dasharray: 21 39;
+}
+.plate5 .line3 {
+  stroke-dasharray: 21 39;
+}
+.plate5 .line4 {
+  stroke-dasharray: 40 40;
+}
+.plate5 .x {
+  transition: transform 400ms 50ms;
+}
+.active.plate5 .line {
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms, transform 400ms;
+}
+.active.plate5 .line1 {
+  stroke-dasharray: 1 40;
+  stroke-dashoffset: -33px;
+}
+.active.plate5 .line2 {
+  stroke-dasharray: 5 39;
+  stroke-dashoffset: -37px;
+}
+.active.plate5 .line3 {
+  stroke-dasharray: 5 39;
+  stroke-dashoffset: -37px;
+}
+.active.plate5 .line4 {
+  stroke-dasharray: 1 40;
+  stroke-dashoffset: -33px;
+}
+.active.plate5 .x {
+  transition: transform 400ms 50ms;
+}
 
 /* 
 #######################################
@@ -608,3 +694,4 @@ REACT360VIEWER + VRBUTTON STYLE
   -webkit-animation: spinner-grow .75s linear infinite;
   animation: spinner-grow .75s linear infinite;
 }
+
