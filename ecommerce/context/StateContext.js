@@ -6,6 +6,7 @@ const Context = createContext();
 export const StateContext = ({ children }) => {
     const [showCart, setShowCart] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
+    const [changeIconHamburgerMenu, setChangeIconHamburgerMenu] = useState(false);
     const [cartItems, setCartItems] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalQuantities, setTotalQuantities] = useState(0);
@@ -83,6 +84,8 @@ export const StateContext = ({ children }) => {
                 setShowCart, 
                 showMenu,
                 setShowMenu,
+                changeIconHamburgerMenu,
+                setChangeIconHamburgerMenu,
                 cartItems,
                 totalPrice,
                 totalQuantities,
