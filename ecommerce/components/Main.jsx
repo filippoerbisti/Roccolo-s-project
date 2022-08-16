@@ -73,14 +73,13 @@ const Main = () => {
           </button>
         </Link>
       </div>
-      <div className={styles.btnContainer}>
+      {/* <div className={styles.btnContainer}>
         <Link href='/wine'>
           <button className={styles.btn} type='button'> 
             {t('wine')}
           </button>
         </Link>
       </div>
-
       <div className={styles.btnContainer}>
         <Link href='/gallery'>
           <button className={styles.btn} type='button'> 
@@ -94,7 +93,7 @@ const Main = () => {
             {t('contact')}
           </button>
         </Link>
-      </div>
+      </div> */}
 
       <hr className={styles.hr} />
 
