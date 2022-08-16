@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import useTranslation from 'next-translate/useTranslation';
 
-import React360Viewer from '../components/React360Viewer';
+import View360 from '../components/View360';
 import styles from '../styles/Tour.module.css'
 
 const Tour = () => {
@@ -23,31 +23,17 @@ const Tour = () => {
             <div className={styles.row}>
                 <div className={styles.colmx20}>
                     <h2 className={styles.title2}>
-                        <Link href="/farm">{t('titleFarm')}</Link>
+                        <Link href="/event">{t('titleFarm')}</Link>
                     </h2>
                     <p className={styles.paragraph}>{t('paragraphFarm')}</p>
-                    <React360Viewer
-                        amount={36}
-                        imagePath="https://scaleflex.cloudimg.io/crop/1920x700/n/https://scaleflex.airstore.io/demo/360-car"
-                        fileName="iris-{index}.jpeg"
-                        spinReverse
-                        // autoplay
-                        buttonClass="light"
-                    />
+                    <View360 className={styles.main360vr} />
                 </div>
                 <div className={styles.colmx20}>
                     <h2 className={styles.title2}>
                         <Link href="/wineshop">{t('titleWineshop')}</Link>
                     </h2>
                     <p className={styles.paragraph}>{t('paragraphWineshop')}</p>
-                    <React360Viewer
-                        amount={36}
-                        imagePath="https://scaleflex.cloudimg.io/crop/1920x700/n/https://scaleflex.airstore.io/demo/360-car"
-                        fileName="iris-{index}.jpeg"
-                        spinReverse
-                        // autoplay
-                        buttonClass="light"
-                    />
+                    <View360 className={styles.main360vr} />
                 </div>
             </div>
         </div>
