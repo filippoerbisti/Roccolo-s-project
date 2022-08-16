@@ -8,6 +8,7 @@ export {default as ScrollToTop } from './ScrollToTop';
 export {default as Footer } from './Footer';
 
 export {default as Product } from './Product';
+export {default as View360 } from './View360';
 export {default as WineShop } from './WineShop';
 export {default as Tasting } from './Tasting';
 export {default as Wedding } from './Wedding';
@@ -21,3 +22,4 @@ export {default as FooterBanner } from './old/FooterBanner';
 
 export {default as Moon } from './Moon';
 export {default as BackImage } from './BackImage';
+
