@@ -24,6 +24,7 @@ const ProductDetails = ({ product, products }) => {
     return (
         <div>
             <div className={styles.container}>
+            <h1>!!! THIS IS A DEMO, Don't Buy Anything !!!</h1>
                 <div className={styles['product-detail-container']}>
                     <div>
                         <div className={styles['product-detail-box']}>

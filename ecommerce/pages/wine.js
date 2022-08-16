@@ -11,6 +11,7 @@ const Wine = ({ products }) => {
     return (
         <div className={styles.mx20}>
             <h1 className={styles.title}>{t('ourWines')}</h1>
+            <p className={styles.title}>!!! THIS IS A DEMO, Don't Buy Anything !!!</p>
 
             <div className={styles['products-container']}>
                     {products?.map((product) => 
