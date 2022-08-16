@@ -12,10 +12,13 @@
     "@babel/core": "^7.18.2",
     "@emailjs/browser": "^3.6.2",
     "@madzadev/image-slider": "^1.0.9",
+    "@react-three/drei": "^9.22.4",
+    "@react-three/fiber": "^8.3.1",
     "@sanity/client": "^3.3.1",
     "@sanity/image-url": "^1.0.1",
     "@sendgrid/mail": "^7.7.0",
     "@stripe/stripe-js": "^1.31.0",
+    "antd": "^4.22.5",
     "axios": "^0.27.2",
     "canvas-confetti": "^1.5.1",
     "country-flag-icons": "^1.5.5",
@@ -36,7 +39,8 @@
     "react-icons": "^4.4.0",
     "react-spring": "^9.4.5",
     "react-use-measure": "^2.1.1",
-    "stripe": "^9.5.0"
+    "stripe": "^9.5.0",
+    "three": "^0.143.0"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.17.12",
