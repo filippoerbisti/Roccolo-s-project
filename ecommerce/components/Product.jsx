@@ -19,7 +19,6 @@ const Product = ({ product}) => {
   return (
     <div>
       <Link 
-        // href={`/product/${slug.current}`}
         href={{
           pathname: '/product/[slug]',
           query: { slug: slug.current }
