@@ -7,7 +7,7 @@ import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../styles/Main.module.css';
 import dataMainImgSlider from '../store/dataMainImgSlider';
-import BackImage from './BackImage';
+import Look from './Look';
 
 const ReadMore = ({ children }) => {
   const text = children;
@@ -49,9 +49,8 @@ const Main = () => {
 
   return (
     <div className={styles.mx20}>
-      {/* <BackImage /> */}
 
-      <div className={styles.slider}>
+      {/* <div className={styles.slider}>
         <Slider 
           imageList={images} 
           width={1200} 
@@ -62,9 +61,12 @@ const Main = () => {
           autoPlay={true}
           autoPlayInterval={5000}
           bgColor="white"
-        />
+        /> 
+      </div> */}
+      
+      <div className={styles.posrel}>
+        <Look />
       </div>
-
 
       <div className={styles.btnContainer}>
         <Link href='/tour'>
