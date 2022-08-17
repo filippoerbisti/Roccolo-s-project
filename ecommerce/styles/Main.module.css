@@ -2,6 +2,10 @@
     margin: 0 20px;
 }
 
+.posrel {
+    position: relative;
+}
+
 .btnContainer {
     width: 100%;
     display: flex;
