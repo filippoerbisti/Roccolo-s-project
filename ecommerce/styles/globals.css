@@ -43,6 +43,7 @@ a {
   margin: 10px 25px;
   position: relative;
   background: #fff;
+  height: 100px;
 }
 
 span.text-red {
@@ -574,4 +575,3 @@ span.text-red {
 .active.plate5 .x {
   transition: transform 400ms 50ms;
 }
-
