@@ -3,6 +3,7 @@ export {default as Navbar } from './Navbar';
 export {default as HamburgerMenu } from './HamburgerMenu';
 export {default as HamburgerIcon } from './HamburgerIcon';
 export {default as Main} from './Main';
+export {default as Look } from './Look';
 export {default as Cart } from './Cart';
 export {default as ScrollToTop } from './ScrollToTop';
 export {default as Footer } from './Footer';
@@ -18,8 +19,3 @@ export {default as PrivacyPolicyCookie } from './PrivacyPolicyCookie';
 
 export {default as HeroBanner } from './old/HeroBanner';
 export {default as FooterBanner } from './old/FooterBanner';
-
-
-export {default as Moon } from './Moon';
-export {default as BackImage } from './BackImage';
-
