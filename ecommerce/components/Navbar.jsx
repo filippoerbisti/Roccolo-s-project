@@ -46,7 +46,7 @@ const Navbar = props => {
           src="https://res.cloudinary.com/dl38nyo08/image/upload/v1654615358/Roccolo%20del%20Lago/logo_dyyyvx.jpg"
           width={240} 
           height={100} 
-          objectFit="cover"
+          objectFit="contain"
           className='cursor-pointer'
           onClick={() => setActiveTabs('')}
         />
