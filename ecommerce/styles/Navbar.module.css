@@ -97,10 +97,6 @@
         color: #892331;
     }
 
-    .active:hover {
-        cursor: url(../public/cursor_wine.gif), auto;
-    }
-
     .menuHamburgerIcon {
         display: none;
     }
