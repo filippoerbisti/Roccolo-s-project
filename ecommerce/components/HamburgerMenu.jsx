@@ -18,7 +18,7 @@ const HamburgerMenu = () => {
     <div className={styles.navigation}>
       <Link href={"/"} className='cursor-pointer'>
         <Image 
-          src="https://res.cloudinary.com/dl38nyo08/image/upload/v1654615358/Roccolo%20del%20Lago/logo_dyyyvx.jpg"
+          src="https://res.cloudinary.com/dl38nyo08/image/upload/v1660806591/Roccolo%20del%20Lago/logo_iidjdd.png"
           width={300} 
           height={120} 
           objectFit="contain"
