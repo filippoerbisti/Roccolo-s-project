@@ -108,8 +108,14 @@ const Cart = () => {
                 className='btn'
                 onClick={handleCheckout}
               >
-                {/* TRADUZIONE!!!!!!!!!!!!!! */}
-                Pay with Stripe
+                {t('payWith')} Stripe
+              </button>
+              <button 
+                type='button' 
+                className='btn'
+                onClick={handleCheckout}
+              >
+                {t('payWith')} Paypal
               </button>
             </div>
           </div>
