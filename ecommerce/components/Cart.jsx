@@ -47,6 +47,7 @@ const Cart = () => {
           <span className='cart-num-items'>({totalQuantities} {totalQuantities === 1 ? `${t('item')}` : `${t('items')}`})</span>
         </button>
 
+        {/* This part doesn't appear, in our case we don't show cart if product in its is 0 */}
         {cartItems.length < 1 && (
           <div className='empty-cart'>
             <AiOutlineShopping size={150} />
@@ -70,21 +71,19 @@ const Cart = () => {
               <div className='item-desc'>
                 <div className='flex top'>
                   <h5>{item.name}</h5>
-                  <h4>€{item.price}</h4>
+                  <h4>{item.price} €</h4>
                 </div>
                 <div className='flex bottom'>
-                  <div>
-                    <p className='quantity-desc'>
+                    <div className='quantity-desc'>
                       <span className='minus' onClick={() => toggleCartItemQuantity(item._id, 'dec')}>
                           <AiOutlineMinus />
                       </span>
-                      <span className='num' onClick="">
+                      <span className='num'>
                           {item.quantity}
                       </span>
                       <span className='plus' onClick={() => toggleCartItemQuantity(item._id, 'inc')}>
                           <AiOutlinePlus />
                       </span>
-                    </p>
                   </div>
                   <button
                     type='button'
@@ -101,8 +100,7 @@ const Cart = () => {
         {cartItems.length >= 1 && (
           <div className='cart-bottom'>
             <div className='total'>
-              <h3>Subtotal:</h3>
-              <h3>€{totalPrice}</h3>
+              <h3>{t('total')}: {totalPrice} €</h3>
             </div>
             <div className='btn-container'>
               <button 
@@ -110,6 +108,7 @@ const Cart = () => {
                 className='btn'
                 onClick={handleCheckout}
               >
+                {/* TRADUZIONE!!!!!!!!!!!!!! */}
                 Pay with Stripe
               </button>
             </div>
