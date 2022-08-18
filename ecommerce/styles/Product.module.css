@@ -24,11 +24,6 @@
     gap: 20px 30px; /* row-gap column gap */
     margin-bottom: 15px;
   }
-  
-  .py {
-    margin: 0 0 30px 0;
-    padding: 40px 0px;
-  }
 
   .card {
     display: flex;
@@ -388,7 +383,7 @@
   }
 
   .py {
-    padding: 30px 10px;
+    padding: 10px;
   }
 
   .product-detail-container {
@@ -405,10 +400,6 @@
 
   .products-container {
     gap: 20px 10px;
-  }
-
-  .py {
-    padding: 30px 10px;
   }
 
   .product-detail-container {
@@ -441,7 +432,7 @@
   }
 
   .py {
-    padding: 30px 0;
+    padding: 10px 0;
   }
   
   .product-detail-container {
