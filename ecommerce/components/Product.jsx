@@ -37,7 +37,7 @@ const Product = ({ product}) => {
               <h2>{name}</h2>
               <div className={styles.priceBox}>
                   <h3>Price:
-                    <span> € {price}</span>
+                    <span> {price} €</span>
                   </h3>
               </div>
               <button className={styles.btn} onClick={handleBuyNow}>Buy Now</button>
