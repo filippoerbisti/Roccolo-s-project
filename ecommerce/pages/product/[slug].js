@@ -56,7 +56,7 @@ const ProductDetails = ({ product, products }) => {
                         </div>
                         <h4>{t('details')}:</h4>
                         <p>{details}</p>
-                        <p className={styles.price}>€{price}</p>
+                        <p className={styles.price}>{price} €</p>
                         <div className={styles.quantity}>
                             <h3>{t('quantity')}:</h3>
                             <p className={styles['quantity-desc']}>
