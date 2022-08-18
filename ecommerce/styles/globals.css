@@ -245,11 +245,12 @@ span.text-red {
 
 .minus, .plus, .num {
   font-size: 18px;
-  padding: 0 5px;
+  padding: 0 7px;
 }
 
 .minus, .plus {
   cursor: pointer;
+  color: #892331;
 }
 
 .total{
