@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../styles/Policy.module.css';
 
