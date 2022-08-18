@@ -154,6 +154,7 @@ span.text-red {
   cursor: pointer;
   gap: 2px;
   margin-left: 20px;
+  margin-top: 20px;
   border: none;
   background-color: transparent;
 }
@@ -354,11 +355,11 @@ span.text-red {
 
   .cart-container{
     width: 100vw;
-    padding: 4px;
+    padding: 10px;
   }
 
   .cart-heading{
-    margin-top: 35px;
+    margin-top: 40px;
   }
 
   .product-container{
