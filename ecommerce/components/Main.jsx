@@ -4,7 +4,7 @@ import Image from 'next/image';
 import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../styles/Main.module.css';
-import Teste from './Teste';
+import Slider from './Slider';
 
 const ReadMore = ({ children }) => {
   const text = children;
@@ -44,7 +44,7 @@ const Main = () => {
   
   return (
     <div className={styles.mx20}>      
-      <Teste />
+      <Slider />
 
       <div className={styles.btnContainer}>
         <Link href='/tour'>
