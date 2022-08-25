@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Slider from "@madzadev/image-slider";
-    import "@madzadev/image-slider/dist/index.css";
 import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../styles/Main.module.css';
-import dataMainImgSlider from '../store/dataMainImgSlider';
-import Look from './Look';
 import Teste from './Teste';
 
 const ReadMore = ({ children }) => {
@@ -46,26 +42,9 @@ const Main = () => {
   const pWedding = `${t('weddingParagraph')}`;
   const pWeddingParagraph = pWedding.replace(/xxx/gi, '\n\r');
   
-  const images = dataMainImgSlider;
-
   return (
-    <div className={styles.mx20}>
-
-      {/* <div className={styles.slider}>
-        <Slider 
-          imageList={images} 
-          width={1200} 
-          height={500} 
-          showArrowControls={true} 
-          showDotControls={true} 
-          loop={true}
-          autoPlay={true}
-          autoPlayInterval={5000}
-          bgColor="white"
-        /> 
-      </div> */}
-      
-        <Teste />
+    <div className={styles.mx20}>      
+      <Teste />
 
       <div className={styles.btnContainer}>
         <Link href='/tour'>
