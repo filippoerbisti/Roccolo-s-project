@@ -69,7 +69,7 @@ const Main = () => {
 
       <div className={styles.btnContainer}>
         <Link href='/tour'>
-          <button className={styles.btn} type='button'> 
+          <button className={`${styles.btn} ${styles.btnTour}`} type='button'> 
             {t('virtualTour')}
           </button>
         </Link>
