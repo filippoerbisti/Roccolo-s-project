@@ -8,6 +8,7 @@ import useTranslation from 'next-translate/useTranslation';
 import styles from '../styles/Main.module.css';
 import dataMainImgSlider from '../store/dataMainImgSlider';
 import Look from './Look';
+import Teste from './Teste';
 
 const ReadMore = ({ children }) => {
   const text = children;
@@ -64,9 +65,7 @@ const Main = () => {
         /> 
       </div> */}
       
-      <div className={styles.posrel}>
-        <Look />
-      </div>
+        <Teste />
 
       <div className={styles.btnContainer}>
         <Link href='/tour'>
