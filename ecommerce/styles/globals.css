@@ -595,3 +595,54 @@ span.text-red {
 .active.plate5 .x {
   transition: transform 400ms 50ms;
 }
+
+/* Styles Slider/Swiper */
+
+.swiper {
+  width: 90%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Style arrows */
+.swiper-button-next, 
+.swiper-rtl, 
+.swiper-button-prev {
+  color: white;
+}
+
+/* Style pagination */
+.swiper-pagination-bullet-active {
+  background: white;
+}
+
+@media screen and (min-width: 1501px) {
+  .swiper {
+    width: 70%;
+  }
+}
+
