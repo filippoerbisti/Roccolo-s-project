@@ -30,7 +30,7 @@ const Slider = () => {
             >
                 {images?.map((image) => 
                     <SwiperSlide key={image._id}>
-                        <a href={image.url} target="_blank">
+                        <a href={image.url} target="_blank" rel="noopener noreferrer">
                             <Image 
                                 src={image.url}
                                 layout="intrinsic"
