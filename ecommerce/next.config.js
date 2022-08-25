@@ -3,7 +3,7 @@
 const nextTranslate = require('next-translate');
 
 const withImages = require("next-images");
-const withTM = require("next-transpile-modules")(["@madzadev/image-slider"]);
+const withTM = require("next-transpile-modules");
 
 // module.exports = withImages(withTM());
 
