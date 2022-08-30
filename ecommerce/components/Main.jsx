@@ -95,7 +95,7 @@ const Main = () => {
             </Link>
           </div>
         </div>
-        <div className={styles.w50mx40}>
+        <div className={`${styles.w50mx40} ${styles.mob}`}>
           <Image 
             src='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394256/Roccolo%20del%20Lago/casual%20img/pexels-pixabay-434311_dbuhns.jpg' 
             alt="wineshop_img" 
@@ -110,7 +110,7 @@ const Main = () => {
       <hr className={styles.hr} />
 
       <div className={styles.textContainerRight}>
-        <div className={styles.w50mx40}>
+        <div className={`${styles.w50mx40} ${styles.mob}`}>
           <Image 
             src='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394256/Roccolo%20del%20Lago/casual%20img/pexels-ray-piedra-1545529_tv7i7l.jpg' 
             alt="tasting_img" 
@@ -159,7 +159,7 @@ const Main = () => {
             </Link>
           </div>
         </div>
-        <div className={styles.w50mx40}>
+        <div className={`${styles.w50mx40} ${styles.mob}`}>
           <Image 
             src='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394713/Roccolo%20del%20Lago/casual%20img/pexels-duan%C3%A9-viljoen-12412480_xryskx.jpg'
             alt="wineshop_img" 
