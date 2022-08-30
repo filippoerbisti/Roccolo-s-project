@@ -14,7 +14,7 @@ const Cart = () => {
   const cartRef = useRef();
   const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuantity, onRemove } = useStateContext();
 
-  const handleCheckout = async () => {
+  const handleCheckoutStripe = async () => {
     const stripe = await getStripe();
 
     const response = await fetch('/api/stripe', {
@@ -32,6 +32,68 @@ const Cart = () => {
     toast.loading('Redirecting...');
 
     stripe.redirectToCheckout({ sessionId: data.id });
+  }
+
+  const handleCheckoutPaypal = async () => {
+    toast.loading('Not implemented - Work in progress');
+  }
+
+  // Custom component to wrap the PayPalButtons and handle currency changes
+  const ButtonWrapper = ({ currency, showSpinner }) => {
+    // usePayPalScriptReducer can be use only inside children of PayPalScriptProviders
+    // This is the main reason to wrap the PayPalButtons in a new component
+    const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
+
+    useEffect(() => {
+        dispatch({
+            type: "resetOptions",
+            value: {
+                ...options,
+                currency: currency,
+            },
+        });
+    }, [currency, showSpinner]);
+
+
+    return (
+        <>
+            { (showSpinner && isPending) && <div className="spinner" /> }
+            <PayPalButtons
+                style={style}
+                disabled={false}
+                forceReRender={[amount, currency, style]}
+                fundingSource={paypalFunding}
+                createOrder={(data, actions) => {
+                    return actions.order
+                        .create({
+                            purchase_units: [
+                                {
+                                    amount: {
+                                        currency_code: currency,
+                                        value: amount,
+                                    },
+                                },
+                            ],
+                        })
+                        .then((orderId) => {
+                            // Your code here after create the order
+                            return orderId;
+                        });
+                }}
+                onApprove={function (data, actions) {
+                    return actions.order.capture().then(function (details) {
+                        const shipping = details.purchase_units[0].shipping;
+                        createOrder({
+                            customer: shipping.name.full_name,
+                            address: shipping.address.address_line_1,
+                            total: cart.total,
+                            method: 1
+                        })
+                    });
+                }}
+            />
+        </>
+    );
   }
 
   return (
@@ -106,14 +168,14 @@ const Cart = () => {
               <button 
                 type='button' 
                 className='btn'
-                onClick={handleCheckout}
+                onClick={handleCheckoutStripe}
               >
                 {t('payWith')} Stripe
               </button>
               <button 
                 type='button' 
                 className='btn'
-                onClick={handleCheckout}
+                onClick={handleCheckoutPaypal}
               >
                 {t('payWith')} Paypal
               </button>
