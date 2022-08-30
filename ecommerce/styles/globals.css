@@ -599,7 +599,7 @@ span.text-red {
 /* Styles Slider/Swiper */
 
 .swiper {
-  width: 90%;
+  width: 85%;
   height: 100%;
 }
 
@@ -642,7 +642,6 @@ span.text-red {
 
 @media screen and (min-width: 1501px) {
   .swiper {
-    width: 70%;
+    width: 65%;
   }
 }
-
