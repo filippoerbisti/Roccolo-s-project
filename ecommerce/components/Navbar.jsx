@@ -118,7 +118,7 @@ const Navbar = props => {
 
         {showMenu && <HamburgerMenu />}
 
-        <div className={styles.menuHamburgerIcon}>
+        <div className={!showCart ? `${styles.menuHamburgerIcon}` : ''}>
           <HamburgerIcon onClick={() => {
             setChangeIconHamburgerMenu(!changeIconHamburgerMenu)
           }}/>
