@@ -81,14 +81,18 @@ const Tasting = () => {
       <div className={styles.footerTasting}>
         <p className={styles.footerParagraphTasting}>{t('tastingFooter')}</p>
         <div className={styles.footerTastingBtnCont}>
-          <button className={styles.footerTastingButton}>
+          <button className={`${styles.footerTastingButton} tooltip`}>
             <a href="mailto:info@roccolodellago.it" target="_blank">
               <i className="fa-solid fa-envelope fa-xl"></i>
+              <span className='tooltiptext'>{t('sendEmail')}</span>
             </a>
           </button>
-          <button className={styles.footerTastingButton}>
-            <a href="https://wa.me/3482359226?text=Salve%20sarei%20interessato%20a">
+          <button className={`${styles.footerTastingButton} tooltip`}>
+            <a 
+              href="https://wa.me/3482359226?text=Salve%20sarei%20interessato%20a"
+            >
               <i className="fa-brands fa-whatsapp fa-xl"></i>
+              <span className='tooltiptext'>{t('sendMsg')}</span>
             </a>
           </button>
         </div>
