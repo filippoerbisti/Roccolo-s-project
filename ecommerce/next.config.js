@@ -14,7 +14,7 @@ const nextConfig = nextTranslate({
   },
 });
 
-module.exports = withImages(withTM(nextConfig));
+module.exports = withImages(nextConfig);
 
 // Equal way, work
 // module.exports = nextTranslate({
