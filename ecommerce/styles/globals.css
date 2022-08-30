@@ -284,6 +284,20 @@ span.text-red {
   margin: auto;
 }
 
+.btn-container-cart{
+  width: 500px;
+  margin: auto;
+  display: flex;
+}
+
+.btn-container-cart button:first-child {
+  margin-right: 10px;
+}
+
+.btn-container-cart button:nth-child(2){
+  margin-left: 10px;
+}
+
 .btn{
   width: 100%;
   max-width: 400px;
@@ -417,7 +431,7 @@ span.text-red {
   }
 
   .cart-bottom{
-    padding: 30px;
+    padding: 0 0 30px 10px;
   }
 
   .total h3{
@@ -445,6 +459,18 @@ span.text-red {
     margin: auto;
   }
 
+  .btn-container-cart{
+    width: 350px;
+    margin: auto;
+  }
+
+  .btn-container-cart button:first-child {
+    margin-right: 3px;
+  }
+  
+  .btn-container-cart button:nth-child(2){
+    margin-left: 3px;
+  }
 }
 
 

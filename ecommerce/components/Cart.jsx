@@ -164,7 +164,7 @@ const Cart = () => {
             <div className='total'>
               <h3>{t('total')}: {totalPrice} €</h3>
             </div>
-            <div className='btn-container'>
+            <div className='btn-container-cart'>
               <button 
                 type='button' 
                 className='btn'
