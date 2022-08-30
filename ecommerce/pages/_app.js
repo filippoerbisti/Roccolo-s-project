@@ -66,13 +66,15 @@ function MyApp({ Component, pageProps }) {
             style={{ 
               background: "#2B373B", 
               display: "flex", 
-              alignItems: 'center',
-              fontSize: "15px"
+              alignItems: 'end',
+              justifyContent: 'end',
+              fontSize: "14px",
+              paddingRight: "10px",
+              padding: "5px"
             }}
             buttonStyle={{ 
               padding: '10px',
-              margin: '10px',
-              marginLeft: 'auto',
+              margin: '-10px 5px 5px 0',
               cursor: "pointer",
               color: "#fff", 
               backgroundColor: "#892331",
