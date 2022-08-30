@@ -1,5 +1,4 @@
 
-
 /* 
 ############### 
 
@@ -475,14 +474,15 @@ span.text-red {
 
 
 /* 
-## Filippo Erbisti ##
+## FILIPPO ERBISTI CUSTOM STYLES CSS ##
 */
 
 .cursor-pointer {
   cursor: pointer;
 }
 
-/* Styles Progress Scrollbar  */
+/* STYLES PROGRESS SCROLLBAR  */
+
 #scrollPath {
   position: fixed;
   top: 0;
@@ -523,7 +523,8 @@ span.text-red {
   filter: blur(30px);
 }
 
-/* Styles ReadMore */
+
+/* STYLES READMORE */
 
 .showMore {
   cursor: pointer;
@@ -537,7 +538,8 @@ span.text-red {
   text-decoration: underline;
 }
 
-/* Styles Hamburger Menu ICON */
+
+/* STYLES HAMBURGER MENU ICON */
 
 .hamburger-menu {
   z-index: 5000;
@@ -626,7 +628,8 @@ span.text-red {
   transition: transform 400ms 50ms;
 }
 
-/* Styles Slider/Swiper */
+
+/* STYLES SWIPER / SLIDER */
 
 .swiper {
   width: 85%;
@@ -677,9 +680,7 @@ span.text-red {
 }
 
 
-
-
-
+/* STYLES TOOLTIP */
 
 .tooltip {
   position: relative;
