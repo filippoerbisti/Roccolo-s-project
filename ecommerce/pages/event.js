@@ -7,11 +7,15 @@ import styles from '../styles/Event.module.css';
 const Event = () => {
   return (
     <div className={styles.mx20}>
-      <Tasting id="tasting" />
+      <section id="wedding">
+        <Tasting id="tasting" />
+      </section>
 
       <hr className={styles.hr} />
 
-      <Wedding id="wedding" />
+      <section id="wedding">
+        <Wedding />
+      </section>
     </div>
   )
 }
