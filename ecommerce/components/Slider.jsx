@@ -38,6 +38,8 @@ const Slider = () => {
                                 height={700} 
                                 // objectFit="contain"
                                 className='cursor-pointer'
+                                blurDataURL={image.url}
+                                placeholder='blur'
                             />
                         </a>
                     </SwiperSlide>

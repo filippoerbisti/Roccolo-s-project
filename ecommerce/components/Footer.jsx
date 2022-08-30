@@ -57,6 +57,8 @@ const Footer = () => {
               alt="loghi-bio-footer_img" 
               width={300}
               height={100}
+              blurDataURL={img1}
+              placeholder='blur'
             />
           </div>
         </div>

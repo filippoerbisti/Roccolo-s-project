@@ -103,6 +103,8 @@ const Main = () => {
             height={400} 
             layout="responsive" 
             objectFit="cover"
+            blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394256/Roccolo%20del%20Lago/casual%20img/pexels-pixabay-434311_dbuhns.jpg'
+            placeholder='blur'
           />
         </div>
       </div>
@@ -118,6 +120,8 @@ const Main = () => {
             height={400} 
             layout="responsive" 
             objectFit="cover"
+            blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394256/Roccolo%20del%20Lago/casual%20img/pexels-ray-piedra-1545529_tv7i7l.jpg'
+            placeholder='blur'
           />
         </div>
         <div className={styles.w50mx40}>
@@ -167,6 +171,8 @@ const Main = () => {
             height={400} 
             layout="responsive" 
             objectFit="cover"
+            blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394713/Roccolo%20del%20Lago/casual%20img/pexels-duan%C3%A9-viljoen-12412480_xryskx.jpg'
+            placeholder='blur'
           />
         </div>
       </div>

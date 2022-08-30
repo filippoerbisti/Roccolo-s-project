@@ -49,6 +49,8 @@ const Navbar = props => {
           objectFit="contain"
           className='cursor-pointer'
           onClick={() => setActiveTabs('')}
+          blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1660806591/Roccolo%20del%20Lago/logo_iidjdd.png'
+          placeholder='blur'
         />
       </Link>
 

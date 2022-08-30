@@ -51,18 +51,24 @@ const Wedding = () => {
           height={250} 
           objectFit="cover" 
           src="https://res.cloudinary.com/dl38nyo08/image/upload/v1655394713/Roccolo%20del%20Lago/casual%20img/pexels-duan%C3%A9-viljoen-12412480_xryskx.jpg" 
+          blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394713/Roccolo%20del%20Lago/casual%20img/pexels-duan%C3%A9-viljoen-12412480_xryskx.jpg'
+          placeholder='blur'
         />
         <Image 
           width={500} 
           height={250} 
           objectFit="cover" 
           src="https://res.cloudinary.com/dl38nyo08/image/upload/v1655394260/Roccolo%20del%20Lago/casual%20img/pexels-elina-sazonova-1850595_jeaeks.jpg" 
+          blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394260/Roccolo%20del%20Lago/casual%20img/pexels-elina-sazonova-1850595_jeaeks.jpg'
+          placeholder='blur'
         />
         <Image 
           width={500} 
           height={250} 
           objectFit="cover" 
           src="https://res.cloudinary.com/dl38nyo08/image/upload/v1655394843/Roccolo%20del%20Lago/casual%20img/pexels-nicole-michalou-5775055_lemko8.jpg" 
+          blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394843/Roccolo%20del%20Lago/casual%20img/pexels-nicole-michalou-5775055_lemko8.jpg'
+          placeholder='blur'
         />
       </div>
     </div>

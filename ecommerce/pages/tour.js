@@ -15,10 +15,13 @@ const Tour = () => {
             <p className={styles.paragr}>{t('paragraph')}</p>
             <div className={styles.spinContainer}>
                 <Image 
-                src='https://res.cloudinary.com/dl38nyo08/image/upload/v1655208182/Roccolo%20del%20Lago/vr-360-logo_s1uhk0.png' 
-                width={100}
-                height={75}
-                className={styles.spin3D} />
+                    src='https://res.cloudinary.com/dl38nyo08/image/upload/v1655208182/Roccolo%20del%20Lago/vr-360-logo_s1uhk0.png' 
+                    width={100}
+                    height={75}
+                    className={styles.spin3D} 
+                    blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1655208182/Roccolo%20del%20Lago/vr-360-logo_s1uhk0.png'
+                    placeholder='blur'
+                />
             </div>
             <div className={styles.row}>
                 <div className={styles.colmx20}>
