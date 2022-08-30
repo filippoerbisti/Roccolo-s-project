@@ -208,8 +208,6 @@ span.text-red {
 .product .cart-product-image{
   width: 15%;
   height: 15%;
-  border-radius: 15px;
-  background-color: #ebebeb;
 }
 
 .cart-product-image {
@@ -384,6 +382,7 @@ span.text-red {
   .cart-container{
     width: 100vw;
     padding: 10px;
+    z-index: 99999;
   }
 
   .cart-heading{
@@ -473,7 +472,7 @@ span.text-red {
   right: 0;
   width: 10px;
   background: #892331;
-  z-index: 9999;
+  z-index: 100;
 }
 
 #progressbar::before {
@@ -515,7 +514,7 @@ span.text-red {
 /* Styles Hamburger Menu ICON */
 
 .hamburger-menu {
-  z-index: 99999999;
+  z-index: 5000;
 }
 .svg,
 .burger,
@@ -544,6 +543,11 @@ span.text-red {
   stroke-linejoin: round;
   transform-origin: 50%;
   transition: stroke-dasharray 500ms 200ms, stroke-dashoffset 500ms 200ms, transform 500ms 200ms;
+}
+.active {
+  position: fixed;
+  top: 20px;
+  right: 5px;
 }
 .x .line {
   stroke-width: 5.5px;
