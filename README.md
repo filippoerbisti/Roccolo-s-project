@@ -113,7 +113,7 @@ possibile ordinare sia i vini che l'olio di produzione della tenuta.
 <br />
 La sfida progettuale propone la creazione di tour vituale dei vigneti biologici e della cantina.
 L'obiettivo è quello di far conoscere e apprezzare al massimo tutti gli aspetti della
-produzione vinicola, andando ad esaltare le caratteristiche dei vigleti e la qualità del vino
+produzione vinicola, andando ad esaltare le caratteristiche dei vigneti e la qualità del vino
 prodotto.
 
 ----------------------------------------------------------------
