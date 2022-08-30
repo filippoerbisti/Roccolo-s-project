@@ -29,13 +29,13 @@ const Slider = () => {
                 className="mySwiper"
             >
                 {images?.map((image) => 
-                    <SwiperSlide key={image._id}>
+                    <SwiperSlide key={image.url}>
                         <a href={image.url} target="_blank" rel="noopener noreferrer">
                             <Image 
                                 src={image.url}
                                 layout="intrinsic"
-                                width={1300} 
-                                height={800} 
+                                width={1200} 
+                                height={700} 
                                 // objectFit="contain"
                                 className='cursor-pointer'
                             />
