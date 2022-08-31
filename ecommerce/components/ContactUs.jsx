@@ -4,9 +4,9 @@ import Script from 'next/script';
 import useTranslation from 'next-translate/useTranslation';
 import * as emailjs from '@emailjs/browser';
 import { toast } from 'react-hot-toast';
+import * as gtag from '../lib/gtag';
 
 import styles from '../styles/ContactUs.module.css';
-import * as gtag from '../lib/gtag';
 
 const ContactUs = () => {
   const { t } = useTranslation('contact');
@@ -15,7 +15,6 @@ const ContactUs = () => {
 
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
-  const fullname = firstname + " " + lastname;
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
@@ -23,32 +22,25 @@ const ContactUs = () => {
 
   const tOption = t('contact:objectEmail', { count: 150 }, { returnObjects: true });
 
-  // TODO invio email
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  const fullname = capitalizeFirstLetter(firstname) + " " + capitalizeFirstLetter(lastname);
+
   const sendEmail = async (e) => {
     e.preventDefault();
+
+    gtag.event({
+      action: 'submit_form',
+      category: 'Contact',
+      label: email,
+    })
 
     const isCaptchaChecked = () => {
       return grecaptcha && grecaptcha.getResponse().length !== 0;
     }
 
     if (isCaptchaChecked()) {
-      if (email !== '' && newsletter == true) {
-        console.log('cio');
-        try {
-          const res = await fetch("/api/mail", {
-            method: "POST",
-            body: email,
-          });
-    
-          const data = await res.json();
-          if (data.error !== null) {
-            throw data.error;
-          }
-          console.log('end')
-        } catch (e) {
-        }
-      }
-
       if (fullname !== '' && email !== '' && subject !== '' && message !== '') {    
         const templateParams = {
           from_name: fullname,
@@ -59,7 +51,8 @@ const ContactUs = () => {
         }
 
         const toastLoading = toast.loading(`${t('emailSend')}`);
-
+        
+        // Send email to ourselves -> info + Send email to client -> reminder
         emailjs.send(
           process.env.NEXT_PUBLIC_SERVICE_ID,
           process.env.NEXT_PUBLIC_TEMPLATE_ID,
@@ -79,6 +72,9 @@ const ContactUs = () => {
         }, (error) => {
           toast.error(`${t('emailErr')}`);
         });
+
+        //Newsletter - TODO
+
       } else {
         toast.error(`${t('emailCompiled')}`);
       }
@@ -87,23 +83,12 @@ const ContactUs = () => {
     }
   }
 
-  const send = async (e) => {
-    e.preventDefault()
-
-    gtag.event({
-      action: 'submit_form',
-      category: 'Contact',
-      label: email,
-    })
-    // console.log(gtag)
-  }
-
   return (
     <div className={styles.mx20}>
       <h1 className={styles.title}>{t('title')}</h1>
       <p className={styles.paragraph}>{t('info')}</p>
       <p className={styles.paragraph}>{t('infoStaff')}</p>
-      <form method="post" onSubmit={send} className={styles.mx60aic}>
+      <form method="post" onSubmit={sendEmail} className={styles.mx60aic}>
         <div className={styles.center}>
           <div className={styles.row}>
             <div className={styles.col}>
@@ -201,7 +186,7 @@ const ContactUs = () => {
                 name={t('newsletter')} 
                 id={t('newsletter')} 
               />
-              <label htmlFor={t('newsletter')}>{t('newsletterPromo')}</label>
+              <label htmlFor={t('newsletter')}>{t('newsletterPromo')} - TODO</label>
             </div>
           </div>
 
@@ -230,7 +215,7 @@ const ContactUs = () => {
             ></div> 
 
             <div className={styles.btnContainer}>
-              <button type="submit" onClick={(e)=>{send(e)}} className={styles.btn}>{t('button')}</button>
+              <button type="submit" onClick={(e)=>{sendEmail(e)}} className={styles.btn}>{t('button')}</button>
             </div>
           </div>
         </div>
