@@ -169,7 +169,7 @@ Software, that allows individuals and companies to send and receive payments via
 > <a href="https://stripe.com/it">Stripe</a>
 
 Receipt template
-![Receipt template](https://github.com/filippoerbisti/Roccolo-s-project//blob/master/docs/readme/assets/model-receive.PNG?raw=true)
+![Receipt template](https://github.com/filippoerbisti/Roccolo-s-project/blob/master/docs/readme/assets/model-receive.PNG?raw=true)
 
 ### PayPal *In progress...*
 
@@ -188,7 +188,7 @@ When user contact us, we receive:
 ![Template Email](https://github.com/filippoerbisti/pr1/blob/master/docs/readme/assets/template_email.png?raw=true)
 
 Then, automatically thank to auto-reply the client received:
-![Template Email](https://github.com/filippoerbisti/pr1/blob/master/docs/readme/assets/template_email_client.png?raw=true)
+![Template Email](https://github.com/filippoerbisti/Roccolo-s-project/blob/master/docs/readme/assets/template_email_client.png?raw=true)
 
 ----------------------------------------------------------------
 
