@@ -88,6 +88,8 @@ Check:
 > <a href="https://stripe.com/it">STRIPE</a>
 > 
 > <a href="https://paypal.com/it">PAYPAL</a>
+> 
+> <a href="https://emailjs.com/it">EMAILJS</a>
  
 
 ## DEMAND
@@ -148,9 +150,10 @@ with [Sanity.io](https://sanity.io) and [Vercel](https://vercel.com/) for Deploy
 [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
 with [Sanity.io](https://sanity.io) and [Vercel](https://vercel.com/) for Deploy
 
-Custom use of React-360
-
-*In progress...*
+Library used:
+- three
+- @react-three/fiber
+- @react-three/drei
 
 ----------------------------------------------------------------
 
@@ -175,25 +178,25 @@ Classic, basic Payment with PayPal, one of the largest payment methods
 
 ----------------------------------------------------------------
 
-## CONTACT US SERVICE *In progress...*
+## CONTACT US SERVICE
 
 > <a href="https://emailjs.com/">EmailJs</a>
 
-Email Services: Gmail - Roccolo del Lago
-<br />
-Email Templates: Template - Roccolo del Lago
-<br />
+Send email with EmailJS
 
 When user contact us, we receive:
 ![Template Email](https://github.com/filippoerbisti/pr1/blob/master/docs/readme/assets/template_email.png?raw=true)
 
+Then, automatically thank to auto-reply the client received:
+![Template Email](https://github.com/filippoerbisti/pr1/blob/master/docs/readme/assets/template_email_client.png?raw=true)
+
 ----------------------------------------------------------------
 
-## GOOGLE ANALYTICS *In progress...*
+## GOOGLE ANALYTICS
 
 > Use of cookies
 
-!!! To be integrated with Google ADS !!!
+Check how many click and interaction the site had.
 
 ----------------------------------------------------------------
 
