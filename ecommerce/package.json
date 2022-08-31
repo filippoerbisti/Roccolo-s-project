@@ -20,7 +20,6 @@
     "axios": "^0.27.2",
     "canvas-confetti": "^1.5.1",
     "country-flag-icons": "^1.5.5",
-    "emailjs": "^4.0.0",
     "gsap": "file:gsap-bonus.tgz",
     "jquery": "^3.6.0",
     "lodash.shuffle": "^4.2.0",
