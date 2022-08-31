@@ -185,7 +185,7 @@ Classic, basic Payment with PayPal, one of the largest payment methods
 Send email with EmailJS
 
 When user contact us, we receive:
-![Template Email](https://github.com/filippoerbisti/pr1/blob/master/docs/readme/assets/template_email.PNG?raw=true)
+![Template Email](https://github.com/filippoerbisti/pr1/blob/master/docs/readme/assets/template_email.png?raw=true)
 
 Then, automatically thank to auto-reply the client received:
 ![Template Email Client](https://github.com/filippoerbisti/Roccolo-s-project/blob/master/docs/readme/assets/template_email_client.PNG?raw=true)
