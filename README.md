@@ -169,7 +169,7 @@ Software, that allows individuals and companies to send and receive payments via
 > <a href="https://stripe.com/it">Stripe</a>
 
 Receipt template
-![Receipt template](https://github.com/filippoerbisti/pr1/blob/master/docs/readme/assets/model-receive.PNG?raw=true)
+![Receipt template](https://github.com/filippoerbisti/Roccolo-s-project//blob/master/docs/readme/assets/model-receive.PNG?raw=true)
 
 ### PayPal *In progress...*
 
