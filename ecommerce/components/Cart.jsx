@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import Link from 'next/link';
-import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping } from 'react-icons/ai';
+import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping, AiOutlineClose } from 'react-icons/ai';
 import { TiDeleteOutline } from 'react-icons/ti';
 import toast from 'react-hot-toast';
 import useTranslation from 'next-translate/useTranslation';
@@ -99,6 +99,13 @@ const Cart = () => {
   return (
     <div className='cart-wrapper' ref={cartRef}>
       <div className='cart-container'>
+        <button 
+          type='button' 
+          className='xCart' 
+          onClick={() => setShowCart(false)}
+        >
+          <AiOutlineClose />
+        </button>
         <button 
           type='button' 
           className='cart-heading' 
