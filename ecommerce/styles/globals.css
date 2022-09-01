@@ -153,7 +153,18 @@ span.text-red {
   cursor: pointer;
   gap: 2px;
   margin-left: 20px;
-  margin-top: 20px;
+  padding-top: 20px;
+  border: none;
+  background-color: transparent;
+}
+
+.xCart {
+  position: absolute;
+  right: 20px;
+  top: 30px;
+  display: flex;
+  font-size: 36px;
+  cursor: pointer;
   border: none;
   background-color: transparent;
 }
@@ -715,3 +726,5 @@ span.text-red {
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+
+
