@@ -153,7 +153,7 @@ span.text-red {
   cursor: pointer;
   gap: 2px;
   margin-left: 20px;
-  padding-top: 20px;
+  padding-top: 10px;
   border: none;
   background-color: transparent;
 }
