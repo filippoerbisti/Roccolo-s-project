@@ -52,7 +52,9 @@ const ContactUs = () => {
 
         const toastLoading = toast.loading(`${t('emailSend')}`);
         
-        // Send email to ourselves -> info + Send email to client -> reminder
+        // Send email to ourselves -> info 
+        // +++
+        //Send email to client -> reminder
         emailjs.send(
           process.env.NEXT_PUBLIC_SERVICE_ID,
           process.env.NEXT_PUBLIC_TEMPLATE_ID,
@@ -73,7 +75,18 @@ const ContactUs = () => {
           toast.error(`${t('emailErr')}`);
         });
 
-        //Newsletter - TODO
+        //Subscribe Newsletter
+        if (newsletter) {
+          const res = fetch('/api/newsletter', {
+            body: JSON.stringify({
+              email: email
+            }),
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            method: 'POST'
+          });
+        }
 
       } else {
         toast.error(`${t('emailCompiled')}`);
@@ -186,7 +199,7 @@ const ContactUs = () => {
                 name={t('newsletter')} 
                 id={t('newsletter')} 
               />
-              <label htmlFor={t('newsletter')}>{t('newsletterPromo')} - TODO</label>
+              <label htmlFor={t('newsletter')}>{t('newsletterPromo')}</label>
             </div>
           </div>
 
