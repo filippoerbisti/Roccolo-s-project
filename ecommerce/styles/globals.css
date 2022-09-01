@@ -673,6 +673,20 @@ span.text-red {
   background: white;
 }
 
+
+
+/* @media screen and (min-width: 1350px) {
+  .swiper {
+    width: 80%;
+  }
+} */
+
+@media screen and (max-width: 768px) {
+  .swiper {
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 1501px) {
   .swiper {
     width: 65%;
