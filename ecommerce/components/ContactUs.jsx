@@ -77,7 +77,7 @@ const ContactUs = () => {
 
         //Subscribe Newsletter
         if (newsletter) {
-          const res = fetch('/api/newsletter', {
+          const res = await fetch('/api/newsletter', {
             body: JSON.stringify({
               email: email
             }),
