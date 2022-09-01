@@ -49,8 +49,8 @@ const Layout = ({ children }) => {
         <meta name="twitter:image" content="https://roccolodellago.vercel.app/logo.png" />
         <meta name="twitter:title" content={t('title')} />
         <meta name="twitter:description" content={t('description')} />
-
       </Head>
+      
       <div>
         <header>
           <Navbar />
