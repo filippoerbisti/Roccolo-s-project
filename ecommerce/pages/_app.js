@@ -31,6 +31,11 @@ function MyApp({ Component, pageProps }) {
   const cookieName = "RoccoloCookieConsent";
   const isSetCookie = getCookieConsentValue(cookieName);
 
+  // Script MailChimp
+  if (typeof window !== 'undefined') {
+    !function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/78feab6cda4db6359e390d731/b658f8f48f616d8c262bb5139.js");
+  }
+
   return (
     <StateContext>
       <Layout>
