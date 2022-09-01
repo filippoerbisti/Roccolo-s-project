@@ -161,7 +161,7 @@ span.text-red {
 .xCart {
   position: absolute;
   right: 20px;
-  top: 30px;
+  top: 20px;
   display: flex;
   font-size: 36px;
   cursor: pointer;
