@@ -33,6 +33,12 @@ const Tasting = () => {
   const pTasting = `${t('tastingParagraph')}`;
   const pTastingParagraph = pTasting.replace(/xxx/gi, '\n\r');
 
+  const mailTo = "info@roccolodellago.it";
+  const phoneNumber = "3482359226";
+  const introMessageWhatsapp = "Azienda Agricola Roccolo del Lago. Località Saline, 9 - 37017 Lazise (VR). Ti aspettiamo tutti i giorni esclusa Domenica dalle ore 9:00 alle 18:00 per i tuoi acquisti al Wineshop, (da Aprile ad Ottobre), una visita alla tenuta o per il tuo evento speciale. Contattaci per richiedere informazioni e disponibilità per la tua prenotazione. Email: info@roccolodellago.it Tel. +39.0457581077";
+  const space = "                                                                    ";
+  const messageWhatsapp = "Salve, La contatto per ( inserisci qui il messaggio ). Grazie e arrivederci. Roccolo del Lago"
+
   return (
     <div className={styles.mx60}>
       <h1 className={styles.title}>{t('tastingTitle')}</h1>
@@ -82,15 +88,13 @@ const Tasting = () => {
         <p className={styles.footerParagraphTasting}>{t('tastingFooter')}</p>
         <div className={styles.footerTastingBtnCont}>
           <button className={`${styles.footerTastingButton} tooltip`}>
-            <a href="mailto:info@roccolodellago.it" target="_blank">
+            <a href={`mailto:${mailTo}`} target="_blank">
               <i className="fa-solid fa-envelope fa-xl"></i>
               <span className='tooltiptext'>{t('sendEmail')}</span>
             </a>
           </button>
           <button className={`${styles.footerTastingButton} tooltip`}>
-            <a 
-              href="https://wa.me/3482359226?text=Salve%20sarei%20interessato%20a"
-            >
+            <a href={`https://wa.me/${phoneNumber}?text=${introMessageWhatsapp}${space}${messageWhatsapp}`}>
               <i className="fa-brands fa-whatsapp fa-xl"></i>
               <span className='tooltiptext'>{t('sendMsg')}</span>
             </a>
