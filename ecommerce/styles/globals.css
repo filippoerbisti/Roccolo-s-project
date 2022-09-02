@@ -141,7 +141,7 @@ span.text-red {
   width: 600px;
   background-color: white;
   float: right;
-  padding: 30px 20px;
+  padding: 20px 20px;
   position: relative;
 }
 
@@ -153,7 +153,6 @@ span.text-red {
   cursor: pointer;
   gap: 2px;
   margin-left: 20px;
-  padding-top: 20px;
   border: none;
   background-color: transparent;
 }
@@ -161,7 +160,7 @@ span.text-red {
 .xCart {
   position: absolute;
   right: 20px;
-  top: 30px;
+  top: 20px;
   display: flex;
   font-size: 36px;
   cursor: pointer;
