@@ -300,6 +300,8 @@
   }
 
   .buttons .add-to-cart {
+    width: 200px;
+    height: 70px;
     padding: 10px 12px;
     border-radius: 15px;
     border: 2px solid #892331;
@@ -310,7 +312,6 @@
     text-transform: uppercase;
     color: #892331;
     cursor: pointer;
-    width: 200px;
     transform: scale(1, 1);
     transition: transform 0.5s ease;
   }
@@ -320,6 +321,7 @@
   }
   
   .buttons .buy-now {
+    height: 70px;
     width: 200px;
     padding: 10px 12px;
     text-transform: uppercase;
@@ -408,6 +410,18 @@
     width: 90%;
     margin: 40px;
   }
+
+  .buttons,
+  .quantity {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .price {
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -466,10 +480,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  .price {
-    text-align: center;
   }
 
   .quantity {
