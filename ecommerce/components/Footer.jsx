@@ -10,6 +10,8 @@ const Footer = () => {
   const { t } = useTranslation('common');
   const space = ' ';
 
+  const phoneNumber = "+390457581077";
+  const mailTo = "info@roccolodellago.it";
   const img1 = 'https://res.cloudinary.com/dl38nyo08/image/upload/v1654848968/Roccolo%20del%20Lago/loghi-bio-footer_tud0sw.png';
 
   return (
@@ -42,9 +44,9 @@ const Footer = () => {
             <p>{t('where')}: <a href='https://goo.gl/maps/Pgp5XzNNhqQoMqVa6' className={styles.tag} target='_blank'>Località Saline, 9 -
               37017 Lazise (VR)</a></p>
             <br />
-            <p>Tel: <a href="tel:+390457581077" className={styles.tag}>+39 045 7581077</a></p>
+            <p>Tel: <a href={`tel:${phoneNumber}`} className={styles.tag}>+39 045 7581077</a></p>
             <br />
-            <p>Email: <a href="mailto:info@roccolodellago.it" className={styles.tag} target='_blank'>info@roccolodellago.it</a></p>
+            <p>Email: <a href={`mailto:${mailTo}`} className={styles.tag} target='_blank'>info@roccolodellago.it</a></p>
             <br />
             <p className={styles.workHour}>{t('when')}: {space}
             {t('workHours')} <br />

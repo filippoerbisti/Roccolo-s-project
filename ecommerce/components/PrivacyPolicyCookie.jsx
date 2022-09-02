@@ -4,6 +4,8 @@ import Link from 'next/link';
 import styles from '../styles/Policy.module.css';
 
 const PrivacyPolicyCookie = () => {
+  // const mailTo = "info@roccolodellago.it";
+  const mailTo = "filippo.erbisti@gmail.com";
   return (
     <div className={styles.mx60}>
         <h1 className={styles.title}>Privacy Policy</h1>
@@ -175,7 +177,7 @@ const PrivacyPolicyCookie = () => {
           <p>If you have any questions about this Privacy Policy, You can contact us:</p>
           <ul>
             <li>
-              <p>By email: <a href="mailto:filippo.erbisti@gmail.com" class="__cf_email__">filippo.erbisti@gmail.com</a></p>
+              <p>By email: <a href={`mailto:${mailTo}`} class="__cf_email__">filippo.erbisti@gmail.com</a></p>
             </li>
             <li>
               <p>By visiting this page on our website: <Link href="/contact"  target="_blank">https://roccolodellago.vercel.app/contact</Link></p>

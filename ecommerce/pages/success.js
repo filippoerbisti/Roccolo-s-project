@@ -10,6 +10,9 @@ const Success = () => {
     const { t } = useTranslation('success');
     const { setCartItems, setTotalPrice, setTotalQuantities } = useStateContext();
 
+    // const mailTo = "info@roccolodellago.it";
+    const mailTo = "filippo.erbisti@gmail.com";
+
     useEffect(() => {
         localStorage.clear();
         setCartItems([]);
@@ -28,7 +31,7 @@ const Success = () => {
                 <p className='email-msg'>{t('checkEmail')}</p>
                 <p className='description'>
                     {t('anyQuestion')}
-                    <a className='email' href='mailto:filippo.erbisti@gmail.com'>
+                    <a className='email' href={`mailto:${mailTo}`}>
                         filippo.erbisti@gmail.com   
                     </a>
                 </p>
