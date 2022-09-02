@@ -1,9 +1,10 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping, AiOutlineClose } from 'react-icons/ai';
 import { TiDeleteOutline } from 'react-icons/ti';
 import toast from 'react-hot-toast';
 import useTranslation from 'next-translate/useTranslation';
+import { PayPalScriptProvider, PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
 
 import { useStateContext } from '../context/StateContext';
 import { urlFor } from '../lib/client';
@@ -11,6 +12,9 @@ import getStripe from '../lib/getStripe';
 
 const Cart = () => {
   const { t } = useTranslation('common');
+
+  const clientIdPaypal = process.env.NEXT_PUBLIC_CLIENT_ID_PAYPAL;
+
   const cartRef = useRef();
   const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuantity, onRemove } = useStateContext();
 
@@ -34,9 +38,10 @@ const Cart = () => {
     stripe.redirectToCheckout({ sessionId: data.id });
   }
 
-  const handleCheckoutPaypal = async () => {
-    toast.loading('Not implemented - Work in progress');
-  }
+  // This values are the props in the UI
+  const amount = totalPrice;
+  const currency = "EUR";
+  const style = {"layout":"vertical"};
 
   // Custom component to wrap the PayPalButtons and handle currency changes
   const ButtonWrapper = ({ currency, showSpinner }) => {
@@ -54,45 +59,47 @@ const Cart = () => {
         });
     }, [currency, showSpinner]);
 
-
     return (
-        <>
-            { (showSpinner && isPending) && <div className="spinner" /> }
-            <PayPalButtons
-                style={style}
-                disabled={false}
-                forceReRender={[amount, currency, style]}
-                fundingSource={paypalFunding}
-                createOrder={(data, actions) => {
-                    return actions.order
-                        .create({
-                            purchase_units: [
-                                {
-                                    amount: {
-                                        currency_code: currency,
-                                        value: amount,
-                                    },
-                                },
-                            ],
-                        })
-                        .then((orderId) => {
-                            // Your code here after create the order
-                            return orderId;
-                        });
-                }}
-                onApprove={function (data, actions) {
-                    return actions.order.capture().then(function (details) {
-                        const shipping = details.purchase_units[0].shipping;
-                        createOrder({
-                            customer: shipping.name.full_name,
-                            address: shipping.address.address_line_1,
-                            total: cart.total,
-                            method: 1
-                        })
-                    });
-                }}
-            />
-        </>
+      <>
+        { (showSpinner && isPending) && <div className="spinner" /> }
+        <PayPalButtons
+          style={style}
+          disabled={false}
+          forceReRender={[amount, currency, style]}
+          fundingSource={undefined} 
+          //fundingSource={paypalFunding} -> to display determinated bottons (we would use paypal.FUNDING.PAYPAL && paypal.FUNDING.CARD)
+          // | paypal.FUNDING.PAYPAL = button PayPal
+          // | paypal.FUNDING.CARD = button Credit or debit cards
+          createOrder={(data, actions) => {
+            return actions.order
+                .create({
+                  purchase_units: [
+                    {
+                      amount: {
+                        currency_code: currency,
+                        value: amount,
+                      }
+                    },
+                  ],
+                })
+                .then((orderId) => {
+                  // Your code here after create the order
+                  return orderId;
+              });
+            }}
+            onApprove={function (data, actions) {
+                return actions.order.capture().then(function (details) {
+                  const shipping = details.purchase_units[0].shipping;
+                  createOrder({
+                      customer: shipping.name.full_name,
+                      address: shipping.address.address_line_1,
+                      total: totalPrice,
+                      method: 1
+                  })
+            });
+          }}
+        />
+      </>
     );
   }
 
@@ -143,16 +150,16 @@ const Cart = () => {
                   <h4>{item.price} €</h4>
                 </div>
                 <div className='flex bottom'>
-                    <div className='quantity-desc'>
-                      <span className='minus' onClick={() => toggleCartItemQuantity(item._id, 'dec')}>
-                          <AiOutlineMinus />
-                      </span>
-                      <span className='num'>
-                          {item.quantity}
-                      </span>
-                      <span className='plus' onClick={() => toggleCartItemQuantity(item._id, 'inc')}>
-                          <AiOutlinePlus />
-                      </span>
+                  <div className='quantity-desc'>
+                    <span className='minus' onClick={() => toggleCartItemQuantity(item._id, 'dec')}>
+                      <AiOutlineMinus />
+                    </span>
+                    <span className='num'>
+                      {item.quantity}
+                    </span>
+                    <span className='plus' onClick={() => toggleCartItemQuantity(item._id, 'inc')}>
+                      <AiOutlinePlus />
+                    </span>
                   </div>
                   <button
                     type='button'
@@ -174,18 +181,27 @@ const Cart = () => {
             <div className='btn-container-cart'>
               <button 
                 type='button' 
-                className='btn'
+                className='btn-stripe'
                 onClick={handleCheckoutStripe}
               >
                 {t('payWith')} Stripe
               </button>
-              <button 
-                type='button' 
-                className='btn'
-                onClick={handleCheckoutPaypal}
-              >
-                {t('payWith')} Paypal
-              </button>
+
+              <div className='btn-paypal'>
+                <PayPalScriptProvider 
+                  options={{ 
+                    "client-id": clientIdPaypal,
+                    components: "buttons",
+                    currency: "USD"
+                  }}
+                >
+                  {/* <PayPalButtons className="paypal" style={{ layout: "horizontal" }} /> */}
+                  <ButtonWrapper 
+                    currency={currency}
+                    showSpinner={false}
+                  />
+                </PayPalScriptProvider>
+              </div>
             </div>
           </div>
         )}
