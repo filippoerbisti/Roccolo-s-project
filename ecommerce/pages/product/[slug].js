@@ -27,23 +27,56 @@ const ProductDetails = ({ product, products }) => {
             <div className={styles.container}>
             <h1>!!! THIS IS A DEMO, Don't Buy Anything !!!</h1>
                 <div className={styles['product-detail-container']}>
-                    <div>
+                    <div className={styles.w50}>
                         <div className={styles['product-detail-box']}>
-                            <img src={urlFor(image && image[index])} className={styles['product-detail-image']}/>
+                            {/* <img src={urlFor(image && image[index])} className={styles['product-detail-image']}/> */}
                         </div>
                         <div className={styles['small-images-container']}>
-                            {image?.map((item, i) => (
+                            {/* {image?.map((item, i) => (
                                 <img
                                     key={i}
                                     src={urlFor(item).url()}
                                     className={styles['small-image']}
                                     onMouseEnter={() => setIndex(i)}
                                 />
-                            ))}
+                            ))} */}
+                        </div>
+                        <div className={styles.buttonForPc}>
+                            <p className={styles.price}>{price} €</p>
+                            <div className={styles.quantity}>
+                                <h3>{t('quantity')}:</h3>
+                                <p className={styles['quantity-desc']}>
+                                    <span className={styles.minus} onClick={decQty}>
+                                        <AiOutlineMinus />
+                                    </span>
+                                    <span className={styles.num}>
+                                        {qty}
+                                    </span>
+                                    <span className={styles.plus} onClick={incQty}>
+                                        <AiOutlinePlus />
+                                    </span>
+                                </p>
+                            </div>
+                            <div className={styles.buttons}>
+                                <button 
+                                    type="button" 
+                                    className={styles['add-to-cart']} 
+                                    onClick={() => onAdd(product, qty)}
+                                >
+                                    {t('addCart')}
+                                </button>
+                                <button 
+                                    type="button" 
+                                    className={styles['buy-now']} 
+                                    onClick={handleBuyNow}
+                                >
+                                    {t('buyNow')}
+                                </button>
+                            </div>
                         </div>
                     </div>
 
-                    <div className={styles['product-detail-desc']}>
+                    <div className={`${styles['product-detail-desc']} ${styles.w50}`}>
                         <h1 className={styles['product-title']}>{name}</h1>
                         <div className={styles.reviews}>
                             <div>
@@ -55,98 +88,102 @@ const ProductDetails = ({ product, products }) => {
                                 {/* <AiOutlineStar /> */}
                             </div>
                         </div>
-                        <h3>{t('details')}:</h3>
-                        {/* Check for each detail section if it is valued */}
-                        {detailRegione != null && detailRegione != "" &&
+                        <div>
+                            <h3>{t('details')}:</h3>
+                            {/* Check for each detail section if it is valued */}
+                            {detailRegione != null && detailRegione != "" &&
+                                <p>
+                                    <span className={styles.details}>{t('detailRegione').toUpperCase()}: {space}</span>
+                                    {detailRegione}
+                                </p>
+                            }
+                            {detailVigneto != null && detailVigneto != "" &&
+                                <p>
+                                    <span className={styles.details}>{t('detailVigneto').toUpperCase()}: {space}</span>
+                                    {detailVigneto}
+                                </p>
+                            }
+                            {detailUve != null && detailUve != "" &&
+                                <p>
+                                    <span className={styles.details}>{t('detailUve').toUpperCase()}: {space}</span>
+                                    {detailUve}
+                                </p>
+                            }
+                            {detailFruttaio != null && detailFruttaio != "" &&
+                                <p>
+                                    <span className={styles.details}>{t('detailFruttaio').toUpperCase()}: {space}</span>
+                                    {detailFruttaio}
+                                </p>
+                            }
+                            {detailVinificazione != null && detailVinificazione != "" &&
+                                <p>
+                                    <span className={styles.details}>{t('detailVinificazione').toUpperCase()}: {space}</span>
+                                    {detailVinificazione}
+                                </p>
+                            }
+                            {detailAffinamento != null && detailAffinamento != "" &&
+                                <p>
+                                    <span className={styles.details}>{t('detailAffinamento').toUpperCase()}: {space}</span>
+                                    {detailAffinamento}
+                                </p>
+                            }
+                            {detailNoteGustative != null && detailNoteGustative != "" &&
+                                <p>
+                                    <span className={styles.details}>{t('detailNoteGustative').toUpperCase()}: {space}</span>
+                                    {detailNoteGustative}
+                                </p>
+                            }
+                            {detailAnalisi != null && detailAnalisi != "" &&
+                                <p>
+                                    <span className={styles.details}>{t('detailAnalisi').toUpperCase()}: {space}</span>
+                                    {detailAnalisi}
+                                </p>
+                            }
+                            {detailGastronomia != null && detailGastronomia != "" &&
                             <p>
-                                <span className={styles.details}>{t('detailRegione').toUpperCase()}: {space}</span>
-                                {detailRegione}
+                                <span className={styles.details}>{t('detailGastronomia').toUpperCase()}: {space}</span>
+                                {detailGastronomia}
                             </p>
-                        }
-                        {detailVigneto != null && detailVigneto != "" &&
-                            <p>
-                                <span className={styles.details}>{t('detailVigneto').toUpperCase()}: {space}</span>
-                                {detailVigneto}
-                            </p>
-                        }
-                        {detailUve != null && detailUve != "" &&
-                            <p>
-                                <span className={styles.details}>{t('detailUve').toUpperCase()}: {space}</span>
-                                {detailUve}
-                            </p>
-                        }
-                        {detailFruttaio != null && detailFruttaio != "" &&
-                            <p>
-                                <span className={styles.details}>{t('detailFruttaio').toUpperCase()}: {space}</span>
-                                {detailFruttaio}
-                            </p>
-                        }
-                        {detailVinificazione != null && detailVinificazione != "" &&
-                            <p>
-                                <span className={styles.details}>{t('detailVinificazione').toUpperCase()}: {space}</span>
-                                {detailVinificazione}
-                            </p>
-                        }
-                        {detailAffinamento != null && detailAffinamento != "" &&
-                            <p>
-                                <span className={styles.details}>{t('detailAffinamento').toUpperCase()}: {space}</span>
-                                {detailAffinamento}
-                            </p>
-                        }
-                        {detailNoteGustative != null && detailNoteGustative != "" &&
-                            <p>
-                                <span className={styles.details}>{t('detailNoteGustative').toUpperCase()}: {space}</span>
-                                {detailNoteGustative}
-                            </p>
-                        }
-                        {detailAnalisi != null && detailAnalisi != "" &&
-                            <p>
-                                <span className={styles.details}>{t('detailAnalisi').toUpperCase()}: {space}</span>
-                                {detailAnalisi}
-                            </p>
-                        }
-                        {detailGastronomia != null && detailGastronomia != "" &&
-                           <p>
-                            <span className={styles.details}>{t('detailGastronomia').toUpperCase()}: {space}</span>
-                            {detailGastronomia}
-                        </p>
-                        }
-                        {detailBottiglia != null && detailBottiglia != "" &&
-                            <p>
-                                <span className={styles.details}>{t('detailBottiglia').toUpperCase()}: {space}</span>
-                                {detailBottiglia}
-                            </p>
-                        }
-                        <p className={styles.price}>{price} €</p>
-                        <div className={styles.quantity}>
-                            <h3>{t('quantity')}:</h3>
-                            <p className={styles['quantity-desc']}>
-                                <span className={styles.minus} onClick={decQty}>
-                                    <AiOutlineMinus />
-                                </span>
-                                <span className={styles.num}>
-                                    {qty}
-                                </span>
-                                <span className={styles.plus} onClick={incQty}>
-                                    <AiOutlinePlus />
-                                </span>
-                            </p>
+                            }
+                            {detailBottiglia != null && detailBottiglia != "" &&
+                                <p>
+                                    <span className={styles.details}>{t('detailBottiglia').toUpperCase()}: {space}</span>
+                                    {detailBottiglia}
+                                </p>
+                            }
                         </div>
-                        <div className={styles.buttons}>
-                            <button 
-                                type="button" 
-                                className={styles['add-to-cart']} 
-                                onClick={() => onAdd(product, qty)}
-                            >
-                                {t('addCart')}
-                            </button>
-                            <button 
-                                type="button" 
-                                className={styles['buy-now']} 
-                                onClick={handleBuyNow}
-                            >
-                                {t('buyNow')}
-                            </button>
+                        <div className={styles.buttonForMobile}>
+                            <p className={styles.price}>{price} €</p>
+                            <div className={styles.quantity}>
+                                <h3>{t('quantity')}:</h3>
+                                <p className={styles['quantity-desc']}>
+                                    <span className={styles.minus} onClick={decQty}>
+                                        <AiOutlineMinus />
+                                    </span>
+                                    <span className={styles.num}>
+                                        {qty}
+                                    </span>
+                                    <span className={styles.plus} onClick={incQty}>
+                                        <AiOutlinePlus />
+                                    </span>
+                                </p>
+                            </div>
+                            <div className={styles.buttons}>
+                                <button 
+                                    type="button" 
+                                    className={styles['add-to-cart']} 
+                                    onClick={() => onAdd(product, qty)}
+                                >
+                                    {t('addCart')}
+                                </button>
+                                <button 
+                                    type="button" 
+                                    className={styles['buy-now']} 
+                                    onClick={handleBuyNow}
+                                >
+                                    {t('buyNow')}
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
