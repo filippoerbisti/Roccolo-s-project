@@ -574,6 +574,21 @@ span.text-red {
 }
 
 
+/* STYLES COLLAPSIBLE DETAIL */
+
+span#collapsible-trigger-1662290408103.Collapsible__trigger.is-closed, 
+span#collapsible-trigger-1662290408103.Collapsible__trigger.is-open {
+  width: 100%;
+  display: flex;
+  cursor: pointer;
+}
+
+span#collapsible-trigger-1662290408103.Collapsible__trigger.is-open {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
 /* STYLES HAMBURGER MENU ICON */
 
 .hamburger-menu {

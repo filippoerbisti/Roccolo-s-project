@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import useTranslation from 'next-translate/useTranslation';
+import Collapsible from 'react-collapsible';
 
 import { client, urlFor } from '../../lib/client';
 import { Product } from '../../components';
@@ -10,6 +11,20 @@ import styles from '../../styles/Product.module.css';
 import marquee from '../../styles/Marquee.module.css';
 
 const ProductDetails = ({ product, products }) => {
+
+    const [mobile, setMobile] = useState(false);
+    const mobileWidth = '1025';
+
+    if (typeof window !== 'undefined') {
+        window.onresize = function() {
+        if (window.innerWidth < mobileWidth)
+            setMobile(true)
+        else
+            setMobile(false)
+        }
+        console.log(window.innerWidth)
+    }
+
     const { t } = useTranslation('product');
     const space = " ";
 
@@ -78,80 +93,159 @@ const ProductDetails = ({ product, products }) => {
 
                     <div className={`${styles['product-detail-desc']} ${styles.w50}`}>
                         <h1 className={styles['product-title']}>{name}</h1>
-                        <div className={styles.reviews}>
+                        {/* <div className={styles.reviews}>
                             <div>
                                 <AiFillStar />
                                 <AiFillStar />
                                 <AiFillStar />
                                 <AiFillStar />
                                 <AiFillStar />
-                                {/* <AiOutlineStar /> */}
+                                <AiOutlineStar />
                             </div>
-                        </div>
-                        <div>
-                            <h3>{t('details')}:</h3>
-                            {/* Check for each detail section if it is valued */}
-                            {detailRegione != null && detailRegione != "" &&
+                        </div> */}
+                        {/* Detail for Pc */}
+                        {!mobile &&
+                            <div>
+                                <h3 className={styles.center}>{t('details').toUpperCase()}</h3>
+                                {/* Check for each detail section if it is valued */}
+                                {detailRegione != null && detailRegione != "" &&
+                                    <p>
+                                        <span className={styles.details}>{t('detailRegione').toUpperCase()}: {space}</span>
+                                        {detailRegione}
+                                    </p>
+                                }
+                                {detailVigneto != null && detailVigneto != "" &&
+                                    <p>
+                                        <span className={styles.details}>{t('detailVigneto').toUpperCase()}: {space}</span>
+                                        {detailVigneto}
+                                    </p>
+                                }
+                                {detailUve != null && detailUve != "" &&
+                                    <p>
+                                        <span className={styles.details}>{t('detailUve').toUpperCase()}: {space}</span>
+                                        {detailUve}
+                                    </p>
+                                }
+                                {detailFruttaio != null && detailFruttaio != "" &&
+                                    <p>
+                                        <span className={styles.details}>{t('detailFruttaio').toUpperCase()}: {space}</span>
+                                        {detailFruttaio}
+                                    </p>
+                                }
+                                {detailVinificazione != null && detailVinificazione != "" &&
+                                    <p>
+                                        <span className={styles.details}>{t('detailVinificazione').toUpperCase()}: {space}</span>
+                                        {detailVinificazione}
+                                    </p>
+                                }
+                                {detailAffinamento != null && detailAffinamento != "" &&
+                                    <p>
+                                        <span className={styles.details}>{t('detailAffinamento').toUpperCase()}: {space}</span>
+                                        {detailAffinamento}
+                                    </p>
+                                }
+                                {detailNoteGustative != null && detailNoteGustative != "" &&
+                                    <p>
+                                        <span className={styles.details}>{t('detailNoteGustative').toUpperCase()}: {space}</span>
+                                        {detailNoteGustative}
+                                    </p>
+                                }
+                                {detailAnalisi != null && detailAnalisi != "" &&
+                                    <p>
+                                        <span className={styles.details}>{t('detailAnalisi').toUpperCase()}: {space}</span>
+                                        {detailAnalisi}
+                                    </p>
+                                }
+                                {detailGastronomia != null && detailGastronomia != "" &&
                                 <p>
-                                    <span className={styles.details}>{t('detailRegione').toUpperCase()}: {space}</span>
-                                    {detailRegione}
+                                    <span className={styles.details}>{t('detailGastronomia').toUpperCase()}: {space}</span>
+                                    {detailGastronomia}
                                 </p>
-                            }
-                            {detailVigneto != null && detailVigneto != "" &&
-                                <p>
-                                    <span className={styles.details}>{t('detailVigneto').toUpperCase()}: {space}</span>
-                                    {detailVigneto}
-                                </p>
-                            }
-                            {detailUve != null && detailUve != "" &&
-                                <p>
-                                    <span className={styles.details}>{t('detailUve').toUpperCase()}: {space}</span>
-                                    {detailUve}
-                                </p>
-                            }
-                            {detailFruttaio != null && detailFruttaio != "" &&
-                                <p>
-                                    <span className={styles.details}>{t('detailFruttaio').toUpperCase()}: {space}</span>
-                                    {detailFruttaio}
-                                </p>
-                            }
-                            {detailVinificazione != null && detailVinificazione != "" &&
-                                <p>
-                                    <span className={styles.details}>{t('detailVinificazione').toUpperCase()}: {space}</span>
-                                    {detailVinificazione}
-                                </p>
-                            }
-                            {detailAffinamento != null && detailAffinamento != "" &&
-                                <p>
-                                    <span className={styles.details}>{t('detailAffinamento').toUpperCase()}: {space}</span>
-                                    {detailAffinamento}
-                                </p>
-                            }
-                            {detailNoteGustative != null && detailNoteGustative != "" &&
-                                <p>
-                                    <span className={styles.details}>{t('detailNoteGustative').toUpperCase()}: {space}</span>
-                                    {detailNoteGustative}
-                                </p>
-                            }
-                            {detailAnalisi != null && detailAnalisi != "" &&
-                                <p>
-                                    <span className={styles.details}>{t('detailAnalisi').toUpperCase()}: {space}</span>
-                                    {detailAnalisi}
-                                </p>
-                            }
-                            {detailGastronomia != null && detailGastronomia != "" &&
-                            <p>
-                                <span className={styles.details}>{t('detailGastronomia').toUpperCase()}: {space}</span>
-                                {detailGastronomia}
-                            </p>
-                            }
-                            {detailBottiglia != null && detailBottiglia != "" &&
-                                <p>
-                                    <span className={styles.details}>{t('detailBottiglia').toUpperCase()}: {space}</span>
-                                    {detailBottiglia}
-                                </p>
-                            }
-                        </div>
+                                }
+                                {detailBottiglia != null && detailBottiglia != "" &&
+                                    <p>
+                                        <span className={styles.details}>{t('detailBottiglia').toUpperCase()}: {space}</span>
+                                        {detailBottiglia}
+                                    </p>
+                                }
+                            </div>
+                        }
+                        {/* Detail for mobile -> collapse panel */}
+                        {mobile &&
+                            <div className={styles.panel}>
+                                <Collapsible 
+                                    trigger="Clicca qui per maggiori dettagli"
+                                    triggerWhenOpen="X (chiudi)"
+                                >
+    
+                                    <div>
+                                        <h3 className={styles.center}>{t('details').toUpperCase()}</h3>
+                                        {/* Check for each detail section if it is valued */}
+                                        {detailRegione != null && detailRegione != "" &&
+                                            <p>
+                                                <span className={styles.details}>{t('detailRegione').toUpperCase()}: {space}</span>
+                                                {detailRegione}
+                                            </p>
+                                        }
+                                        {detailVigneto != null && detailVigneto != "" &&
+                                            <p>
+                                                <span className={styles.details}>{t('detailVigneto').toUpperCase()}: {space}</span>
+                                                {detailVigneto}
+                                            </p>
+                                        }
+                                        {detailUve != null && detailUve != "" &&
+                                            <p>
+                                                <span className={styles.details}>{t('detailUve').toUpperCase()}: {space}</span>
+                                                {detailUve}
+                                            </p>
+                                        }
+                                        {detailFruttaio != null && detailFruttaio != "" &&
+                                            <p>
+                                                <span className={styles.details}>{t('detailFruttaio').toUpperCase()}: {space}</span>
+                                                {detailFruttaio}
+                                            </p>
+                                        }
+                                        {detailVinificazione != null && detailVinificazione != "" &&
+                                            <p>
+                                                <span className={styles.details}>{t('detailVinificazione').toUpperCase()}: {space}</span>
+                                                {detailVinificazione}
+                                            </p>
+                                        }
+                                        {detailAffinamento != null && detailAffinamento != "" &&
+                                            <p>
+                                                <span className={styles.details}>{t('detailAffinamento').toUpperCase()}: {space}</span>
+                                                {detailAffinamento}
+                                            </p>
+                                        }
+                                        {detailNoteGustative != null && detailNoteGustative != "" &&
+                                            <p>
+                                                <span className={styles.details}>{t('detailNoteGustative').toUpperCase()}: {space}</span>
+                                                {detailNoteGustative}
+                                            </p>
+                                        }
+                                        {detailAnalisi != null && detailAnalisi != "" &&
+                                            <p>
+                                                <span className={styles.details}>{t('detailAnalisi').toUpperCase()}: {space}</span>
+                                                {detailAnalisi}
+                                            </p>
+                                        }
+                                        {detailGastronomia != null && detailGastronomia != "" &&
+                                        <p>
+                                            <span className={styles.details}>{t('detailGastronomia').toUpperCase()}: {space}</span>
+                                            {detailGastronomia}
+                                        </p>
+                                        }
+                                        {detailBottiglia != null && detailBottiglia != "" &&
+                                            <p>
+                                                <span className={styles.details}>{t('detailBottiglia').toUpperCase()}: {space}</span>
+                                                {detailBottiglia}
+                                            </p>
+                                        }
+                                    </div>
+                                </Collapsible>
+                            </div>
+                        }
+
                         <div className={styles.buttonForMobile}>
                             <p className={styles.price}>{price} €</p>
                             <div className={styles.quantity}>

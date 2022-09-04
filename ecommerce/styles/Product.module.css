@@ -12,6 +12,10 @@
     width: 50%;
   }
 
+  .center {
+    text-align: center;
+  }
+
   .title {
     text-transform: uppercase;
     letter-spacing: 5px;
@@ -273,6 +277,18 @@
     display: flex;
     gap: 5px;
     align-items: center;
+  }
+
+  .panel {
+    padding: 10px;
+    border-style: solid;
+    border-width: 5px;
+    border-image: 
+      linear-gradient(
+        to bottom, 
+        red, 
+        rgba(0, 0, 0, 0)
+      ) 0 100%; 
   }
 
   .product-detail-desc h4 {
