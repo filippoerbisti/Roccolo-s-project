@@ -15,6 +15,10 @@
     text-align: center;
   }
 
+  .details {
+    font-weight: bold;
+  }
+
   .products-container {
     display: flex;
     justify-content: center;

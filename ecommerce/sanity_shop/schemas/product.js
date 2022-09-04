@@ -26,7 +26,7 @@ export default {
             options: {
                 source: 'name',
                 maxLength: 90,
-            }
+            },
         },
         {
             name: 'price',
@@ -37,12 +37,67 @@ export default {
             title: 'Rating',
             name: 'rating',
             // title: 'Rating (0 - 10)',
-            type: 'number'
+            type: 'number',
         },
         {
-            name: 'details',
-            title: 'Details',
+            title: 'Category',
+            name: 'category',
             type: 'string',
+        },
+        {
+            name: 'detailRegione',
+            title: 'DetailRegione',
+            type: 'string',
+        },
+        {
+            name: 'detailVigneto',
+            title: 'DetailVigneto',
+            type: 'string',
+        },
+        {
+            name: 'detailUve',
+            title: 'DetailUve',
+            type: 'string',
+        },
+        {
+            name: 'detailFruttaio',
+            title: 'DetailFruttaio',
+            type: 'string',
+        },
+        {
+            name: 'detailVinificazione',
+            title: 'DetailVinificazione',
+            type: 'string',
+        },
+        {
+            name: 'detailAffinamento',
+            title: 'DetailAffinamento',
+            type: 'string',
+        },
+        {
+            name: 'detailNoteGustative',
+            title: 'DetailNoteGustative',
+            type: 'string',
+        },
+        {
+            name: 'detailAnalisi',
+            title: 'DetailAnalisi',
+            type: 'string',
+        },
+        {
+            name: 'detailGastronomia',
+            title: 'DetailGastronomia',
+            type: 'string',
+        },
+        {
+            name: 'detailBottiglia',
+            title: 'DetailBottiglia',
+            type: 'string',
+        },
+        {
+            name: 'detailsBio',
+            title: 'DetailBio',
+            type: 'boolean',
         },
     ],
     orderings: [

@@ -10,9 +10,10 @@ import styles from '../../styles/Product.module.css';
 import marquee from '../../styles/Marquee.module.css';
 
 const ProductDetails = ({ product, products }) => {
-    const { t } = useTranslation('common');
+    const { t } = useTranslation('product');
+    const space = " ";
 
-    const { image, name, details, price } = product;
+    const { image, name, price, detailRegione, detailVigneto, detailUve, detailFruttaio, detailVinificazione, detailAffinamento, detailNoteGustative, detailAnalisi, detailGastronomia, detailBottiglia, detailsBio } = product;
     const [index, setIndex] = useState(0);
     const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
 
@@ -28,17 +29,17 @@ const ProductDetails = ({ product, products }) => {
                 <div className={styles['product-detail-container']}>
                     <div>
                         <div className={styles['product-detail-box']}>
-                            <img src={urlFor(image && image[index])} className={styles['product-detail-image']}/>
+                            {/* <img src={urlFor(image && image[index])} className={styles['product-detail-image']}/> */}
                         </div>
                         <div className={styles['small-images-container']}>
-                            {image?.map((item, i) => (
+                            {/* {image?.map((item, i) => (
                                 <img
                                     key={i}
-                                    src={urlFor(item)}
+                                    src={urlFor(item).url()}
                                     className={styles['small-image']}
                                     onMouseEnter={() => setIndex(i)}
                                 />
-                            ))}
+                            ))} */}
                         </div>
                     </div>
 
@@ -54,8 +55,68 @@ const ProductDetails = ({ product, products }) => {
                                 {/* <AiOutlineStar /> */}
                             </div>
                         </div>
-                        <h4>{t('details')}:</h4>
-                        <p>{details}</p>
+                        <h3>{t('details')}:</h3>
+                        {/* Check for each detail section if it is valued */}
+                        {detailRegione != null && detailRegione != "" &&
+                            <p>
+                                <span class={styles.details}>{t('detailRegione').toUpperCase()}: {space}</span>
+                                {detailRegione}
+                            </p>
+                        }
+                        {detailVigneto != null && detailVigneto != "" &&
+                            <p>
+                                <span class={styles.details}>{t('detailVigneto').toUpperCase()}: {space}</span>
+                                {detailVigneto}
+                            </p>
+                        }
+                        {detailUve != null && detailUve != "" &&
+                            <p>
+                                <span class={styles.details}>{t('detailUve').toUpperCase()}: {space}</span>
+                                {detailUve}
+                            </p>
+                        }
+                        {detailFruttaio != null && detailFruttaio != "" &&
+                            <p>
+                                <span class={styles.details}>{t('detailFruttaio').toUpperCase()}: {space}</span>
+                                {detailFruttaio}
+                            </p>
+                        }
+                        {detailVinificazione != null && detailVinificazione != "" &&
+                            <p>
+                                <span class={styles.details}>{t('detailVinificazione').toUpperCase()}: {space}</span>
+                                {detailVinificazione}
+                            </p>
+                        }
+                        {detailAffinamento != null && detailAffinamento != "" &&
+                            <p>
+                                <span class={styles.details}>{t('detailAffinamento').toUpperCase()}: {space}</span>
+                                {detailAffinamento}
+                            </p>
+                        }
+                        {detailNoteGustative != null && detailNoteGustative != "" &&
+                            <p>
+                                <span class={styles.details}>{t('detailNoteGustative').toUpperCase()}: {space}</span>
+                                {detailNoteGustative}
+                            </p>
+                        }
+                        {detailAnalisi != null && detailAnalisi != "" &&
+                            <p>
+                                <span class={styles.details}>{t('detailAnalisi').toUpperCase()}: {space}</span>
+                                {detailAnalisi}
+                            </p>
+                        }
+                        {detailGastronomia != null && detailGastronomia != "" &&
+                           <p>
+                            <span class={styles.details}>{t('detailGastronomia').toUpperCase()}: {space}</span>
+                            {detailGastronomia}
+                        </p>
+                        }
+                        {detailBottiglia != null && detailBottiglia != "" &&
+                            <p>
+                                <span class={styles.details}>{t('detailBottiglia').toUpperCase()}: {space}</span>
+                                {detailBottiglia}
+                            </p>
+                        }
                         <p className={styles.price}>{price} €</p>
                         <div className={styles.quantity}>
                             <h3>{t('quantity')}:</h3>

@@ -9,6 +9,7 @@ const i18nConfig = {
       '/': ['home'],
       '/success': ['success'],
       // Shop / Product
+      '/product/[slug]': ['product'],
       '/wineshop': ['wineshop'],
       '/event': ['event'],
       '/tour': ['tour'],

@@ -1,0 +1,17 @@
+{
+    "details": "Dettagli",
+    "quantity": "Quantità",
+    "addCart" : "Aggiungi al Carrello",
+    "buyNow": "Compra Ora",
+    "alsoLike": "Ti potrebbe anche piacere",
+    "detailRegione": "Regione",
+    "detailVigneto": "Vigneto",
+    "detailUve": "Uve",
+    "detailFruttaio": "Fruttaio",
+    "detailVinificazione": "Vinificazione",
+    "detailAffinamento": "Affinamento",
+    "detailNoteGustative": "Note Gustative",
+    "detailAnalisi": "Analisi",
+    "detailGastronomia": "Gastronomia",
+    "detailBottiglia": "Bottiglia"
+}

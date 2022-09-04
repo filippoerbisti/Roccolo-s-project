@@ -1,0 +1,17 @@
+{
+    "details": "Details",
+    "quantity": "Quantity",
+    "addCart" : "Add to Cart",
+    "buyNow": "Buy Now",
+    "alsoLike": "You may also like",
+    "detailRegione": "Region",
+    "detailVigneto": "Vineyard",
+    "detailUve": "Grapes",
+    "detailFruttaio": "Loft",
+    "detailVinificazione": "Vinification",
+    "detailAffinamento": "Refinement",
+    "detailNoteGustative": "Tasting Notes",
+    "detailAnalisi": "Analyses",
+    "detailGastronomia": "Gastronomy",
+    "detailBottiglia": "Bottle"
+}

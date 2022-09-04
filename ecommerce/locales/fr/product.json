@@ -1,0 +1,17 @@
+{
+    "details": "Details",
+    "quantity": "Quantity",
+    "addCart" : "Ajouter au Panier",
+    "buyNow": "Acheter Maintenant",
+    "alsoLike": "Tu pourrais aussi aimer",
+    "detailRegione": "Région",
+    "detailVigneto": "Vignoble",
+    "detailUve": "Raisins",
+    "detailFruttaio": "Grenier",
+    "detailVinificazione": "Vinification",
+    "detailAffinamento": "Raffinement",
+    "detailNoteGustative": "Notes de dégustation",
+    "detailAnalisi": "Analyses",
+    "detailGastronomia": "Gastronomie",
+    "detailBottiglia": "Bouteille"
+}
