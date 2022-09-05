@@ -42,19 +42,19 @@ const ProductDetails = ({ product, products }) => {
             <div className={styles.container}>
             <h1>!!! THIS IS A DEMO, Don't Buy Anything !!!</h1>
                 <div className={styles['product-detail-container']}>
-                    <div className={styles.w50}>
+                    <div className={`${styles.w50} ${styles.fxCenter}`}>
                         <div className={styles['product-detail-box']}>
-                            {/* <img src={urlFor(image && image[index])} className={styles['product-detail-image']}/> */}
+                            <img src={urlFor(image && image[index])} className={styles['product-detail-image']}/>
                         </div>
                         <div className={styles['small-images-container']}>
-                            {/* {image?.map((item, i) => (
+                            {image?.map((item, i) => (
                                 <img
                                     key={i}
                                     src={urlFor(item).url()}
                                     className={styles['small-image']}
                                     onMouseEnter={() => setIndex(i)}
                                 />
-                            ))} */}
+                            ))}
                         </div>
                         <div className={styles.buttonForPc}>
                             <p className={styles.price}>{price} €</p>

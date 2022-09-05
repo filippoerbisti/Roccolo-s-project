@@ -12,6 +12,13 @@
     width: 50%;
   }
 
+  .fxCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   .center {
     text-align: center;
   }
