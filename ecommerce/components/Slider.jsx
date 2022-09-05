@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 // import required modules
-import { Pagination, Navigation } from "swiper";
+import { EffectCoverflow, Pagination, Navigation } from "swiper";
 
 import dataMainImgSlider from '../store/dataMainImgSlider';
 
@@ -18,14 +18,25 @@ const Slider = () => {
     return (
         <>
             <Swiper
-                slidesPerView={1}
+                // slidesPerView={1}
                 spaceBetween={30}
                 loop={true}
                 pagination={{
                     clickable: true,
                 }}
+                effect={"coverflow"}
+                grabCursor={true}
+                centeredSlides={true}
+                slidesPerView={"auto"}
+                coverflowEffect={{
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                }}
                 navigation={true}
-                modules={[Pagination, Navigation]}
+                modules={[EffectCoverflow, Pagination, Navigation]}
                 className="mySwiper"
             >
                 {images?.map((image) => 
