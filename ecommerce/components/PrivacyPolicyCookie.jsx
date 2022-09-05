@@ -177,7 +177,7 @@ const PrivacyPolicyCookie = () => {
           <p>If you have any questions about this Privacy Policy, You can contact us:</p>
           <ul>
             <li>
-              <p>By email: <a href={`mailto:${mailTo}`} class="__cf_email__">filippo.erbisti@gmail.com</a></p>
+              <p>By email: <a href={`mailto:${mailTo}`} rel="noopener noreferrer" class="__cf_email__">filippo.erbisti@gmail.com</a></p>
             </li>
             <li>
               <p>By visiting this page on our website: <Link href="/contact"  target="_blank">https://roccolodellago.vercel.app/contact</Link></p>

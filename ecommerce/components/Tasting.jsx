@@ -88,7 +88,7 @@ const Tasting = () => {
         <p className={styles.footerParagraphTasting}>{t('tastingFooter')}</p>
         <div className={styles.footerTastingBtnCont}>
           <button className={`${styles.footerTastingButton} tooltip`}>
-            <a href={`mailto:${mailTo}`} target="_blank">
+            <a href={`mailto:${mailTo}`} target="_blank" rel="noopener noreferrer">
               <i className="fa-solid fa-envelope fa-xl"></i>
               <span className='tooltiptext'>{t('sendEmail')}</span>
             </a>

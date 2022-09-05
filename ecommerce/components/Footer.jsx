@@ -46,7 +46,7 @@ const Footer = () => {
             <br />
             <p>Tel: <a href={`tel:${phoneNumber}`} className={styles.tag}>+39 045 7581077</a></p>
             <br />
-            <p>Email: <a href={`mailto:${mailTo}`} className={styles.tag} target='_blank'>info@roccolodellago.it</a></p>
+            <p>Email: <a href={`mailto:${mailTo}`} className={styles.tag} target='_blank' rel="noopener noreferrer">info@roccolodellago.it</a></p>
             <br />
             <p className={styles.workHour}>{t('when')}: {space}
             {t('workHours')} <br />

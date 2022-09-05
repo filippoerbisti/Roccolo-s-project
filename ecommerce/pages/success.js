@@ -31,7 +31,7 @@ const Success = () => {
                 <p className='email-msg'>{t('checkEmail')}</p>
                 <p className='description'>
                     {t('anyQuestion')}
-                    <a className='email' href={`mailto:${mailTo}`}>
+                    <a className='email' href={`mailto:${mailTo}`} rel="noopener noreferrer">
                         filippo.erbisti@gmail.com   
                     </a>
                 </p>
