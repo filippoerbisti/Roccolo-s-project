@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 // import required modules
-import { EffectCoverflow, Pagination, Navigation } from "swiper";
+import { EffectCoverflow, Autoplay, Pagination, Navigation } from "swiper";
 
 import dataMainImgSlider from '../store/dataMainImgSlider';
 
@@ -35,8 +35,12 @@ const Slider = () => {
                     modifier: 1,
                     slideShadows: true,
                 }}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
                 navigation={true}
-                modules={[EffectCoverflow, Pagination, Navigation]}
+                modules={[EffectCoverflow, Autoplay, Pagination, Navigation]}
                 className="mySwiper"
             >
                 {images?.map((image) => 
