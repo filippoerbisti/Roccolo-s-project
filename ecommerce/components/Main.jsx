@@ -69,7 +69,6 @@ const Main = ({ products }) => {
 
   const mobileWidth = '900';
   const smallPcWidth = '1250';
-
   const size = useWindowSize();
   let n = 1;
   if (size.width <= mobileWidth){
@@ -79,33 +78,6 @@ const Main = ({ products }) => {
   } else {
     n = 3;
   }
-
-  let n2;
-  let n3;
-  // if (typeof window !== 'undefined') {
-  //   window.onload = function() {
-  //     width = window.innerWidth;
-  //       if (width <= mobileWidth)
-  //         n = 1;
-  //       else if (width > mobileWidth && width <= smallPcWidth)
-  //         n = 2;
-  //       else 
-  //         n = 3;
-  //         console.log(n, width)
-  //   }
-  //   window.onresize = function() {
-  //     let width = window.innerWidth;
-  //       if (width <= mobileWidth)
-  //         n = 1;
-  //       else if (width > mobileWidth && width <= smallPcWidth)
-  //         n = 2;
-  //       else 
-  //         n = 3;
-  //         console.log(n, width)
-
-  //   }
-  //   console.log(n)
-  // }
 
   const pWineshop = `${t('wineshopParagraph')}`;
   const pWineshopParagraph = pWineshop.replace(/xxx/gi, '\n\r');
@@ -151,12 +123,12 @@ const Main = ({ products }) => {
 
       <hr className={styles.hr} />
 
-      <div>
+      <div className={styles.pb10}>
         <div className={marquee['maylike-products-wrapper']}>
           <h2 className={styles.title}>I NOSTRI VINI</h2>
           <div className={styles.btnContainer}>
               <Link href='/wine'>
-                <button className={styles.btn} type='button'> 
+                <button className={`${styles.btn} ${styles.btnWine}`} type='button'> 
                   SHOP
                 </button>
               </Link>
