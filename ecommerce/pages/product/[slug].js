@@ -39,9 +39,9 @@ const ProductDetails = ({ product, products }) => {
     const mobileWidth = '1025';
     const size = useWindowSize();
     if (size.width <= mobileWidth)
-        mob = true;
+        mobile = true;
     else
-        mob = false;
+        mobile = false;
 
     const { t } = useTranslation('product');
     const space = " ";
@@ -75,7 +75,8 @@ const ProductDetails = ({ product, products }) => {
                             ))}
                         </div>
                         <div className={styles.buttonForPc}>
-                            <p className={styles.price}>{price} €</p>
+                            {/* necessary for rounding and / or to add decimals to the value -> in this case 2 == toFixed(2) */}
+                            <p className={styles.price}>{price.toFixed(2)} €</p>
                             <div className={styles.quantity}>
                                 <h3>{t('quantity')}:</h3>
                                 <p className={styles['quantity-desc']}>

@@ -37,7 +37,8 @@ const Product = ({ product}) => {
               <h2>{name}</h2>
               <div className={styles.priceBox}>
                   <h3>Price:
-                    <span> {price} €</span>
+                    {/* necessary for rounding and / or to add decimals to the value -> in this case 2 == toFixed(2) */}
+                    <span> {price.toFixed(2)} €</span>
                   </h3>
               </div>
               <button className={styles.btn} onClick={handleBuyNow}>Buy Now</button>

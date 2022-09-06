@@ -39,7 +39,7 @@ const Cart = () => {
   }
 
   // This values are the props in the UI
-  const amount = totalPrice;
+  const amount = totalPrice.toFixed(2);
   const currency = "EUR";
   const style = {"layout":"vertical"};
 
@@ -93,7 +93,7 @@ const Cart = () => {
                   createOrder({
                       customer: shipping.name.full_name,
                       address: shipping.address.address_line_1,
-                      total: totalPrice,
+                      total: totalPrice.toFixed(2),
                       method: 1
                   })
             });
@@ -147,7 +147,7 @@ const Cart = () => {
               <div className='item-desc'>
                 <div className='flex top'>
                   <h5>{item.name}</h5>
-                  <h4>{item.price} €</h4>
+                  <h4>{item.price.toFixed(2)} €</h4>
                 </div>
                 <div className='flex bottom'>
                   <div className='quantity-desc'>
@@ -176,7 +176,7 @@ const Cart = () => {
         {cartItems.length >= 1 && (
           <div className='cart-bottom'>
             <div className='total'>
-              <h3>{t('total')}: {totalPrice} €</h3>
+              <h3>{t('total')}: {totalPrice.toFixed(2)} €</h3>
             </div>
             <div className='btn-container-cart'>
               <button 
