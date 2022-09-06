@@ -1,24 +1,67 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { client } from '../lib/client';
 import { Product } from '../components';
 import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../styles/Product.module.css';
 
+
+
 const Wine = ({ products }) => {
+    
     const { t } = useTranslation('common');
+
+    const [selectedCategory, setSelectedCategory] = useState('');
+    let allProducts = true;
+    if(selectedCategory == null || selectedCategory == '')
+        allProducts = true;
+    else 
+        allProducts = false;
+
+        console.log(selectedCategory, allProducts)
 
     return (
         <div className={styles.mx20}>
             <h1 className={styles.title}>{t('ourWines')}</h1>
             <p className={styles.title}>!!! THIS IS A DEMO, Don't Buy Anything !!!</p>
 
+            <select 
+                value={selectedCategory}
+                onChange={(e) => {
+                    setSelectedCategory(e.target.value);
+                }}
+            >
+                <option value={'All'}>All</option>
+                <option value={'Vini Spumanti'}>{'Vini Spumanti'}</option>
+                <option value={'Vini Bianchi'}>{'Vini Bianchi'}</option>
+                <option value={'Vini Rosati'}>{'Vini Rosati'}</option>
+                <option value={'Vini Rossi'}>{'Vini Rossi'}</option>
+                <option value={'Vini da Dessert'}>{'Vini da Dessert'}</option>
+                <option value={'Grappa'}>{'Grappa'}</option>
+                <option value={'Olio'}>{'Olio'}</option>
+            </select>
+
             <div className={styles['products-container']}>
-                    {products?.map((product) => 
-                    <div className={styles.py} key={product._id}>
-                        <Product product={product} />
-                    </div>
-                    )}
+                {/* All products */}
+                {allProducts && 
+                    <>
+                        {products?.map((product) => 
+                            <div className={styles.py} key={product._id}>
+                                <Product product={product} />
+                            </div>
+                        )}
+                    </>
+                }
+                {/* Product filtered by Category */}
+                {!allProducts && 
+                    <>
+                        {products?.filter(c => c.category == selectedCategory).map((product) => 
+                            <div className={styles.py} key={product._id}>
+                                <Product product={product} />
+                            </div>
+                        )}
+                    </>
+                }
             </div>
         </div>
     )
