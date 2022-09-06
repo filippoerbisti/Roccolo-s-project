@@ -716,6 +716,7 @@ span#collapsible-trigger-1662290408103.Collapsible__trigger.is-open {
 .swiper-rtl, 
 .swiper-button-prev {
   color: #892331;
+  display: none;
 }
 
 /* Style pagination */
