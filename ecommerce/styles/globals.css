@@ -762,3 +762,134 @@ span#collapsible-trigger-1662290408103.Collapsible__trigger.is-open {
 }
 
 
+/* STYLES DROPDWON MENU IN SHOP (DMS) */
+
+.custom-select > details {
+	position: relative;
+	width: 300px;
+	margin-right: 1rem;
+}
+
+.custom-select > details[open] {
+	z-index: 1;
+}
+
+.custom-select > summary {
+	padding: 1rem;
+	cursor: pointer;
+	border-radius: 5px;
+	background-color: #ddd;
+	list-style: none;
+}
+
+.custom-select > summary::-webkit-details-marker {
+	display: none;
+}
+
+.custom-select > details[open] summary:before {
+	content: '';
+	display: block;
+	width: 100vw;
+	height: 100vh;
+	background: transparent;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.custom-select > summary:after {
+	content: '';
+	display: inline-block;
+	width: .5rem;
+	height: .5rem;
+	border-bottom: 1px solid currentColor;
+	border-left: 1px solid currentColor;
+	border-bottom-left-radius: 2px;
+	transform: rotate(45deg) translate(50%, 0%);
+	transform-origin: center center;
+	transition: transform ease-in-out 100ms
+}
+
+.custom-select > summary:focus {
+	outline: none;
+}
+
+.custom-select > details[open] summary:after {
+	transform: rotate(-45deg) translate(0%, 0%);
+}
+
+.custom-select > ul {
+	width: 100%;
+	background: #ddd;
+	position: absolute;
+	top: calc(100% + .5rem);
+	left: 0;
+	padding: 1rem;
+	margin: 0;
+	box-sizing: border-box;
+	border-radius: 5px;
+	max-height: 200px;
+	overflow-y: auto;
+}
+
+.custom-select > li {
+	margin: 0;
+	padding: 1rem 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.custom-select > li:first-child {
+	padding-top: 0;
+}
+
+.custom-select > li:last-child {
+	padding-bottom: 0;
+	border-bottom: none;
+}
+
+/* FAKE SELECT */
+
+.radios {
+	counter-reset: radios;
+}
+
+.radios:before {
+	content: var(--selection);
+}
+
+.custom-select > input[type=radio] {
+	counter-increment: radios;
+	appearance: none;
+	display: none;
+}
+
+.custom-select > input[type=radio]:checked {
+	display: inline;
+	--display: block;
+}
+
+.custom-select > input[type=radio]:after {
+	content: attr(title);
+	display: inline;
+	font-size: 1rem;
+}
+
+.listSelect {
+	counter-reset: labels;
+}
+
+.custom-select > label {
+	width: 100%;
+	display: flex;
+	cursor: pointer;
+	justify-content: space-between;
+}
+
+.custom-select > label span {
+	--display: none;
+	display: var(--display);
+	width: 1rem;
+	height: 1rem;
+	border: 1px solid #727272;
+	border-radius: 3px;
+}
