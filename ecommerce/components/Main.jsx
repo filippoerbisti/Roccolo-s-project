@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import useTranslation from 'next-translate/useTranslation';
@@ -7,6 +7,15 @@ import { Product, Slider } from '../components';
 
 import styles from '../styles/Main.module.css';
 import marquee from '../styles/Marquee.module.css';
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+// import required modules
+import { Pagination, Navigation } from "swiper";
 
 const ReadMore = ({ children }) => {
   const text = children;
@@ -32,8 +41,71 @@ const ReadMore = ({ children }) => {
   )
 }
 
+const useWindowSize = () => {
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Handler to call on window resize
+      function handleResize() {
+        // Set window width/height to state
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      }
+      window.addEventListener("resize", handleResize);
+      handleResize();
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
+  return windowSize;
+}
+
 const Main = ({ products }) => {
   const { t } = useTranslation('home');
+
+  const mobileWidth = '900';
+  const smallPcWidth = '1250';
+
+  const size = useWindowSize();
+  let n = 1;
+  if (size.width <= mobileWidth){
+    n = 1;
+  } else if (size.width > mobileWidth && size.width <= smallPcWidth) {
+    n = 2;
+  } else {
+    n = 3;
+  }
+
+  let n2;
+  let n3;
+  // if (typeof window !== 'undefined') {
+  //   window.onload = function() {
+  //     width = window.innerWidth;
+  //       if (width <= mobileWidth)
+  //         n = 1;
+  //       else if (width > mobileWidth && width <= smallPcWidth)
+  //         n = 2;
+  //       else 
+  //         n = 3;
+  //         console.log(n, width)
+  //   }
+  //   window.onresize = function() {
+  //     let width = window.innerWidth;
+  //       if (width <= mobileWidth)
+  //         n = 1;
+  //       else if (width > mobileWidth && width <= smallPcWidth)
+  //         n = 2;
+  //       else 
+  //         n = 3;
+  //         console.log(n, width)
+
+  //   }
+  //   console.log(n)
+  // }
 
   const pWineshop = `${t('wineshopParagraph')}`;
   const pWineshopParagraph = pWineshop.replace(/xxx/gi, '\n\r');
@@ -89,14 +161,35 @@ const Main = ({ products }) => {
                 </button>
               </Link>
             </div>
-          <div className={marquee['marquee']}>
+          {/* <div className={marquee['marquee']}>
             <div className={`${marquee['maylike-products-container']} ${marquee.track}`}>
               {products?.map((product) => (
                 <Product key={product._id} 
                   product={product} />
               ))}
             </div>
-          </div>
+          </div> */}
+
+          <Swiper
+            slidesPerView={size <= mobileWidth ? n : size > mobileWidth && size <= smallPcWidth ? n : n}
+            spaceBetween={20}
+            loop={true}
+            pagination={{
+                clickable: true,
+                dynamicBullets: true,
+            }}
+            navigation={true}
+            modules={[Pagination, Navigation]}
+            className="mySwiper"
+          >
+            {products?.map((product) => 
+                <SwiperSlide key={product._id}>
+                    <div className={styles.py} key={product._id}>
+                        <Product product={product} />
+                    </div>
+                </SwiperSlide>
+            )}
+          </Swiper>
         </div>
       </div>
 
@@ -203,15 +296,6 @@ const Main = ({ products }) => {
       </div>
     </div>
   )
-}
-
-export const getServerSideProps = async () => {
-  const query = '*[_type == "product"]';
-  const products = await client.fetch(query);
-
-  return {
-    props: { products }
-  }
 }
 
 export default Main
