@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import useTranslation from 'next-translate/useTranslation';
 import Collapsible from 'react-collapsible';
@@ -10,20 +10,38 @@ import { useStateContext } from '../../context/StateContext';
 import styles from '../../styles/Product.module.css';
 import marquee from '../../styles/Marquee.module.css';
 
+const useWindowSize = () => {
+    const [windowSize, setWindowSize] = useState({
+      width: undefined,
+      height: undefined,
+    });
+    useEffect(() => {
+      if (typeof window !== 'undefined') {
+        // Handler to call on window resize
+        function handleResize() {
+          // Set window width/height to state
+          setWindowSize({
+            width: window.innerWidth,
+            height: window.innerHeight,
+          });
+        }
+        window.addEventListener("resize", handleResize);
+        handleResize();
+        return () => window.removeEventListener("resize", handleResize);
+      }
+    }, []);
+    return windowSize;
+}
+
 const ProductDetails = ({ product, products }) => {
 
-    const [mobile, setMobile] = useState(false);
+    let mobile;
     const mobileWidth = '1025';
-
-    if (typeof window !== 'undefined') {
-        window.onresize = function() {
-        if (window.innerWidth < mobileWidth)
-            setMobile(true)
-        else
-            setMobile(false)
-        }
-        console.log(window.innerWidth)
-    }
+    const size = useWindowSize();
+    if (size.width <= mobileWidth)
+        mob = true;
+    else
+        mob = false;
 
     const { t } = useTranslation('product');
     const space = " ";
