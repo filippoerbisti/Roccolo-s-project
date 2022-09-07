@@ -10,37 +10,33 @@ const Wine = ({ products }) => {
     const { t } = useTranslation('common');
 
     const [selectedCategory, setSelectedCategory] = useState('All');
-    let allProducts = true;
-
-    useEffect(() => {
-        if(selectedCategory == null || selectedCategory == '' || selectedCategory == 'All')
-            allProducts = true;
-        else 
-            allProducts = false;
-      }, [allProducts]);
-
-      console
 
     return (
         <div className={styles.mx20}>
             <h1 className={styles.title}>{t('ourWines')}</h1>
             <p className={styles.title}>!!! THIS IS A DEMO, Don't Buy Anything !!!</p>
 
-            <style jsx>{`
-                .selectCenter {
-                    text-align: center;
-                    margin-bottom: 20px
-                }
-                .selectCenter select {
-                    width: 300px;
-                    height: 40px;
-                    font-size: 18px;
-                    padding: 0 10px;
-                }
-            `}</style>
+            <style jsx>
+                {`
+                    .selectCenter {
+                        text-align: center;
+                        margin-bottom: 20px
+                    }
+                    .selectCenter select {
+                        width: 300px;
+                        height: 40px;
+                        font-size: 18px;
+                        padding: 0 10px;
+                    }
+                    .result {
+                        padding-top: 20px;
+                    }
+                `}
+            </style>
             <div className='selectCenter'>
                 <select 
                     value={selectedCategory}
+                    defaultValue={'All'}
                     onChange={(e) => {
                         setSelectedCategory(e.target.value);
                     }}
@@ -58,7 +54,7 @@ const Wine = ({ products }) => {
 
             <div className={styles['products-container']}>
                 {/* All products */}
-                {allProducts && 
+                {selectedCategory == 'All' && 
                     <>
                         {products?.map((product) => 
                             <div className={styles.py} key={product._id}>
@@ -68,8 +64,9 @@ const Wine = ({ products }) => {
                     </>
                 }
                 {/* Product filtered by Category */}
-                {!allProducts && 
+                {selectedCategory != 'All' && 
                     <>
+                    
                         {products?.filter(c => c.category == selectedCategory).map((product) => 
                             <div className={styles.py} key={product._id}>
                                 <Product product={product} />
