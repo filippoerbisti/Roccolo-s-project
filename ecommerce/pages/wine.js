@@ -41,14 +41,14 @@ const Wine = ({ products }) => {
                         setSelectedCategory(e.target.value);
                     }}
                 >
-                    <option value={'All'}>All</option>
-                    <option value={'Vini Spumanti'}>{'Vini Spumanti'}</option>
-                    <option value={'Vini Bianchi'}>{'Vini Bianchi'}</option>
-                    <option value={'Vini Rosati'}>{'Vini Rosati'}</option>
-                    <option value={'Vini Rossi'}>{'Vini Rossi'}</option>
-                    <option value={'Vini da Dessert'}>{'Vini da Dessert'}</option>
-                    <option value={'Grappa'}>{'Grappa'}</option>
-                    <option value={'Olio'}>{'Olio'}</option>
+                    <option value={'All'}>{t('all')}</option>
+                    <option value={'Vini Spumanti'}>{t('sparklingWines')}</option>
+                    <option value={'Vini Bianchi'}>{t('whiteWines')}</option>
+                    <option value={'Vini Rosati'}>{t('roseWines')}</option>
+                    <option value={'Vini Rossi'}>{t('redWines')}</option>
+                    <option value={'Vini da Dessert'}>{t('dessertWines')}</option>
+                    <option value={'Grappa'}>{t('grappa')}</option>
+                    <option value={'Olio'}>{t('oil')}</option>
                 </select>
             </div>
 
@@ -66,7 +66,6 @@ const Wine = ({ products }) => {
                 {/* Product filtered by Category */}
                 {selectedCategory != 'All' && 
                     <>
-                    
                         {products?.filter(c => c.category == selectedCategory).map((product) => 
                             <div className={styles.py} key={product._id}>
                                 <Product product={product} />
