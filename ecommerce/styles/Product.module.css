@@ -49,7 +49,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    width: 320px;
+    width: 350px;
     height: 450px;
     background: #7ba05f;
     border-radius: 20px;
@@ -77,8 +77,9 @@
     content: attr(data-text);
     position: absolute;
     top: 3%;
-    left: 3%;
-    font-size: 5em;
+    left: 2%;
+    text-align: left;
+    font-size: 4em;
     font-weight: 800;
     font-style: italic;
     color: rgba(255, 255, 255, 0.4);
@@ -93,7 +94,7 @@
     transform: translateY(-50%);
     z-index: 10000;
     width: 100%;
-    height: 220px;
+    height: auto;
     transition: 0.5s;
   }
   
@@ -105,8 +106,8 @@
   .contentBox {
     display: none;
     position: absolute;
-    bottom: 10%;
-    margin-bottom: 20px;
+    bottom: 20%;
+    /* margin-bottom: 25px; */
     width: 100%;
     height: 100px;
     text-align: center;
@@ -121,7 +122,6 @@
   .contentBox h2 {
     position: relative;
     font-weight: 600;
-    letter-spacing: 2px;
     text-transform: uppercase;
   }
   
