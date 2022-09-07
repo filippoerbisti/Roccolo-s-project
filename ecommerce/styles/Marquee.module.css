@@ -4,7 +4,9 @@
 
 .maylike-products-wrapper h2 {
     text-align: center;
-    padding: 0 30px;
+    padding: 0;
+    color: #892331;
+    font-size: 30px;
 }
   
 .maylike-products-container {
@@ -42,7 +44,7 @@
     .maylike-products-wrapper h2{
         text-align: center;
         margin: 0 0 10px 0;
-        color: #892331;
+        font-size: 27px;
     }
     
     .track {
