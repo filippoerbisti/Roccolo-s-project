@@ -20,6 +20,15 @@
 
     "viewAllWine": "Voir Tous Les Vins",
     "ourWines": "Les Vins de nos Exploitations",
+
+    "all": "Tous",
+    "sparklingWines": "Vins Mousseux",
+    "whiteWines": "Vins Blancs",
+    "roseWines": "Vins Rosés",
+    "redWines": "Vins Rouges",
+    "dessertWines": "Vins de Dessert",
+    "grappa": "Grappa",
+    "oil": "Huile",
         
     "details": "Details",
     "quantity": "Quantity",

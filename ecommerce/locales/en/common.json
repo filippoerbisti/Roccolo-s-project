@@ -20,6 +20,15 @@
 
     "viewAllWine": "View All Wines",
     "ourWines": "The wines of our Farms",
+
+    "all": "All",
+    "sparklingWines": "Sparkling Wines",
+    "whiteWines": "White Wines",
+    "roseWines": "Rosè Wines",
+    "redWines": "Red Wines",
+    "dessertWines": "Dessert Wines",
+    "grappa": "Grappa",
+    "oil": "Oil",
         
     "details": "Details",
     "quantity": "Quantity",

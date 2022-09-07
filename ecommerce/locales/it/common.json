@@ -20,6 +20,15 @@
 
     "viewAllWine": "Vedi Tutti i Vini",
     "ourWines": "I Vini delle nostre Aziende Agricole",
+
+    "all": "Tutti",
+    "sparklingWines": "Vini Spumanti",
+    "whiteWines": "Vini Bianchi",
+    "roseWines": "Vini Rosati",
+    "redWines": "Vini Rossi",
+    "dessertWines": "Vini da Dessert",
+    "grappa": "Grappa",
+    "oil": "Olio",
         
     "details": "Dettagli",
     "quantity": "Quantità",
