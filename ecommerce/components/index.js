@@ -17,5 +17,7 @@ export {default as Galleries } from './Galleries';
 export {default as ContactUs } from './ContactUs';
 export {default as PrivacyPolicyCookie } from './PrivacyPolicyCookie';
 
+export {default as Pagination } from './Pagination';
+
 export {default as HeroBanner } from './old/HeroBanner';
 export {default as FooterBanner } from './old/FooterBanner';
