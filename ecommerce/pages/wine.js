@@ -1,22 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { client } from '../lib/client';
-import { Product } from '../components';
+import { Product, Pagination } from '../components';
 import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../styles/Product.module.css';
 
-const Wine = ({ products }) => {
+const Wine = ({ products, countProducts }) => {
     
     const { t } = useTranslation('common');
 
     const [selectedCategory, setSelectedCategory] = useState('All');
+
+    // let PageSize = 0;
+    // const [currentPage, setCurrentPage] = useState(1);
+
+    // const currentTableData = useMemo(() => {
+    //   const firstPageIndex = (currentPage - 1) * PageSize;
+    //   const lastPageIndex = firstPageIndex + PageSize;
+    //   return products.slice(firstPageIndex, lastPageIndex);
+    // }, [currentPage]);
 
     return (
         <div className={styles.mx20}>
             <h1 className={styles.title}>{t('ourWines')}</h1>
             <p className={styles.title}>!!! THIS IS A DEMO, Don't Buy Anything !!!</p>
 
-            <style jsx>
+            <style jsx="true">
                 {`
                     .selectCenter {
                         text-align: center;
@@ -36,7 +45,6 @@ const Wine = ({ products }) => {
             <div className='selectCenter'>
                 <select 
                     value={selectedCategory}
-                    defaultValue={'All'}
                     onChange={(e) => {
                         setSelectedCategory(e.target.value);
                     }}
@@ -51,7 +59,7 @@ const Wine = ({ products }) => {
                     <option value={'Olio'}>{t('oil')}</option>
                 </select>
             </div>
-
+            
             <div className={styles['products-container']}>
                 {/* All products */}
                 {selectedCategory == 'All' && 
@@ -64,7 +72,7 @@ const Wine = ({ products }) => {
                     </>
                 }
                 {/* Product filtered by Category */}
-                {selectedCategory != 'All' && 
+                {products != 'All' && 
                     <>
                         {products?.filter(c => c.category == selectedCategory).map((product) => 
                             <div className={styles.py} key={product._id}>
@@ -73,6 +81,13 @@ const Wine = ({ products }) => {
                         )}
                     </>
                 }
+                {/* <Pagination
+                    className="pagination-bar"
+                    currentPage={currentPage}
+                    totalCount={products.length}
+                    pageSize={PageSize}
+                    onPageChange={page => setCurrentPage(page)}
+                /> */}
             </div>
         </div>
     )
@@ -81,12 +96,17 @@ const Wine = ({ products }) => {
 export const getServerSideProps = async () => {
     const query = '*[_type == "product"]';
     const products = await client.fetch(query);
+    var countProducts = 0;
+    for(var product in products) {
+        if(products.hasOwnProperty(product))
+            ++countProducts;
+    }
   
     const bannerQuery = '*[_type == "banner"]';
     const bannerData = await client.fetch(bannerQuery);
   
     return {
-      props: { products, bannerData }
+      props: { products, bannerData, countProducts }
     }
 }
 
