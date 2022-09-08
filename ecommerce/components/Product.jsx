@@ -26,12 +26,12 @@ const Product = ({ product}) => {
       >
         <div className={styles.card} data-text={name}>
           <div className={styles.imgBox}>
-            {/* <img 
+            <img 
               src={urlFor(image && image[0])} 
               alt="product_img" 
               objectfit="cover"
               className={styles['product-image']}
-            /> */}
+            />
           </div>
           <div className={styles.contentBox}>
               <h2>{name}</h2>
