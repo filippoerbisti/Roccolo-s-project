@@ -16,11 +16,11 @@ const Login = () => {
             <form>
             <div class="form__group field">
                     <input type="text" class="form__field" placeholder="Username" name="username" id='username' required />
-                    <label for="username" class="form__label">Username</label>
+                    <label htmlFor="username" class="form__label">Username</label>
                 </div>
                 <div class="form__group field">
                     <input type="password" class="form__field" placeholder="Password" name="password" id='password' required />
-                    <label for="password" class="form__label">Password</label>
+                    <label htmlFor="password" class="form__label">Password</label>
                 </div>
             <button type="submit">ACCEDI</button>
             </form>
