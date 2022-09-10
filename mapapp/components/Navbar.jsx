@@ -14,9 +14,6 @@ const Navbar = () => {
             className='cursor-pointer'
             />
         </Link>
-        <div>
-            
-        </div>
     </div>
   )
 }

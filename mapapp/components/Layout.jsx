@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 // import useTranslation from 'next-translate/useTranslation';
 
 import Navbar from './Navbar';
+import { useRouter } from 'next/router';
 
 const Layout = ({ children }) => {
+
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (router.route !== '/')
+      setIsAuthenticated(true)
+    else 
+    setIsAuthenticated(false)
+  }, [isAuthenticated]);
 
   return (
     <div>
@@ -39,9 +50,11 @@ const Layout = ({ children }) => {
       </Head>
       
       <div>
-        <header className='header'>
-          <Navbar />
-        </header>
+        {isAuthenticated && 
+          <header className='header'>
+            <Navbar />
+          </header>
+        }
         <main className='main'>
           {children}
         </main>
