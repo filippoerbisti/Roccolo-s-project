@@ -5,6 +5,8 @@ import { useContext } from 'react';
 import { AuthContext } from '../context/auth-context';
 
 
+
+
 export default function Home() {
   const router = useRouter();
   const authContext = useContext(AuthContext);
