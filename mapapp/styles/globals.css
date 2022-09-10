@@ -5,6 +5,30 @@
 body {
   font-size: 10px;
   font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  background-color: #f9f8fa;
+  z-index: 999999;
+}
+
+.main {
+  position: relative;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* STYLES NAVBAR */
+
+.navbar-container {
+  background-color: white;
+  width: 100%;
 }
 
 .flex-center {
