@@ -47,6 +47,106 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  opacity: 0.6;
+  background-image: url('../../ecommerce/public/degustazioni.png');
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+}
+
+.login h1 {
+  font-size: 24px;
+  margin: 10px 0;
+  color: white;
+  text-align: center;
+}
+
+.form-login {
+  background-color: rgba(185, 33, 33, 0.5);
+  padding: 20px;
+  border-radius: 25px;
+}
+
+.form__group {
+  position: relative;
+  padding: 15px 0;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1rem;
+  color: #fff;
+  padding: 5px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #11998e;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+
+.login form button {
+  width: 100%;
+  max-width: 300px;
+  padding: 5px 0px;
+  margin-top: 20px;
+  border-radius: 15px;
+  border: none;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: #892331;
+  color: #fff;
+  cursor: pointer;
+  transform: scale(1, 1);
+  transition: transform 0.5s ease;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
 }
 
 .flex-center {
