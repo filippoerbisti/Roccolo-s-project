@@ -1,5 +1,6 @@
 import React, { useCallback, useRef } from "react";
 import QuickPinchZoom, { make3dTransformValue } from "react-quick-pinch-zoom";
+import { FiHome, FiMap, FiHelpCircle } from 'react-icons/fi';
 
 const IMG_URL =
   "https://user-images.githubusercontent.com/4661784/" +
@@ -55,33 +56,22 @@ const Main = () => {
 
     return (
         <div>
-            <QuickPinchZoom onUpdate={onUpdate}>
-                <img ref={imgRef} src={IMG_URL}/>
-            </QuickPinchZoom>
-            <div className="container stage">
-                <div className="container">
-                    <div className="tabbar tab-style1">
-                        <ul className="flex-center">
-                        <li className="home active" data-where="home"><span className="material-icons-outlined">
-                            home
-                            </span></li>
-                        <li className="products" data-where="products">
-                            <span className="material-icons-outlined">
-                            shopping_bag
-                            </span>
+            <div className="stage">
+                    <QuickPinchZoom onUpdate={onUpdate}>
+                        <img ref={imgRef} src={IMG_URL}/>
+                    </QuickPinchZoom>
+                <div className="tabbar">
+                    <ul className="flex-center">
+                        <li className="">
+                            <FiHome/>
                         </li>
-                        <li className="services" data-where="services"><span className="material-icons-outlined">
-                            plumbing
-                            </span></li>
-                        <li className="about" data-where="about"><span className="material-icons-outlined">
-                            business
-                            </span></li>
-                        <li className="help" data-where="help"><span className="material-icons-outlined">
-                            help_outline
-                            </span></li>
-                        <li className="follow">&nbsp;</li>
-                        </ul>
-                    </div>
+                        <li className="">
+                            <FiMap/>
+                        </li>
+                        <li className="">
+                            <FiHelpCircle/>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
