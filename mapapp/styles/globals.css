@@ -20,12 +20,11 @@ body {
 }
 
 .main {
-  position: absolute;
-  background-color: beige;
-  padding-top: 100px;
+  /* position: absolute; */
   width: 100%;
   max-width: 500px;
   height: 100vh;
+  margin: 0 auto;
 }
 
 .cursor-pointer {
@@ -36,6 +35,17 @@ body {
 
 .navbar-container {
   width: 100%;
+  height: 100px;
+  display: flex;
+  margin: 10px;
+}
+
+.navbar-container button {
+  font-size: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 15px;
 }
 
 /* STYLES LOGIN */
@@ -155,27 +165,22 @@ body {
   align-items: center;
 }
 
-.stage {
-  max-width: 400px;
-  width: 400px;
-  margin: 0 auto;
-  height: 100vh;
-  background-color: gold;
-}
-
 .tabbar {
   height: 70px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   box-sizing: content-box;
   bottom: 0;
-  left: 0;
-  right: 0;
   position: fixed;
   width: 100%;
   overflow: hidden;
   transition: background-color 0.4s;
+}
+
+.tab-content {
+  background-color: var(--app-content-background-color);
+  height: 100vh - 140px;
 }
 
 .tabbar ul {
@@ -184,7 +189,8 @@ body {
   padding: 0;
   position: absolute;
   bottom: 0;
-  width: 400px;
+  width: 100%;
+  max-width: 500px;
   background-color: #f9f8fa;
   height: 60px;
 }
@@ -212,4 +218,43 @@ body {
   top: -10px;
   border-radius: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+.home.active {
+  --outset-shadow: rgba(255, 159, 40, 0.45);
+  --inset-shadow: rgba(88, 54, 13, 0.45);
+  --clay-box-shadow: rgba(88, 54, 13, 0.4);
+  --clay-background-color: #ed9426;
+  --clay-fg-color: #f1f2f3;
+  color: #cf5c0f;
+}
+.home-style {
+  --app-content-background-color: #ed9426;
+}
+
+.map.active {
+  --outset-shadow: rgba(93, 255, 85, 0.45);
+  --inset-shadow: rgba(28, 78, 26, 0.45);
+  --clay-box-shadow: rgba(28, 78, 26, 0.4);
+  --clay-background-color: #4dd146;
+  --clay-fg-color: #f1f2f3;
+  color: #4dd146;
+}
+.map-style {
+  --app-content-background-color: #4dd146;
+}
+
+.help.active {
+  --outset-shadow: rgba(230, 230, 230, 0.45);
+  --inset-shadow: rgba(81, 81, 81, 0.45);
+  --clay-box-shadow: rgba(81, 81, 81, 0.4);
+  --clay-background-color: #a3a3a3;
+  --clay-fg-color: #f1f2f3;
+  color: #783896;
+}
+.help-style {
+  --app-content-background-color: #a3a3a3;
 }

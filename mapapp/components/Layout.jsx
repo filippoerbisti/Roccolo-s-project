@@ -4,6 +4,7 @@ import Head from 'next/head';
 
 import Navbar from './Navbar';
 import { useRouter } from 'next/router';
+import BottomBar from './BottomBar';
 
 const Layout = ({ children }) => {
 
@@ -14,7 +15,7 @@ const Layout = ({ children }) => {
     if (router.route !== '/')
       setIsAuthenticated(true)
     else 
-    setIsAuthenticated(false)
+      setIsAuthenticated(false)
   }, [isAuthenticated]);
 
   return (
@@ -50,17 +51,15 @@ const Layout = ({ children }) => {
       </Head>
       
       <div>
-        {isAuthenticated && 
-          <header className='header'>
-            <Navbar />
-          </header>
-        }
+        {/* <header className='header'>
+          <Navbar />
+        </header> */}
         <main className='main'>
           {children}
         </main>
-        <footer>
-          {/* <Footer /> */}
-        </footer>
+        {/* <footer>
+          <BottomBar />
+        </footer> */}
       </div>
     </div>
   )
