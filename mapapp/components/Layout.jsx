@@ -1,21 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Head from 'next/head';
 // import useTranslation from 'next-translate/useTranslation';
 
 import { Navbar, QReader } from './';
-import { useRouter } from 'next/router';
+import { useAuth } from '../context/AuthContext';
 
 const Layout = ({ children }) => {
 
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const router = useRouter();
-
-  useEffect(() => {
-    if (router.route !== '/')
-      setIsAuthenticated(true)
-    else 
-      setIsAuthenticated(false)
-  }, [isAuthenticated]);
+  const { user } = useAuth();
 
   return (
     <div>
@@ -51,11 +43,15 @@ const Layout = ({ children }) => {
       
       <div className='main'>
         <header>
-          <Navbar />
+          {user &&
+            <Navbar />
+          }
         </header>
         <main>
           {children}
-          <QReader />
+          {user &&
+            <QReader />
+          }
         </main>
       </div>
     </div>
