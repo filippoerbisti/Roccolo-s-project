@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --count: 4;
+  --slide-count: 3;
+  --slide-duration: 0s;
+  --slide-step: (var(--slide-duration) / var(--count));
+  --distance: calc(50vw + 100%);
+  --color: hsl(0 0% 10%);
+  --bg: hsl(0 0% 98%);
+}
+
 body {
   font-size: 10px;
   font-family: "Roboto", sans-serif;
@@ -12,7 +22,6 @@ body {
 .header {
   position: fixed;
   top: 0;
-  background-color: cyan;
   z-index: 999999;
   height: 100px;
   width: 100%;
@@ -31,22 +40,53 @@ body {
   cursor: pointer;
 }
 
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.vis {
+  display: flex;
+  flex-direction: column;
+}
+
+.novis {
+  display: none;
+}
+
+
 /* STYLES NAVBAR */
 
 .navbar-container {
   width: 100%;
-  height: 100px;
+  max-width: 500px;
+  height: 110px;
   display: flex;
-  margin: 10px;
+  justify-content: space-between;
+  top: 0;
+  position: fixed;
+  z-index: 999999;
+  background: white;
+  /* margin: 10px 0; */
+  padding-top: 10px;
 }
 
 .navbar-container button {
   font-size: 2rem;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   justify-content: flex-end;
   margin: 10px 15px;
 }
+
+/* END STYLES NAVBAR */
+
 
 /* STYLES LOGIN */
 
@@ -97,9 +137,11 @@ body {
   background: transparent;
   transition: border-color 0.2s;
 }
+
 .form__field::placeholder {
   color: transparent;
 }
+
 .form__field:placeholder-shown ~ .form__label {
   font-size: 1.3rem;
   cursor: text;
@@ -122,6 +164,7 @@ body {
   border-image: linear-gradient(to right, #11998e, #38ef7d);
   border-image-slice: 1;
 }
+
 .form__field:focus ~ .form__label {
   position: absolute;
   top: 0;
@@ -154,16 +197,92 @@ body {
   transition: transform 0.5s ease;
 }
 
-.flex-col {
-  display: flex;
-  flex-direction: column;
+/* END STYLES LOGIN */
+
+
+.tab-content {
+  margin-top: 100px;
+  height: calc(100vh); /* 100px = fixed height of navbar */
 }
 
-.flex-center {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+
+/* STYLES HOME */
+
+#home {
+  
 }
+
+#home h1 {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.5em;
+  letter-spacing: 0.4em;
+  margin-top: 20px;
+}
+
+#home .btn-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+#home .btn {
+  width: 100%;
+  max-width: 200px;
+  padding: 3px 0px;
+  border-radius: 15px;
+  border: none;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: #892331;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* END STYLES HOME */
+
+
+/* STYLES MAP */
+
+#map {
+  
+}
+
+#map h1 {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.5em;
+  letter-spacing: 0.4em;
+  margin-top: 20px;
+}
+
+/* END STYLES MAP */
+
+
+/* STYLES HELP */
+
+#help {
+  
+}
+
+#help h1 {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.5em;
+  letter-spacing: 0.4em;
+  margin-top: 20px;
+}
+
+/* END STYLES HELP */
+
+
+/* STYLES TAB BAR */
 
 .tabbar {
   height: 70px;
@@ -178,9 +297,34 @@ body {
   transition: background-color 0.4s;
 }
 
-.tab-content {
-  background-color: var(--app-content-background-color);
-  height: 100vh - 140px;
+.home.active {
+  --outset-shadow: rgba(255, 159, 40, 0.45);
+  --inset-shadow: rgba(88, 54, 13, 0.45);
+  --clay-box-shadow: rgba(88, 54, 13, 0.4);
+  --clay-background-color: #cf5c0f;
+  --clay-fg-color: #f1f2f3;
+  color: #cf5c0f;
+}
+
+.map.active {
+  --outset-shadow: rgba(93, 255, 85, 0.45);
+  --inset-shadow: rgba(28, 78, 26, 0.45);
+  --clay-box-shadow: rgba(28, 78, 26, 0.4);
+  --clay-background-color: #4dd146;
+  --clay-fg-color: #f1f2f3;
+  color: #4dd146;
+}
+.map-style {
+  --app-content-background-color: #4dd146;
+}
+
+.help.active {
+  --outset-shadow: rgba(230, 230, 230, 0.45);
+  --inset-shadow: rgba(81, 81, 81, 0.45);
+  --clay-box-shadow: rgba(81, 81, 81, 0.4);
+  --clay-background-color: #783896;
+  --clay-fg-color: #f1f2f3;
+  color: #783896;
 }
 
 .tabbar ul {
@@ -223,38 +367,73 @@ body {
 
 
 
-.home.active {
-  --outset-shadow: rgba(255, 159, 40, 0.45);
-  --inset-shadow: rgba(88, 54, 13, 0.45);
-  --clay-box-shadow: rgba(88, 54, 13, 0.4);
-  --clay-background-color: #ed9426;
-  --clay-fg-color: #f1f2f3;
-  color: #cf5c0f;
-}
-.home-style {
-  --app-content-background-color: #ed9426;
+
+
+
+@media(prefers-reduced-motion: no-preference) {
+  :root {
+    --slide-duration: 0.65s;
+  }
 }
 
-.map.active {
-  --outset-shadow: rgba(93, 255, 85, 0.45);
-  --inset-shadow: rgba(28, 78, 26, 0.45);
-  --clay-box-shadow: rgba(28, 78, 26, 0.4);
-  --clay-background-color: #4dd146;
-  --clay-fg-color: #f1f2f3;
-  color: #4dd146;
-}
-.map-style {
-  --app-content-background-color: #4dd146;
+#home h1 {
+  font-size: clamp(2rem, 10vmin, 10rem);
+  font-style: italic;
+  text-transform: uppercase;
+  position: relative;
+  margin: 0;
+  color: var(--color);
 }
 
-.help.active {
-  --outset-shadow: rgba(230, 230, 230, 0.45);
-  --inset-shadow: rgba(81, 81, 81, 0.45);
-  --clay-box-shadow: rgba(81, 81, 81, 0.4);
-  --clay-background-color: #a3a3a3;
-  --clay-fg-color: #f1f2f3;
-  color: #783896;
+#home h1 span {
+  line-height: 0.85;
 }
-.help-style {
-  --app-content-background-color: #a3a3a3;
+
+#home h1 span:not([aria-hidden]) {
+  color: transparent;
+  animation: fill 0s calc(calc(var(--count) * var(--slide-step)) + (var(--slide-duration) * var(--slide-count))) both;
+}
+
+@keyframes fill {
+  to {
+    color: var(--color);
+  }
+}
+
+#home h1 span[aria-hidden] {
+  --delay: calc(var(--index) * var(--slide-step));
+  position: absolute;
+  display: inline-block;
+  animation:
+    slide var(--slide-duration) var(--delay) var(--slide-count) backwards ease-in,
+    slide-to calc(var(--slide-duration) * 0.5) calc(var(--delay) + (var(--slide-duration) * var(--slide-count))) forwards cubic-bezier(.87,1.4,.87,1.4);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*    */
+  --block: calc(100% / var(--count));
+  clip-path: inset(
+    calc(var(--index) * (var(--block)))
+    -50%
+    calc(100% - ((var(--index) * var(--block)) + var(--block)))
+    -50%);
+}
+
+#home h1 span:nth-of-type(even) {
+  --distance: calc(-50vw - 100%);
+}
+
+@keyframes slide {
+  0% {
+    transform: translate(-50%, -50%) translateX(calc(var(--distance) * -1));
+  }
+  100% {
+    transform: translate(-50%, -50%) translateX(var(--distance));
+  }
+}
+
+@keyframes slide-to {
+  0% {
+    transform: translate(-50%, -50%) translateX(calc(var(--distance) * -1));
+  }
 }
