@@ -1,98 +1,119 @@
-import React from 'react';
-import { FiHome, FiMap, FiHelpCircle, FiLogOut } from 'react-icons/fi';
+import React, { useEffect } from 'react';
+import { FiHome, FiMap, FiHelpCircle } from 'react-icons/fi';
 import Link from 'next/link';
 
-import { useAuth } from '../context/AuthContext';
 import { useRouter } from 'next/router';
+import { Home, Mapping, About } from './';
 
 const Main = () => {
 
-  const { logout } = useAuth();
   const router = useRouter();
 
-  if (typeof window !== "undefined"){
+  useEffect(() => {
     const uls = document.querySelectorAll("ul");
     uls.forEach((ul) => {
-        const resetClass = ul.parentNode.getAttribute("class");
-        const lis = ul.querySelectorAll("li");
-        lis.forEach((li) => {
-            li.addEventListener("click", (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                // router.push('/')
-                const target = e.currentTarget;
-                console.log(target)
+      const resetClass = ul.parentNode.getAttribute("class");
+      const lis = ul.querySelectorAll("li");
 
-                if (
-                    target.classList.contains("active") ||
-                    target.classList.contains("follow")
-                ) {
-                    return;
-                }
-                ul.parentNode.setAttribute(
-                    "class",
-                    `${resetClass}`
-                );
-                lis.forEach((item) => clearClass(item, "active"));
-                setClass(target, "active");
-            });
+      lis.forEach((li) => {
+        li.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const target = e.currentTarget;
+          if (
+              target.classList.contains("active") ||
+              target.classList.contains("follow")
+          ) {
+              return;
+          }
+          ul.parentNode.setAttribute(
+              "class",
+              `${resetClass}`
+          );
+          lis.forEach((item) => clearClass(item, "active"));
+          setClass(target, "active");
+          console.log(target.dataset.where)
+
+          switch (target.dataset.where) {
+            case "home":
+              document.getElementById("tab-content").style.backgroundColor = "#cf5c0f";
+              break;
+            case "map":
+              document.getElementById("tab-content").style.backgroundColor = "#4dd146";
+              break;
+            case "help":
+              document.getElementById("tab-content").style.backgroundColor = "#783896";
+              break;
+            default:
+              document.getElementById("tab-content").style.backgroundColor = "#cf5c0f";
+              break;
+          } 
+
+          let pageId = target.attributes[1].value; //get data-where of li
+          router.push('#' + pageId);
+
+          const divsMain = document.getElementsByClassName("content");
+          for(let i = 0; i < divsMain.length; i++) {
+            let divId = divsMain[i].id;
+            if (divId == pageId) {
+              clearClass(divsMain[i], "novis");
+              setClass(divsMain[i], "vis");
+            }
+            else {
+              setClass(divsMain[i], "novis");
+              clearClass(divsMain[i], "vis");
+            }
+          }
         });
+      });
     });
-}
+}, []);
 
-function clearClass(node, className) {
-    node.classList.remove(className);
-}
 
-function setClass(node, className) {
-    node.classList.add(className);
-}
+  function clearClass(node, className) {
+      node.classList.remove(className);
+  }
 
-    return (
-      <div>
-        <div className='navbar-container'>
-          <Link href={"/"} className='cursor-pointer'>
-            <img 
-              src="https://res.cloudinary.com/dl38nyo08/image/upload/v1660806591/Roccolo%20del%20Lago/logo_iidjdd.png"
-              width={240} 
-              height={100} 
-              // objectfit="contain"
-              className='cursor-pointer'
-            />
-          </Link>
-          <button
-            onClick={() => {
-              logout()
-              router.push('/')
-            }}
-          >
-            <FiLogOut />
-          </button>
-        </div>
-        <div className='tab-content'>
+  function setClass(node, className) {
+      node.classList.add(className);
+  }
+
+  return (
+    <div>
+      <div id="tab-content" className='tab-content'>
+        <div id='home' className='content vis'>
           <h1>BENVENUTI <br/> NEL NOSTRO TOUR</h1>
+          <div className='btn-container'>
+            <button className='btn'>Come si usa</button>
+            <button className='btn'>Iniziamo</button>
+          </div>
+          <Home />
         </div>
-        <div className="tabbar">
-          <ul className="flex-center">
-            <li class="home" data-where="home">
-                <a href={"/home"}>
-                    <FiHome/>
-                </a>
-            </li>
-            <li class="map" data-where="map">
-                <a href={"/map"}>
-                    <FiMap/>
-                </a>
-            </li>
-            <li class="help" data-where="help">
-                <a href={"/help"}>
-                    <FiHelpCircle/>
-                </a>
-            </li>
-          </ul>
+        <div id='map' className='content novis'>
+          <h1>MAPAPP</h1>
+          <p>Esplora il nostro Roccolo</p>
+          <Mapping />
+        </div>
+        <div id='help' className='content novis'>
+          <h1>COME SI USA</h1>
+          <About />
         </div>
       </div>
-    )
+      <div className="tabbar">
+        <ul className="flex-center">
+          <li className="home active" data-where="home">
+            <FiHome/>
+          </li>
+          <li className="map" data-where="map">
+            <FiMap/>
+          </li>
+          <li className="help" data-where="help">
+            <FiHelpCircle/>
+          </li>
+        </ul>
+      </div>
+    </div>
+  )
 }
 
 export default Main
