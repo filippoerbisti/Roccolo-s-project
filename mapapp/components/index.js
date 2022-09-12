@@ -2,6 +2,7 @@ export {default as Layout } from './Layout';
 export {default as Login } from './Login';
 export {default as Navbar } from './Navbar';
 export {default as Main } from './Main';
+export {default as QReader } from './QReader';
 export {default as BottomBar } from './BottomBar';
 
 export {default as Home } from './Home';
