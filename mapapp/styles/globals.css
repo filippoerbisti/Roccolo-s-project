@@ -7,9 +7,7 @@
   --slide-count: 3;
   --slide-duration: 0s;
   --slide-step: (var(--slide-duration) / var(--count));
-  --distance: calc(50vw + 100%);
-  --color: hsl(0 0% 10%);
-  --bg: hsl(0 0% 98%);
+  --distance: 100%;
 }
 
 body {
@@ -59,35 +57,6 @@ body {
 .novis {
   display: none;
 }
-
-
-/* STYLES NAVBAR */
-
-.navbar-container {
-  width: 100%;
-  max-width: 500px;
-  height: 110px;
-  display: flex;
-  justify-content: space-between;
-  top: 0;
-  position: fixed;
-  z-index: 999999;
-  background: white;
-  /* margin: 10px 0; */
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.navbar-container button {
-  font-size: 2rem;
-  /* width: 100%; */
-  display: flex;
-  justify-content: flex-end;
-  margin: 10px 15px;
-}
-
-/* END STYLES NAVBAR */
-
 
 /* STYLES LOGIN */
 
@@ -201,6 +170,70 @@ body {
 /* END STYLES LOGIN */
 
 
+/* STYLES NAVBAR */
+
+.navbar-container {
+  width: 100%;
+  max-width: 500px;
+  height: 110px;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  position: fixed;
+  z-index: 999999;
+  background: white;
+  /* margin: 10px 0; */
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.navbar-container button {
+  font-size: 2rem;
+  /* width: 100%; */
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 15px;
+}
+
+/* END STYLES NAVBAR */
+
+
+/* STYLES QR READER */
+
+.qr-reader-container {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  position: fixed;
+  bottom: 100px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.qr-reader {
+  z-index: 20;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  color: #000;
+  cursor: pointer;
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-icon {
+  width: 50px;
+  height: 50px;
+}
+
+/* END STYLES QR READER */
+
+
+/* STYLES MAIN CONTENT */
+
 .tab-content {
   padding-top: 110px;
   height: calc(100vh); /* 110px = fixed height of navbar */
@@ -211,7 +244,7 @@ body {
 /* STYLES HOME */
 
 #home {
-  
+  padding: 0 10px;
 }
 
 #home h1 {
@@ -245,13 +278,83 @@ body {
   cursor: pointer;
 }
 
+@media(prefers-reduced-motion: no-preference) {
+  :root {
+    --slide-duration: 0.5s;
+  }
+}
+
+#home .slider-title {
+  overflow: hidden;
+}
+
+#home .slider-title h1 {
+  font-size: 24px;
+  text-transform: uppercase;
+  position: relative;
+  margin: 0;
+  color: black;
+}
+
+#home .slider-title h1 span {
+  line-height: 0.85;
+}
+
+#home h1 span:not([aria-hidden]) {
+  color: transparent;
+  animation: fill 0s calc(calc(var(--count) * var(--slide-step)) + (var(--slide-duration) * var(--slide-count))) both;
+}
+
+@keyframes fill {
+  to {
+    color: black;
+  }
+}
+
+#home .slider-title h1 span[aria-hidden] {
+  --delay: calc(var(--index) * var(--slide-step));
+  position: absolute;
+  display: inline-block;
+  animation:
+    slide var(--slide-duration) var(--delay) var(--slide-count) backwards ease-in,
+    slide-to calc(var(--slide-duration) * 0.5) calc(var(--delay) + (var(--slide-duration) * var(--slide-count))) forwards cubic-bezier(.87,1.4,.87,1.4);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  --block: calc(100% / var(--count));
+  clip-path: inset(
+    calc(var(--index) * (var(--block)))
+    -50%
+    calc(100% - ((var(--index) * var(--block)) + var(--block)))
+    -50%);
+}
+
+#home .slider-title h1 span:nth-of-type(even) {
+  --distance: -150%;
+}
+
+@keyframes slide {
+  0% {
+    transform: translate(-50%, -50%) translateX(calc(var(--distance) * -1));
+  }
+  100% {
+    transform: translate(-50%, -50%) translateX(var(--distance));
+  }
+}
+
+@keyframes slide-to {
+  0% {
+    transform: translate(-50%, -50%) translateX(calc(var(--distance) * -1));
+  }
+}
+
 /* END STYLES HOME */
 
 
 /* STYLES MAP */
 
 #map {
-  
+  padding: 0 10px;
 }
 
 #map h1 {
@@ -263,13 +366,17 @@ body {
   margin-top: 10px;
 }
 
+#map p {
+  font-size: small;
+}
+
 /* END STYLES MAP */
 
 
 /* STYLES HELP */
 
 #help {
-  
+  padding: 0 10px;
 }
 
 #help h1 {
@@ -283,6 +390,8 @@ body {
 
 /* END STYLES HELP */
 
+/* END STYLES MAIN CONTENT */
+
 
 /* STYLES TAB BAR */
 
@@ -295,6 +404,7 @@ body {
   bottom: 0;
   position: fixed;
   width: 100%;
+  max-width: 500px;
   overflow: hidden;
   transition: background-color 0.4s;
 }
@@ -366,76 +476,5 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
+/* END STYLES TAB BAR */
 
-
-
-
-
-
-@media(prefers-reduced-motion: no-preference) {
-  :root {
-    --slide-duration: 0.5s;
-  }
-}
-
-#home .slider-title h1 {
-  /* font-size: clamp(2rem, 10vmin, 10rem); */
-  font-size: 24px;
-  font-style: italic;
-  text-transform: uppercase;
-  position: relative;
-  margin: 0;
-  color: var(--color);
-}
-
-#home .slider-title h1 span {
-  line-height: 0.85;
-}
-
-#home h1 span:not([aria-hidden]) {
-  color: transparent;
-  animation: fill 0s calc(calc(var(--count) * var(--slide-step)) + (var(--slide-duration) * var(--slide-count))) both;
-}
-
-@keyframes fill {
-  to {
-    color: var(--color);
-  }
-}
-
-#home .slider-title h1 span[aria-hidden] {
-  --delay: calc(var(--index) * var(--slide-step));
-  position: absolute;
-  display: inline-block;
-  animation:
-    slide var(--slide-duration) var(--delay) var(--slide-count) backwards ease-in,
-    slide-to calc(var(--slide-duration) * 0.5) calc(var(--delay) + (var(--slide-duration) * var(--slide-count))) forwards cubic-bezier(.87,1.4,.87,1.4);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  --block: calc(100% / var(--count));
-  clip-path: inset(
-    calc(var(--index) * (var(--block)))
-    -50%
-    calc(100% - ((var(--index) * var(--block)) + var(--block)))
-    -50%);
-}
-
-#home .slider-title h1 span:nth-of-type(even) {
-  --distance: calc(-50vw - 100%);
-}
-
-@keyframes slide {
-  0% {
-    transform: translate(-50%, -50%) translateX(calc(var(--distance) * -1));
-  }
-  100% {
-    transform: translate(-50%, -50%) translateX(var(--distance));
-  }
-}
-
-@keyframes slide-to {
-  0% {
-    transform: translate(-50%, -50%) translateX(calc(var(--distance) * -1));
-  }
-}
