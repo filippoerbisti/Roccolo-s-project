@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 // import useTranslation from 'next-translate/useTranslation';
 
-import Navbar from './Navbar';
+import { Navbar, QReader } from './';
 import { useRouter } from 'next/router';
 
 const Layout = ({ children }) => {
@@ -55,6 +55,7 @@ const Layout = ({ children }) => {
         </header>
         <main>
           {children}
+          <QReader />
         </main>
       </div>
     </div>
