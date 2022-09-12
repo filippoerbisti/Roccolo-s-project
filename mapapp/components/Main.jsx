@@ -35,16 +35,16 @@ const Main = () => {
           // change background color 
           switch (target.dataset.where) {
             case "home":
-              document.getElementById("tab-content").style.backgroundColor = "#cf5c0f";
+              document.getElementById("tab-content").style.backgroundColor = "#d4e1bf";
               break;
             case "map":
-              document.getElementById("tab-content").style.backgroundColor = "#4dd146";
+              document.getElementById("tab-content").style.backgroundColor = "#f5f4f1";
               break;
             case "help":
-              document.getElementById("tab-content").style.backgroundColor = "#783896";
+              document.getElementById("tab-content").style.backgroundColor = "#7ba05f";
               break;
             default:
-              document.getElementById("tab-content").style.backgroundColor = "#cf5c0f";
+              document.getElementById("tab-content").style.backgroundColor = "#d4e1bf";
               break;
           } 
 
