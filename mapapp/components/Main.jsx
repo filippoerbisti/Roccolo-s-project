@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { FiHome, FiMap, FiHelpCircle } from 'react-icons/fi';
-import Link from 'next/link';
 
 import { useRouter } from 'next/router';
 import { Home, Mapping, About } from './';
@@ -32,8 +31,8 @@ const Main = () => {
           );
           lis.forEach((item) => clearClass(item, "active"));
           setClass(target, "active");
-          console.log(target.dataset.where)
 
+          // change background color 
           switch (target.dataset.where) {
             case "home":
               document.getElementById("tab-content").style.backgroundColor = "#cf5c0f";
@@ -49,10 +48,11 @@ const Main = () => {
               break;
           } 
 
-          let pageId = target.attributes[1].value; //get data-where of li
+          let pageId = target.attributes[1].value; //get data-where of li to then compared
           router.push('#' + pageId);
 
           const divsMain = document.getElementsByClassName("content");
+          // show section (id) or hidden
           for(let i = 0; i < divsMain.length; i++) {
             let divId = divsMain[i].id;
             if (divId == pageId) {
@@ -67,8 +67,7 @@ const Main = () => {
         });
       });
     });
-}, []);
-
+  }, []);
 
   function clearClass(node, className) {
       node.classList.remove(className);
