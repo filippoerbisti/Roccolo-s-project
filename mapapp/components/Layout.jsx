@@ -4,7 +4,6 @@ import Head from 'next/head';
 
 import Navbar from './Navbar';
 import { useRouter } from 'next/router';
-import BottomBar from './BottomBar';
 
 const Layout = ({ children }) => {
 
@@ -50,16 +49,13 @@ const Layout = ({ children }) => {
         <meta name="twitter:description" content={t('description')} /> */}
       </Head>
       
-      <div>
-        {/* <header className='header'>
+      <div className='main'>
+        <header>
           <Navbar />
-        </header> */}
-        <main className='main'>
+        </header>
+        <main>
           {children}
         </main>
-        {/* <footer>
-          <BottomBar />
-        </footer> */}
       </div>
     </div>
   )
