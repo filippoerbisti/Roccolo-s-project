@@ -18,11 +18,11 @@ const Mapping = () => {
     }, []);
 
     return (
-        <div className="stage">
-            <QuickPinchZoom onUpdate={onUpdate}>
-                <img ref={imgRef} src={IMG_URL}/>
-            </QuickPinchZoom>
-        </div>
+      <>
+        <QuickPinchZoom onUpdate={onUpdate}>
+          <img ref={imgRef} src={IMG_URL}/>
+        </QuickPinchZoom>
+      </>
     )
 }
 
