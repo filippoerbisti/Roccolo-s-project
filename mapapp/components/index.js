@@ -10,3 +10,4 @@ export {default as HomeTitle } from './HomeTitle';
 export {default as Mapping } from './Mapping';
 
 export {default as About } from './About';
+export {default as FAQ } from './FAQ';
