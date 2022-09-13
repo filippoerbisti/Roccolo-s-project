@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { FiHome, FiMap, FiHelpCircle } from 'react-icons/fi';
+import Link from 'next/link';
 
 import { useRouter } from 'next/router';
 import { Home, Mapping, About } from './';
@@ -7,6 +8,14 @@ import { Home, Mapping, About } from './';
 const Main = () => {
 
   const router = useRouter();
+
+  function clearClass(node, className) {
+    node.classList.remove(className);
+  } 
+
+  function setClass(node, className) {
+    node.classList.add(className);
+  }
 
   useEffect(() => {
     const uls = document.querySelectorAll("ul");
@@ -19,6 +28,7 @@ const Main = () => {
           e.preventDefault();
           e.stopPropagation();
           const target = e.currentTarget;
+          console.log(target)
           if (
               target.classList.contains("active") ||
               target.classList.contains("follow")
@@ -30,6 +40,7 @@ const Main = () => {
               `${resetClass}`
           );
           lis.forEach((item) => clearClass(item, "active"));
+          
           setClass(target, "active");
 
           // change background color 
@@ -69,12 +80,81 @@ const Main = () => {
     });
   }, []);
 
-  function clearClass(node, className) {
-      node.classList.remove(className);
+  const navigateHome = () => {
+    document.getElementById("tab-content").style.backgroundColor = "#d4e1bf";
+    let pageId = 'home'; 
+    router.push('#' + pageId);
+
+    const divsMain = document.getElementsByClassName("content");
+    // show section (id) or hidden
+    for(let i = 0; i < divsMain.length; i++) {
+      let divId = divsMain[i].id;
+      if (divId == pageId) {
+        clearClass(divsMain[i], "novis");
+        setClass(divsMain[i], "vis");
+      }
+      else {
+        setClass(divsMain[i], "novis");
+        clearClass(divsMain[i], "vis");
+      }
+    }
   }
 
-  function setClass(node, className) {
-      node.classList.add(className);
+  const navigateMap = () => {
+    const uls = document.querySelectorAll("ul");
+    uls.forEach((ul) => {
+      const resetClass = ul.parentNode.getAttribute("class");
+      const target = document.getElementsByClassName('map');
+      const liHome = document.getElementsByClassName('home');
+      const liHelp = document.getElementsByClassName('help');
+      ul.parentNode.setAttribute(
+          "class",
+          `${resetClass}`
+      );
+      clearClass(liHome, "active");
+      // clearClass(liHelp, "active");
+      setClass(target, "active");
+
+      // change background color 
+      document.getElementById("tab-content").style.backgroundColor = "#f5f4f1";
+
+      let pageId = 'map'; //get data-where of li to then compared
+      router.push('#' + pageId);
+
+      const divsMain = document.getElementsByClassName("content");
+      // show section (id) or hidden
+      for(let i = 0; i < divsMain.length; i++) {
+        let divId = divsMain[i].id;
+        if (divId == pageId) {
+          clearClass(divsMain[i], "novis");
+          setClass(divsMain[i], "vis");
+        }
+        else {
+          setClass(divsMain[i], "novis");
+          clearClass(divsMain[i], "vis");
+        }
+      }
+    });
+  }
+
+  const navigateHelp = () => {
+    document.getElementById("tab-content").style.backgroundColor = "#7ba05f";
+    let pageId = 'help'; 
+    router.push('#' + pageId);
+
+    const divsMain = document.getElementsByClassName("content");
+    // show section (id) or hidden
+    for(let i = 0; i < divsMain.length; i++) {
+      let divId = divsMain[i].id;
+      if (divId == pageId) {
+        clearClass(divsMain[i], "novis");
+        setClass(divsMain[i], "vis");
+      }
+      else {
+        setClass(divsMain[i], "novis");
+        clearClass(divsMain[i], "vis");
+      }
+    }
   }
 
   return (
@@ -83,8 +163,16 @@ const Main = () => {
         <div id='home' className='content vis'>
           <h1>BENVENUTI <br/> NEL NOSTRO TOUR</h1>
           <div className='btn-container'>
-            <button className='btn'>Come si usa</button>
-            <button className='btn'>Iniziamo</button>
+            <button className='btn' onClick={navigateHelp}>
+                {/* <Link href={'#help'}> */}
+                  Come si usa
+                {/* </Link> */}
+              </button>
+            <button className='btn' onClick={navigateMap}>
+              {/* <Link href={'#map'}> */}
+                Iniziamo
+              {/* </Link> */}
+            </button>
           </div>
           <Home />
         </div>
