@@ -81,10 +81,24 @@ const Main = () => {
   }, []);
 
   const navigateHome = () => {
-    document.getElementById("tab-content").style.backgroundColor = "#d4e1bf";
-    let pageId = 'home'; 
-    router.push('#' + pageId);
+    const liHome = document.getElementsByClassName('home');
+    const liMap = document.getElementsByClassName('map');
+    const liHelp = document.getElementsByClassName('help');
 
+    for(var i = 0; i < liMap.length; i++)
+      liMap[i].classList.remove("active");
+
+    for(var i = 0; i < liHelp.length; i++)
+      liHelp[i].classList.remove("active");
+
+    // Add class
+    for(var i = 0; i < liHome.length; i++)
+      liHome[i].classList.add("active");
+
+    // change background color 
+    document.getElementById("tab-content").style.backgroundColor = "#d4e1bf";
+    const pageId = 'home'
+    router.push('#' + pageId);
     const divsMain = document.getElementsByClassName("content");
     // show section (id) or hidden
     for(let i = 0; i < divsMain.length; i++) {
@@ -101,47 +115,60 @@ const Main = () => {
   }
 
   const navigateMap = () => {
-    const uls = document.querySelectorAll("ul");
-    uls.forEach((ul) => {
-      const resetClass = ul.parentNode.getAttribute("class");
-      const target = document.getElementsByClassName('map');
-      const liHome = document.getElementsByClassName('home');
-      const liHelp = document.getElementsByClassName('help');
-      ul.parentNode.setAttribute(
-          "class",
-          `${resetClass}`
-      );
-      clearClass(liHome, "active");
-      // clearClass(liHelp, "active");
-      setClass(target, "active");
+    const liHome = document.getElementsByClassName('home');
+    const liMap = document.getElementsByClassName('map');
+    const liHelp = document.getElementsByClassName('help');
 
-      // change background color 
-      document.getElementById("tab-content").style.backgroundColor = "#f5f4f1";
+    // Remove class
+    for(var i = 0; i < liHome.length; i++)
+      liHome[i].classList.remove("active");
 
-      let pageId = 'map'; //get data-where of li to then compared
-      router.push('#' + pageId);
+    for(var i = 0; i < liHelp.length; i++)
+      liHelp[i].classList.remove("active");
 
-      const divsMain = document.getElementsByClassName("content");
-      // show section (id) or hidden
-      for(let i = 0; i < divsMain.length; i++) {
-        let divId = divsMain[i].id;
-        if (divId == pageId) {
-          clearClass(divsMain[i], "novis");
-          setClass(divsMain[i], "vis");
-        }
-        else {
-          setClass(divsMain[i], "novis");
-          clearClass(divsMain[i], "vis");
-        }
+    // Add class
+    for(var i = 0; i < liMap.length; i++)
+      liMap[i].classList.add("active");
+
+    // change background color 
+    document.getElementById("tab-content").style.backgroundColor = "#f5f4f1";
+    const pageId = 'map';
+    router.push('#' + pageId);
+    const divsMain = document.getElementsByClassName("content");
+    // show section (id) or hidden
+    for(let i = 0; i < divsMain.length; i++) {
+      let divId = divsMain[i].id;
+      if (divId == pageId) {
+        clearClass(divsMain[i], "novis");
+        setClass(divsMain[i], "vis");
       }
-    });
+      else {
+        setClass(divsMain[i], "novis");
+        clearClass(divsMain[i], "vis");
+      }
+    }
   }
 
   const navigateHelp = () => {
-    document.getElementById("tab-content").style.backgroundColor = "#7ba05f";
-    let pageId = 'help'; 
-    router.push('#' + pageId);
+    const liHome = document.getElementsByClassName('home');
+    const liMap = document.getElementsByClassName('map');
+    const liHelp = document.getElementsByClassName('help');
 
+    // Remove class
+    for(var i = 0; i < liHome.length; i++)
+      liHome[i].classList.remove("active");
+
+    for(var i = 0; i < liMap.length; i++)
+      liMap[i].classList.remove("active");
+
+    // Add class
+    for(var i = 0; i < liHelp.length; i++)
+      liHelp[i].classList.add("active");
+
+    // change background color 
+    document.getElementById("tab-content").style.backgroundColor = "#7ba05f";
+    const pageId = 'help';
+    router.push('#' + pageId);
     const divsMain = document.getElementsByClassName("content");
     // show section (id) or hidden
     for(let i = 0; i < divsMain.length; i++) {
