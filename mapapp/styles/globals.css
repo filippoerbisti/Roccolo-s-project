@@ -278,6 +278,13 @@ body {
   cursor: pointer;
 }
 
+#home p {
+  font-size: medium;
+  text-align: center;
+}
+
+/* STYLES SLIDER TITLE */
+
 @media(prefers-reduced-motion: no-preference) {
   :root {
     --slide-duration: 0.5s;
@@ -348,6 +355,8 @@ body {
   }
 }
 
+/* END STYLES SLIDER TITLE */
+
 /* END STYLES HOME */
 
 
@@ -367,7 +376,8 @@ body {
 }
 
 #map p {
-  font-size: small;
+  font-size: medium;
+  text-align: center;
 }
 
 /* END STYLES MAP */
@@ -387,6 +397,12 @@ body {
   letter-spacing: 0.4em;
   margin-top: 10px;
 }
+
+#help p {
+  font-size: medium;
+  text-align: center;
+}
+
 
 /* STYLES FAQ */
 
