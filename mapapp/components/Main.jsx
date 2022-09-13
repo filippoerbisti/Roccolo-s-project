@@ -3,7 +3,7 @@ import { FiHome, FiMap, FiHelpCircle } from 'react-icons/fi';
 import Link from 'next/link';
 
 import { useRouter } from 'next/router';
-import { HomeTitle, Mapping, About } from './';
+import { HomeTitle, Mapping, About, FAQ } from './';
 
 const Main = () => {
 
@@ -211,6 +211,8 @@ const Main = () => {
         <div id='help' className='content novis'>
           <h1>COME SI USA</h1>
           <About />
+          <h1>FAQ</h1>
+          <FAQ />
         </div>
       </div>
       <div className="tabbar">
