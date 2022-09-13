@@ -3,7 +3,7 @@ import { FiHome, FiMap, FiHelpCircle } from 'react-icons/fi';
 import Link from 'next/link';
 
 import { useRouter } from 'next/router';
-import { Home, Mapping, About } from './';
+import { HomeTitle, Mapping, About } from './';
 
 const Main = () => {
 
@@ -174,7 +174,7 @@ const Main = () => {
               {/* </Link> */}
             </button>
           </div>
-          <Home />
+          <HomeTitle />
         </div>
         <div id='map' className='content novis'>
           <h1>MAPAPP</h1>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Home = () => {
+const HomeTitle = () => {
   return (
     <div className='slider-title'>
         <h1 style={{"--count": 4}}>
@@ -14,4 +14,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default HomeTitle

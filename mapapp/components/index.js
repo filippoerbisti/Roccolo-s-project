@@ -5,7 +5,7 @@ export {default as Main } from './Main';
 export {default as QReader } from './QReader';
 export {default as BottomBar } from './BottomBar';
 
-export {default as Home } from './Home';
+export {default as HomeTitle } from './HomeTitle';
 
 export {default as Mapping } from './Mapping';
 
