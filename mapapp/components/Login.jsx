@@ -14,8 +14,8 @@ const Login = () => {
     const handleLogin = async (e) => {
       e.preventDefault();
       try {
-        await login(data.email, data.password)
-        router.push('/home')
+        await login(data.email, data.password);
+        router.push('/');
       } catch (err) {
         console.log(err)
       }
