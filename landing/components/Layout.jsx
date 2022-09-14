@@ -9,15 +9,15 @@ import Head from 'next/head';
 const Layout = ({ children }) => {
 //   const { t } = useTranslation('meta');
 
-  if (typeof window !== 'undefined') {
-    // progressbar
-    let progress = document.getElementById('progressbar');
-    window.onscroll = function() {
-      let totalHeight = document.body.scrollHeight - window.innerHeight;
-      let progressHeight = (window.scrollY / totalHeight) * 100;
-      progress.style.height = progressHeight + "%";
-    }
-  }
+  // if (typeof window !== 'undefined') {
+  //   // progressbar
+  //   let progress = document.getElementById('progressbar');
+  //   window.onscroll = function() {
+  //     let totalHeight = document.body.scrollHeight - window.innerHeight;
+  //     let progressHeight = (window.scrollY / totalHeight) * 100;
+  //     progress.style.height = progressHeight + "%";
+  //   }
+  // }
 
   return (
     <div>
