@@ -3,21 +3,18 @@ import { FiHome, FiMap, FiHelpCircle } from 'react-icons/fi';
 import Link from 'next/link';
 
 import { useRouter } from 'next/router';
-import { HomeTitle, Mapping, About, FAQ } from './';
+import { HomeTitle, Stage, Mapping, About, FAQ, QReaderIcon, ScanReader } from './';
 
 const Main = () => {
 
   const router = useRouter();
-
-  function clearClass(node, className) {
-    node.classList.remove(className);
-  } 
-
-  function setClass(node, className) {
-    node.classList.add(className);
-  }
+  var modalQR;
 
   useEffect(() => {
+    // Modal QR
+    modalQR = document.getElementById("modalQR");
+
+    // Tabbar
     const uls = document.querySelectorAll("ul");
     uls.forEach((ul) => {
       const resetClass = ul.parentNode.getAttribute("class");
@@ -80,6 +77,7 @@ const Main = () => {
     });
   }, []);
 
+  // Navigate home = simulation click on li with className="home"
   const navigateHome = () => {
     const liHome = document.getElementsByClassName('home');
     const liMap = document.getElementsByClassName('map');
@@ -114,6 +112,7 @@ const Main = () => {
     }
   }
 
+  // Navigate Map = simulation click on li with className="map"
   const navigateMap = () => {
     const liHome = document.getElementsByClassName('home');
     const liMap = document.getElementsByClassName('map');
@@ -149,6 +148,7 @@ const Main = () => {
     }
   }
 
+  // Navigate Help = simulation click on li with className="help"
   const navigateHelp = () => {
     const liHome = document.getElementsByClassName('home');
     const liMap = document.getElementsByClassName('map');
@@ -184,6 +184,36 @@ const Main = () => {
     }
   }
 
+  // When the user clicks the button, open the modal 
+  const modalShow = () => {
+      modalQR.style.display = "flex";
+      modalQR.style.justifyContent = "center";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  const modalClose = () => {
+      modalQR.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  if(typeof window !== "undefined") {
+      window.onclick = function(event) {
+          if (event.target == modalQR) {
+              modalQR.style.display = "none";
+          }
+      }
+  }
+
+  // Function clear class
+  function clearClass(node, className) {
+    node.classList.remove(className);
+  } 
+
+  // Function remove class
+  function setClass(node, className) {
+    node.classList.add(className);
+  }
+
   return (
     <div>
       <div id="tab-content" className='tab-content'>
@@ -201,7 +231,8 @@ const Main = () => {
               {/* </Link> */}
             </button>
           </div>
-          <HomeTitle />
+          {/* <HomeTitle /> */}
+          <Stage />
         </div>
         <div id='map' className='content novis'>
           <h1>MAPAPP</h1>
@@ -227,6 +258,22 @@ const Main = () => {
             <FiHelpCircle/>
           </li>
         </ul>
+      </div>
+
+      {/* <!-- Trigger/Open The Modal --> */}
+      <button onClick={modalShow}>
+        <QReaderIcon />
+      </button>
+            
+      {/* <!-- The Modal --> */}
+      <div id="modalQR" className="modal-qr">
+          {/* <!-- Modal content --> */}
+          <div className="modal-content-qr">
+              <div className="modal-body-qr">
+                  <span className="close-qr" onClick={modalClose}>&times;</span>
+                  <ScanReader />
+              </div>
+          </div>
       </div>
     </div>
   )
