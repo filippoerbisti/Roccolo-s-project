@@ -5,6 +5,7 @@ import styled from "styled-components";
 const StyledBlockWrapper = styled.div`
   position: relative;
   background: white;
+  border-radious: 50px;
   padding: 20px;
   margin-bottom: 10px;
   border: 1px solid lightgray;
@@ -63,12 +64,12 @@ export default function Stage() {
         <div>
             <ReactSortable list={blocks} setList={setBlocks} {...sortableOptions}>
                 {blocks.map((block, blockIndex) => (
-                <BlockWrapper
-                    key={block.id}
-                    block={block}
-                    blockIndex={[blockIndex]}
-                    setBlocks={setBlocks}
-                />
+                    <BlockWrapper
+                        key={block.id}
+                        block={block}
+                        blockIndex={[blockIndex]}
+                        setBlocks={setBlocks}
+                    />
                 ))}
             </ReactSortable>
         </div>
@@ -81,17 +82,17 @@ function Container({ block, blockIndex, setBlocks }) {
                 key={block.id}
                 list={block.children}
                 setList={(currentList) => {
-                setBlocks((sourceList) => {
-                    const tempList = [...sourceList];
-                    const _blockIndex = [...blockIndex];
-                    const lastIndex = _blockIndex.pop();
-                    const lastArr = _blockIndex.reduce(
-                        (arr, i) => arr[i]["children"],
-                        tempList
-                    );
-                    lastArr[lastIndex]["children"] = currentList;
-                    return tempList;
-                });
+                    setBlocks((sourceList) => {
+                        const tempList = [...sourceList];
+                        const _blockIndex = [...blockIndex];
+                        const lastIndex = _blockIndex.pop();
+                        const lastArr = _blockIndex.reduce(
+                            (arr, i) => arr[i]["children"],
+                            tempList
+                        );
+                        lastArr[lastIndex]["children"] = currentList;
+                        return tempList;
+                    });
                 }}
                 {...sortableOptions}
             >
