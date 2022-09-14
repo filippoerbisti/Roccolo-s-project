@@ -2,13 +2,13 @@ import React from 'react';
 import Head from 'next/head';
 // import useTranslation from 'next-translate/useTranslation';
 
-import { Navbar, QReader } from './';
+import { Navbar } from './';
 import { useAuth } from '../context/AuthContext';
 
 const Layout = ({ children }) => {
 
   const { user } = useAuth();
-
+  
   return (
     <div>
       <Head>
@@ -49,9 +49,6 @@ const Layout = ({ children }) => {
         </header>
         <main>
           {children}
-          {user &&
-            <QReader />
-          }
         </main>
       </div>
     </div>
