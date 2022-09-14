@@ -3,6 +3,7 @@ export {default as Login } from './Login';
 export {default as Navbar } from './Navbar';
 export {default as Main } from './Main';
 export {default as QReader } from './QReader';
+export {default as ScanReader } from './ScanReader';
 export {default as BottomBar } from './BottomBar';
 
 export {default as HomeTitle } from './HomeTitle';
