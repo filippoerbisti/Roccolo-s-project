@@ -3,7 +3,7 @@ import { FiHome, FiMap, FiHelpCircle } from 'react-icons/fi';
 import Link from 'next/link';
 
 import { useRouter } from 'next/router';
-import { HomeTitle, Stage, Mapping, About, FAQ, QReaderIcon, ScanReader } from './';
+import { Stage, Mapping, About, FAQ, QReaderIcon, ScanReader } from './';
 
 const Main = () => {
 
@@ -32,7 +32,6 @@ const Main = () => {
           e.preventDefault();
           e.stopPropagation();
           const target = e.currentTarget;
-          console.log(target)
           if (
               target.classList.contains("active") ||
               target.classList.contains("follow")
@@ -231,7 +230,6 @@ const Main = () => {
               {/* </Link> */}
             </button>
           </div>
-          {/* <HomeTitle /> */}
           <Stage />
         </div>
         <div id='map' className='content novis'>
