@@ -1,48 +1,71 @@
 import React, { useEffect } from 'react';
 
+import {
+    Accordion,
+    AccordionItem,
+    AccordionItemHeading,
+    AccordionItemButton,
+    AccordionItemPanel,
+} from 'react-accessible-accordion';
+
+// Demo styles, see 'Styles' section below for some notes on use.
+// import 'react-accessible-accordion/dist/fancy-example.css';
+
 const FAQ = () => {
     
   return (
     <div>
-        <div className="wrap-collabsible"> 
-            <input id="collapsible1" className="collapsible-toggle" type="checkbox" /> 
-            <label htmlFor="collapsible1" className="collapsible-lbl-toggle">FAQ 1</label>
-            <div className="collapsible-content">
-                <div className="collapsible-content-inner">
-                    <p> QUnit is by calling one of the object that are embedded in JavaScript, and faster JavaScript program could also used with its elegant, well documented, and functional programming using JS, HTML pages Modernizr is a popular browsers without plug-ins. Test-Driven Development.</p>
-                </div>
-            </div>
-        </div>
-
-        <div className="wrap-collabsible"> 
-            <input id="collapsible2" className="collapsible-toggle" type="checkbox" /> 
-            <label htmlFor="collapsible2" className="collapsible-lbl-toggle">FAQ 2</label>
-            <div className="collapsible-content">
-                <div className="collapsible-content-inner">
-                    <p> QUnit is by calling one of the object that are embedded in JavaScript, and faster JavaScript program could also used with its elegant, well documented, and functional programming using JS, HTML pages Modernizr is a popular browsers without plug-ins. Test-Driven Development.</p>
-                </div>
-            </div>
-        </div>
-
-        <div className="wrap-collabsible"> 
-            <input id="collapsible3" className="collapsible-toggle" type="checkbox" /> 
-            <label htmlFor="collapsible3" className="collapsible-lbl-toggle">FAQ 3</label>
-            <div className="collapsible-content">
-                <div className="collapsible-content-inner">
-                    <p> QUnit is by calling one of the object that are embedded in JavaScript, and faster JavaScript program could also used with its elegant, well documented, and functional programming using JS, HTML pages Modernizr is a popular browsers without plug-ins. Test-Driven Development.</p>
-                </div>
-            </div>
-        </div>
-
-        <div className="wrap-collabsible"> 
-            <input id="collapsible4" className="collapsible-toggle" type="checkbox" /> 
-            <label htmlFor="collapsible4" className="collapsible-lbl-toggle">FAQ 4</label>
-            <div className="collapsible-content">
-                <div className="collapsible-content-inner">
-                    <p> QUnit is by calling one of the object that are embedded in JavaScript, and faster JavaScript program could also used with its elegant, well documented, and functional programming using JS, HTML pages Modernizr is a popular browsers without plug-ins. Test-Driven Development.</p>
-                </div>
-            </div>
-        </div>
+        <Accordion allowZeroExpanded> {/* allowZeroExpanded allows closing of all accordions */}
+            <AccordionItem>
+                <AccordionItemHeading>
+                    <AccordionItemButton>
+                        What harsh truths do you prefer to ignore?
+                    </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                    Exercitation in fugiat est ut ad ea cupidatat ut in
+                    cupidatat occaecat ut occaecat consequat est minim minim
+                    esse tempor laborum consequat esse adipisicing eu
+                    reprehenderit enim.
+                </AccordionItemPanel>
+            </AccordionItem>
+            <AccordionItem>
+                <AccordionItemHeading>
+                    <AccordionItemButton>
+                        Is free will real or just an illusion?
+                    </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                    In ad velit in ex nostrud dolore cupidatat consectetur
+                    ea in ut nostrud velit in irure cillum tempor laboris
+                    sed adipisicing eu esse duis nulla non.
+                </AccordionItemPanel>
+            </AccordionItem>
+            <AccordionItem>
+                <AccordionItemHeading>
+                    <AccordionItemButton>
+                        Is free will real or just an illusion?
+                    </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                    In ad velit in ex nostrud dolore cupidatat consectetur
+                    ea in ut nostrud velit in irure cillum tempor laboris
+                    sed adipisicing eu esse duis nulla non.
+                </AccordionItemPanel>
+            </AccordionItem>
+            <AccordionItem>
+                <AccordionItemHeading>
+                    <AccordionItemButton>
+                        Is free will real or just an illusion?
+                    </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                    In ad velit in ex nostrud dolore cupidatat consectetur
+                    ea in ut nostrud velit in irure cillum tempor laboris
+                    sed adipisicing eu esse duis nulla non.
+                </AccordionItemPanel>
+            </AccordionItem>
+        </Accordion>
     </div>
   )
 }
