@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-md/expansion-panel": "^5.1.3",
     "firebase": "^9.9.4",
     "flowbite": "^1.5.3",
     "flowbite-react": "^0.1.10",
