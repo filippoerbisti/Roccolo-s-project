@@ -53,18 +53,6 @@ const FAQ = () => {
                     sed adipisicing eu esse duis nulla non.
                 </AccordionItemPanel>
             </AccordionItem>
-            <AccordionItem>
-                <AccordionItemHeading>
-                    <AccordionItemButton>
-                        Is free will real or just an illusion?
-                    </AccordionItemButton>
-                </AccordionItemHeading>
-                <AccordionItemPanel>
-                    In ad velit in ex nostrud dolore cupidatat consectetur
-                    ea in ut nostrud velit in irure cillum tempor laboris
-                    sed adipisicing eu esse duis nulla non.
-                </AccordionItemPanel>
-            </AccordionItem>
         </Accordion>
     </div>
   )
