@@ -1,10 +1,9 @@
 import React, { useState }  from 'react';
-import { useRouter } from 'next/router';
+import toast from 'react-hot-toast';
 import { useAuth } from '../context/AuthContext';
 
 const Login = () => {
 
-    const router = useRouter();
     const { user, login } = useAuth();
     const [data, setData] = useState({
       email: '',
@@ -15,9 +14,10 @@ const Login = () => {
       e.preventDefault();
       try {
         await login(data.email, data.password);
-        router.push('/');
+        toast.success('Login corretto');
       } catch (err) {
-        console.log(err)
+        console.log(err);
+        toast.error('Le credenziali sono errate');
       }
     };
 
