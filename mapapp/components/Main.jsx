@@ -193,12 +193,14 @@ const Main = () => {
 
   // When the user clicks the button, open the modal 
   const modalShow = () => {
+    modalQR = document.getElementById("modalQR");
     modalQR.style.display = "flex";
     modalQR.style.justifyContent = "center";
   }
 
   // When the user clicks on <span> (x), close the modal
   const modalClose = () => {
+    modalQR = document.getElementById("modalQR");
     modalQR.style.display = "none";
   }
 
