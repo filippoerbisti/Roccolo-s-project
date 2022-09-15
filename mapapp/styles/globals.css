@@ -34,6 +34,7 @@ body {
   max-width: 500px;
   height: 100vh;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .cursor-pointer {
@@ -310,7 +311,7 @@ body {
       }
 
       .accordion__heading {
-        font-size: medium;
+        font-size: 16px;
         text-transform: uppercase;
       }
 
@@ -334,7 +335,7 @@ body {
       }
 
       .accordion__panel {
-        font-size: 16px;
+        font-size: 14px;
         padding: 10px;
         text-align: left;
         border: 2px solid #38ef7d;
@@ -619,3 +620,35 @@ body {
 }
 
 /* END STYLES LOADER WALKER */
+
+
+
+.genially-view-slide-container > img {
+  scale: 2;
+}
+
+#frame { 
+  /* zoom: 2; 
+  -moz-transform: scale(2); 
+  -moz-transform-origin: 0 0;  */
+  transform: translate3d(100px 100px 200%);
+}ù
+
+
+
+
+#wrapper { width: 710px; height: 1420px; padding: 0; overflow: hidden; }
+#scaled-frame { width: 1000px; height: 2000px; border: 0px; }
+#scaled-frame {
+zoom: 1.71;
+-moz-transform: scale(1.71);
+-moz-transform-origin: 0 0;
+-o-transform: scale(1.71);
+-o-transform-origin: 0 0;
+-webkit-transform: scale(1.71);
+-webkit-transform-origin: 0 0;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+#scaled-frame  { zoom: 1;  }
+}
