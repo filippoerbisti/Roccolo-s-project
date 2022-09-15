@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
+import { Toaster } from 'react-hot-toast';
 
-import { Layout, Navbar, BottomBar, Loader } from '../components';
+import { Layout, Loader } from '../components';
 import '../styles/globals.css'
 import { AuthContextProvider } from '../context/AuthContext';
 import ProtectedRoute from '../components/ProtectedRoute';
@@ -24,9 +25,13 @@ function MyApp({ Component, pageProps }) {
       {isLoaded &&
         <Layout>
           {noAuthRequired.includes(router.pathname) ? (
-            <Component {...pageProps} />
+            <>
+              <Toaster />
+              <Component {...pageProps} />
+            </>
           ) : (
             <ProtectedRoute>
+              <Toaster />
               <Component {...pageProps} />
             </ProtectedRoute>
           )}
