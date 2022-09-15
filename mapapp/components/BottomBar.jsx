@@ -16,10 +16,7 @@ const BottomBar = () => {
                 li.addEventListener("click", (e) => {
                     e.preventDefault();
                     e.stopPropagation();
-                    // router.push('/')
                     const target = e.currentTarget;
-                    console.log(target)
-
                     if (
                         target.classList.contains("active") ||
                         target.classList.contains("follow")
