@@ -14,6 +14,13 @@ const Main = () => {
     // Modal QR
     modalQR = document.getElementById("modalQR");
 
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modalQR) {
+        modalQR.style.display = "none";
+      }
+    }
+
     // Tabbar
     const uls = document.querySelectorAll("ul");
     uls.forEach((ul) => {
@@ -186,22 +193,13 @@ const Main = () => {
 
   // When the user clicks the button, open the modal 
   const modalShow = () => {
-      modalQR.style.display = "flex";
-      modalQR.style.justifyContent = "center";
+    modalQR.style.display = "flex";
+    modalQR.style.justifyContent = "center";
   }
 
   // When the user clicks on <span> (x), close the modal
   const modalClose = () => {
-      modalQR.style.display = "none";
-  }
-
-  // When the user clicks anywhere outside of the modal, close it
-  if(typeof window !== "undefined") {
-      window.onclick = function(event) {
-          if (event.target == modalQR) {
-              modalQR.style.display = "none";
-          }
-      }
+    modalQR.style.display = "none";
   }
 
   // Function clear class
