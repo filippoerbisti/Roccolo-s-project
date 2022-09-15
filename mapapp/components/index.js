@@ -7,7 +7,6 @@ export {default as ScanReader } from './ScanReader';
 export {default as Loader } from './Loader';
 export {default as BottomBar } from './BottomBar';
 
-export {default as HomeTitle } from './HomeTitle';
 export {default as Stage } from './Stage';
 
 export {default as Mapping } from './Mapping';
