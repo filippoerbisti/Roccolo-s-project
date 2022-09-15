@@ -303,81 +303,46 @@ body {
 
     /* STYLES FAQ */
 
-    .wrap-collabsible input[type="checkbox"] {
-      display: none;
-    }
+      /* STYLES ACCORDION */
 
-    .wrap-collabsible {
-      margin: 10px 0;
-    }
+      .accordion__item {
+        margin: 10px 0;
+      }
 
-    .collapsible-lbl-toggle {
-      display: block;
-      /* font-weight: bold; */
-      /* font-family: monospace; */
-      font-size: 1.2rem;
-      text-transform: uppercase;
-      /* text-align: center; */
-      padding: 10px;
-      color: #ddd;
-      background: #0069ff;
-      cursor: pointer;
-      border-radius: 7px;
-      transition: all 0.25s ease-out;
-    }
+      .accordion__heading {
+        font-size: medium;
+        text-transform: uppercase;
+      }
 
-    .collapsible-lbl-toggle:hover {
-      color: #fff;
-    }
+      .accordion__heading > [aria-expanded="false"] {
+        border: 2px solid #38ef7d;
+        border-radius: 50px;
+        padding: 10px;
+      }
 
-    .collapsible-lbl-toggle::before {
-      content: " ";
-      display: inline-block;
-      border-top: 5px solid transparent;
-      border-bottom: 5px solid transparent;
-      border-left: 5px solid currentColor;
-      vertical-align: middle;
-      margin-right: 0.7rem;
-      transform: translateY(-2px);
-      transition: transform 0.2s ease-out;
-    }
+      .accordion__heading > [aria-expanded="true"] {
+        border-top: 2px solid #38ef7d;
+        border-bottom-right-radius: 10px solid #38ef7d;
+        border-right: 2px solid #38ef7d;
+        border-bottom-left-radius: 10px solid #38ef7d;
+        border-left: 2px solid #38ef7d;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        padding: 10px;
 
-    /* change direction arrow */
-    .collapsible-toggle:checked + .collapsible-lbl-toggle::before {
-      transform: rotate(90deg) translateX(-3px);
-    }
+        background: rgba(0, 0, 0, 0.2);
+      }
 
-    .collapsible-content {
-      max-height: 0px;
-      overflow: hidden;
-      transition: max-height 0.25s ease-in-out;
-    }
+      .accordion__panel {
+        font-size: 16px;
+        padding: 10px;
+        text-align: left;
+        border: 2px solid #38ef7d;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+      }
 
-    .collapsible-toggle:checked + .collapsible-lbl-toggle + .collapsible-content {
-      max-height: 350px;
-    }
-
-    /* when is opening change border-bottom-x */
-    .collapsible-toggle:checked + .collapsible-lbl-toggle {
-      border-bottom-right-radius: 0;
-      border-bottom-left-radius: 0;
-    }
-
-    .collapsible-content .collapsible-content-inner {
-      /* background: rgba(0, 105, 255, 0.2); */
-      border-bottom: 1px solid rgba(0, 105, 255, 0.45);
-      border-right: 1px solid rgba(0, 105, 255, 0.45);
-      border-left: 1px solid rgba(0, 105, 255, 0.45);
-      border-bottom-left-radius: 7px;
-      border-bottom-right-radius: 7px;
-      /* padding: 0.5rem 1rem; */
-      padding: 10px;
-    }
-
-    .collapsible-content p {
-      /* margin-bottom: 0; */
-      font-size: medium;
-    }
+      /* END STYLES ACCORDION */
 
     /* END STYLES FAQ */
 
@@ -590,3 +555,67 @@ body {
   /* END STYLES MODAL QR READER */
 
 /* END STYLES QR READER */
+
+
+
+
+
+
+
+
+/* STYLES LOADER WALKER */
+
+@-webkit-keyframes walkanim {
+  to {
+    background-position: 100% 0;
+  }
+}
+@keyframes walkanim {
+  to {
+    background-position: 100% 0;
+  }
+}
+
+.walker {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* background-color: rgba(0, 0, 0, 0.4); */
+  z-index: 100;
+}
+
+.walker p {
+  font-size: medium;
+}
+
+#walk-container {
+  display: inline-block;
+  position: relative;
+  width: 20%;
+  padding-bottom: 30%;
+  vertical-align: middle;
+  overflow: hidden;
+  -webkit-animation: stroll 30s linear infinite;
+          animation: stroll 30s linear infinite;
+}
+
+#walk {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/walk-sequence.svg);
+  background-repeat: no-repeat;
+  background-size: 800%;
+  -webkit-animation: walkanim 1s infinite steps(7);
+          animation: walkanim 1s infinite steps(7);
+}
+
+/* END STYLES LOADER WALKER */
