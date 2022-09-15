@@ -4,6 +4,7 @@ export {default as Navbar } from './Navbar';
 export {default as Main } from './Main';
 export {default as QReaderIcon } from './QReaderIcon';
 export {default as ScanReader } from './ScanReader';
+export {default as Loader } from './Loader';
 export {default as BottomBar } from './BottomBar';
 
 export {default as HomeTitle } from './HomeTitle';
