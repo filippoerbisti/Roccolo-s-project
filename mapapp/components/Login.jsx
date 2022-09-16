@@ -1,10 +1,9 @@
 import React, { useState }  from 'react';
-import { useRouter } from 'next/router';
+import toast from 'react-hot-toast';
 import { useAuth } from '../context/AuthContext';
 
 const Login = () => {
 
-    const router = useRouter();
     const { user, login } = useAuth();
     const [data, setData] = useState({
       email: '',
@@ -14,10 +13,11 @@ const Login = () => {
     const handleLogin = async (e) => {
       e.preventDefault();
       try {
-        await login(data.email, data.password)
-        router.push('/home')
+        await login(data.email, data.password);
+        toast.success('Login corretto');
       } catch (err) {
-        console.log(err)
+        console.log(err);
+        toast.error('Le credenziali sono errate');
       }
     };
 
@@ -34,7 +34,8 @@ const Login = () => {
                 <h1>INIZIA IL TOUR</h1>
                 <form onSubmit={handleLogin}>
                     <div className="form__group field">
-                        <input 
+                        <input
+                            id='email' 
                             onChange={(e) =>
                                 setData({
                                     ...data,
@@ -47,18 +48,21 @@ const Login = () => {
                             placeholder="Enter email"
                             className="form__field" 
                         />
-                        <label htmlFor="username" className="form__label">Username</label>
+                        <label htmlFor="email" className="form__label">Username</label>
                     </div>
                     <div className="form__group field">
                         <input 
+                            id='password'
                             onChange={(e) =>
                                 setData({
-                                ...data,
-                                password: e.target.value,
+                                    ...data,
+                                    password: e.target.value,
                                 })
                             }
                             value={data.password}
                             required
+                            pattern="[a-z0-9]{1,15}"
+                            // title="Password should be digits (0 to 9) or alphabets (a to z)."
                             type="password"
                             placeholder="Password"
                             className="form__field"

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BiQrScan } from 'react-icons/bi';
 
-const QReader = () => {
+const QReaderIcon = () => {
   return (
     <div className='qr-reader-container'>
         <div className='qr-reader'>
@@ -11,4 +11,4 @@ const QReader = () => {
   )
 }
 
-export default QReader
+export default QReaderIcon

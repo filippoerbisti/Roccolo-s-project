@@ -1,23 +1,30 @@
 import React, { useEffect } from 'react';
 import { FiHome, FiMap, FiHelpCircle } from 'react-icons/fi';
-import Link from 'next/link';
 
 import { useRouter } from 'next/router';
-import { HomeTitle, Mapping, About, FAQ } from './';
+import { Mapping, HowUse, FAQ, QReaderIcon, ScanReader } from './';
+
+import dataFakePath from '../store/dataFakePath';
 
 const Main = () => {
 
+  const paths = dataFakePath;
+
   const router = useRouter();
-
-  function clearClass(node, className) {
-    node.classList.remove(className);
-  } 
-
-  function setClass(node, className) {
-    node.classList.add(className);
-  }
+  var modalQR;
 
   useEffect(() => {
+    // Modal QR
+    modalQR = document.getElementById("modalQR");
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modalQR) {
+        modalQR.style.display = "none";
+      }
+    }
+
+    // Tabbar
     const uls = document.querySelectorAll("ul");
     uls.forEach((ul) => {
       const resetClass = ul.parentNode.getAttribute("class");
@@ -28,7 +35,6 @@ const Main = () => {
           e.preventDefault();
           e.stopPropagation();
           const target = e.currentTarget;
-          console.log(target)
           if (
               target.classList.contains("active") ||
               target.classList.contains("follow")
@@ -80,6 +86,7 @@ const Main = () => {
     });
   }, []);
 
+  // Navigate home = simulation click on li with className="home"
   const navigateHome = () => {
     const liHome = document.getElementsByClassName('home');
     const liMap = document.getElementsByClassName('map');
@@ -114,6 +121,7 @@ const Main = () => {
     }
   }
 
+  // Navigate Map = simulation click on li with className="map"
   const navigateMap = () => {
     const liHome = document.getElementsByClassName('home');
     const liMap = document.getElementsByClassName('map');
@@ -149,6 +157,7 @@ const Main = () => {
     }
   }
 
+  // Navigate Help = simulation click on li with className="help"
   const navigateHelp = () => {
     const liHome = document.getElementsByClassName('home');
     const liMap = document.getElementsByClassName('map');
@@ -184,6 +193,29 @@ const Main = () => {
     }
   }
 
+  // When the user clicks the button, open the modal 
+  const modalShow = () => {
+    modalQR = document.getElementById("modalQR");
+    modalQR.style.display = "flex";
+    modalQR.style.justifyContent = "center";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  const modalClose = () => {
+    modalQR = document.getElementById("modalQR");
+    modalQR.style.display = "none";
+  }
+
+  // Function clear class
+  function clearClass(node, className) {
+    node.classList.remove(className);
+  } 
+
+  // Function remove class
+  function setClass(node, className) {
+    node.classList.add(className);
+  }
+
   return (
     <div>
       <div id="tab-content" className='tab-content'>
@@ -191,17 +223,26 @@ const Main = () => {
           <h1>BENVENUTI <br/> NEL NOSTRO TOUR</h1>
           <div className='btn-container'>
             <button className='btn' onClick={navigateHelp}>
-                {/* <Link href={'#help'}> */}
-                  Come si usa
-                {/* </Link> */}
-              </button>
+              {/* <Link href={'#help'}> */}
+                Come si usa
+              {/* </Link> */}
+            </button>
+            </div>
+            <div className='btn-container'>
             <button className='btn' onClick={navigateMap}>
               {/* <Link href={'#map'}> */}
                 Iniziamo
               {/* </Link> */}
             </button>
           </div>
-          <HomeTitle />
+          <h1>TAPPE</h1>
+          {paths.map((path) => (
+            <div key={path.id} className="path-card">
+              <img src={path.img} target="_blank" />
+              <h4>{path.title}</h4>
+              <input type="checkbox" checked={path.completed}/>
+            </div>
+          ))}
         </div>
         <div id='map' className='content novis'>
           <h1>MAPAPP</h1>
@@ -210,7 +251,7 @@ const Main = () => {
         </div>
         <div id='help' className='content novis'>
           <h1>COME SI USA</h1>
-          <About />
+          <HowUse />
           <h1>FAQ</h1>
           <FAQ />
         </div>
@@ -227,6 +268,22 @@ const Main = () => {
             <FiHelpCircle/>
           </li>
         </ul>
+      </div>
+
+      {/* Trigger/Open The Modal */}
+      <button onClick={modalShow}>
+        <QReaderIcon />
+      </button>
+            
+      {/* The Modal */}
+      <div id="modalQR" className="modal-qr">
+          {/* <!-- Modal content --> */}
+          <div className="modal-content-qr">
+              <div className="modal-body-qr">
+                  <span className="close-qr" onClick={modalClose}>&times;</span>
+                  <ScanReader />
+              </div>
+          </div>
       </div>
     </div>
   )
