@@ -19,7 +19,7 @@ const Footer = () => {
       <p className={styles.followUs}>{t('followUs')}</p>
       <ul className={iconStyles.ul}>
         <li>
-            <a href="https://it-it.facebook.com/roccolodellago/" target="_blank">
+            <a href="https://it-it.facebook.com/roccolodellago/" target="_blank" rel="noreferrer">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -28,7 +28,7 @@ const Footer = () => {
             </a>
         </li>
         <li>
-            <a href="https://www.instagram.com/roccolodellago/" target="_blank">
+            <a href="https://www.instagram.com/roccolodellago/" target="_blank" rel="noreferrer">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -41,7 +41,7 @@ const Footer = () => {
       <div className={styles.row}>
         <div className={styles.left}>
           <div>
-            <p>{t('where')}: <a href='https://goo.gl/maps/Pgp5XzNNhqQoMqVa6' className={styles.tag} target='_blank'>Località Saline, 9 -
+            <p>{t('where')}: <a href='https://goo.gl/maps/Pgp5XzNNhqQoMqVa6' className={styles.tag} target='_blank' rel="noreferrer">Località Saline, 9 -
               37017 Lazise (VR)</a></p>
             <br />
             <p>Tel: <a href={`tel:${phoneNumber}`} className={styles.tag}>+39 045 7581077</a></p>
@@ -80,7 +80,7 @@ const Footer = () => {
       <div className={styles.endFooter}>
         <p>
           <span className={styles.tag}>
-            <a href='/'>Società Agricola Roccolo del Lago S.r.l. </a>
+            <a href='/' rel="noreferrer">Società Agricola Roccolo del Lago S.r.l. </a>
           </span> 
           -
           <span className={styles.tag}>
@@ -90,7 +90,7 @@ const Footer = () => {
           REAVR-366731 - P. Iva 03802970230 - Cap. Sociale 100.000.00 €
           </p>
         <p>2022 © Roccolo del Lago. {t('rightsReserved')} <br />
-          {t('poweredBy')} <a href="https://filippoerbisti.netlify.app" target="_blank" className={styles.poweredBy}>Filippo Erbisti</a>
+          {t('poweredBy')} <a href="https://filippoerbisti.netlify.app" target="_blank" rel="noreferrer" className={styles.poweredBy}>Filippo Erbisti</a>
           <span className={styles.privacyPolicy}>
             <Link href="/privacy-policy"> Privacy/Policy</Link>
           </span>
