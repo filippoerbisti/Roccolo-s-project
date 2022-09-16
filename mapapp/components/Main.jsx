@@ -5,7 +5,11 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Stage, Mapping, About, FAQ, QReaderIcon, ScanReader } from './';
 
+import dataFakePath from '../store/dataFakePath';
+
 const Main = () => {
+
+  const paths = dataFakePath;
 
   const router = useRouter();
   var modalQR;
@@ -213,6 +217,10 @@ const Main = () => {
     node.classList.add(className);
   }
 
+  const clickPath = (path) => {
+    console.log(path)
+  }
+
   return (
     <div>
       <div id="tab-content" className='tab-content'>
@@ -220,17 +228,27 @@ const Main = () => {
           <h1>BENVENUTI <br/> NEL NOSTRO TOUR</h1>
           <div className='btn-container'>
             <button className='btn' onClick={navigateHelp}>
-                {/* <Link href={'#help'}> */}
-                  Come si usa
-                {/* </Link> */}
-              </button>
+              {/* <Link href={'#help'}> */}
+                Come si usa
+              {/* </Link> */}
+            </button>
+            </div>
+            <div className='btn-container'>
             <button className='btn' onClick={navigateMap}>
               {/* <Link href={'#map'}> */}
                 Iniziamo
               {/* </Link> */}
             </button>
           </div>
-          <Stage />
+          <h1>TAPPE</h1>
+          {paths.map((path) => (
+            <div key={path.id} className="path-card">
+              <img src={path.img} target="_blank" />
+              <h4>{path.title}</h4>
+              <input type="checkbox" />
+            </div>
+          ))}
+          {/* <Stage /> */}
         </div>
         <div id='map' className='content novis'>
           <h1>MAPAPP</h1>
