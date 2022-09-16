@@ -233,12 +233,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 20px 0;
+    margin: 10px 0;
   }
 
   #home .btn {
     width: 100%;
-    max-width: 150px;
+    max-width: 300px;
     padding: 3px 0px;
     border-radius: 15px;
     border: none;
