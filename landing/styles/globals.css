@@ -1,8 +1,72 @@
-*{
-  margin: 0;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+html,
+body, * {
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  box-sizing: border-box;
 }
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.main-container {
+  padding: 10px;
+  width: 100%;
+  margin: 0;
+}
+
+
+/* STYLES PROGRESS SCROLLBAR  */
+
+#scrollPath {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+#progressbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 10px;
+  background: #892331;
+  z-index: 100;
+}
+
+#progressbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #892331;
+  filter: blur(10px);
+}
+
+#progressbar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #892331;
+  filter: blur(30px);
+}
+
 
 /* STYLES PARALLAX EFFECT */
 
@@ -23,19 +87,19 @@ h2 {
 }
 
 .parallax {
-  background-image: url("https://images.unsplash.com/photo-1558985040-ed4d5029dd50?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NjIzODkxNjg&ixlib=rb-1.2.1&q=80"); 
+  background-image: url("https://res.cloudinary.com/dl38nyo08/image/upload/v1654615348/Roccolo%20del%20Lago/degustazioni_zs5pmi.png"); 
 }
 
 .parallax1 {
-  background-image: url("https://images.unsplash.com/photo-1610128114197-485d933885c5?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NjIzOTA2Nzc&ixlib=rb-1.2.1&q=80");
+  background-image: url("https://res.cloudinary.com/dl38nyo08/image/upload/v1655394841/Roccolo%20del%20Lago/casual%20img/pexels-andrea-piacquadio-3756623_ruiuh7.jpg");
 }
 
 .parallax2 {
-  background-image: url("https://images.unsplash.com/photo-1562095241-8c6714fd4178?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NjIzOTA5OTg&ixlib=rb-1.2.1&q=80");
+  background-image: url("https://res.cloudinary.com/dl38nyo08/image/upload/v1655394258/Roccolo%20del%20Lago/casual%20img/pexels-pixabay-39511_nkcwju.jpg");
 }
 
 .parallax3 {
-  background-image: url("https://images.unsplash.com/photo-1543722530-d2c3201371e7?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NjIzOTExOTg&ixlib=rb-1.2.1&q=80");
+  background-image: url("https://res.cloudinary.com/dl38nyo08/image/upload/v1655394247/Roccolo%20del%20Lago/casual%20img/pexels-tim-mossholder-953166_mirtjj.jpg");
 }
 
 .text-bloc p {
