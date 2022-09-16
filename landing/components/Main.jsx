@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from './Footer';
 
 const Main = () => {
   return (
@@ -26,10 +25,7 @@ const Main = () => {
         <section className="section-background parallax3">
             <h2>Galaxy</h2>
         </section>
-        <section>
-            <Footer />
-        </section>
-        
+                
     </div>
   )
 }
