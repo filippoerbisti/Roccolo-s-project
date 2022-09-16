@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { QrReader } from "react-qr-reader";
+import { useRouter } from 'next/router';
+import toast from 'react-hot-toast';
 
 const ScanReader = () => {
 
+    const router = useRouter();
     const [data, setData] = useState("No result");
 
     let isMobileDevice;
@@ -22,9 +25,12 @@ const ScanReader = () => {
                         onResult={(result, error) => {
                             if (!!result) {
                                 setData(result?.text);
+                                toast.success('Redirect ...');
+                                router.push(result);
                             }
 
                             if (!!error) {
+                                toast.error('Errore lettura QR');
                                 console.info(error);
                             }
                         }}
