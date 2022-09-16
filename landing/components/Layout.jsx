@@ -4,20 +4,20 @@ import useTranslation from 'next-translate/useTranslation';
 
 // import Navbar from './Navbar';
 import Footer from './Footer';
-// import ScrollToTop from './ScrollToTop';
+import ScrollToTop from './ScrollToTop';
 
 const Layout = ({ children }) => {
   const { t } = useTranslation('meta');
 
-  // if (typeof window !== 'undefined') {
-  //   // progressbar
-  //   let progress = document.getElementById('progressbar');
-  //   window.onscroll = function() {
-  //     let totalHeight = document.body.scrollHeight - window.innerHeight;
-  //     let progressHeight = (window.scrollY / totalHeight) * 100;
-  //     progress.style.height = progressHeight + "%";
-  //   }
-  // }
+  if (typeof window !== 'undefined') {
+    // progressbar
+    let progress = document.getElementById('progressbar');
+    window.onscroll = function() {
+      let totalHeight = document.body.scrollHeight - window.innerHeight;
+      let progressHeight = (window.scrollY / totalHeight) * 100;
+      progress.style.height = progressHeight + "%";
+    }
+  }
 
   return (
     <div>
@@ -56,9 +56,9 @@ const Layout = ({ children }) => {
           <Navbar />
         </header> */}
         <main className='main-container'>
-          {/* <div id='progressbar'></div>
+          <div id='progressbar'></div>
           <div id='scrollPath'></div>
-          <ScrollToTop /> */}
+          <ScrollToTop />
           {children}
         </main>
         <footer>
