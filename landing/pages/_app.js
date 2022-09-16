@@ -7,10 +7,11 @@ function MyApp({ Component, pageProps }) {
     // <StateContext>
       <Layout>
         <Component {...pageProps} />
-      </Layout>
 
-      //{/* Font Awesome */}
-      // <Script src="https://kit.fontawesome.com/60aa6b5946.js" crossOrigin="anonymous"></Script>
+        {/* Font Awesome */}
+        <Script src="https://kit.fontawesome.com/60aa6b5946.js" crossOrigin="anonymous"></Script>
+      </Layout>
+      
     // </StateContext>
   )
 }
