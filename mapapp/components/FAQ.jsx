@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { FaAngleUp } from 'react-icons/fa';
 
 import {
     Accordion,
@@ -19,6 +20,7 @@ const FAQ = () => {
             <AccordionItem>
                 <AccordionItemHeading>
                     <AccordionItemButton>
+                        <FaAngleUp className='arrow' />
                         What harsh truths do you prefer to ignore?
                     </AccordionItemButton>
                 </AccordionItemHeading>
@@ -32,6 +34,7 @@ const FAQ = () => {
             <AccordionItem>
                 <AccordionItemHeading>
                     <AccordionItemButton>
+                        <FaAngleUp className='arrow' />
                         Is free will real or just an illusion?
                     </AccordionItemButton>
                 </AccordionItemHeading>
@@ -44,6 +47,7 @@ const FAQ = () => {
             <AccordionItem>
                 <AccordionItemHeading>
                     <AccordionItemButton>
+                        <FaAngleUp className='arrow' />
                         Is free will real or just an illusion?
                     </AccordionItemButton>
                 </AccordionItemHeading>
