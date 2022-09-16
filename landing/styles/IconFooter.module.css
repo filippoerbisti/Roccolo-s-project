@@ -1,0 +1,96 @@
+.ul {
+    position: relative;
+    display: flex;
+    transform-style: preserve-3d;
+    margin-bottom: 20px;
+    padding: 5px 0;
+  }
+  
+  .ul li {
+    position: relative;
+    list-style: none;
+    width: 50px;
+    height: 50px;
+    margin: 0 20px;
+  }
+  
+  .ul li span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: rgba(240, 45, 52, 0.1);
+    color: white;
+    font-size: 30px !important;
+    transition: 0.2s;
+  }
+  
+  .ul li::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: rgba(240, 45, 52, 1.3);
+    transform-origin: top;
+    transform: skewX(-41deg);
+  }
+  
+  .ul li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -9px;
+    width: 9px;
+    height: 100%;
+    background: rgba(240, 45, 52, 1.3);    
+    transform-origin: right;
+    transform: skewY(-49deg);
+  }
+  
+  .ul li:hover span {
+    z-index: 1000;
+    transition: 0.5s;
+    color: #fff;
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.05);
+  }
+  
+  .ul li:hover span:nth-child(5) {
+    transform: translate(20px, -20px);
+    opacity: 1;
+  }
+  
+  .ul li:hover span:nth-child(4) {
+    transform: translate(15px, -15px);
+    opacity: 0.8;
+  }
+  
+  .ul li:hover span:nth-child(3) {
+    transform: translate(10px, -10px);
+    opacity: 0.6;
+  }
+  
+  .ul li:hover span:nth-child(2) {
+    transform: translate(5px, -5px);
+    opacity: 0.4;
+  }
+  
+  .ul li:hover span:nth-child(1) {
+    transform: translate(0px, 0px);
+    opacity: 0.2;
+  }
+  
+  .ul li:nth-child(1):hover span {
+    /* Facebook Icon*/
+    background: #3b5999;
+  }
+  .ul li:nth-child(2):hover span {
+    /* Instagram Icon*/
+    background: linear-gradient(#405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
+  }
+  
