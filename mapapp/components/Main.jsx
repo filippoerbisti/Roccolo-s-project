@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { FiHome, FiMap, FiHelpCircle } from 'react-icons/fi';
-import Link from 'next/link';
 
 import { useRouter } from 'next/router';
-import { Stage, Mapping, About, FAQ, QReaderIcon, ScanReader } from './';
+import { Mapping, HowUse, FAQ, QReaderIcon, ScanReader } from './';
 
 import dataFakePath from '../store/dataFakePath';
 
@@ -217,10 +216,6 @@ const Main = () => {
     node.classList.add(className);
   }
 
-  const clickPath = (path) => {
-    console.log(path)
-  }
-
   return (
     <div>
       <div id="tab-content" className='tab-content'>
@@ -245,10 +240,14 @@ const Main = () => {
             <div key={path.id} className="path-card">
               <img src={path.img} target="_blank" />
               <h4>{path.title}</h4>
-              <input type="checkbox" />
+              {path.completed &&
+                <input type="checkbox" checked/>
+              }
+              {!path.completed &&
+                <input type="checkbox" />
+              }
             </div>
           ))}
-          {/* <Stage /> */}
         </div>
         <div id='map' className='content novis'>
           <h1>MAPAPP</h1>
@@ -257,7 +256,7 @@ const Main = () => {
         </div>
         <div id='help' className='content novis'>
           <h1>COME SI USA</h1>
-          <About />
+          <HowUse />
           <h1>FAQ</h1>
           <FAQ />
         </div>
@@ -276,12 +275,12 @@ const Main = () => {
         </ul>
       </div>
 
-      {/* <!-- Trigger/Open The Modal --> */}
+      {/* Trigger/Open The Modal */}
       <button onClick={modalShow}>
         <QReaderIcon />
       </button>
             
-      {/* <!-- The Modal --> */}
+      {/* The Modal */}
       <div id="modalQR" className="modal-qr">
           {/* <!-- Modal content --> */}
           <div className="modal-content-qr">
