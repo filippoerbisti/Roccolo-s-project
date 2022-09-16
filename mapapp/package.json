@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "country-flag-icons": "^1.5.5",
     "firebase": "^9.9.4",
     "flowbite": "^1.5.3",
     "flowbite-react": "^0.1.10",
