@@ -31,6 +31,7 @@ const Mapping = () => {
             </iframe> 
           </div> 
         </div>
+        
       {/* </QuickPinchZoom> */}
     </>
   )
