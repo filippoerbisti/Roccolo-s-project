@@ -11,7 +11,6 @@ const ScanReader = () => {
 
     let isMobileDevice;
     useEffect(() => {
-        console.log('ciao')
         if (window.navigator.userAgent.toLowerCase().includes("mobi"))
             isMobileDevice = true;
         else
