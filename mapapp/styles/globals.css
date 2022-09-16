@@ -34,7 +34,7 @@ body {
   max-width: 500px;
   height: 100vh;
   margin: 0 auto;
-  overflow: hidden;
+  /* overflow-y:scroll; */
 }
 
 .cursor-pointer {
@@ -206,9 +206,9 @@ body {
 /* STYLES MAIN CONTENT */
 
   .tab-content {
-
     padding-top: 110px;
-    height: calc(100vh - 20px); /* -20px for no scrolling --- 110px = fixed height of navbar */
+    height: 100%; /* -20px for no scrolling --- 110px = fixed height of navbar */
+    min-height: 100vh;
     background: #d4e1bf;
   }
 
@@ -216,7 +216,9 @@ body {
   /* STYLES HOME */
 
   #home {
-    padding: 0 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 61px;
   }
 
   #home h1 {
@@ -261,7 +263,9 @@ body {
   /* STYLES MAP */
 
   #map {
-    padding: 0 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 61px;
   }
 
   #map h1 {
@@ -284,7 +288,9 @@ body {
   /* STYLES HELP */
 
   #help {
-    padding: 0 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 61px;
   }
 
   #help h1 {
@@ -407,7 +413,7 @@ body {
   width: 100%;
   max-width: 500px;
   background-color: #f9f8fa;
-  height: 60px;
+  height: 61px; /* add 1px for layout */
 }
 
 .tabbar li {
@@ -619,3 +625,35 @@ body {
 }
 
 /* END STYLES LOADER WALKER */
+
+
+
+
+
+
+.path-card {
+  display: flex;
+  align-items: center;
+  max-width: 480px;
+  border: 2px solid black;
+  border-radius: 15px;
+  margin: 5px 10px;
+}
+
+.path-card img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin: 5px 10px;
+}
+
+.path-card h4 {
+  margin-left: 10px;
+  text-transform: uppercase;
+  font-size: medium;
+}
+
+.path-card input {
+  margin-left: auto;
+  margin-right: 10px;
+}
