@@ -7,9 +7,11 @@ const ScanReader = () => {
 
     const router = useRouter();
     const [data, setData] = useState("No result");
+    const redirectUrlToMapApp = 'https://mapapproccolo.vercel.app/';
 
     let isMobileDevice;
     useEffect(() => {
+        console.log('ciao')
         if (window.navigator.userAgent.toLowerCase().includes("mobi"))
             isMobileDevice = true;
         else
@@ -25,12 +27,14 @@ const ScanReader = () => {
                         onResult={(result, error) => {
                             if (!!result) {
                                 setData(result?.text);
-                                toast.success('Redirect ...');
-                                router.push(result);
+                                if (result.startsWith(redirectUrlToMapApp)){
+                                    toast.success('Redirect ...');
+                                    router.push(result);
+                                }
                             }
 
                             if (!!error) {
-                                toast.error('Errore lettura QR');
+                                // toast.error('Errore lettura QR');
                                 console.info(error);
                             }
                         }}
