@@ -3,11 +3,11 @@ import Head from 'next/head';
 // import useTranslation from 'next-translate/useTranslation';
 
 // import Navbar from './Navbar';
-// import Footer from './Footer';
+import Footer from './Footer';
 // import ScrollToTop from './ScrollToTop';
 
 const Layout = ({ children }) => {
-//   const { t } = useTranslation('meta');
+  // const { t } = useTranslation('meta');
 
   // if (typeof window !== 'undefined') {
   //   // progressbar
@@ -61,9 +61,9 @@ const Layout = ({ children }) => {
           <ScrollToTop /> */}
           {children}
         </main>
-        {/* <footer>
+        <footer>
           <Footer />
-        </footer> */}
+        </footer>
       </div>
     </div>
   )
