@@ -183,6 +183,7 @@ body {
   height: 110px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   top: 0;
   position: fixed;
   z-index: 999999;
@@ -192,12 +193,33 @@ body {
   padding-bottom: 10px;
 }
 
-.navbar-container button {
-  font-size: 2rem;
-  /* width: 100%; */
+.navbar-container .logout {
+  font-size: 25px;
   display: flex;
   justify-content: flex-end;
-  margin: 10px 15px;
+  margin-right: 10px;
+  /* margin: 10px 15px; */
+}
+
+.navbar-container .nav-icon {
+  height: 100%;
+  display: flex;
+  /* align-items: flex-end; */
+}
+
+.navbar-container .lang-container {
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+
+.navbar-container .lang-icon {
+  width: 25px;
+  height: 25px;
+  margin: 0 5px;
+  cursor: pointer;
 }
 
 /* END STYLES NAVBAR */
@@ -206,9 +228,9 @@ body {
 /* STYLES MAIN CONTENT */
 
   .tab-content {
-    padding-top: 110px;
-    height: 100%; /* -20px for no scrolling --- 110px = fixed height of navbar */
-    min-height: 100vh;
+    padding-top: 110px;   /* 110px = fixed height of navbar */
+    height: calc(100vh - 20px);   /* -20px for no scrolling  */
+    /* min-height: 100vh; */
     background: #d4e1bf;
   }
 
@@ -241,7 +263,7 @@ body {
   #home .btn {
     width: 100%;
     max-width: 300px;
-    padding: 3px 0px;
+    padding: 5px;
     border-radius: 15px;
     border: none;
     font-size: 20px;
@@ -327,6 +349,14 @@ body {
         padding: 10px 15px;
       }
 
+      .accordion__heading .arrow {
+        margin-right: 5px;
+      }
+
+      .accordion__heading > [aria-expanded="false"] > .arrow {
+        transform: rotateX(180deg);
+      }
+
       .accordion__heading > [aria-expanded="true"] {
         border-top: 2px solid #38ef7d;
         border-bottom-right-radius: 10px solid #38ef7d;
@@ -337,6 +367,11 @@ body {
         border-top-right-radius: 25px;
         padding: 10px 15px;
         background: rgba(0, 0, 0, 0.2);
+      }
+
+      .accordion__button {
+        display: flex;
+        align-items: center;
       }
 
       .accordion__panel {
