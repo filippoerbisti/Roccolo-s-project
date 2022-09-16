@@ -71,7 +71,7 @@ a {
 /* STYLES PARALLAX EFFECT */
 
 h2 {
-  font-size: 125px;
+  font-size: 100px;
 }
 
 .section-background {
@@ -88,6 +88,7 @@ h2 {
 
 .parallax {
   background-image: url("https://res.cloudinary.com/dl38nyo08/image/upload/v1654615348/Roccolo%20del%20Lago/degustazioni_zs5pmi.png"); 
+  flex-direction: column;
 }
 
 .parallax1 {
@@ -103,8 +104,36 @@ h2 {
 }
 
 .text-bloc p {
-  margin: 75px;
+  margin: 50px;
   font-size: 22px;
 }
 
 /* END STYLES PARALLAX EFFECT */
+
+
+
+.btn-container{
+  width: 400px;
+  margin: auto;
+}
+
+.btn{
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 12px;
+  border-radius: 15px;
+  border: none;
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: uppercase;
+  background-color: #f02d34;
+  color: #fff;
+  cursor: pointer;
+  transform: scale(1, 1);
+  transition: transform 0.5s ease;
+  margin-bottom: 30px;
+}
+
+.btn:hover{
+  transform: scale(1.1,1.1);
+}
