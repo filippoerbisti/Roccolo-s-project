@@ -11,5 +11,5 @@ export {default as Stage } from './Stage';
 
 export {default as Mapping } from './Mapping';
 
-export {default as About } from './About';
+export {default as HowUse } from './HowUse';
 export {default as FAQ } from './FAQ';
