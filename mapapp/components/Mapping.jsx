@@ -34,7 +34,7 @@ const Mapping = () => {
         <div style={{width: '100%'}}>
           <div id="wrapper" style={{position: "relative", paddingBottom: "74.9791492910759%", paddingTop: 0, "height": 0}}>
             <iframe id="scaled-frame" frameBorder="0" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%"}} 
-              src="https://view.genial.ly/6324997be49d130018188e97" type="text/html" allowFullScreen={true} scrolling="yes" allownetworking="all">
+              src="https://view.genial.ly/6324997be49d130018188e97" type="text/html" allowFullScreen={true} scrolling="yes">
             </iframe>
           </div>
         </div>
