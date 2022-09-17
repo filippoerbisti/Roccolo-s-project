@@ -295,10 +295,8 @@ const Main = () => {
                             if (!!result) {
                                 setData(result?.text);
                                 modalClose();
-                                // if (result.startsWith(redirectUrlToMapApp)){
-                                    toast.success('Redirect ...');
-                                    router.push('/' + result.text);
-                                // }
+                                // toast.success('Redirect ...');
+                                router.push('/' + result.text);
                             }
 
                             if (!!error) {
