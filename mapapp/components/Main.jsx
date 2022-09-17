@@ -58,16 +58,16 @@ const Main = () => {
           // change background color 
           switch (target.dataset.where) {
             case "home":
-              document.getElementById("tab-content").style.backgroundColor = "#d4e1bf";
+              document.body.style.backgroundColor = "#d4e1bf";
               break;
             case "map":
-              document.getElementById("tab-content").style.backgroundColor = "#f5f4f1";
+              document.body.style.backgroundColor = "#f5f4f1";
               break;
             case "help":
-              document.getElementById("tab-content").style.backgroundColor = "#7ba05f";
+              document.body.style.backgroundColor = "#7ba05f";
               break;
             default:
-              document.getElementById("tab-content").style.backgroundColor = "#d4e1bf";
+              document.body.style.backgroundColor = "#d4e1bf";
               break;
           } 
 
@@ -288,16 +288,16 @@ const Main = () => {
               <div className="modal-body-qr">
                   <span className="close-qr" onClick={modalClose}>&times;</span>
                   {/* <ScanReader /> */}
-                  <div style={{marginTop: '50px'}}>
+                  <div style={{marginTop: '10px', paddingLeft: '15px'}}>
                     <h1 style={{fontSize: "18px", textAlign: "center"}}>SCANNER QR</h1>
                     <QrReader
                         onResult={(result, error) => {
                             if (!!result) {
                                 setData(result?.text);
-                                if (result.startsWith(redirectUrlToMapApp)){
+                                // if (result.startsWith(redirectUrlToMapApp)){
                                     toast.success('Redirect ...');
-                                    router.push(result.text);
-                                }
+                                    router.push('/' + result.text);
+                                // }
                             }
 
                             if (!!error) {
@@ -308,7 +308,7 @@ const Main = () => {
                         //this is facing mode : "environment " it will open backcamera of the smartphone and if not found will 
                         // open the front camera
                         constraints = {{ facingMode:  "environment"  }}
-                        style = {{ width: "50%", height: "50%" }}
+                        style = {{ width: "50%", height: "50%", backgroundColor: '#000' }}
                     />
                     <p style={{textAlign: "center"}}>{data}</p>
                   </div>
