@@ -19,7 +19,7 @@ const ScanReader = () => {
 
     return (
         <div>
-            {!isMobileDevice &&
+            {isMobileDevice &&
                 <div style={{marginTop: '50px'}}>
                     <h1 style={{fontSize: "18px", textAlign: "center"}}>SCANNER QR</h1>
                     <QrReader
@@ -46,7 +46,7 @@ const ScanReader = () => {
                 </div>
             }
 
-            {isMobileDevice && <h1 style={{marginTop: '50px', fontSize: "18px", textAlign: "center"}}>ACCESSIBILE SOLO DA TELEFONO</h1>}
+            {!isMobileDevice && <h1 style={{marginTop: '50px', fontSize: "18px", textAlign: "center"}}>ACCESSIBILE SOLO DA TELEFONO</h1>}
         </div>
     )
 }
