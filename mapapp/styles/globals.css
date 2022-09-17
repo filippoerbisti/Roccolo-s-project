@@ -493,10 +493,11 @@ body {
 
   .qr-reader-container {
     position: relative;
-    max-width: 500px;
-    width: 100%;
+    width: 70px;
+    height: 70px;
     position: fixed;
     bottom: 80px;
+    right: 20px;
     display: flex;
     justify-content: flex-end;
   }
@@ -509,7 +510,6 @@ body {
     width: 70px;
     color: #000;
     cursor: pointer;
-    margin-right: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
