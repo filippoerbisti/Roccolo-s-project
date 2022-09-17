@@ -28,7 +28,7 @@ const ScanReader = () => {
                                 setData(result?.text);
                                 if (result.startsWith(redirectUrlToMapApp)){
                                     toast.success('Redirect ...');
-                                    router.push(result);
+                                    router.push(result.text);
                                 }
                             }
 
