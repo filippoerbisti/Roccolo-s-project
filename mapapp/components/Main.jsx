@@ -295,7 +295,7 @@ const Main = () => {
                             if (!!result) {
                                 setData(result?.text);
                                 modalClose();
-                                // toast.success('Redirect ...');
+                                toast.success('Redirect ...');
                                 router.push('/' + result.text);
                             }
 
