@@ -198,6 +198,10 @@ body {
   padding-left: 10px;
 }
 
+.genially-view-slide-container {
+  background-color: #000;
+}
+
 .navbar-container .logout {
   font-size: 25px;
   display: flex;

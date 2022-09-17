@@ -109,7 +109,7 @@ const Main = () => {
       liHome[i].classList.add("active");
 
     // change background color 
-    document.getElementById("tab-content").style.backgroundColor = "#d4e1bf";
+    document.body.style.backgroundColor = "#d4e1bf";
     const pageId = 'home'
     router.push('#' + pageId);
     const divsMain = document.getElementsByClassName("content");
@@ -145,7 +145,7 @@ const Main = () => {
       liMap[i].classList.add("active");
 
     // change background color 
-    document.getElementById("tab-content").style.backgroundColor = "#f5f4f1";
+    document.body.style.backgroundColor = "#f5f4f1";
     const pageId = 'map';
     router.push('#' + pageId);
     const divsMain = document.getElementsByClassName("content");
@@ -181,7 +181,7 @@ const Main = () => {
       liHelp[i].classList.add("active");
 
     // change background color 
-    document.getElementById("tab-content").style.backgroundColor = "#7ba05f";
+    document.body.style.backgroundColor = "#7ba05f";
     const pageId = 'help';
     router.push('#' + pageId);
     const divsMain = document.getElementsByClassName("content");
