@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FiHome, FiMap, FiHelpCircle } from 'react-icons/fi';
 
 import { useRouter } from 'next/router';
@@ -6,12 +6,18 @@ import { Mapping, HowUse, FAQ, QReaderIcon, ScanReader } from './';
 
 import dataFakePath from '../store/dataFakePath';
 
+import { QrReader } from "react-qr-reader";
+import toast from 'react-hot-toast';
+
 const Main = () => {
 
   const paths = dataFakePath;
 
   const router = useRouter();
   var modalQR;
+
+  const [data, setData] = useState("No result");
+    const redirectUrlToMapApp = 'https://mapapproccolo.vercel.app/';
 
   useEffect(() => {
     // Modal QR
@@ -281,7 +287,31 @@ const Main = () => {
           <div className="modal-content-qr">
               <div className="modal-body-qr">
                   <span className="close-qr" onClick={modalClose}>&times;</span>
-                  <ScanReader />
+                  {/* <ScanReader /> */}
+                  <div style={{marginTop: '50px'}}>
+                    <h1 style={{fontSize: "18px", textAlign: "center"}}>SCANNER QR</h1>
+                    <QrReader
+                        onResult={(result, error) => {
+                            if (!!result) {
+                                setData(result?.text);
+                                if (result.startsWith(redirectUrlToMapApp)){
+                                    toast.success('Redirect ...');
+                                    router.push(result.text);
+                                }
+                            }
+
+                            if (!!error) {
+                                // toast.error('Errore lettura QR');
+                                console.info(error);
+                            }
+                        }}
+                        //this is facing mode : "environment " it will open backcamera of the smartphone and if not found will 
+                        // open the front camera
+                        constraints = {{ facingMode:  "environment"  }}
+                        style = {{ width: "50%", height: "50%" }}
+                    />
+                    <p style={{textAlign: "center"}}>{data}</p>
+                  </div>
               </div>
           </div>
       </div>
