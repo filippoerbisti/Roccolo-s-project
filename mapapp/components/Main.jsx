@@ -240,7 +240,7 @@ const Main = () => {
             <div key={path.id} className="path-card">
               <img src={path.img} target="_blank" />
               <h4>{path.title}</h4>
-              <input type="checkbox" checked={path.completed}/>
+              {/* <input type="checkbox" checked={path.completed}/> */}
             </div>
           ))}
         </div>
