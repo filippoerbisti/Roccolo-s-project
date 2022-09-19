@@ -6,8 +6,10 @@ import {
   signOut,
 } from 'firebase/auth';
 import { 
-  doc, 
+  doc,  
+  addDoc,
   getDoc, 
+  collection
 } from 'firebase/firestore';
 import { auth, database } from '../utils/firebase';
 
@@ -41,12 +43,26 @@ export const AuthContextProvider = ({ children }) => {
     return () => unsubscribe();
   }, []);
 
-  const signup = (email, password) => {
+  const signup = (email, password) => {    
     return createUserWithEmailAndPassword(auth, email, password)
   }
 
   const login = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password)
+  }
+
+  const createDocFirebase = async (user) => {
+    await login(auth);
+    addDoc(collection(database, "paths"), {
+      id: user.uid,
+      path1: false,
+      path2: false,
+      path3: false,
+      path4: false,
+      path5: false,
+      path6: false,
+      userId: user.uid
+    });
   }
 
   const logout = async () => {
