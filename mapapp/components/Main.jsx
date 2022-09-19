@@ -5,19 +5,20 @@ import { useRouter } from 'next/router';
 import { Mapping, HowUse, FAQ, QReaderIcon, ScanReader } from './';
 
 import dataFakePath from '../store/dataFakePath';
+import { useAuth } from '../context/AuthContext';
 
 import { QrReader } from "react-qr-reader";
 import toast from 'react-hot-toast';
 
 const Main = () => {
 
-  const paths = dataFakePath;
+  const fakePaths = dataFakePath;
+  const { paths } = useAuth();
 
   const router = useRouter();
   var modalQR;
 
   const [data, setData] = useState("No result");
-    const redirectUrlToMapApp = 'https://mapapproccolo.vercel.app/';
 
   useEffect(() => {
     // Modal QR
@@ -242,13 +243,16 @@ const Main = () => {
             </button>
           </div>
           <h1>TAPPE</h1>
-          {paths.map((path) => (
-            <div key={path.id} className="path-card">
-              <img src={path.img} target="_blank" />
-              <h4>{path.title}</h4>
-              {/* <input type="checkbox" checked={path.completed}/> */}
-            </div>
-          ))}
+          {fakePaths.map((fakePath) => {
+            console.log(paths[fakePath.path])
+            return (
+              <div key={fakePath.id} className="path-card">
+                <img src={fakePath.img} target="_blank" />
+                <h4>{fakePath.title}</h4>
+                <input type="checkbox" defaultChecked={paths[fakePath.path]} disabled />
+              </div>
+            )
+          })}
         </div>
         <div id='map' className='content novis'>
           <h1>MAPAPP</h1>
@@ -291,25 +295,23 @@ const Main = () => {
                   <div style={{marginTop: '10px', paddingLeft: '15px'}}>
                     <h1 style={{fontSize: "18px", textAlign: "center"}}>SCANNER QR</h1>
                     <QrReader
-                        onResult={(result, error) => {
-                            if (!!result) {
-                                setData(result?.text);
-                                modalClose();
-                                toast.success('Redirect ...');
-                                router.push('/' + result.text);
-                            }
-
-                            if (!!error) {
-                                // toast.error('Errore lettura QR');
-                                console.info(error);
-                            }
-                        }}
-                        //this is facing mode : "environment " it will open backcamera of the smartphone and if not found will 
-                        // open the front camera
-                        constraints = {{ facingMode:  "environment"  }}
-                        style = {{ width: "50%", height: "50%", backgroundColor: '#000' }}
+                      onResult={(result, error) => {
+                        if (!!result) {
+                          setData(result?.text);
+                          modalClose();
+                          toast.success('Redirect ...');
+                          router.push('/' + result.text);
+                        }
+                        if (!!error) {
+                          // toast.error('Errore lettura QR');
+                          console.info(error);
+                        }
+                      }}
+                      //this is facing mode : "environment " it will open backcamera of the smartphone and if not found will 
+                      // open the front camera
+                      constraints = {{ facingMode:  "environment"  }}
+                      style = {{ width: "50%", height: "50%", backgroundColor: '#000' }}
                     />
-                    <p style={{textAlign: "center"}}>{data}</p>
                   </div>
               </div>
           </div>
