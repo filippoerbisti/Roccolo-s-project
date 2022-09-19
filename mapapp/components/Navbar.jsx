@@ -18,8 +18,8 @@ const Navbar = () => {
         <Link href={"/"} className='cursor-pointer'>
           <img 
             src="https://res.cloudinary.com/dl38nyo08/image/upload/v1660806591/Roccolo%20del%20Lago/logo_iidjdd.png"
-            width={240} 
-            height={100} 
+            width={200} 
+            height={70} 
             // objectfit="contain"
             className='cursor-pointer'
           />
@@ -33,12 +33,12 @@ const Navbar = () => {
             <Link href={currentRoute} locale="en">
               <GB title="English" className='lang-icon'/>
             </Link>
-            <Link href={currentRoute} locale="de">
+            {/* <Link href={currentRoute} locale="de">
               <DE title="Deutsch" className='lang-icon'/>
-            </Link>
-            <Link href={currentRoute} locale="fr">
+            </Link> */}
+            {/* <Link href={currentRoute} locale="fr">
               <FR title="Français" className='lang-icon'/>
-            </Link>
+            </Link> */}
           </div>
 
           <button

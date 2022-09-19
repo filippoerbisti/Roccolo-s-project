@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FiHome, FiMap, FiHelpCircle } from 'react-icons/fi';
 
 import { useRouter } from 'next/router';
@@ -6,12 +6,18 @@ import { Mapping, HowUse, FAQ, QReaderIcon, ScanReader } from './';
 
 import dataFakePath from '../store/dataFakePath';
 
+import { QrReader } from "react-qr-reader";
+import toast from 'react-hot-toast';
+
 const Main = () => {
 
   const paths = dataFakePath;
 
   const router = useRouter();
   var modalQR;
+
+  const [data, setData] = useState("No result");
+    const redirectUrlToMapApp = 'https://mapapproccolo.vercel.app/';
 
   useEffect(() => {
     // Modal QR
@@ -52,16 +58,16 @@ const Main = () => {
           // change background color 
           switch (target.dataset.where) {
             case "home":
-              document.getElementById("tab-content").style.backgroundColor = "#d4e1bf";
+              document.body.style.backgroundColor = "#d4e1bf";
               break;
             case "map":
-              document.getElementById("tab-content").style.backgroundColor = "#f5f4f1";
+              document.body.style.backgroundColor = "#f5f4f1";
               break;
             case "help":
-              document.getElementById("tab-content").style.backgroundColor = "#7ba05f";
+              document.body.style.backgroundColor = "#7ba05f";
               break;
             default:
-              document.getElementById("tab-content").style.backgroundColor = "#d4e1bf";
+              document.body.style.backgroundColor = "#d4e1bf";
               break;
           } 
 
@@ -103,7 +109,7 @@ const Main = () => {
       liHome[i].classList.add("active");
 
     // change background color 
-    document.getElementById("tab-content").style.backgroundColor = "#d4e1bf";
+    document.body.style.backgroundColor = "#d4e1bf";
     const pageId = 'home'
     router.push('#' + pageId);
     const divsMain = document.getElementsByClassName("content");
@@ -139,7 +145,7 @@ const Main = () => {
       liMap[i].classList.add("active");
 
     // change background color 
-    document.getElementById("tab-content").style.backgroundColor = "#f5f4f1";
+    document.body.style.backgroundColor = "#f5f4f1";
     const pageId = 'map';
     router.push('#' + pageId);
     const divsMain = document.getElementsByClassName("content");
@@ -175,7 +181,7 @@ const Main = () => {
       liHelp[i].classList.add("active");
 
     // change background color 
-    document.getElementById("tab-content").style.backgroundColor = "#7ba05f";
+    document.body.style.backgroundColor = "#7ba05f";
     const pageId = 'help';
     router.push('#' + pageId);
     const divsMain = document.getElementsByClassName("content");
@@ -281,7 +287,30 @@ const Main = () => {
           <div className="modal-content-qr">
               <div className="modal-body-qr">
                   <span className="close-qr" onClick={modalClose}>&times;</span>
-                  <ScanReader />
+                  {/* <ScanReader /> */}
+                  <div style={{marginTop: '10px', paddingLeft: '15px'}}>
+                    <h1 style={{fontSize: "18px", textAlign: "center"}}>SCANNER QR</h1>
+                    <QrReader
+                        onResult={(result, error) => {
+                            if (!!result) {
+                                setData(result?.text);
+                                modalClose();
+                                toast.success('Redirect ...');
+                                router.push('/' + result.text);
+                            }
+
+                            if (!!error) {
+                                // toast.error('Errore lettura QR');
+                                console.info(error);
+                            }
+                        }}
+                        //this is facing mode : "environment " it will open backcamera of the smartphone and if not found will 
+                        // open the front camera
+                        constraints = {{ facingMode:  "environment"  }}
+                        style = {{ width: "50%", height: "50%", backgroundColor: '#000' }}
+                    />
+                    <p style={{textAlign: "center"}}>{data}</p>
+                  </div>
               </div>
           </div>
       </div>
