@@ -5,7 +5,11 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from 'firebase/auth';
-import { auth } from '../utils/firebase';
+import { 
+  doc, 
+  getDoc, 
+} from 'firebase/firestore';
+import { auth, database } from '../utils/firebase';
 
 const AuthContext = createContext({});
 
@@ -13,7 +17,7 @@ export const useAuth = () => useContext(AuthContext);
 
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [path, setPath] = useState(null);
+  const [paths, setPaths] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -24,9 +28,10 @@ export const AuthContextProvider = ({ children }) => {
           email: user.email,
           displayName: user.displayName,
         });
-        setPath({
-          
-        });
+        getDoc(doc(database, "paths", user.uid)).then(docSnap => {
+          if (docSnap.exists())
+            setPaths(docSnap.data());
+        })
       } else {
         setUser(null);
       }
@@ -50,7 +55,7 @@ export const AuthContextProvider = ({ children }) => {
   }
 
   return (
-    <AuthContext.Provider value={{ user, login, signup, logout }}>
+    <AuthContext.Provider value={{ user, paths, login, signup, logout }}>
       {loading ? null : children}
     </AuthContext.Provider>
   )
