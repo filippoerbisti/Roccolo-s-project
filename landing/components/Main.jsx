@@ -17,6 +17,10 @@ const Main = () => {
         <div>
             <section className="section-background parallax">
                 <div>
+                    {/* EXAMPLE WITH TAILWINDCSS */}
+                    <h1 className="text-3xl font-bold underline">
+                        Title with TailwindCss
+                    </h1>
                     <h2>Roccolo del Lago</h2>
                     <div className='btn-container'>
                         <button onClick={bookTastingNow} className='btn'>{t('bookNow')}</button>
