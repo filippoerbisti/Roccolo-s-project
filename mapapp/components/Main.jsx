@@ -234,8 +234,8 @@ const Main = () => {
                 Come si usa
               {/* </Link> */}
             </button>
-            </div>
-            <div className='btn-container'>
+          </div>
+          <div className='btn-container'>
             <button className='btn' onClick={navigateMap}>
               {/* <Link href={'#map'}> */}
                 Iniziamo
@@ -244,7 +244,6 @@ const Main = () => {
           </div>
           <h1>TAPPE</h1>
           {fakePaths.map((fakePath) => {
-            console.log(paths[fakePath.path])
             return (
               <div key={fakePath.id} className="path-card">
                 <img src={fakePath.img} target="_blank" />
