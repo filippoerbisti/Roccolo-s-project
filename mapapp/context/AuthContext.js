@@ -7,9 +7,8 @@ import {
 } from 'firebase/auth';
 import { 
   doc,  
-  addDoc,
-  getDoc, 
-  collection
+  getDoc,
+  setDoc 
 } from 'firebase/firestore';
 import { auth, database } from '../utils/firebase';
 
@@ -30,9 +29,25 @@ export const AuthContextProvider = ({ children }) => {
           email: user.email,
           displayName: user.displayName,
         });
-        getDoc(doc(database, "paths", user.uid)).then(docSnap => {
+        getDoc(doc(database, "user_paths", user.email)).then(docSnap => {
           if (docSnap.exists())
             setPaths(docSnap.data());
+          else {
+            setDoc(doc(database, "user_paths", user.email), {
+              id: user.uid,
+              path1: false,
+              path2: false,
+              path3: false,
+              path4: false,
+              path5: false,
+              path6: false,
+              userId: user.uid,
+              userMail: user.email
+            });
+            getDoc(doc(database, "user_paths", user.email)).then(docSnap => {
+              setPaths(docSnap.data());
+            });
+          }
         })
       } else {
         setUser(null);
@@ -49,20 +64,6 @@ export const AuthContextProvider = ({ children }) => {
 
   const login = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password)
-  }
-
-  const createDocFirebase = async (user) => {
-    await login(auth);
-    addDoc(collection(database, "paths"), {
-      id: user.uid,
-      path1: false,
-      path2: false,
-      path3: false,
-      path4: false,
-      path5: false,
-      path6: false,
-      userId: user.uid
-    });
   }
 
   const logout = async () => {
