@@ -30,6 +30,8 @@ const ReadMore = ({ children }) => {
 const Tasting = () => {
   const { t } = useTranslation('event');
 
+  const landingUrl = 'https://landingroccolo.vercel.app';
+
   const pTasting = `${t('tastingParagraph')}`;
   const pTastingParagraph = pTasting.replace(/xxx/gi, '\n\r');
 
@@ -85,6 +87,13 @@ const Tasting = () => {
         </div>
       </div>
       <div className={styles.footerTasting}>
+        <div className={styles.btnContainer}>
+          <Link href={landingUrl}>
+            <button className={styles.btn} type='button'> 
+              {t('tastingButton')}
+            </button>
+          </Link>
+        </div>
         <p className={styles.footerParagraphTasting}>{t('tastingFooter')}</p>
         <div className={styles.footerTastingBtnCont}>
           <button className={`${styles.footerTastingButton} tooltip`}>
