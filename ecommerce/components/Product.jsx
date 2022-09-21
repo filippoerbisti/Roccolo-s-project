@@ -27,7 +27,7 @@ const Product = ({ product}) => {
         <div className={styles.card} data-text={name}>
           <div className={styles.imgBox}>
             <img 
-              src={urlFor(image && image[0])} 
+              src={urlFor(product.image && product.image[0]).url()} 
               alt="product_img" 
               objectfit="cover"
               className={styles['product-image']}

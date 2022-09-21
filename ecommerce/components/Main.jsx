@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import useTranslation from 'next-translate/useTranslation';
-import { client } from '../lib/client';
 import { Product, Slider } from '../components';
 
 import styles from '../styles/Main.module.css';
@@ -87,7 +86,7 @@ const Main = ({ products }) => {
 
   const pWedding = `${t('weddingParagraph')}`;
   const pWeddingParagraph = pWedding.replace(/xxx/gi, '\n\r');
-  
+
   return (
     <div className={styles.mx20}>      
       <Slider />
@@ -155,11 +154,11 @@ const Main = ({ products }) => {
             className="mySwiper"
           >
             {products?.map((product) => 
-                <SwiperSlide key={product._id}>
-                    <div className={styles.py} key={product._id}>
-                        <Product product={product} />
-                    </div>
-                </SwiperSlide>
+              <SwiperSlide key={product._id}>
+                <div className={styles.py}>
+                  <Product key={product._id} product={product} />
+                </div>
+              </SwiperSlide>
             )}
           </Swiper>
         </div>
