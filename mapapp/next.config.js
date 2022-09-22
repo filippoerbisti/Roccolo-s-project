@@ -18,4 +18,4 @@ const nextConfig = nextTranslate({
   swcMinify: true,
 });
 
-module.exports = withPWA(nextConfig)
+module.exports = process.env.NODE_ENV === 'development' ? nextConfig : withPWA(nextConfig);
