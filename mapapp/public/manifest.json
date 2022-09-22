@@ -1,0 +1,22 @@
+{
+    "theme_color" : "#8b572a",
+    "background_color" : "#d0021b",
+    "display" : "standalone",
+    "scope" : "/",
+    "start_url" : "/",
+    "name" : "Map Roccolo del Lago",
+    "short_name" : "Map Roccolo",
+    "description" : "App per visite con supporto online Roccolo del Lago",
+    "icons": [
+        {
+            "src": "/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
