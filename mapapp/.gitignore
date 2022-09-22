@@ -3,8 +3,8 @@
 .env
 
 # compiled build output
-/public/sw.js
-/public/workbox-6a1bf588.js
+/public/sw*
+/public/workbox*
 
 # dependencies
 /node_modules
