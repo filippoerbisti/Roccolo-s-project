@@ -497,7 +497,7 @@ body {
     height: 70px;
     position: fixed;
     bottom: 80px;
-    right: 20px;
+    right: 10px;
     display: flex;
     justify-content: flex-end;
   }
