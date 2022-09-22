@@ -22,41 +22,45 @@ export const AuthContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // onAuthStateChanged
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser({
           uid: user.uid,
-          email: user.email,
-          displayName: user.displayName,
+          email: user.email
         });
-        getDoc(doc(database, "user_paths", user.email)).then(docSnap => {
-          if (docSnap.exists())
-            setPaths(docSnap.data());
-          else {
-            setDoc(doc(database, "user_paths", user.email), {
-              id: user.uid,
-              path1: false,
-              path2: false,
-              path3: false,
-              path4: false,
-              path5: false,
-              path6: false,
-              userId: user.uid,
-              userMail: user.email
-            });
-            getDoc(doc(database, "user_paths", user.email)).then(docSnap => {
-              setPaths(docSnap.data());
-            });
-          }
-        })
       } else {
         setUser(null);
       }
       setLoading(false);
     })
 
+    // if user is not empty do:
+    if(user) {
+      getDoc(doc(database, "user_paths", user.email)).then(docSnap => {
+        if (docSnap.exists())
+          setPaths(docSnap.data());
+        else {
+          setDoc(doc(database, "user_paths", user.email), {
+            id: user.uid,
+            path1: false,
+            path2: false,
+            path3: false,
+            path4: false,
+            path5: false,
+            path6: false,
+            userId: user.uid,
+            userMail: user.email
+          });
+          getDoc(doc(database, "user_paths", user.email)).then(docSnap => {
+            setPaths(docSnap.data());
+          });
+        }
+      })
+    }
+
     return () => unsubscribe();
-  }, []);
+  }, [paths]);
 
   const signup = (email, password) => {    
     return createUserWithEmailAndPassword(auth, email, password)
