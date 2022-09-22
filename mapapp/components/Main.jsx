@@ -13,7 +13,7 @@ import toast from 'react-hot-toast';
 const Main = () => {
 
   const fakePaths = dataFakePath;
-  const { paths } = useAuth();
+  const paths = useAuth();
 
   const router = useRouter();
   var modalQR;
