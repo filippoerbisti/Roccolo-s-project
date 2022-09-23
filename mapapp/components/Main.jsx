@@ -14,6 +14,7 @@ const Main = () => {
 
   const fakePaths = dataFakePath;
   const paths = useAuth();
+  console.log(paths)
 
   const router = useRouter();
   var modalQR;
@@ -240,7 +241,10 @@ const Main = () => {
             return (
               <div key={fakePath.id} className="path-card">
                 <img src={fakePath.img} target="_blank" />
-                <h4>{fakePath.title}</h4>
+                <div className='path-card-txt'>
+                  <h4>{fakePath.title}</h4>
+                  <p>{fakePath.description}</p>
+                </div>
                 <input type="checkbox" defaultChecked={paths[fakePath.path]} disabled />
               </div>
             )
