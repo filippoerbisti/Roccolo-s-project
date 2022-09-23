@@ -227,22 +227,15 @@ const Main = () => {
     <div>
       <div id="tab-content" className='tab-content'>
         <div id='home' className='content vis'>
-          <h1>BENVENUTI <br/> NEL NOSTRO TOUR</h1>
+          <h1>Benvenuti nel tour</h1>
           <div className='btn-container'>
             <button className='btn' onClick={navigateHelp}>
               {/* <Link href={'#help'}> */}
-                Come si usa
+                Come si usa?
               {/* </Link> */}
             </button>
           </div>
-          <div className='btn-container'>
-            <button className='btn' onClick={navigateMap}>
-              {/* <Link href={'#map'}> */}
-                Iniziamo
-              {/* </Link> */}
-            </button>
-          </div>
-          <h1>TAPPE</h1>
+          <h2>Tappe:</h2>
           {fakePaths.map((fakePath) => {
             return (
               <div key={fakePath.id} className="path-card">
@@ -252,16 +245,23 @@ const Main = () => {
               </div>
             )
           })}
+          <div className='btn-container'>
+            <button className='btn-start' onClick={navigateMap}>
+              {/* <Link href={'#map'}> */}
+                Iniziamo
+              {/* </Link> */}
+            </button>
+          </div>
         </div>
         <div id='map' className='content novis'>
-          <h1>MAPAPP</h1>
+          <h1>Mapapp</h1>
           <p>Esplora il nostro Roccolo</p>
           <Mapping />
         </div>
         <div id='help' className='content novis'>
-          <h1>COME SI USA</h1>
+          <h1>Come si usa</h1>
           <HowUse />
-          <h1>FAQ</h1>
+          <h2>FAQ:</h2>
           <FAQ />
         </div>
       </div>
