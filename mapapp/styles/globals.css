@@ -344,21 +344,24 @@ body {
 
       .accordion__item {
         margin: 10px 0;
+        background: #F5F5F5;
+        box-shadow: -8px 8px 35px rgba(0, 0, 0, 0.45);
+        border-radius: 5px;
       }
 
       .accordion__heading {
         font-size: 16px;
-        text-transform: uppercase;
       }
 
       .accordion__heading > [aria-expanded="false"] {
-        border: 2px solid #38ef7d;
-        border-radius: 50px;
         padding: 10px 15px;
       }
 
       .accordion__heading .arrow {
-        margin-right: 5px;
+        /* margin-right: 5px; */
+        /* position: relative; */
+        /* right: 5px; */
+        margin-left: auto;
       }
 
       .accordion__heading > [aria-expanded="false"] > .arrow {
@@ -366,15 +369,15 @@ body {
       }
 
       .accordion__heading > [aria-expanded="true"] {
-        border-top: 2px solid #38ef7d;
+        /* border-top: 2px solid white;
         border-bottom-right-radius: 10px solid #38ef7d;
         border-right: 2px solid #38ef7d;
         border-bottom-left-radius: 10px solid #38ef7d;
-        border-left: 2px solid #38ef7d;
-        border-top-left-radius: 25px;
-        border-top-right-radius: 25px;
+        border-left: 2px solid #38ef7d; */
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
         padding: 10px 15px;
-        background: rgba(0, 0, 0, 0.2);
+        background: #F5F5F5;
       }
 
       .accordion__button {
@@ -386,9 +389,8 @@ body {
         font-size: 14px;
         padding: 10px 15px;
         text-align: left;
-        border: 2px solid #38ef7d;
-        border-bottom-left-radius: 25px;
-        border-bottom-right-radius: 25px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
       }
 
       /* END STYLES ACCORDION */
@@ -678,9 +680,10 @@ body {
   display: flex;
   align-items: center;
   max-width: 480px;
-  border: 2px solid black;
   border-radius: 15px;
-  margin: 5px 10px;
+  margin: 10px;
+  background: #F5F5F5;
+  box-shadow: -8px 8px 35px rgba(0, 0, 0, 0.45);
 }
 
 .path-card img {
