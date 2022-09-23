@@ -243,9 +243,12 @@ const Main = () => {
                 <img src={fakePath.img} target="_blank" />
                 <div className='path-card-txt'>
                   <h4>{fakePath.title}</h4>
-                  <p>{fakePath.description}</p>
+                  <button>Vedi dettagli</button>
                 </div>
-                <input type="checkbox" defaultChecked={paths[fakePath.path]} disabled />
+                <div class="checkbox-round">
+                  <input type="checkbox" id='checkbox' defaultChecked={paths[fakePath.path]} disabled />
+                  <label for="checkbox"></label>
+                </div>
               </div>
             )
           })}
