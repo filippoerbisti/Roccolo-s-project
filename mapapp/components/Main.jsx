@@ -59,13 +59,13 @@ const Main = () => {
           // change background color 
           switch (target.dataset.where) {
             case "home":
-              document.body.style.backgroundColor = "#d4e1bf";
+              document.body.style.backgroundColor = "#EDCFBC";
               break;
             case "map":
-              document.body.style.backgroundColor = "#f5f4f1";
+              document.body.style.backgroundColor = "#C4D7BD";
               break;
             case "help":
-              document.body.style.backgroundColor = "#7ba05f";
+              document.body.style.backgroundColor = "#D6C6DD";
               break;
             default:
               document.body.style.backgroundColor = "#d4e1bf";
@@ -110,7 +110,7 @@ const Main = () => {
       liHome[i].classList.add("active");
 
     // change background color 
-    document.body.style.backgroundColor = "#d4e1bf";
+    document.body.style.backgroundColor = "#EDCFBC";
     const pageId = 'home'
     router.push('#' + pageId);
     const divsMain = document.getElementsByClassName("content");
@@ -146,7 +146,7 @@ const Main = () => {
       liMap[i].classList.add("active");
 
     // change background color 
-    document.body.style.backgroundColor = "#f5f4f1";
+    document.body.style.backgroundColor = "#C4D7BD";
     const pageId = 'map';
     router.push('#' + pageId);
     const divsMain = document.getElementsByClassName("content");
@@ -182,7 +182,7 @@ const Main = () => {
       liHelp[i].classList.add("active");
 
     // change background color 
-    document.body.style.backgroundColor = "#7ba05f";
+    document.body.style.backgroundColor = "#D6C6DD";
     const pageId = 'help';
     router.push('#' + pageId);
     const divsMain = document.getElementsByClassName("content");
