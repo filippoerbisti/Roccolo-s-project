@@ -5,16 +5,13 @@ import { useRouter } from 'next/router';
 import { Mapping, HowUse, FAQ, QReaderIcon, ScanReader } from './';
 
 import dataFakePath from '../store/dataFakePath';
-import { useAuth } from '../context/AuthContext';
 
 import { QrReader } from "react-qr-reader";
 import toast from 'react-hot-toast';
 
-const Main = () => {
+const Main = ({ paths }) => {
 
   const fakePaths = dataFakePath;
-  const paths = useAuth();
-  console.log(paths)
 
   const router = useRouter();
   var modalQR;
@@ -239,15 +236,17 @@ const Main = () => {
           <h2>Tappe:</h2>
           {fakePaths.map((fakePath) => {
             return (
-              <div key={fakePath.id} className="path-card">
+              <div key={fakePath.id} className="path-card" style={{background: `url(${fakePath.img})`, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}>
                 <img src={fakePath.img} target="_blank" />
                 <div className='path-card-txt'>
                   <h4>{fakePath.title}</h4>
                   <button>Vedi dettagli</button>
                 </div>
-                <div class="checkbox-round">
-                  <input type="checkbox" id='checkbox' defaultChecked={paths[fakePath.path]} disabled />
-                  <label for="checkbox"></label>
+                <div className="checkbox-round">
+                  {paths && 
+                    <input type="checkbox" id='checkbox' defaultChecked={paths[fakePath.path]} disabled />
+                  }
+                  <label htmlFor="checkbox"></label>
                 </div>
               </div>
             )
