@@ -265,7 +265,7 @@ body {
     /* font-weight: 600; */
     font-size: 24px;
     color: #000000;
-    padding-left: 10px;
+    /* padding-left: 10px; */
   }
 
   #home .btn-container {
@@ -356,9 +356,10 @@ body {
 
   #help h2 {
     /* font-family: 'Be Vietnam'; */
-    font-weight: 600;
+    /* font-weight: 600; */
     font-size: 24px;
     color: #000000;
+    /* padding-left: 10px; */
   }
 
   #help p {
@@ -711,7 +712,7 @@ body {
   align-items: center;
   max-width: 480px;
   border-radius: 15px;
-  margin: 10px;
+  margin: 10px 5px;
   background: #F5F5F5;
   box-shadow: -3px 3px 5px #940E25, -5px 5px 5px rgba(0, 0, 0, 0.45);
   color: white;
