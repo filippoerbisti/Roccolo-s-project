@@ -236,7 +236,7 @@ const Main = ({ paths }) => {
           <h2>Tappe:</h2>
           {fakePaths.map((fakePath) => {
             return (
-              <div key={fakePath.id} className="path-card" style={{background: `url(${fakePath.img})`, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}>
+              <div key={fakePath.id} className="path-card" style={{background: `linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(${fakePath.img})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center"}}>
                 <img src={fakePath.img} target="_blank" />
                 <div className='path-card-txt'>
                   <h4>{fakePath.title}</h4>
