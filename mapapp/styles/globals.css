@@ -262,9 +262,10 @@ body {
 
   #home h2 {
     /* font-family: 'Be Vietnam'; */
-    font-weight: 600;
+    /* font-weight: 600; */
     font-size: 24px;
     color: #000000;
+    padding-left: 10px;
   }
 
   #home .btn-container {
@@ -279,7 +280,7 @@ body {
     width: 100%;
     max-width: 150px;
     padding: 5px;
-    border-radius: 15px;
+    border-radius: 7px;
     border: none;
     font-size: 20px;
     font-weight: 500;
@@ -642,12 +643,6 @@ body {
 /* END STYLES QR READER */
 
 
-
-
-
-
-
-
 /* STYLES LOADER WALKER */
 
 @-webkit-keyframes walkanim {
@@ -708,17 +703,17 @@ body {
 
 
 
-
+/* STYLES PATHS CARD */
 
 .path-card {
   display: flex;
-  height: 80px;
+  height: 100px;
   align-items: center;
   max-width: 480px;
   border-radius: 15px;
-  margin: 5px 10px;
+  margin: 10px;
   background: #F5F5F5;
-  box-shadow: -8px 8px 35px rgba(0, 0, 0, 0.45);
+  box-shadow: -3px 3px 5px #940E25, -5px 5px 5px rgba(0, 0, 0, 0.45);
   color: white;
 }
 
@@ -742,14 +737,15 @@ body {
 .path-card h4 {
   margin-left: 10px;
   text-transform: uppercase;
-  font-size: medium;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .path-card button {
   width: 100%;
   margin-left: 10px;
   padding-right: 20px;
-  font-size: 14px;
+  font-size: 15px;
   display: flex;
   justify-content: flex-end;
   text-decoration: underline;
@@ -812,6 +808,9 @@ body {
 .checkbox-round input[type="checkbox"]:checked + label:after {
   opacity: 1;
 }
+
+/* STYLES PATHS CARD */
+
 
 #wrapper > .genially-view-menu-action {
   visibility: hidden !important;
