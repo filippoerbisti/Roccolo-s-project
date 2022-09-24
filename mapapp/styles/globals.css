@@ -436,7 +436,7 @@ body {
 
 .tabbar {
   z-index: 50;
-  height: 70px;
+  height: 75px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
