@@ -20,8 +20,8 @@ const FAQ = () => {
             <AccordionItem>
                 <AccordionItemHeading>
                     <AccordionItemButton>
-                        <FaAngleUp className='arrow' />
                         What harsh truths do you prefer to ignore?
+                        <FaAngleUp className='arrow' />
                     </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
@@ -34,8 +34,8 @@ const FAQ = () => {
             <AccordionItem>
                 <AccordionItemHeading>
                     <AccordionItemButton>
-                        <FaAngleUp className='arrow' />
                         Is free will real or just an illusion?
+                        <FaAngleUp className='arrow' />
                     </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
@@ -47,8 +47,8 @@ const FAQ = () => {
             <AccordionItem>
                 <AccordionItemHeading>
                     <AccordionItemButton>
-                        <FaAngleUp className='arrow' />
                         Is free will real or just an illusion?
+                        <FaAngleUp className='arrow' />
                     </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>

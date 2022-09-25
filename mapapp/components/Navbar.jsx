@@ -18,8 +18,8 @@ const Navbar = () => {
         <Link href={"/"} className='cursor-pointer'>
           <img 
             src="https://res.cloudinary.com/dl38nyo08/image/upload/v1660806591/Roccolo%20del%20Lago/logo_iidjdd.png"
-            width={200} 
-            height={70} 
+            width={180} 
+            height={60} 
             // objectfit="contain"
             className='cursor-pointer'
           />

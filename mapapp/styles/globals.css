@@ -15,7 +15,7 @@ body {
   font-family: "Roboto", sans-serif;
   width: 100%;
   height: 100vh;
-  background: #d4e1bf;
+  background: #EDCFBC;
 }
 
 /* STYLES UTILS */
@@ -90,10 +90,16 @@ body {
 }
 
 .form-login {
+<<<<<<< HEAD
   background-color: #F5F5F5;
   padding: 25px;
   border-radius: 10px;
   box-shadow: -4px 4px 20px #000000;
+=======
+  background-color: #940E25;
+  padding: 20px;
+  border-radius: 25px;
+>>>>>>> 7a3c5fad51e0580f3aa77321e290e578f155b0ae
 }
 
 .form__group {
@@ -169,9 +175,16 @@ body {
   border-radius: 10px;
   border: none;
   font-size: 20px;
+<<<<<<< HEAD
   font-weight: 600;
   background-color: #890017;
   color: #F5F5F5;
+=======
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: #940E25;
+  color: #fff;
+>>>>>>> 7a3c5fad51e0580f3aa77321e290e578f155b0ae
   cursor: pointer;
   transform: scale(1, 1);
   transition: transform 0.5s ease;
@@ -256,12 +269,20 @@ body {
   }
 
   #home h1 {
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 30px;
+    font-weight: 500;
     text-align: center;
-    line-height: 1.5em;
-    letter-spacing: 0.4em;
-    padding-top: 10px;
+    /* line-height: 1.5em; */
+    /* letter-spacing: 0.4em; */
+    /* padding-top: 10px; */
+  }
+
+  #home h2 {
+    /* font-family: 'Be Vietnam'; */
+    /* font-weight: 600; */
+    font-size: 24px;
+    color: #000000;
+    /* padding-left: 10px; */
   }
 
   #home .btn-container {
@@ -274,14 +295,28 @@ body {
 
   #home .btn {
     width: 100%;
-    max-width: 300px;
+    max-width: 150px;
     padding: 5px;
-    border-radius: 15px;
+    border-radius: 7px;
     border: none;
     font-size: 20px;
     font-weight: 500;
-    text-transform: uppercase;
-    background-color: #892331;
+    background: #940E25;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  #home .btn-start {
+    box-sizing: border-box;
+    background: #940E25;
+    border: 4px solid #FFFFFF;
+    box-shadow: -4px 4px 25px rgba(0, 0, 0, 0.4);
+    height: 100px;
+    width: 100px;
+    padding: 5px;
+    border-radius: 100%;
+    font-size: 20px;
+    font-weight: 500;
     color: #fff;
     cursor: pointer;
   }
@@ -303,12 +338,12 @@ body {
   }
 
   #map h1 {
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 30px;
+    font-weight: 500;
     text-align: center;
-    line-height: 1.5em;
-    letter-spacing: 0.4em;
-    padding-top: 10px;
+    /* line-height: 1.5em; */
+    /* letter-spacing: 0.4em; */
+    /* padding-top: 10px; */
   }
 
   #map p {
@@ -328,12 +363,20 @@ body {
   }
 
   #help h1 {
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 30px;
+    font-weight: 500;
     text-align: center;
-    line-height: 1.5em;
-    letter-spacing: 0.4em;
-    padding-top: 10px;
+    /* line-height: 1.5em; */
+    /* letter-spacing: 0.4em; */
+    /* padding-top: 10px; */
+  }
+
+  #help h2 {
+    /* font-family: 'Be Vietnam'; */
+    /* font-weight: 600; */
+    font-size: 24px;
+    color: #000000;
+    /* padding-left: 10px; */
   }
 
   #help p {
@@ -348,21 +391,24 @@ body {
 
       .accordion__item {
         margin: 10px 0;
+        background: #F5F5F5;
+        box-shadow: -8px 8px 35px rgba(0, 0, 0, 0.45);
+        border-radius: 5px;
       }
 
       .accordion__heading {
         font-size: 16px;
-        text-transform: uppercase;
       }
 
       .accordion__heading > [aria-expanded="false"] {
-        border: 2px solid #38ef7d;
-        border-radius: 50px;
         padding: 10px 15px;
       }
 
       .accordion__heading .arrow {
-        margin-right: 5px;
+        /* margin-right: 5px; */
+        /* position: relative; */
+        /* right: 5px; */
+        margin-left: auto;
       }
 
       .accordion__heading > [aria-expanded="false"] > .arrow {
@@ -370,15 +416,15 @@ body {
       }
 
       .accordion__heading > [aria-expanded="true"] {
-        border-top: 2px solid #38ef7d;
+        /* border-top: 2px solid white;
         border-bottom-right-radius: 10px solid #38ef7d;
         border-right: 2px solid #38ef7d;
         border-bottom-left-radius: 10px solid #38ef7d;
-        border-left: 2px solid #38ef7d;
-        border-top-left-radius: 25px;
-        border-top-right-radius: 25px;
+        border-left: 2px solid #38ef7d; */
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
         padding: 10px 15px;
-        background: rgba(0, 0, 0, 0.2);
+        background: #F5F5F5;
       }
 
       .accordion__button {
@@ -390,9 +436,8 @@ body {
         font-size: 14px;
         padding: 10px 15px;
         text-align: left;
-        border: 2px solid #38ef7d;
-        border-bottom-left-radius: 25px;
-        border-bottom-right-radius: 25px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
       }
 
       /* END STYLES ACCORDION */
@@ -408,7 +453,7 @@ body {
 
 .tabbar {
   z-index: 50;
-  height: 70px;
+  height: 75px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -425,30 +470,36 @@ body {
   --outset-shadow: rgba(255, 159, 40, 0.45);
   --inset-shadow: rgba(88, 54, 13, 0.45);
   --clay-box-shadow: rgba(88, 54, 13, 0.4);
-  --clay-background-color: #cf5c0f;
+  --clay-background-color: #EDCFBC;
   --clay-fg-color: #f1f2f3;
-  color: #cf5c0f;
+  color: #EDCFBC;
+}
+.home-style {
+  --app-content-background-color: #EDCFBC;
 }
 
 .map.active {
   --outset-shadow: rgba(93, 255, 85, 0.45);
   --inset-shadow: rgba(28, 78, 26, 0.45);
   --clay-box-shadow: rgba(28, 78, 26, 0.4);
-  --clay-background-color: #4dd146;
+  --clay-background-color: #C4D7BD;
   --clay-fg-color: #f1f2f3;
-  color: #4dd146;
+  color: #C4D7BD;
 }
 .map-style {
-  --app-content-background-color: #4dd146;
+  --app-content-background-color: #C4D7BD;
 }
 
 .help.active {
   --outset-shadow: rgba(230, 230, 230, 0.45);
   --inset-shadow: rgba(81, 81, 81, 0.45);
   --clay-box-shadow: rgba(81, 81, 81, 0.4);
-  --clay-background-color: #783896;
+  --clay-background-color: #D6C6DD;
   --clay-fg-color: #f1f2f3;
-  color: #783896;
+  color: #D6C6DD;
+}
+.help-style {
+  --app-content-background-color: #D6C6DD;
 }
 
 .tabbar ul {
@@ -501,7 +552,7 @@ body {
     height: 70px;
     position: fixed;
     bottom: 80px;
-    right: 20px;
+    right: 10px;
     display: flex;
     justify-content: flex-end;
   }
@@ -610,12 +661,6 @@ body {
 /* END STYLES QR READER */
 
 
-
-
-
-
-
-
 /* STYLES LOADER WALKER */
 
 @-webkit-keyframes walkanim {
@@ -676,20 +721,33 @@ body {
 
 
 
-
+/* STYLES PATHS CARD */
 
 .path-card {
   display: flex;
+  height: 100px;
   align-items: center;
   max-width: 480px;
-  border: 2px solid black;
   border-radius: 15px;
-  margin: 5px 10px;
+  margin: 10px 5px;
+  background: #F5F5F5;
+  box-shadow: -3px 3px 5px #940E25, -5px 5px 5px rgba(0, 0, 0, 0.45);
+  color: white;
+}
+
+.path-card-txt {
+  /* path-card max-width: 480px, img width: 70px + margin-x: 10px 
+  == 480 - 70 - 10 - 10 = 300px => max-width: for title & description*/
+  width: 65%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
 }
 
 .path-card img {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   border-radius: 50px;
   margin: 5px 10px;
 }
@@ -697,10 +755,81 @@ body {
 .path-card h4 {
   margin-left: 10px;
   text-transform: uppercase;
-  font-size: medium;
+  font-size: 20px;
+  font-weight: 600;
 }
 
-.path-card input {
+.path-card button {
+  width: 100%;
+  margin-left: 10px;
+  padding-right: 20px;
+  font-size: 15px;
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: underline;
+}
+
+/* .path-card input[type=checkbox] {
+  margin-left: auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 2px solid #940E25;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+} */
+
+.checkbox-round {
+  display: flex;
+  align-items: center;
   margin-left: auto;
   margin-right: 10px;
+}
+
+.checkbox-round label {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  /* position: absolute; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox-round label:after {
+
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 6px;
+  opacity: 0;
+  position: absolute;
+  transform: rotate(-45deg);
+  width: 12px;
+}
+
+.checkbox-round input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.checkbox-round input[type="checkbox"]:checked + label {
+  background-color: #66bb6a;
+  border-color: #66bb6a;
+}
+
+.checkbox-round input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+
+/* STYLES PATHS CARD */
+
+
+#wrapper > .genially-view-menu-action {
+  visibility: hidden !important;
 }

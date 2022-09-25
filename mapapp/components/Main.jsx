@@ -5,15 +5,13 @@ import { useRouter } from 'next/router';
 import { Mapping, HowUse, FAQ, QReaderIcon, ScanReader } from './';
 
 import dataFakePath from '../store/dataFakePath';
-import { useAuth } from '../context/AuthContext';
 
 import { QrReader } from "react-qr-reader";
 import toast from 'react-hot-toast';
 
-const Main = () => {
+const Main = ({ paths }) => {
 
   const fakePaths = dataFakePath;
-  const { paths } = useAuth();
 
   const router = useRouter();
   var modalQR;
@@ -59,13 +57,13 @@ const Main = () => {
           // change background color 
           switch (target.dataset.where) {
             case "home":
-              document.body.style.backgroundColor = "#d4e1bf";
+              document.body.style.backgroundColor = "#EDCFBC";
               break;
             case "map":
-              document.body.style.backgroundColor = "#f5f4f1";
+              document.body.style.backgroundColor = "#C4D7BD";
               break;
             case "help":
-              document.body.style.backgroundColor = "#7ba05f";
+              document.body.style.backgroundColor = "#D6C6DD";
               break;
             default:
               document.body.style.backgroundColor = "#d4e1bf";
@@ -110,7 +108,7 @@ const Main = () => {
       liHome[i].classList.add("active");
 
     // change background color 
-    document.body.style.backgroundColor = "#d4e1bf";
+    document.body.style.backgroundColor = "#EDCFBC";
     const pageId = 'home'
     router.push('#' + pageId);
     const divsMain = document.getElementsByClassName("content");
@@ -146,7 +144,7 @@ const Main = () => {
       liMap[i].classList.add("active");
 
     // change background color 
-    document.body.style.backgroundColor = "#f5f4f1";
+    document.body.style.backgroundColor = "#C4D7BD";
     const pageId = 'map';
     router.push('#' + pageId);
     const divsMain = document.getElementsByClassName("content");
@@ -182,7 +180,7 @@ const Main = () => {
       liHelp[i].classList.add("active");
 
     // change background color 
-    document.body.style.backgroundColor = "#7ba05f";
+    document.body.style.backgroundColor = "#D6C6DD";
     const pageId = 'help';
     router.push('#' + pageId);
     const divsMain = document.getElementsByClassName("content");
@@ -227,21 +225,40 @@ const Main = () => {
     <div>
       <div id="tab-content" className='tab-content'>
         <div id='home' className='content vis'>
-          <h1>BENVENUTI <br/> NEL NOSTRO TOUR</h1>
+          <h1>Benvenuti nel tour</h1>
           <div className='btn-container'>
             <button className='btn' onClick={navigateHelp}>
               {/* <Link href={'#help'}> */}
-                Come si usa
+                Come si usa?
               {/* </Link> */}
             </button>
-            </div>
-            <div className='btn-container'>
-            <button className='btn' onClick={navigateMap}>
+          </div>
+          <h2>Tappe:</h2>
+          {fakePaths.map((fakePath) => {
+            return (
+              <div key={fakePath.id} className="path-card" style={{background: `linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(${fakePath.img})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center"}}>
+                <img src={fakePath.img} target="_blank" />
+                <div className='path-card-txt'>
+                  <h4>{fakePath.title}</h4>
+                  <button>Vedi dettagli</button>
+                </div>
+                <div className="checkbox-round">
+                  {paths && 
+                    <input type="checkbox" id='checkbox' defaultChecked={paths[fakePath.path]} disabled />
+                  }
+                  <label htmlFor="checkbox"></label>
+                </div>
+              </div>
+            )
+          })}
+          <div className='btn-container'>
+            <button className='btn-start' onClick={navigateMap}>
               {/* <Link href={'#map'}> */}
                 Iniziamo
               {/* </Link> */}
             </button>
           </div>
+<<<<<<< HEAD
           <h1>TAPPE</h1>
           {fakePaths.map((fakePath) => {
             
@@ -253,16 +270,18 @@ const Main = () => {
               </div>
             )
           })}
+=======
+>>>>>>> 7a3c5fad51e0580f3aa77321e290e578f155b0ae
         </div>
         <div id='map' className='content novis'>
-          <h1>MAPAPP</h1>
+          <h1>Mapapp</h1>
           <p>Esplora il nostro Roccolo</p>
           <Mapping />
         </div>
         <div id='help' className='content novis'>
-          <h1>COME SI USA</h1>
+          <h1>Come si usa</h1>
           <HowUse />
-          <h1>FAQ</h1>
+          <h2>FAQ:</h2>
           <FAQ />
         </div>
       </div>

@@ -7,9 +7,8 @@ import {
 } from 'firebase/auth';
 import { 
   doc,  
-  addDoc,
-  getDoc, 
-  collection
+  getDoc,
+  setDoc 
 } from 'firebase/firestore';
 import { auth, database } from '../utils/firebase';
 
@@ -19,29 +18,54 @@ export const useAuth = () => useContext(AuthContext);
 
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [paths, setPaths] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [paths, setPaths] = useState(null);
 
   useEffect(() => {
+    // onAuthStateChanged
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
+      if (user !== null) {
         setUser({
           uid: user.uid,
-          email: user.email,
-          displayName: user.displayName,
+          email: user.email
         });
-        getDoc(doc(database, "paths", user.uid)).then(docSnap => {
-          if (docSnap.exists())
-            setPaths(docSnap.data());
-        })
+        if(user.uid)
+          getPaths();
+        
       } else {
         setUser(null);
+        setPaths(null);
       }
       setLoading(false);
     })
 
     return () => unsubscribe();
-  }, []);
+  });
+
+    const getPaths = () => {
+      if(user !== null) {
+        getDoc(doc(database, "user_paths", user.email)).then(docSnap => {
+          if (docSnap.exists())
+            setPaths(docSnap.data());
+          else {
+            setDoc(doc(database, "user_paths", user.email), {
+              id: user.uid,
+              path1: false,
+              path2: false,
+              path3: false,
+              path4: false,
+              path5: false,
+              path6: false,
+              userId: user.uid,
+              userMail: user.email
+            });
+            getDoc(doc(database, "user_paths", user.email)).then(docSnap => {
+              setPaths(docSnap.data());
+            });
+          }
+        })
+      }
+    }
 
   const signup = (email, password) => {    
     return createUserWithEmailAndPassword(auth, email, password)
@@ -51,22 +75,10 @@ export const AuthContextProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password)
   }
 
-  const createDocFirebase = async (user) => {
-    await login(auth);
-    addDoc(collection(database, "paths"), {
-      id: user.uid,
-      path1: false,
-      path2: false,
-      path3: false,
-      path4: false,
-      path5: false,
-      path6: false,
-      userId: user.uid
-    });
-  }
-
   const logout = async () => {
+    window.location.reload();
     setUser(null);
+    setPaths(null);
     await signOut(auth);
   }
 

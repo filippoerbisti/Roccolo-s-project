@@ -2,6 +2,10 @@
 
 .env
 
+# compiled build output
+/public/sw*
+/public/workbox*
+
 # dependencies
 /node_modules
 /.pnp
