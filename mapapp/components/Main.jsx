@@ -244,7 +244,7 @@ const Main = () => {
           </div>
           <h1>TAPPE</h1>
           {fakePaths.map((fakePath) => {
-            console.log(paths[fakePath.path])
+            
             return (
               <div key={fakePath.id} className="path-card">
                 <img src={fakePath.img} target="_blank" />

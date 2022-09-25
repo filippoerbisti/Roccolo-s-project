@@ -24,14 +24,13 @@ const Login = () => {
     return (
         <div className='login'>
             <div className='form-login'>
-                <img 
+                <img
                     src="https://res.cloudinary.com/dl38nyo08/image/upload/v1660806591/Roccolo%20del%20Lago/logo_iidjdd.png"
                     width={240} 
                     height={100} 
                     // objectfit="contain"
                     className='cursor-pointer'
                 />
-                <h1>INIZIA IL TOUR</h1>
                 <form onSubmit={handleLogin}>
                     <div className="form__group field">
                         <input
@@ -69,7 +68,7 @@ const Login = () => {
                         />
                         <label htmlFor="password" className="form__label">Password</label>
                     </div>
-                    <button type="submit">ACCEDI</button>
+                    <button type="submit">Inizia il tour</button>
                 </form>
             </div>
         </div>
