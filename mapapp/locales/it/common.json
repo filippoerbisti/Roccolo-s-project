@@ -1,50 +1,8 @@
 {
-    "navShop": "SHOP",
-    "navWineShop": "WINESHOP",
-    "navEvents": "EVENTI",
-    "navWines": "VINI",
-    "navGallery": "GALLERIA",
-    "navContact": "CONTATTI",
-    "navTour": "TOUR",
-
-    "yourCart": "Tuo Carrello",
-    "item": "Elemento",
-    "items": "Elementi",
-    "shopBagEmpty": "Il tuo carrello è vuoto",
-    "contShopping": "CONTINUA GLI ACQUISTI",
-    "total": "Totale",
-    "payWith": "Paga con",
-
-    "readMore": "... Leggi di più",
-    "showLess": "(Mostra meno)",
-
-    "viewAllWine": "Vedi Tutti i Vini",
-    "ourWines": "I Vini delle nostre Aziende Agricole",
-
-    "all": "Tutti",
-    "sparklingWines": "Vini Spumanti",
-    "whiteWines": "Vini Bianchi",
-    "roseWines": "Vini Rosati",
-    "redWines": "Vini Rossi",
-    "dessertWines": "Vini da Dessert",
-    "grappa": "Grappa",
-    "oil": "Olio",
-        
-    "details": "Dettagli",
-    "quantity": "Quantità",
-    "addCart" : "Aggiungi al Carrello",
-    "buyNow": "Compra Ora",
-    "alsoLike": "Ti potrebbe anche piacere",
-
-    "followUs": "Seguici su",
-    "where": "Dove",
-    "when": "Orario",
-    "workHours": "tutti i giorni dalle 9:00 alle 18:00",
-    "close": "Domenica chiuso",
-
-    "cookieText": "Questo sito web utilizza i cookie per migliorare l'esperienza dell'utente.",
-    "cookieBtn": "Ho capito!",
-
-    "rightsReserved": "Tutti i diritti sono riservati",
-    "poweredBy": "Offerto da"
+    "loading": "Caricamento",
+    "welcome": "Benvenuti nel tour",
+    "howUseIt": "Come si usa",
+    "start": "Iniziamo",
+    "paths": "Tappe",
+    "exploreRoccolo": "Esplora il nostro Roccolo"
 }

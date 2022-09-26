@@ -226,11 +226,11 @@ const Main = ({ paths }) => {
     <div>
       <div id="tab-content" className='tab-content'>
         <div id='home' className='content vis'>
-          <h1>Benvenuti nel tour</h1>
+          <h1>{t('welcome')}</h1>
           <div className='btn-container'>
             <button className='btn' onClick={navigateHelp}>
               {/* <Link href={'#help'}> */}
-                {t('howUseit')}?
+                {t('howUseIt')}?
               {/* </Link> */}
             </button>
           </div>
