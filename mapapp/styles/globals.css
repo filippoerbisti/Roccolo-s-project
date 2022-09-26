@@ -90,16 +90,10 @@ body {
 }
 
 .form-login {
-<<<<<<< HEAD
   background-color: #F5F5F5;
   padding: 25px;
   border-radius: 10px;
   box-shadow: -4px 4px 20px #000000;
-=======
-  background-color: #940E25;
-  padding: 20px;
-  border-radius: 25px;
->>>>>>> 7a3c5fad51e0580f3aa77321e290e578f155b0ae
 }
 
 .form__group {
@@ -175,16 +169,10 @@ body {
   border-radius: 10px;
   border: none;
   font-size: 20px;
-<<<<<<< HEAD
-  font-weight: 600;
-  background-color: #890017;
-  color: #F5F5F5;
-=======
   font-weight: 500;
   text-transform: uppercase;
   background-color: #940E25;
   color: #fff;
->>>>>>> 7a3c5fad51e0580f3aa77321e290e578f155b0ae
   cursor: pointer;
   transform: scale(1, 1);
   transition: transform 0.5s ease;
