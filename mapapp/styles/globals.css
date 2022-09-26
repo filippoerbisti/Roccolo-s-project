@@ -74,7 +74,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  opacity: 0.6;
+  opacity: 0.7;
   background-image: url('../../ecommerce/public/degustazioni.png');
   background-repeat: no-repeat;
   background-position: 50% 0;
@@ -84,14 +84,16 @@ body {
 .login h1 {
   font-size: 24px;
   margin: 10px 0;
-  color: white;
+  color: #940E25;
   text-align: center;
+  font-size: 600;
 }
 
 .form-login {
-  background-color: #940E25;
-  padding: 20px;
-  border-radius: 25px;
+  background-color: #F5F5F5;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: -4px 4px 20px #000000;
 }
 
 .form__group {
@@ -101,14 +103,18 @@ body {
   margin: 0 auto;
 }
 
+.form__group:first-child{
+  margin-top: 35px;
+}
+
 .form__field {
   font-family: inherit;
   width: 100%;
   border: 0;
-  border-bottom: 2px solid #9b9b9b;
+  border-bottom: 1px solid #9b9b9b;
   outline: 0;
   font-size: 1rem;
-  color: #fff;
+  color: rgb(0, 0, 0);
   padding: 5px 0;
   background: transparent;
   transition: border-color 0.2s;
@@ -130,15 +136,14 @@ body {
   display: block;
   transition: 0.2s;
   font-size: 1rem;
-  color: #9b9b9b;
+  color: #000000;
 }
 
 .form__field:focus {
   padding-bottom: 6px;
-  font-weight: 700;
-  border-width: 3px;
-  border-image: linear-gradient(to right, #11998e, #38ef7d);
-  border-image-slice: 1;
+  font-weight: 400;
+  border-width: 2px;
+  border-color: #940E25;
 }
 
 .form__field:focus ~ .form__label {
@@ -146,9 +151,9 @@ body {
   top: 0;
   display: block;
   transition: 0.2s;
-  font-size: 1rem;
-  color: #11998e;
-  font-weight: 700;
+  font-size: 0.9rem;
+  color: #940E25;
+  font-weight: 600;
 }
 
 /* reset input */
@@ -161,7 +166,7 @@ body {
   max-width: 300px;
   padding: 5px 0px;
   margin-top: 20px;
-  border-radius: 15px;
+  border-radius: 10px;
   border: none;
   font-size: 20px;
   font-weight: 500;
@@ -721,7 +726,7 @@ body {
 .path-card-txt {
   /* path-card max-width: 480px, img width: 70px + margin-x: 10px 
   == 480 - 70 - 10 - 10 = 300px => max-width: for title & description*/
-  width: 65%;
+  /*width: 65%;*/
   max-width: 300px;
   display: flex;
   flex-direction: column;

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Head from 'next/head';
 import useTranslation from 'next-translate/useTranslation';
 
-import { Navbar } from './';
+import { Navbar, NoAuthPeriod } from './';
 import { useAuth } from '../context/AuthContext';
 
 const Layout = ({ children }) => {

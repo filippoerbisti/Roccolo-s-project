@@ -1,50 +1,8 @@
 {
-    "navShop": "SHOP",
-    "navWineShop": "WINESHOP",
-    "navEvents": "EVENTS",
-    "navWines": "WINES",
-    "navGallery": "GALLERY",
-    "navContact": "CONTACTS",
-    "navTour": "TOUR",
-
-    "yourCart": "Your Cart",
-    "item": "Item",
-    "items": "Items",
-    "shopBagEmpty": "Your shopping bag is empty",
-    "contShopping": "CONTINUE SHOPPING",
-    "total": "Total",
-    "payWith": "Pay with",
-    
-    "readMore": "... Read more",
-    "showLess": "(Show less)",
-
-    "viewAllWine": "View All Wines",
-    "ourWines": "The wines of our Farms",
-
-    "all": "All",
-    "sparklingWines": "Sparkling Wines",
-    "whiteWines": "White Wines",
-    "roseWines": "Rosè Wines",
-    "redWines": "Red Wines",
-    "dessertWines": "Dessert Wines",
-    "grappa": "Grappa",
-    "oil": "Oil",
-        
-    "details": "Details",
-    "quantity": "Quantity",
-    "addCart" : "Add to Cart",
-    "buyNow": "Buy Now",
-    "alsoLike": "You may also like",
-
-    "followUs": "Follow us on",
-    "where": "Where",
-    "when": "Hours",
-    "workHours": "every day from 9:00 to 18:00",
-    "close": "Closed on Sunday",
-
-    "cookieText": "This website uses cookies to enhance the user experience.",
-    "cookieBtn": "I understand!",
-
-    "rightsReserved": "All Rights Reserved",
-    "poweredBy": "Powered by"
+    "loading": "Loading",
+    "welcome": "Welcome to the tour",
+    "howUseIt": "How to use",
+    "start": "Start",
+    "paths": "Stages",
+    "exploreRoccolo": "Explore our Roccolo"
 }
