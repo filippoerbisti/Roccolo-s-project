@@ -726,7 +726,7 @@ body {
 .path-card-txt {
   /* path-card max-width: 480px, img width: 70px + margin-x: 10px 
   == 480 - 70 - 10 - 10 = 300px => max-width: for title & description*/
-  width: 65%;
+  /*width: 65%;*/
   max-width: 300px;
   display: flex;
   flex-direction: column;
