@@ -230,7 +230,7 @@ const Main = ({ paths }) => {
           <div className='btn-container'>
             <button className='btn' onClick={navigateHelp}>
               {/* <Link href={'#help'}> */}
-                {t('howUseit')}
+                {t('howUseit')}?
               {/* </Link> */}
             </button>
           </div>
