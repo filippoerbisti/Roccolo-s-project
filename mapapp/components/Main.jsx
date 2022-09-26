@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FiHome, FiMap, FiHelpCircle } from 'react-icons/fi';
-
+import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router';
 import { Mapping, HowUse, FAQ, QReaderIcon, ScanReader } from './';
 
@@ -10,6 +10,7 @@ import { QrReader } from "react-qr-reader";
 import toast from 'react-hot-toast';
 
 const Main = ({ paths }) => {
+  const { t } = useTranslation('common');
 
   const fakePaths = dataFakePath;
 
@@ -229,11 +230,18 @@ const Main = ({ paths }) => {
           <div className='btn-container'>
             <button className='btn' onClick={navigateHelp}>
               {/* <Link href={'#help'}> */}
-                Come si usa?
+                {t('howUseit')}
               {/* </Link> */}
             </button>
           </div>
-          <h2>Tappe:</h2>
+          <div className='btn-container'>
+            <button className='btn-start' onClick={navigateMap}>
+              {/* <Link href={'#map'}> */}
+                {t('start')}
+              {/* </Link> */}
+            </button>
+          </div>
+          <h2>{t('paths')}:</h2>
           {fakePaths.map((fakePath) => {
             return (
               <div key={fakePath.id} className="path-card" style={{background: `linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(${fakePath.img})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center"}}>
@@ -251,32 +259,14 @@ const Main = ({ paths }) => {
               </div>
             )
           })}
-          <div className='btn-container'>
-            <button className='btn-start' onClick={navigateMap}>
-              {/* <Link href={'#map'}> */}
-                Iniziamo
-              {/* </Link> */}
-            </button>
-          </div>
-          <h1>TAPPE</h1>
-          {fakePaths.map((fakePath) => {
-            
-            return (
-              <div key={fakePath.id} className="path-card">
-                <img src={fakePath.img} target="_blank" />
-                <h4>{fakePath.title}</h4>
-                <input type="checkbox" defaultChecked={paths[fakePath.path]} disabled />
-              </div>
-            )
-          })}
         </div>
         <div id='map' className='content novis'>
           <h1>Mapapp</h1>
-          <p>Esplora il nostro Roccolo</p>
+          <p>{t('exploreRoccolo')}</p>
           <Mapping />
         </div>
         <div id='help' className='content novis'>
-          <h1>Come si usa</h1>
+          <h1>{t('howUseIt')}</h1>
           <HowUse />
           <h2>FAQ:</h2>
           <FAQ />
