@@ -9,7 +9,6 @@ const Layout = ({ children }) => {
   const { t } = useTranslation('meta');
 
   const { user } = useAuth();
-  console.log("user", user);
   
   return (
     <div>
