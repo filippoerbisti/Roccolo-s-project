@@ -12,8 +12,6 @@ const Navbar = () => {
   const { logout } = useAuth();
   const router = useRouter();
   const currentRoute = useRouter().asPath;
-  const langItRef = useRef();
-  const langEnRef = useRef();
 
   return (
     <div className='navbar-container'>
@@ -29,12 +27,12 @@ const Navbar = () => {
 
         <div className='nav-icon'>
           <div className='lang-container'>
-            <a ref={langItRef} href={currentRoute} locale="it">
+            <Link href={currentRoute} locale="it">
               <IT title="Italiano" className='lang-icon'/>
-            </a>
-            <a ref={langEnRef} href={currentRoute} locale="en">
+            </Link>
+            <Link href={currentRoute} locale="en">
               <GB title="English" className='lang-icon'/>
-            </a>
+            </Link>
             {/* <Link href={currentRoute} locale="de">
               <DE title="Deutsch" className='lang-icon'/>
             </Link> */}
