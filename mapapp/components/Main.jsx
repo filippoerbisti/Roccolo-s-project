@@ -258,7 +258,6 @@ const Main = ({ paths }) => {
               {/* </Link> */}
             </button>
           </div>
-<<<<<<< HEAD
           <h1>TAPPE</h1>
           {fakePaths.map((fakePath) => {
             
@@ -270,8 +269,6 @@ const Main = ({ paths }) => {
               </div>
             )
           })}
-=======
->>>>>>> 7a3c5fad51e0580f3aa77321e290e578f155b0ae
         </div>
         <div id='map' className='content novis'>
           <h1>Mapapp</h1>
