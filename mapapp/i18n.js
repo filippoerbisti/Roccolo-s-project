@@ -5,8 +5,6 @@ const i18nConfig = {
     defaultLocale: 'default', // Default language of your website
     pages: {
       '*': ['common', 'meta'], // Namespaces that you want to import per page
-      '/': ['home'],
-      '/success': ['success'],
     },
   };
 
