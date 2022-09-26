@@ -9,18 +9,6 @@ const Layout = ({ children }) => {
   const { t } = useTranslation('meta');
 
   const { user } = useAuth();
-  const { authorizedDates } = useAuth()
-  const [isAuthPeriod, setIsAuthPeriod] = useState(false);
-
-  useEffect(() => {
-    if (authorizedDates) {
-      var start = new Date(authorizedDates.start_date.toDate());
-      var end = new Date(authorizedDates.end_date.toDate());
-      var today = new Date();
-      if (today >= start && today <= end)
-        setIsAuthPeriod(true);
-    }
-  }, [isAuthPeriod]);
   
   return (
     <div>
@@ -56,18 +44,12 @@ const Layout = ({ children }) => {
       
       <div className='main'>
         <header>
-          {isAuthPeriod && user &&
+          {user &&
             <Navbar />
           }
         </header>
         <main>
-          {!isAuthPeriod &&
-            <NoAuthPeriod />
-          }
-
-          {isAuthPeriod && 
-            children
-          }
+          {children}
         </main>
       </div>
     </div>
