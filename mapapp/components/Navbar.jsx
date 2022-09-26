@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FiLogOut } from 'react-icons/fi';
@@ -12,6 +12,8 @@ const Navbar = () => {
   const { logout } = useAuth();
   const router = useRouter();
   const currentRoute = useRouter().asPath;
+  const langItRef = useRef();
+  const langEnRef = useRef();
 
   return (
     <div className='navbar-container'>
@@ -27,12 +29,12 @@ const Navbar = () => {
 
         <div className='nav-icon'>
           <div className='lang-container'>
-            <Link href={currentRoute} locale="it">
+            <a ref={langItRef} href={currentRoute} locale="it">
               <IT title="Italiano" className='lang-icon'/>
-            </Link>
-            <Link href={currentRoute} locale="en">
+            </a>
+            <a ref={langEnRef} href={currentRoute} locale="en">
               <GB title="English" className='lang-icon'/>
-            </Link>
+            </a>
             {/* <Link href={currentRoute} locale="de">
               <DE title="Deutsch" className='lang-icon'/>
             </Link> */}
