@@ -109,6 +109,7 @@ export const AuthContextProvider = ({ children }) => {
   const logout = async () => {
     window.location.reload();
     setUser(null);
+    setAuthorizedDates(null);
     setPaths(null);
     await signOut(auth);
   }
