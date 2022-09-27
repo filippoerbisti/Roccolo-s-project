@@ -1,6 +1,5 @@
 import React from 'react';
-import { Main } from '../components';
-import Login from '../components/Login';
+import { Login, Loader, Main } from '../components';
 
 import { useAuth } from '../context/AuthContext';
 
@@ -18,7 +17,7 @@ export default function Index() {
       }
 
       {/* If logged in -> show main */}
-      {user && paths &&
+      {user && authorizedDates && paths &&
         <Main user={user} authorizedDates={authorizedDates} paths={paths} />
       }
     </div>

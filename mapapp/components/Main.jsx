@@ -342,6 +342,11 @@ const Main = ({ user, authorizedDates, paths }) => {
         </div>
       }
 
+      {/* If logged in, but authorizedDates == null (loading) */}
+      {!authorizedDates &&
+        <Loader />
+      }
+
       {/* If logged in && Date.Now is NOT BETWEEN the fixed initial date (choose by user on pay) and the following 6 days (inclusive) */}
       {!isAuthPeriod &&
         <NoAuthPeriod user={user} authorizedDates={authorizedDates} />
