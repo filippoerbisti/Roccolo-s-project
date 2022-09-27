@@ -1,5 +1,14 @@
 {
     "loading": "Wird geladen",
+
+    "errorCredential": "Die Anmeldeinformationen sind falsch",
+    "startTour": "Tour starten",
+
+    "greetings": "Grüße",
+    "activeLicense": "Wir informieren Sie, dass die Lizenz für die Mapapp wird aktiv sein",
+    "fromDate": "Ab dem Datum",
+    "toDate": "Bis zum Datum",
+
     "welcome": "Willkommen auf der Tour",
     "howUseIt": "Wie benutzt man",
     "start": "Anfang",

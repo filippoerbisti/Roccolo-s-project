@@ -1,5 +1,14 @@
 {
     "loading": "Loading",
+
+    "errorCredential": "The credentials are incorrect",
+    "startTour": "Start the tour ",
+
+    "greetings": "Greetings",
+    "activeLicense": "We inform you that the license for the Mapapp will be active",
+    "fromDate": "From the date",
+    "toDate": "Until the date",
+
     "welcome": "Welcome to the tour",
     "howUseIt": "How to use",
     "start": "Start",

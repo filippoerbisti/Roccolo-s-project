@@ -1,5 +1,14 @@
 {
     "loading": "Chargement",
+
+    "errorCredential": "Les identifiants sont incorrects",
+    "startTour": "Commencez la visite",
+
+    "greetings": "Salut",
+    "activeLicense": "Nous vous informons que la licence de Mapapp sera actif",
+    "fromDate": "A partir de la date",
+    "toDate": "Jusqu'à la date",
+
     "welcome": "Bienvenue dans la tournée",
     "howUseIt": "Comment utiliser",
     "start": "Début",
