@@ -1,10 +1,9 @@
 import React from 'react';
-import { useAuth } from '../context/AuthContext';
 
 const NoAuthPeriod = ({ user, authorizedDates })  => {
 
-    var start = new Date(authorizedDates.start_date.toDate()).toString();
-    var end = new Date(authorizedDates.end_date.toDate()).toString();
+    const start = new Date(authorizedDates.start_date.toDate()).toString();
+    const end = new Date(authorizedDates.end_date.toDate()).toString();
 
     return (
         <div className='no-auth-period'>
@@ -17,7 +16,6 @@ const NoAuthPeriod = ({ user, authorizedDates })  => {
                 <br /> {start}
                 <br /> al:
                 <br /> {end}
-
             </h2>
         </div>
     )
