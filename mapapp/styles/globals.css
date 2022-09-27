@@ -818,6 +818,18 @@ body {
 /* STYLES PATHS CARD */
 
 
-#wrapper > .genially-view-menu-action {
-  visibility: hidden !important;
+
+
+
+
+
+
+
+.no-auth-period {
+  width: 100%;
+  padding-top: 100px;
+  height: 100vh;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
 }
