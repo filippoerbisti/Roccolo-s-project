@@ -13,5 +13,11 @@
     "howUseIt": "Wie benutzt man",
     "start": "Anfang",
     "paths": "Stufen",
-    "exploreRoccolo": "Entdecken Sie unser Roccolo"
+    "exploreRoccolo": "Entdecken Sie unser Roccolo",
+
+    "faq1TContact": "Brauchst du Hilfe? Kontaktiere uns.",
+    "faq1PAvailable": "Sie finden uns täglich (außer sonntags) von 9.00 bis 18.00 Uhr bei uns",
+    "faq1PFarm": "Bauernhof",
+    "faq1PCallUs": "Oder rufen Sie uns unter der Nummer an",
+    "faq1PMailUs": "oder senden Sie eine E-Mail an"
 }

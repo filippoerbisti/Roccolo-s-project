@@ -13,5 +13,11 @@
     "howUseIt": "Comment utiliser",
     "start": "Début",
     "paths": "Étapes",
-    "exploreRoccolo": "Découvrez notre Roccolo"
+    "exploreRoccolo": "Découvrez notre Roccolo",
+
+    "faq1TContact": "As-tu besoin d'aide? Contactez-nous.",
+    "faq1PAvailable": "Vous nous trouverez disponibles tous les jours (sauf le dimanche) de 9h00 à 18h00 à notre",
+    "faq1PFarm": "Exploitation",
+    "faq1PCallUs": "Ou appelez-nous au numéro",
+    "faq1PMailUs": "ou envoyer un e-mail à"
 }
