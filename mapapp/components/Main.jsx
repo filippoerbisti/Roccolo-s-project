@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { FiHome, FiMap, FiHelpCircle } from 'react-icons/fi';
 import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router';
@@ -262,7 +263,9 @@ const Main = ({ user, authorizedDates, paths }) => {
                     <img src={fakePath.img} target="_blank" />
                     <div className='path-card-txt'>
                       <h4>{fakePath.title}</h4>
-                      <button>Vedi dettagli</button>
+                      <span className="detail">
+                        <Link href={''}>Vedi dettagli</Link>
+                      </span>
                     </div>
                     <div className="checkbox-round">
                       {paths && 
