@@ -30,10 +30,11 @@ export const AuthContextProvider = ({ children }) => {
           uid: user.uid,
           email: user.email
         });
-        if(user.uid)
-        {
-          getAuthorizedDate();
-          getPaths();
+        if (user.uid) {
+          if (authorizedDates == null)
+            getAuthorizedDate(user);
+          if (paths == null)
+            getPaths(user);
         }
       } else {
         setUser(null);
@@ -46,7 +47,7 @@ export const AuthContextProvider = ({ children }) => {
     return () => unsubscribe();
   });
 
-  const getAuthorizedDate = () => {
+  const getAuthorizedDate = (user) => {
     if(user !== null) {
       getDoc(doc(database, "user_authorized_dates", user.email)).then(docSnap => {
         if (docSnap.exists())
@@ -73,7 +74,7 @@ export const AuthContextProvider = ({ children }) => {
     }
   }
 
-  const getPaths = () => {
+  const getPaths = (user) => {
     if(user !== null) {
       getDoc(doc(database, "user_paths", user.email)).then(docSnap => {
         if (docSnap.exists())
