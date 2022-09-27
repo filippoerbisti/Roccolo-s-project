@@ -32,7 +32,7 @@ const FAQ = () => {
                     </AccordionItemHeading>
                     <AccordionItemPanel>
                         {t('faq1PAvailable')} {space}
-                        <a href='https://goo.gl/maps/Pgp5XzNNhqQoMqVa6' target='_blank' style={{textDecoration: 'underline'}}>{t('faq1PFarm')} Roccolo del Lago</a>.
+                        <a href='https://goo.gl/maps/Pgp5XzNNhqQoMqVa6' target='_blank' rel="noreferrer" style={{textDecoration: 'underline'}}>{t('faq1PFarm')} Roccolo del Lago</a>.
                         <br />
                         {t('faq1PCallUs')} {space}
                         <a href={`tel:${phoneNumber}`} style={{textDecoration: 'underline'}}>0457581077</a> 
