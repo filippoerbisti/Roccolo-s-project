@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { FiHome, FiMap, FiHelpCircle } from 'react-icons/fi';
 import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router';
-import { Mapping, HowUse, FAQ, QReaderIcon, ScanReader } from './';
+import { Mapping, HowUse, FAQ, QReaderIcon, ScanReader, NoAuthPeriod } from './';
 
 import dataFakePath from '../store/dataFakePath';
 
 import { QrReader } from "react-qr-reader";
 import toast from 'react-hot-toast';
 
-const Main = ({ paths }) => {
+const Main = ({ user, authorizedDates, paths }) => {
   const { t } = useTranslation('common');
 
   const fakePaths = dataFakePath;
@@ -18,8 +18,19 @@ const Main = ({ paths }) => {
   var modalQR;
 
   const [data, setData] = useState("No result");
+  const [isAuthPeriod, setIsAuthPeriod] = useState(false);
 
   useEffect(() => {
+    // Authorizated dates to access
+    if (authorizedDates) {
+      var start = new Date(authorizedDates.start_date.toDate()).getTime();
+      var end = new Date(authorizedDates.end_date.toDate()).getTime();
+      var today = new Date().getTime();
+
+      if (today >= start && today <= end)
+        setIsAuthPeriod(true);
+    }
+
     // Modal QR
     modalQR = document.getElementById("modalQR");
 
@@ -90,7 +101,7 @@ const Main = ({ paths }) => {
         });
       });
     });
-  }, []);
+  }, [isAuthPeriod]);
 
   // Navigate home = simulation click on li with className="home"
   const navigateHome = () => {
@@ -223,106 +234,116 @@ const Main = ({ paths }) => {
   }
 
   return (
-    <div>
-      <div id="tab-content" className='tab-content'>
-        <div id='home' className='content vis'>
-          <h1>{t('welcome')}</h1>
-          <div className='btn-container'>
-            <button className='btn' onClick={navigateHelp}>
-              {/* <Link href={'#help'}> */}
-                {t('howUseIt')}?
-              {/* </Link> */}
-            </button>
-          </div>
-          <div className='btn-container'>
-            <button className='btn-start' onClick={navigateMap}>
-              {/* <Link href={'#map'}> */}
-                {t('start')}
-              {/* </Link> */}
-            </button>
-          </div>
-          <h2>{t('paths')}:</h2>
-          {fakePaths.map((fakePath) => {
-            return (
-              <div key={fakePath.id} className="path-card" style={{background: `linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(${fakePath.img})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center"}}>
-                <img src={fakePath.img} target="_blank" />
-                <div className='path-card-txt'>
-                  <h4>{fakePath.title}</h4>
-                  <button>Vedi dettagli</button>
-                </div>
-                <div className="checkbox-round">
-                  {paths && 
-                    <input type="checkbox" id='checkbox' defaultChecked={paths[fakePath.path]} disabled />
-                  }
-                  <label htmlFor="checkbox"></label>
-                </div>
+    <>
+      {/* If logged in && Date.Now is BETWEEN the fixed initial date (choose by user on pay) and the following 6 days (inclusive) */}
+      {isAuthPeriod &&
+        <div>
+          <div id="tab-content" className='tab-content'>
+            <div id='home' className='content vis'>
+              <h1>{t('welcome')}</h1>
+              <div className='btn-container'>
+                <button className='btn' onClick={navigateHelp}>
+                  {/* <Link href={'#help'}> */}
+                    {t('howUseIt')}?
+                  {/* </Link> */}
+                </button>
               </div>
-            )
-          })}
-        </div>
-        <div id='map' className='content novis'>
-          <h1>Mapapp</h1>
-          <p>{t('exploreRoccolo')}</p>
-          <Mapping />
-        </div>
-        <div id='help' className='content novis'>
-          <h1>{t('howUseIt')}</h1>
-          <HowUse />
-          <h2>FAQ:</h2>
-          <FAQ />
-        </div>
-      </div>
-      <div className="tabbar">
-        <ul className="flex-center">
-          <li className="home active" data-where="home">
-            <FiHome/>
-          </li>
-          <li className="map" data-where="map">
-            <FiMap/>
-          </li>
-          <li className="help" data-where="help">
-            <FiHelpCircle/>
-          </li>
-        </ul>
-      </div>
+              <div className='btn-container'>
+                <button className='btn-start' onClick={navigateMap}>
+                  {/* <Link href={'#map'}> */}
+                    {t('start')}
+                  {/* </Link> */}
+                </button>
+              </div>
+              <h2>{t('paths')}:</h2>
+              {fakePaths.map((fakePath) => {
+                return (
+                  <div key={fakePath.id} className="path-card" style={{background: `linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(${fakePath.img})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center"}}>
+                    <img src={fakePath.img} target="_blank" />
+                    <div className='path-card-txt'>
+                      <h4>{fakePath.title}</h4>
+                      <button>Vedi dettagli</button>
+                    </div>
+                    <div className="checkbox-round">
+                      {paths && 
+                        <input type="checkbox" id='checkbox' defaultChecked={paths[fakePath.path]} disabled />
+                      }
+                      <label htmlFor="checkbox"></label>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+            <div id='map' className='content novis'>
+              <h1>Mapapp</h1>
+              <p>{t('exploreRoccolo')}</p>
+              <Mapping />
+            </div>
+            <div id='help' className='content novis'>
+              <h1>{t('howUseIt')}</h1>
+              <HowUse />
+              <h2>FAQ:</h2>
+              <FAQ />
+            </div>
+          </div>
+          <div className="tabbar">
+            <ul className="flex-center">
+              <li className="home active" data-where="home">
+                <FiHome/>
+              </li>
+              <li className="map" data-where="map">
+                <FiMap/>
+              </li>
+              <li className="help" data-where="help">
+                <FiHelpCircle/>
+              </li>
+            </ul>
+          </div>
 
-      {/* Trigger/Open The Modal */}
-      <button onClick={modalShow}>
-        <QReaderIcon />
-      </button>
-            
-      {/* The Modal */}
-      <div id="modalQR" className="modal-qr">
-          {/* <!-- Modal content --> */}
-          <div className="modal-content-qr">
-              <div className="modal-body-qr">
-                  <span className="close-qr" onClick={modalClose}>&times;</span>
-                  {/* <ScanReader /> */}
-                  <div style={{marginTop: '10px', paddingLeft: '15px'}}>
-                    <h1 style={{fontSize: "18px", textAlign: "center"}}>SCANNER QR</h1>
-                    <QrReader
-                      onResult={(result, error) => {
-                        if (!!result) {
-                          setData(result?.text);
-                          modalClose();
-                          toast.success('Redirect ...');
-                          router.push('/' + result.text);
-                        }
-                        if (!!error) {
-                          // toast.error('Errore lettura QR');
-                          console.info(error);
-                        }
-                      }}
-                      //this is facing mode : "environment " it will open backcamera of the smartphone and if not found will 
-                      // open the front camera
-                      constraints = {{ facingMode:  "environment"  }}
-                      style = {{ width: "50%", height: "50%", backgroundColor: '#000' }}
-                    />
+          {/* Trigger/Open The Modal */}
+          <button onClick={modalShow}>
+            <QReaderIcon />
+          </button>
+                
+          {/* The Modal */}
+          <div id="modalQR" className="modal-qr">
+              {/* <!-- Modal content --> */}
+              <div className="modal-content-qr">
+                  <div className="modal-body-qr">
+                      <span className="close-qr" onClick={modalClose}>&times;</span>
+                      {/* <ScanReader /> */}
+                      <div style={{marginTop: '10px', paddingLeft: '15px'}}>
+                        <h1 style={{fontSize: "18px", textAlign: "center"}}>SCANNER QR</h1>
+                        <QrReader
+                          onResult={(result, error) => {
+                            if (!!result) {
+                              setData(result?.text);
+                              modalClose();
+                              toast.success('Redirect ...');
+                              router.push('/' + result.text);
+                            }
+                            if (!!error) {
+                              // toast.error('Errore lettura QR');
+                              console.info(error);
+                            }
+                          }}
+                          //this is facing mode : "environment " it will open backcamera of the smartphone and if not found will 
+                          // open the front camera
+                          constraints = {{ facingMode:  "environment"  }}
+                          style = {{ width: "50%", height: "50%", backgroundColor: '#000' }}
+                        />
+                      </div>
                   </div>
               </div>
           </div>
-      </div>
-    </div>
+        </div>
+      }
+
+      {/* If logged in && Date.Now is NOT BETWEEN the fixed initial date (choose by user on pay) and the following 6 days (inclusive) */}
+      {!isAuthPeriod &&
+        <NoAuthPeriod user={user} authorizedDates={authorizedDates} />
+      }
+    </>
   )
 }
 
