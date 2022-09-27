@@ -1,8 +1,10 @@
 import React, { useState }  from 'react';
 import toast from 'react-hot-toast';
+import useTranslation from 'next-translate/useTranslation';
 import { useAuth } from '../context/AuthContext';
 
 const Login = () => {
+    const { t } = useTranslation('common');
 
     const { user, login } = useAuth();
     const [data, setData] = useState({
@@ -14,10 +16,9 @@ const Login = () => {
       e.preventDefault();
       try {
         await login(data.email, data.password);
-        toast.success('Login corretto');
       } catch (err) {
         console.log(err);
-        toast.error('Le credenziali sono errate');
+        toast.error(`${t('errorCredential')}`);
       }
     };
 
@@ -44,10 +45,10 @@ const Login = () => {
                             value={data.email}
                             required
                             type="email"
-                            placeholder="Enter email"
+                            placeholder="Email"
                             className="form__field" 
                         />
-                        <label htmlFor="email" className="form__label">Username</label>
+                        <label htmlFor="email" className="form__label">Email</label>
                     </div>
                     <div className="form__group field">
                         <input 
@@ -68,7 +69,7 @@ const Login = () => {
                         />
                         <label htmlFor="password" className="form__label">Password</label>
                     </div>
-                    <button type="submit">Inizia il tour</button>
+                    <button type="submit">{t('startTour')}</button>
                 </form>
             </div>
         </div>

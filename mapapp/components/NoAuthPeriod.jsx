@@ -1,6 +1,8 @@
 import React from 'react';
+import useTranslation from 'next-translate/useTranslation';
 
 const NoAuthPeriod = ({ user, authorizedDates })  => {
+    const { t } = useTranslation('common');
 
     const start = new Date(authorizedDates.start_date.toDate()).toString();
     const end = new Date(authorizedDates.end_date.toDate()).toString();
@@ -8,13 +10,12 @@ const NoAuthPeriod = ({ user, authorizedDates })  => {
     return (
         <div className='no-auth-period'>
             <h2>
-                Salve, {user.email}
+                {t('greetings')}, {user.email}
                 <br />
-                La informiamo che la licenza per il prodotto Mapapp
-                sarà attiva 
-                <br /> dal: 
+                {t('activeLicense')}
+                <br /> {t('fromDate')}: 
                 <br /> {start}
-                <br /> al:
+                <br /> {t('toDate')}:
                 <br /> {end}
             </h2>
         </div>
