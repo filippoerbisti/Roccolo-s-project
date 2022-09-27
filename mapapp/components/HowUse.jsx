@@ -6,6 +6,8 @@ const HowUse = ({ user }) => {
 
   return (
     <div>
+      <h1>INFO</h1>
+      <p>Ciao {user.email}</p>
       <p>Inserire spiegazione e foto per download app</p>
     </div>
   )
