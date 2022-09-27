@@ -284,7 +284,7 @@ const Main = ({ user, authorizedDates, paths }) => {
             </div>
             <div id='help' className='content novis'>
               <h1>{t('howUseIt')}</h1>
-              <HowUse />
+              <HowUse user={user} />
               <h2>FAQ:</h2>
               <FAQ />
             </div>
