@@ -54,23 +54,50 @@ const FAQ = () => {
                 <AccordionItem>
                     <AccordionItemHeading>
                         <AccordionItemButton>
-                            {t('faq2TDownload')}
+                            {t('faq3TPrblCam')}
                             <FaAngleUp className='arrow' />
                         </AccordionItemButton>
                     </AccordionItemHeading>
                     <AccordionItemPanel>
-                        {t('faq2PDownload')}
+                        {t('faq3PPrblCam')} 
                     </AccordionItemPanel>
                 </AccordionItem>
                 <AccordionItem>
                     <AccordionItemHeading>
                         <AccordionItemButton>
-                            {t('faq2TDownload')}
+                            {t('faq4TCamBroke')}
                             <FaAngleUp className='arrow' />
                         </AccordionItemButton>
                     </AccordionItemHeading>
                     <AccordionItemPanel>
-                        {t('faq2PDownload')}
+                        {t('faq4PCamBroke')} 
+                    </AccordionItemPanel>
+                </AccordionItem>
+                <AccordionItem>
+                    <AccordionItemHeading>
+                        <AccordionItemButton>
+                            {t('faq5TPathView')}
+                            <FaAngleUp className='arrow' />
+                        </AccordionItemButton>
+                    </AccordionItemHeading>
+                    <AccordionItemPanel>
+                        {t('faq5PPathView')}:
+                        <ul style={{listStyleType: 'disc', paddingLeft: '15px'}}>
+                            <li>{t('faq5PPathViewLi1')}</li>                     
+                            <li>{t('faq5PPathViewLi2')}</li>                      
+                            <li>{t('faq5PPathViewLi3')}</li>   
+                        </ul>                  
+                    </AccordionItemPanel>
+                </AccordionItem>
+                <AccordionItem>
+                    <AccordionItemHeading>
+                        <AccordionItemButton>
+                            {t('faq6TPathCompl')}
+                            <FaAngleUp className='arrow' />
+                        </AccordionItemButton>
+                    </AccordionItemHeading>
+                    <AccordionItemPanel>
+                        {t('faq6PPathCompl')}                      
                     </AccordionItemPanel>
                 </AccordionItem>
             </Accordion>
