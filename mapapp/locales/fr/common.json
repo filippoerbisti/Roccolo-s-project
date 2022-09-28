@@ -16,6 +16,11 @@
     "exploreRoccolo": "Découvrez notre Roccolo",
 
     "info": "Informations",
+    "helloInfo": "Bonjour",
+    "periodInfo": "rappelez-vous la période d'accès à l'application",
+    "functionalityInfo": "Pour obtenir 100 % de fonctionnalités et une meilleure utilisation, nous vous demandons de",
+    "camAccessInfo": "permettre l'accès à la caméra",
+
     "faq1TContact": "As-tu besoin d'aide? Contactez-nous.",
     "faq1PAvailable": "Vous nous trouverez disponibles tous les jours (sauf le dimanche) de 9h00 à 18h00 à notre",
     "faq1PFarm": "Exploitation",
