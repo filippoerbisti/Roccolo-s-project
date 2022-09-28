@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { FiHome, FiMap, FiHelpCircle } from 'react-icons/fi';
 import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router';
-import { Mapping, HowUse, FAQ, QReaderIcon, ScanReader, NoAuthPeriod } from './';
+import { Mapping, HowUse, FAQ, QReaderIcon, Loader, NoAuthPeriod } from './';
 
 import dataFakePath from '../store/dataFakePath';
 
