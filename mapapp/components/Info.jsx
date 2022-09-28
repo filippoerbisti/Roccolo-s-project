@@ -18,9 +18,17 @@ const Info = ({ user, authorizedDates }) => {
 
   return (
     <div className='info'>
-      <p>Ciao {user.email}, <br /> ricordiamo il periodo di accesso all'app: <br /> {start} - {end}</p>
-      <h4>Nota bene:</h4>
-      <p>Per ottenere il 100% delle funzionalità e un migliore utilizzo si chiede di abilitare l'accesso alla fotocamera.</p>
+      <p style={{textAlign: 'center'}}>
+        {t('helloInfo')} {user.email}, 
+        <br /> {t('periodInfo')}: 
+        <br /> <span style={{fontWeight: 'bold'}}>{start} - {end}</span>
+      </p>
+      <br />
+      <p>
+        {t('functionalityInfo')}
+        <span style={{fontWeight: 'bold'}}> {t('camAccessInfo')}.</span>
+      </p>
+      <br />
     </div>
   )
 }
