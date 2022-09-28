@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { FiHome, FiMap, FiHelpCircle } from 'react-icons/fi';
 import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router';
-import { Mapping, HowUse, FAQ, QReaderIcon, Loader, NoAuthPeriod } from './';
+import { Mapping, Info, FAQ, QReaderIcon, Loader, NoAuthPeriod } from './';
 
 import dataFakePath from '../store/dataFakePath';
 
@@ -283,8 +283,8 @@ const Main = ({ user, authorizedDates, paths }) => {
               <Mapping />
             </div>
             <div id='help' className='content novis'>
-              <h1>{t('howUseIt')}</h1>
-              <HowUse user={user} authorizedDates={authorizedDates} />
+              <h1>{t('info')}</h1>
+              <Info user={user} authorizedDates={authorizedDates} />
               <h2>FAQ:</h2>
               <FAQ />
             </div>
