@@ -463,7 +463,7 @@ body {
 
   #help p {
     font-size: medium;
-    text-align: center;
+    /* text-align: center; */
   }
 
 
