@@ -8,5 +8,5 @@ export {default as Loader } from './Loader';
 
 export {default as Mapping } from './Mapping';
 
-export {default as HowUse } from './HowUse';
+export {default as Info } from './Info';
 export {default as FAQ } from './FAQ';
