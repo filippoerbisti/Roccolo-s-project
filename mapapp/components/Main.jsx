@@ -260,7 +260,7 @@ const Main = ({ user, authorizedDates, paths }) => {
               {fakePaths.map((fakePath) => {
                 return (
                   <div key={fakePath.id} className="path-card" style={{background: `linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(${fakePath.img})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center"}}>
-                    <img src={fakePath.img} target="_blank" />
+                    <img src={fakePath.img} />
                     <div className='path-card-txt'>
                       <h4>{fakePath.title}</h4>
                       <span className="detail">
