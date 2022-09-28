@@ -27,5 +27,16 @@
     "faq1PCallUs": "Ou appelez-nous au numéro",
     "faq1PMailUs": "ou envoyer un e-mail à",
     "faq2TDownload": "Puis-je télécharger l'application et me connecter sur plusieurs appareils ?",
-    "faq2PDownload": "Oui, il n'y a pas de contraintes. Cependant, nous recommandons utiliser un téléphone ou une tablette pour une meilleure immersion visuelle."
+    "faq2PDownload": "Oui, il n'y a pas de contraintes. Cependant, nous recommandons utiliser un téléphone ou une tablette pour une meilleure immersion visuelle.",
+    "faq3TPrblCam": "Des problèmes avec l'appareil photo de votre téléphone ?",
+    "faq3PPrblCam": "Lors de l'ouverture de l'application, vous devez autoriser l'accès à la caméra. Si l'accès vous a déjà été refusé, vous devez ouvrir les paramètres du téléphone, rechercher l'application 'MapappRoccolo' et autoriser l'accès à la caméra, puis redémarrer l'application.",
+    "faq4TCamBroke": "Comment puis-je faire si la caméra externe du téléphone est défectueuse ?",
+    "faq4PCamBroke": "Dans le cas où la caméra externe n'est pas joignable, l'application choisira automatiquement la caméra interne (si joignable)",
+    "faq5TPathView": "Comment visualiser une étape en détail ?",
+    "faq5PPathView": "Il existe plusieurs façons",
+    "faq5PPathViewLi1": "Depuis n'importe quelle page : en scannant le code QR approprié mis en place le long du parcours",
+    "faq5PPathViewLi2": "Depuis la carte interactive : en cliquant sur l'icône correspondant à l'étape souhaitée",
+    "faq5PPathViewLi3": "Depuis la page d'accueil : en cliquant sur l'étape souhaitée",
+    "faq6TPathCompl": "Comment est-il possible de marquer une étape comme terminée ?",
+    "faq6PPathCompl": "Pour terminer une étape, vous devez être sur la page de détails de la même étape, après quoi il y aura un bouton pour la marquer comme terminée"
 }

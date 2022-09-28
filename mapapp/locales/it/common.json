@@ -27,5 +27,16 @@
     "faq1PCallUs": "Oppure chiamaci al numero",
     "faq1PMailUs": "o invia una mail a",
     "faq2TDownload": "Posso scaricare la app e accedere su più dispositivi?",
-    "faq2PDownload": "Sì, non vi sono vincoli. Si consiglia, comunque, di utilizzare un telefono o un tablet per una migliore immersione visiva."
+    "faq2PDownload": "Sì, non vi sono vincoli. Si consiglia, comunque, di utilizzare un telefono o un tablet per una migliore immersione visiva.",
+    "faq3TPrblCam": "Problemi con la fotocamera del telefono?",
+    "faq3PPrblCam": "All'apertura dell'applicazione è necessario consentire l'accesso alla fotocamera. Se precedentemente è stato negato l'accesso, allora è necessario aprire le impostazioni del telefono, cercare l'applicazione 'MapappRoccolo' e consentire l'accesso alla fotocamera, ed infine riavvia l'applicazione.",
+    "faq4TCamBroke": "Come posso fare se la fotocamera esterna del telefono è guasta?",
+    "faq4PCamBroke": "Nel caso in cui la fotocamera esterna non sia raggiungibile, l'applicazione automaticamente sceglierà la fotocamera interna (se raggiungibile)",
+    "faq5TPathView": "Come posso visualizzare in dettaglio una tappa?",
+    "faq5PPathView": "Ci sono più modi",
+    "faq5PPathViewLi1": "Da qualsiasi pagina: scannerizzando l'apposito QR code predisposto lungo il percorso",
+    "faq5PPathViewLi2": "Dalla mappa interattiva: cliccando sull'icona corrispondente alla tappa desiderata",
+    "faq5PPathViewLi3": "Dalla pagina iniziale: cliccando sopra la tappa desiderata",
+    "faq6TPathCompl": "Come è possibile segnare come completata una tappa?",
+    "faq6PPathCompl": "Per completare una tappa bisogna trovarsi nella pagina dettagli della stessa tappa, infondo vi sarà un bottone per segnarla completata "
 }

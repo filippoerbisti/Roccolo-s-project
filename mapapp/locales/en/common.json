@@ -27,5 +27,16 @@
     "faq1PCallUs": "Or call us at the number",
     "faq1PMailUs": "or send an email to",
     "faq2TDownload": "Can I download the app and log in on multiple devices?",
-    "faq2PDownload": "Yes, there are no constraints. However, we recommend to use a phone or tablet for better visual immersion."
+    "faq2PDownload": "Yes, there are no constraints. However, we recommend to use a phone or tablet for better visual immersion.",
+    "faq3TPrblCam": "Problems with your phone's camera?",
+    "faq3PPrblCam": "When opening the application, you need to allow access to the camera. If you have previously been denied access, then you need to open the phone settings, search for the 'MapappRoccolo' application and allow access to the camera, and finally restart the application.",
+    "faq4TCamBroke": "How can I do if the external camera of the phone is faulty?",
+    "faq4PCamBroke": "In case the external camera is not reachable, the application will automatically choose the internal camera (if reachable)",
+    "faq5TPathView": "How can I view a stage in detail?",
+    "faq5PPathView": "There are multiple ways",
+    "faq5PPathViewLi1": "From any page: by scanning the appropriate QR code set up along the route",
+    "faq5PPathViewLi2": "From the interactive map: by clicking on the icon corresponding to the desired stage",
+    "faq5PPathViewLi3": "From the home page: by clicking on the desired stage",
+    "faq6TPathCompl": "How is it possible to mark a stage as completed?",
+    "faq6PPathCompl": "To complete a stage you must be on the details page of the same stage, after which there will be a button to mark it completed"
 }

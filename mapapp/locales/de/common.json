@@ -27,5 +27,16 @@
     "faq1PCallUs": "Oder rufen Sie uns unter der Nummer an",
     "faq1PMailUs": "oder senden Sie eine E-Mail an",
     "faq2TDownload": "Kann ich die App herunterladen und mich auf mehreren Geräten anmelden?",
-    "faq2PDownload": "Ja, es gibt keine Einschränkungen. Wir empfehlen jedoch ein Telefon oder Tablet für ein besseres visuelles Eintauchen zu verwenden."
+    "faq2PDownload": "Ja, es gibt keine Einschränkungen. Wir empfehlen jedoch ein Telefon oder Tablet für ein besseres visuelles Eintauchen zu verwenden.",
+    "faq3TPrblCam": "Probleme mit der Kamera Ihres Telefons?",
+    "faq3PPrblCam": "Beim Öffnen der Anwendung müssen Sie den Zugriff auf die Kamera zulassen. Wenn Ihnen der Zugriff zuvor verweigert wurde, müssen Sie die Telefoneinstellungen öffnen, nach der Anwendung „MapappRoccolo“ suchen und den Zugriff auf die Kamera zulassen und die Anwendung schließlich neu starten.",
+    "faq4TCamBroke": "Was kann ich tun, wenn die externe Kamera des Telefons defekt ist?",
+    "faq4PCamBroke": "Falls die externe Kamera nicht erreichbar ist, wählt die Anwendung automatisch die interne Kamera (falls erreichbar)",
+    "faq5TPathView": "Wie kann ich mir eine Etappe im Detail ansehen?",
+    "faq5PPathView": "Es gibt mehrere Möglichkeiten",
+    "faq5PPathViewLi1": "Von jeder Seite: durch Scannen des entsprechenden QR-Codes entlang der Route",
+    "faq5PPathViewLi2": "Von der interaktiven Karte: durch Klicken auf das Symbol, das der gewünschten Etappe entspricht",
+    "faq5PPathViewLi3": "Von der Startseite: durch Anklicken der gewünschten Stufe",
+    "faq6TPathCompl": "Wie ist es möglich, eine Etappe als abgeschlossen zu markieren?",
+    "faq6PPathCompl": "Um eine Stufe abzuschließen, müssen Sie sich auf der Detailseite derselben Stufe befinden, danach wird eine Schaltfläche angezeigt, um sie als abgeschlossen zu markieren"
 }
