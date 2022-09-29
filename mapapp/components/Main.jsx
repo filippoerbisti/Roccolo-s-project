@@ -331,6 +331,7 @@ const Main = ({ user, authorizedDates, paths }) => {
               <Info user={user} authorizedDates={authorizedDates} />
               <h2>FAQ:</h2>
               <FAQ />
+              <pre style={{textAlign: 'center'}}>{t('version')} v.1.6</pre>
             </div>
           </div>
           <div className="tabbar">
