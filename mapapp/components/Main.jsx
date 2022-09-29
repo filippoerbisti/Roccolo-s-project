@@ -279,16 +279,17 @@ const Main = ({ user, authorizedDates, paths }) => {
                   <div className='swiper-start'>
                     <h1>{t('welcome')}</h1>
                     <div className='btn-container'>
-                      <button className='btn' onClick={navigateHelp}>
-                        {/* <Link href={'#help'}> */}
-                          {t('howUseIt')}?
-                        {/* </Link> */}
-                      </button>
-                    </div>
-                    <div className='btn-container'>
                       <button className='btn-start' onClick={navigateMap}>
                         {/* <Link href={'#map'}> */}
                           {t('start')}
+                        {/* </Link> */}
+                      </button>
+                    </div>
+                    <div className='btn-container' style={{marginTop: '50px'}}>
+                      <button className='btn' onClick={navigateHelp}>
+                        {/* <Link href={'#help'}> */}
+                          {/* {t('howUseIt')}? */}
+                        Assistenza
                         {/* </Link> */}
                       </button>
                     </div>
