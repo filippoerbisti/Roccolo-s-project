@@ -90,10 +90,6 @@ a {
 
 /* STYLES PARALLAX EFFECT */
 
-h2 {
-  font-size: 100px;
-}
-
 .section-background {
   background-attachment: fixed;
   background-position: center;
@@ -121,11 +117,6 @@ h2 {
 
 .parallax3 {
   background-image: url("https://res.cloudinary.com/dl38nyo08/image/upload/v1655394247/Roccolo%20del%20Lago/casual%20img/pexels-tim-mossholder-953166_mirtjj.jpg");
-}
-
-.text-bloc p {
-  margin: 50px;
-  font-size: 22px;
 }
 
 /* END STYLES PARALLAX EFFECT */
