@@ -243,7 +243,7 @@ body {
 
   .tab-content {
     padding-top: 80px;   /* 80px = fixed height of navbar */
-    height: calc(100vh - 20px);   /* -20px for no scrolling  */
+    height: calc(100vh - 20px);  /* -20px for no scrolling  */
     /* min-height: 100vh; */
   }
 
@@ -253,7 +253,7 @@ body {
   #home {
     padding-right: 10px;
     padding-left: 10px;
-    padding-bottom: 70px;
+    /*padding-bottom: 70px;*/
   }
 
   #home h1 {
