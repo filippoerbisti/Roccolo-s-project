@@ -19,7 +19,7 @@ const Form = () => {
     };
 
     return (
-        <Box sx={{ maxWidth: '800px' }}>
+        <Box sx={{ width: '500px' }}>
             <Stepper activeStep={activeStep} orientation="vertical">
                 {/* Step 1: Registration */}
                 <Step>
@@ -30,19 +30,24 @@ const Form = () => {
                         <form>
                             <div>
                                 <input type="text" placeholder='Nome' 
-                                    style={{border: '1px solid black', padding: '5px 10px', borderRadius: '25px', marginRight: '10px'}}
+                                    style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}}
                                 />
                                 <input type="text" placeholder='Cognome' 
-                                    style={{border: '1px solid black', padding: '5px 10px', borderRadius: '25px', marginRight: '10px'}}
+                                    style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}}
+                                />
+                            </div>
+                            <div>
+                                <input type="email" placeholder='Email' 
+                                    style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}}
                                 />
                             </div>
                             <div style={{marginTop: '10px'}}>
-                                <input type="email" placeholder='Email' 
-                                    style={{border: '1px solid black', padding: '5px 10px', borderRadius: '25px', marginRight: '10px'}}
-                                />
-                                <input type="password" placeholder='Password' 
-                                    style={{border: '1px solid black', padding: '5px 10px', borderRadius: '25px', marginRight: '10px'}}
-                                />
+                                <input type="checkbox" id="newsletter" name="newsletter" checked disabled />
+                                <label htmlFor="newsletter" style={{marginLeft: '10px'}}>Newsletter</label>
+                            </div>
+                            <div style={{marginTop: '10px'}}>
+                                <input type="checkbox" id="privacy" name="privacy" />
+                                <label htmlFor="privacy" style={{marginLeft: '10px'}}>Privacy</label>
                             </div>
                         </form>
                         <div>
@@ -65,11 +70,21 @@ const Form = () => {
                     <StepContent>
                         <form>
                             <div>
-                                <input type="number" placeholder='N. Persone' 
-                                    style={{border: '1px solid black', padding: '5px 10px', borderRadius: '25px', marginRight: '10px'}} 
+                                <label class="select-tasting" htmlFor="tastings">
+                                    <select id="tastings" required="required">
+                                        <option value="" disabled="disabled" selected="selected">Seleziona Degustazione</option>
+                                        <option value="degustazione1">Degustazione 1 <span style={{textAlign:'right'}}>(15€)</span></option>
+                                        <option value="degustazione2">Degustazione 2 (30€)</option>
+                                        <option value="degustazione3">Degustazione 3 (45€)</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div>
+                                <input type="number" placeholder='Tot. Persone' 
+                                    style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}} 
                                 />
-                                <input type="number" placeholder='N. Persone Degustazione'
-                                    style={{border: '1px solid black', padding: '5px 10px', borderRadius: '25px', marginRight: '10px'}}
+                                <input type="number" placeholder='Tot. Degustazioni'
+                                    style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}}
                                 />
                             </div>
                         </form>
@@ -98,8 +113,19 @@ const Form = () => {
                     </StepLabel>
                     <StepContent>
                         <div>
-                            <button style={{border: '1px solid black', padding: '5px 10px', borderRadius: '25px', marginRight: '10px'}}>Paga con Stripe</button>
-                            <button style={{border: '1px solid black', padding: '5px 10px', borderRadius: '25px', marginLeft: '10px'}}>Paga con Paypal</button>
+                            <h4>Totale: <span>100€</span></h4>
+                        </div>
+                        <div>
+                            <button 
+                                style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px', color: '#4379FF'}}
+                            >
+                                Paga con Stripe
+                            </button>
+                            <button 
+                                style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginLeft: '10px', marginTop: '10px', color: '#009cde'}}
+                            >
+                                Paga con Paypal
+                            </button>
                         </div>
                         <div>
                             <Button
