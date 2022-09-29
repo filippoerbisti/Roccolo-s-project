@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { FiHome, FiMap, FiHelpCircle } from 'react-icons/fi';
+import { CgArrowLongRight } from 'react-icons/cg';
 import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router';
 import { Mapping, Info, FAQ, QReaderIcon, Loader, NoAuthPeriod } from './';
@@ -278,12 +279,17 @@ const Main = ({ user, authorizedDates, paths }) => {
               <SwiperSlide>
                   <div className='swiper-start'>
                     <h1>{t('welcome')}</h1>
+                    <h3>Esplora il nostro roccolo</h3>
                     <div className='btn-container'>
                       <button className='btn-start' onClick={navigateMap}>
                         {/* <Link href={'#map'}> */}
                           {t('start')}
                         {/* </Link> */}
                       </button>
+                    </div>
+                    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '50px'}}>
+                      <p style={{marginRight: '10px'}}>Trascina per vedere le tappe</p>
+                      <CgArrowLongRight style={{fontSize: '25px'}} />
                     </div>
                     <div className='btn-container' style={{marginTop: '50px'}}>
                       <button className='btn' onClick={navigateHelp}>
