@@ -24,7 +24,8 @@
     "react-quick-pinch-zoom": "^4.5.0",
     "react-sortablejs": "^6.1.4",
     "sortablejs": "^1.15.0",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "swiper": "^8.4.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",
