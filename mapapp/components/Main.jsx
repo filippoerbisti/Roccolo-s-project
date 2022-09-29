@@ -5,10 +5,19 @@ import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router';
 import { Mapping, Info, FAQ, QReaderIcon, Loader, NoAuthPeriod } from './';
 
-import dataFakePath from '../store/dataFakePath';
-
 import { QrReader } from "react-qr-reader";
 import toast from 'react-hot-toast';
+
+import dataFakePath from '../store/dataFakePath';
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-creative";
+
+// import required modules
+import { EffectCreative } from "swiper";
 
 const Main = ({ user, authorizedDates, paths }) => {
   const { t } = useTranslation('common');
@@ -234,6 +243,15 @@ const Main = ({ user, authorizedDates, paths }) => {
     node.classList.add(className);
   }
 
+  const i = 0;
+  const [ok, setOk] = useState(true);
+
+  useEffect(() => {
+    if (i === 0) {
+      setOk(false);
+    }
+  });
+
   return (
     <>
       {/* If logged in && Date.Now is BETWEEN the fixed initial date (choose by user on pay) and the following 6 days (inclusive) */}
@@ -241,45 +259,66 @@ const Main = ({ user, authorizedDates, paths }) => {
         <div>
           <div id="tab-content" className='tab-content'>
             <div id='home' className='content vis'>
-              <div id='benvenuto'>
-                <h1>{t('welcome')}</h1>
-                <div className='btn-container'>
-                  <button className='btn' onClick={navigateHelp}>
-                    {/* <Link href={'#help'}> */}
-                      {t('howUseIt')}?
-                    {/* </Link> */}
-                  </button>
-                </div>
-                <div className='btn-container'>
-                  <button className='btn-start' onClick={navigateMap}>
-                    {/* <Link href={'#map'}> */}
-                      {t('start')}
-                    {/* </Link> */}
-                  </button>
-                </div>
-              </div>
-              <div id='tappe'>
-                <h2>{t('paths')}:</h2>
-                {fakePaths.map((fakePath) => {
-                  return (
-                    <div key={fakePath.id} className="path-card" style={{background: `linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(${fakePath.img})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center"}}>
-                      <img src={fakePath.img} />
-                      <div className='path-card-txt'>
-                        <h4>{fakePath.title}</h4>
-                        <span className="detail">
-                          <Link href={''}>Vedi dettagli</Link>
-                        </span>
-                      </div>
-                      <div className="checkbox-round">
-                        {paths && 
-                          <input type="checkbox" id='checkbox' defaultChecked={paths[fakePath.path]} disabled />
-                        }
-                        <label htmlFor="checkbox"></label>
-                      </div>
+            <Swiper
+              grabCursor={true}
+              effect={"creative"}
+              creativeEffect={{
+                prev: {
+                  shadow: true,
+                  translate: [0, 0, -400]
+                },
+                next: {
+                  translate: ["100%", 0, 0]
+                }
+              }}
+              modules={[EffectCreative]}
+              className="mySwiper"
+              style={{ display: "flex" }}
+            >
+              <SwiperSlide>
+                  <div className='swiper-start'>
+                    <h1>{t('welcome')}</h1>
+                    <div className='btn-container'>
+                      <button className='btn' onClick={navigateHelp}>
+                        {/* <Link href={'#help'}> */}
+                          {t('howUseIt')}?
+                        {/* </Link> */}
+                      </button>
                     </div>
-                  )
-                })}
-              </div>
+                    <div className='btn-container'>
+                      <button className='btn-start' onClick={navigateMap}>
+                        {/* <Link href={'#map'}> */}
+                          {t('start')}
+                        {/* </Link> */}
+                      </button>
+                    </div>
+                  </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className='swiper-path'>
+                  <h2>{t('paths')}:</h2>
+                  {fakePaths.map((fakePath) => {
+                    return (
+                      <div key={fakePath.id} className="path-card" style={{background: `linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(${fakePath.img})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center"}}>
+                        <img src={fakePath.img} />
+                        <div className='path-card-txt'>
+                          <h4>{fakePath.title}</h4>
+                          <span className="detail">
+                            <Link href={''}>Vedi dettagli</Link>
+                          </span>
+                        </div>
+                        <div className="checkbox-round">
+                          {paths && 
+                            <input type="checkbox" id='checkbox' defaultChecked={paths[fakePath.path]} disabled />
+                          }
+                          <label htmlFor="checkbox"></label>
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+              </SwiperSlide>
+            </Swiper>
             </div>
             <div id='map' className='content novis'>
               <h1>Mapapp</h1>
