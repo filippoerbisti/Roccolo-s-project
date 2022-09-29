@@ -38,5 +38,7 @@
     "faq5PPathViewLi2": "From the interactive map: by clicking on the icon corresponding to the desired stage",
     "faq5PPathViewLi3": "From the home page: by clicking on the desired stage",
     "faq6TPathCompl": "How is it possible to mark a stage as completed?",
-    "faq6PPathCompl": "To complete a stage you must be on the details page of the same stage, after which there will be a button to mark it completed"
+    "faq6PPathCompl": "To complete a stage you must be on the details page of the same stage, after which there will be a button to mark it completed",
+
+    "version": "Version"
 }

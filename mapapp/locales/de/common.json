@@ -38,5 +38,7 @@
     "faq5PPathViewLi2": "Von der interaktiven Karte: durch Klicken auf das Symbol, das der gewünschten Etappe entspricht",
     "faq5PPathViewLi3": "Von der Startseite: durch Anklicken der gewünschten Stufe",
     "faq6TPathCompl": "Wie ist es möglich, eine Etappe als abgeschlossen zu markieren?",
-    "faq6PPathCompl": "Um eine Stufe abzuschließen, müssen Sie sich auf der Detailseite derselben Stufe befinden, danach wird eine Schaltfläche angezeigt, um sie als abgeschlossen zu markieren"
+    "faq6PPathCompl": "Um eine Stufe abzuschließen, müssen Sie sich auf der Detailseite derselben Stufe befinden, danach wird eine Schaltfläche angezeigt, um sie als abgeschlossen zu markieren",
+
+    "version": "Ausführung"
 }

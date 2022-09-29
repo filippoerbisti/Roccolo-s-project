@@ -38,5 +38,7 @@
     "faq5PPathViewLi2": "Depuis la carte interactive : en cliquant sur l'icône correspondant à l'étape souhaitée",
     "faq5PPathViewLi3": "Depuis la page d'accueil : en cliquant sur l'étape souhaitée",
     "faq6TPathCompl": "Comment est-il possible de marquer une étape comme terminée ?",
-    "faq6PPathCompl": "Pour terminer une étape, vous devez être sur la page de détails de la même étape, après quoi il y aura un bouton pour la marquer comme terminée"
+    "faq6PPathCompl": "Pour terminer une étape, vous devez être sur la page de détails de la même étape, après quoi il y aura un bouton pour la marquer comme terminée",
+
+    "version": "Version"
 }
