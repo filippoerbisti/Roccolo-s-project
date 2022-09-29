@@ -241,41 +241,45 @@ const Main = ({ user, authorizedDates, paths }) => {
         <div>
           <div id="tab-content" className='tab-content'>
             <div id='home' className='content vis'>
-              <h1>{t('welcome')}</h1>
-              <div className='btn-container'>
-                <button className='btn' onClick={navigateHelp}>
-                  {/* <Link href={'#help'}> */}
-                    {t('howUseIt')}?
-                  {/* </Link> */}
-                </button>
+              <div id='benvenuto'>
+                <h1>{t('welcome')}</h1>
+                <div className='btn-container'>
+                  <button className='btn' onClick={navigateHelp}>
+                    {/* <Link href={'#help'}> */}
+                      {t('howUseIt')}?
+                    {/* </Link> */}
+                  </button>
+                </div>
+                <div className='btn-container'>
+                  <button className='btn-start' onClick={navigateMap}>
+                    {/* <Link href={'#map'}> */}
+                      {t('start')}
+                    {/* </Link> */}
+                  </button>
+                </div>
               </div>
-              <div className='btn-container'>
-                <button className='btn-start' onClick={navigateMap}>
-                  {/* <Link href={'#map'}> */}
-                    {t('start')}
-                  {/* </Link> */}
-                </button>
+              <div id='tappe'>
+                <h2>{t('paths')}:</h2>
+                {fakePaths.map((fakePath) => {
+                  return (
+                    <div key={fakePath.id} className="path-card" style={{background: `linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(${fakePath.img})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center"}}>
+                      <img src={fakePath.img} />
+                      <div className='path-card-txt'>
+                        <h4>{fakePath.title}</h4>
+                        <span className="detail">
+                          <Link href={''}>Vedi dettagli</Link>
+                        </span>
+                      </div>
+                      <div className="checkbox-round">
+                        {paths && 
+                          <input type="checkbox" id='checkbox' defaultChecked={paths[fakePath.path]} disabled />
+                        }
+                        <label htmlFor="checkbox"></label>
+                      </div>
+                    </div>
+                  )
+                })}
               </div>
-              <h2>{t('paths')}:</h2>
-              {fakePaths.map((fakePath) => {
-                return (
-                  <div key={fakePath.id} className="path-card" style={{background: `linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(${fakePath.img})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center"}}>
-                    <img src={fakePath.img} />
-                    <div className='path-card-txt'>
-                      <h4>{fakePath.title}</h4>
-                      <span className="detail">
-                        <Link href={''}>Vedi dettagli</Link>
-                      </span>
-                    </div>
-                    <div className="checkbox-round">
-                      {paths && 
-                        <input type="checkbox" id='checkbox' defaultChecked={paths[fakePath.path]} disabled />
-                      }
-                      <label htmlFor="checkbox"></label>
-                    </div>
-                  </div>
-                )
-              })}
             </div>
             <div id='map' className='content novis'>
               <h1>Mapapp</h1>
@@ -343,7 +347,7 @@ const Main = ({ user, authorizedDates, paths }) => {
       }
 
       {/* If logged in, but authorizedDates == null (loading) */}
-      {!authorizedDates &&
+      {(!authorizedDates || !paths) || (!authorizedDates && !paths) &&
         <Loader />
       }
 
