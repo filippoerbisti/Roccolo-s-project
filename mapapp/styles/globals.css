@@ -259,7 +259,12 @@ body {
     }
     
     .swiper-start {
-      background-color: #EDCFBC;
+      /* background-color: #EDCFBC; */
+      background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(https://res.cloudinary.com/dl38nyo08/image/upload/v1664462336/mapapp/roccolo-roccolo_v1pmex.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: calc(100vh - 70px); /* height tabbar */
       padding-right: 10px;
       padding-left: 10px;
     }
@@ -282,7 +287,7 @@ body {
     font-size: 50px;
     font-weight: 600;
     text-align: center;
-    background-image: linear-gradient(to bottom, #940E25, #EDCFBC);
+    background-image: linear-gradient(to bottom, #940E25, #000000);
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
@@ -296,6 +301,15 @@ body {
     /* font-weight: 600; */
     font-size: 24px;
     color: #000000;
+    /* padding-left: 10px; */
+  }
+
+  #home h3 {
+    /* font-family: 'Be Vietnam'; */
+    font-weight: 600;
+    font-size: 24px;
+    color: #000000;
+    text-align: center;
     /* padding-left: 10px; */
   }
 
