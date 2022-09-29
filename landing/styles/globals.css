@@ -16,6 +16,21 @@ body, * {
   width: 0px;
 }
 
+/* STYLE REMOVE ARROW input[type=number] */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* END STYLE REMOVE ARROW input[type=number] */
+
 a {
   color: inherit;
   text-decoration: none;
@@ -160,3 +175,50 @@ h2 {
 }
 
 /* END STYLE VERTICAL STEPPER */
+
+
+
+
+
+
+
+/* STYLES FORM > SELECT */
+
+.select-tasting {
+  position: relative;
+}
+
+.select-tasting select {
+  -webkit-appearance: none;
+  padding: 7px 40px 7px 12px;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #e8eaed;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 1px 3px -2px #9098a9;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  transition: all 150ms ease;
+}
+
+.select-tasting select:required:invalid {
+  color: #5a667f;
+}
+
+.select-tasting select option {
+  color: #223254;
+}
+
+.select-tasting select option[value=""][disabled] {
+  display: none;
+}
+
+.select-tasting select:focus {
+  outline: none;
+  border-color: #07f;
+  box-shadow: 0 0 0 2px rgba(0,119,255,0.2);
+}
+
+/* END STYLES FORM > SELECT */
