@@ -250,9 +250,31 @@ body {
 
   /* STYLES HOME */
 
+  /* STYLES SWIPER START - LIST PATHS */
+
+    .swiper {
+      margin:  0;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .swiper-start {
+      background-color: #EDCFBC;
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+    
+    .swiper-path {
+      background-color: #EDCFBC;
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+
+  /* END STYLES SWIPER START - LIST PATHS */
+
   #home {
-    padding-right: 10px;
-    padding-left: 10px;
+    /* padding-right: 10px;
+    padding-left: 10px; */
     /*padding-bottom: 70px;*/
   }
 
