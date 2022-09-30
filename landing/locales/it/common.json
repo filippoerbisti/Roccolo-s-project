@@ -7,34 +7,49 @@
     "navContact": "CONTATTI",
     "navTour": "TOUR",
 
-    "yourCart": "Tuo Carrello",
-    "item": "Elemento",
-    "items": "Elementi",
-    "shopBagEmpty": "Il tuo carrello è vuoto",
-    "contShopping": "CONTINUA GLI ACQUISTI",
+    "introTitle1": "Benvenuti al Roccolo",
+    "introTitle2": "dove il tempo è il signore del vino",
+
+    "historyTitle": "La storia dell'antico Roccolo",
+    "historyParagr1": "Costruito nella metà dell'800, il Roccolo è una piccola costruzione di tre piani utilizzato in origine dai cacciatori per catturare con le reti gli  uccelli migratori.",
+    "historyParagr2": "Tale tecnica di caccia era definita Acupio, dal latino Yaucupium, avis (uccello) e capere (prendere). Sulle piante venivano posizionate le gabbiette con uccelli da richiamo. Le reti erano sistemate sulla fila esterna delle piante del boschetto.",
+    "historyParagr3": "La cattura degli uccelli era favorita dal richiamo proveniente dalle gabbiette che attiravano i volatili migratori e da uno speciale strumento usato dai cacciatori, detto spauracchio, che veniva lanciato provocando rumore nel boschetto. L'allarme provocato dallo spauracchio spingeva gli uccelli verso le reti di cattura.",
+
+    "vineyardTitle": "I vigneti",
+    "vineyardParagr1": "Da questi terreni selezioniamo le migliori uve per la produzione del Bardolino Classico e del Chiaretto, vini fruttatie freschi che sanno rappresentare al meglio la produzione vitivinicola del Lago di Garda. Corvina, Rondinella e Molinara nascono su terreni morenici di origine glaciale da vigneti che seguono un sistema di allevamento a cordone speronato libero.",
+    "vineyardParagr2": "Quì, dove il Lago di Garda regola il clima del territorio, lo mitiga per garantire una temperatura media annua di 15°C, le mani esperte seguono con amorevole cura la coltivazione della vite e si dedicano alla produzione di vini di qualità.",
+
+    "visitTitle1": "Visite",
+    "visitTitle2": "Visita i posti suggestivi della tenuta e le sue cantine",
+    "visitTitle3": "Immergiti nella natura e scopri la storia di questo posto",
+    "visitParagrSpan1": "Azienda",
+    "visitParagr1": "",
+    "visitParagrSpan2": "Vigneto",
+    "visitParagr2": "",
+    "visitParagrSpan3": "Cantina",
+    "visitParagr3": "",
+
+    "tastingTitle": "Degustazioni",
+    "proposal1": "Pacchetto ragazzi",
+    "proposal2": "Pacchetto coppia",
+    "proposal3": "Pacchetto famiglia",
+
+    "formTitle": "Prenota la tua degustazione",
+    "formContinueBtn": "Continua",
+    "formBackBtn": "Indietro",
+    "formSubTitle1": "Registrazione",
+    "name": "Nome",
+    "surname": "Cognome",
+    "email": "Email",
+    "newsletterChkbx": "Desidero ricevere informazioni commerciali tramite email",
+    "privacyChkbx": "Ho letto e accetto l'informativa sulla privacy",
+    "formSubTitle2": "Prenotazione",
+    "selectTasting": "Seleziona pacchetto",
+    "totPerson": "Tot. Persone",
+    "totPackage": "Tot. Pacchetti",
+    "formSubTitle3": "Pagamento",
     "total": "Totale",
     "payWith": "Paga con",
-
-    "readMore": "... Leggi di più",
-    "showLess": "(Mostra meno)",
-
-    "viewAllWine": "Vedi Tutti i Vini",
-    "ourWines": "I Vini delle nostre Aziende Agricole",
-
-    "all": "Tutti",
-    "sparklingWines": "Vini Spumanti",
-    "whiteWines": "Vini Bianchi",
-    "roseWines": "Vini Rosati",
-    "redWines": "Vini Rossi",
-    "dessertWines": "Vini da Dessert",
-    "grappa": "Grappa",
-    "oil": "Olio",
-        
-    "details": "Dettagli",
-    "quantity": "Quantità",
-    "addCart" : "Aggiungi al Carrello",
-    "buyNow": "Compra Ora",
-    "alsoLike": "Ti potrebbe anche piacere",
 
     "followUs": "Seguici su",
     "where": "Dove",
@@ -46,10 +61,5 @@
     "cookieBtn": "Ho capito!",
 
     "rightsReserved": "Tutti i diritti sono riservati",
-    "poweredBy": "Offerto da",
-
-    "bookNow": "Prenota Ora",
-    "ourWinea": "I nostri Vini",
-    "ourGrape": "La nostra Uva",
-    "ourVineyards": "I nostri Vigneti"
+    "poweredBy": "Offerto da"
 }
