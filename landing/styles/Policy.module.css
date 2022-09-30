@@ -1,0 +1,44 @@
+.mx60 {
+  margin: 0 60px;
+}
+
+.mx20 {
+  margin: 0 20px;
+}
+
+.title {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.policy h1,
+.policy h2, 
+.policy h3 {
+  margin: 10px 0;
+}
+
+.policy p {
+  line-height: 1.6;
+}
+
+.policy ul li {
+  list-style-type: none;
+}
+
+.policy a:hover {
+  text-decoration: underline;
+}
+
+
+@media screen and (max-width: 1201px) {
+
+  .mx60 {
+    margin: 0;
+  }
+
+  .title {
+      font-size: 28px;
+  }
+}
