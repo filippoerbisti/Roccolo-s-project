@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import useTranslation from 'next-translate/useTranslation';
 
-// import Navbar from './Navbar';
+import Navbar from './Navbar';
 import Footer from './Footer';
 import ScrollToTop from './ScrollToTop';
 
@@ -52,9 +52,9 @@ const Layout = ({ children }) => {
       </Head>
       
       <div>
-        {/* <header>
+        <header>
           <Navbar />
-        </header> */}
+        </header>
         <main className='main-container'>
           <div id='progressbar'></div>
           <div id='scrollPath'></div>
