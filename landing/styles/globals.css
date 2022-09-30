@@ -36,6 +36,20 @@ a {
   text-decoration: none;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.navbar-container{
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 25px;
+  position: relative;
+  background: #fff;
+  height: 100px;
+}
+
 .main-container {
   padding: 0 10px;
   width: 100%;
