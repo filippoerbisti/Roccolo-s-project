@@ -37,7 +37,7 @@ a {
 }
 
 .main-container {
-  padding: 10px;
+  padding: 0 10px;
   width: 100%;
   margin: 0;
 }
@@ -94,7 +94,7 @@ a {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   color: #FFFFFF;
   display: flex;
@@ -103,20 +103,24 @@ a {
 }
 
 .parallax {
-  background-image: url("https://res.cloudinary.com/dl38nyo08/image/upload/v1654615348/Roccolo%20del%20Lago/degustazioni_zs5pmi.png"); 
+  background-image: linear-gradient(rgba(5, 0, 0, 0.5), rgba(5, 0, 0, 0.5)), url("https://res.cloudinary.com/dl38nyo08/image/upload/v1654615348/Roccolo%20del%20Lago/degustazioni_zs5pmi.png"); 
   flex-direction: column;
+  height: 100vh;
 }
 
 .parallax1 {
-  background-image: url("https://res.cloudinary.com/dl38nyo08/image/upload/v1655394841/Roccolo%20del%20Lago/casual%20img/pexels-andrea-piacquadio-3756623_ruiuh7.jpg");
+  background-image: linear-gradient(rgba(5, 0, 0, 0.5), rgba(5, 0, 0, 0.5)), url("https://res.cloudinary.com/dl38nyo08/image/upload/v1655394841/Roccolo%20del%20Lago/casual%20img/pexels-andrea-piacquadio-3756623_ruiuh7.jpg");
+  padding: 100px 0;
 }
 
 .parallax2 {
-  background-image: url("https://res.cloudinary.com/dl38nyo08/image/upload/v1655394258/Roccolo%20del%20Lago/casual%20img/pexels-pixabay-39511_nkcwju.jpg");
+  background-image: linear-gradient(rgba(5, 0, 0, 0.5), rgba(5, 0, 0, 0.5)), url("https://res.cloudinary.com/dl38nyo08/image/upload/v1655394258/Roccolo%20del%20Lago/casual%20img/pexels-pixabay-39511_nkcwju.jpg");
+  padding: 100px 0;
 }
 
-.parallax3 {
-  background-image: url("https://res.cloudinary.com/dl38nyo08/image/upload/v1655394247/Roccolo%20del%20Lago/casual%20img/pexels-tim-mossholder-953166_mirtjj.jpg");
+.parallax-form {
+  background-image:  linear-gradient(rgba(150, 8, 8, 0.4), rgba(117, 4, 4, .6)), url('https://res.cloudinary.com/dl38nyo08/image/upload/v1664527652/Roccolo%20del%20Lago/wine-shop_d5qmyw.jpg');
+  margin: 30px 0;
 }
 
 /* END STYLES PARALLAX EFFECT */
@@ -165,10 +169,14 @@ a {
   justify-content: center;
 }
 
+.stepper span,
+.css-1hv8oq8-MuiStepLabel-label.Mui-active,
+.css-1hv8oq8-MuiStepLabel-label.Mui-completed {
+  color: white;
+  font-size: large;
+}
+
 /* END STYLE VERTICAL STEPPER */
-
-
-
 
 
 
@@ -213,3 +221,85 @@ a {
 }
 
 /* END STYLES FORM > SELECT */
+
+
+
+
+.intro-title {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.box-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-intro {
+  height: 100%;
+  width: 100%;
+  padding: 100px 0;
+  background: linear-gradient(rgba(5, 0, 0, 0.5), rgba(5, 0, 0, 0.5)), url(https://res.cloudinary.com/dl38nyo08/image/upload/v1664462336/mapapp/roccolo-roccolo_v1pmex.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+}
+
+.box-txt-img {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.box-txt,
+.box-img {
+  width: 50%;
+}
+
+.box-txt {
+  margin-right: 10px;
+}
+
+.box-txt p {
+  font-size: medium;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.box-img {
+  max-height: 500px;
+  margin-left: 10px;
+}
+
+
+.parallax1 h3 {
+  font-size: 50px;
+}
+
+.parallax1 h4 {
+  font-size: 35px;
+  margin: 20px 0;
+}
+
+.background-opacity {
+  background: linear-gradient(rgba(5, 0, 0, 0.5), rgba(5, 0, 0, 0.5));
+  padding: 20px;
+  width: 85%;
+  border-radius: 10px;
+}
+
+.background-opacity-form {
+  background: linear-gradient(rgba(5, 0, 0, 0.5), rgba(5, 0, 0, 0.5));
+  margin: 50px 0;
+  padding: 40px 0;
+  width: 55%;
+  border-radius: 10px;
+  box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.25);
+}
