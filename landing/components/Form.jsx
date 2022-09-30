@@ -29,25 +29,25 @@ const Form = () => {
                     <StepContent>
                         <form>
                             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                                <input type="text" placeholder='Nome' 
+                                <input type="text" placeholder='Nome' required
                                     style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}}
                                 />
-                                <input type="text" placeholder='Cognome' 
+                                <input type="text" placeholder='Cognome' required
                                     style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}}
                                 />
                             </div>
                             <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px'}}>
-                                <input type="email" placeholder='Email' 
+                                <input type="email" placeholder='Email' required
                                     style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}}
                                 />
                             </div>
                             <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px', marginTop: '10px'}}>
-                                <input type="checkbox" id="newsletter" name="newsletter" checked disabled />
-                                <label htmlFor="newsletter" style={{marginLeft: '10px'}}>Newsletter</label>
+                                <input type="checkbox" id="privacy" name="privacy"  checked disabled />
+                                <label htmlFor="privacy" style={{marginLeft: '10px'}}>Privacy <span style={{color: 'red'}}>*</span></label>
                             </div>
                             <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px', marginTop: '10px'}}>
-                                <input type="checkbox" id="privacy" name="privacy" />
-                                <label htmlFor="privacy" style={{marginLeft: '10px'}}>Privacy</label>
+                                <input type="checkbox" id="newsletter" name="newsletter" />
+                                <label htmlFor="newsletter" style={{marginLeft: '10px'}}>Newsletter</label>
                             </div>
                         </form>
                         <div>
@@ -80,10 +80,10 @@ const Form = () => {
                                 </label>
                             </div>
                             <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px'}}>
-                                <input type="number" placeholder='Tot. Persone' 
+                                <input type="number" placeholder='Tot. Persone' required
                                     style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}} 
                                 />
-                                <input type="number" placeholder='Tot. Degustazioni'
+                                <input type="number" placeholder='Tot. Degustazioni' required
                                     style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}}
                                 />
                             </div>
