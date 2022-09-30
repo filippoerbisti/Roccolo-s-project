@@ -264,7 +264,7 @@ body {
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      height: calc(100vh - 70px); /* height tabbar */
+      height: 100vh; /* height tabbar  CHECK TODO */
       padding-right: 10px;
       padding-left: 10px;
     }
@@ -273,6 +273,7 @@ body {
       background-color: #EDCFBC;
       padding-right: 10px;
       padding-left: 10px;
+      padding-bottom: 70px;
     }
 
   /* END STYLES SWIPER START - LIST PATHS */
