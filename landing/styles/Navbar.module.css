@@ -5,6 +5,7 @@
     display: none;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 .menu li {
@@ -13,7 +14,7 @@
     list-style: none;
     margin: 0 20px;
     transition: 0.5s;
-    width: auto;
+    /* width: auto; */
     flex-grow: 2;
 }
 
