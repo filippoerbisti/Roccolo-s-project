@@ -294,7 +294,7 @@ a {
 
   .select-tasting select {
     -webkit-appearance: none;
-    padding: 7px 40px 7px 12px;
+    padding: 5px 10px;
     width: 100%;
     max-width: 300px;
     border: 1px solid #e8eaed;
