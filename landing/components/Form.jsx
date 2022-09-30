@@ -28,7 +28,7 @@ const Form = () => {
                     </StepLabel>
                     <StepContent>
                         <form>
-                            <div>
+                            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                                 <input type="text" placeholder='Nome' 
                                     style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}}
                                 />
@@ -36,16 +36,16 @@ const Form = () => {
                                     style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}}
                                 />
                             </div>
-                            <div>
+                            <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px'}}>
                                 <input type="email" placeholder='Email' 
                                     style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}}
                                 />
                             </div>
-                            <div style={{marginTop: '10px'}}>
+                            <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px', marginTop: '10px'}}>
                                 <input type="checkbox" id="newsletter" name="newsletter" checked disabled />
                                 <label htmlFor="newsletter" style={{marginLeft: '10px'}}>Newsletter</label>
                             </div>
-                            <div style={{marginTop: '10px'}}>
+                            <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px', marginTop: '10px'}}>
                                 <input type="checkbox" id="privacy" name="privacy" />
                                 <label htmlFor="privacy" style={{marginLeft: '10px'}}>Privacy</label>
                             </div>
@@ -69,7 +69,7 @@ const Form = () => {
                     </StepLabel>
                     <StepContent>
                         <form>
-                            <div>
+                            <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px', marginTop: '10px'}}>
                                 <label class="select-tasting" htmlFor="tastings">
                                     <select id="tastings" required="required">
                                         <option value="" disabled="disabled" selected="selected">Seleziona Degustazione</option>
@@ -79,7 +79,7 @@ const Form = () => {
                                     </select>
                                 </label>
                             </div>
-                            <div>
+                            <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px'}}>
                                 <input type="number" placeholder='Tot. Persone' 
                                     style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}} 
                                 />
@@ -112,10 +112,10 @@ const Form = () => {
                         Pagamento
                     </StepLabel>
                     <StepContent>
-                        <div>
+                        <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px'}}>
                             <h4>Totale: <span>100€</span></h4>
                         </div>
-                        <div>
+                        <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px'}}>
                             <button 
                                 style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px', color: '#4379FF'}}
                             >
