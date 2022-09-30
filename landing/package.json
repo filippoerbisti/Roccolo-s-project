@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.10.4",
     "@mui/material": "^5.10.7",
     "@mui/styled-engine-sc": "^5.10.6",
+    "country-flag-icons": "^1.5.5",
     "next": "12.3.0",
     "next-translate": "^1.5.0",
     "react": "18.2.0",
