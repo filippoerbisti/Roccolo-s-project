@@ -126,104 +126,7 @@ a {
 /* END STYLES PARALLAX EFFECT */
 
 
-
-.btn-container{
-  width: 400px;
-  margin: auto;
-}
-
-.btn{
-  width: 100%;
-  max-width: 400px;
-  padding: 10px 12px;
-  border-radius: 15px;
-  border: none;
-  font-weight: 500;
-  font-size: 20px;
-  text-transform: uppercase;
-  background-color: #f02d34;
-  color: #fff;
-  cursor: pointer;
-  transform: scale(1, 1);
-  transition: transform 0.5s ease;
-  margin-bottom: 30px;
-}
-
-.btn:hover{
-  transform: scale(1.1,1.1);
-}
-
-
-
-
-/* STYLE VERTICAL STEPPER */
-
-/* .css-16r9pk3 {
-  max-width: 1000px;
-  width: 100%;
-} */
-
-.stepper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.stepper span,
-.css-1hv8oq8-MuiStepLabel-label.Mui-active,
-.css-1hv8oq8-MuiStepLabel-label.Mui-completed {
-  color: white;
-  font-size: large;
-}
-
-/* END STYLE VERTICAL STEPPER */
-
-
-
-
-/* STYLES FORM > SELECT */
-
-.select-tasting {
-  position: relative;
-}
-
-.select-tasting select {
-  -webkit-appearance: none;
-  padding: 7px 40px 7px 12px;
-  width: 100%;
-  max-width: 300px;
-  border: 1px solid #e8eaed;
-  border-radius: 5px;
-  background: #fff;
-  box-shadow: 0 1px 3px -2px #9098a9;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 16px;
-  transition: all 150ms ease;
-}
-
-.select-tasting select:required:invalid {
-  color: #5a667f;
-}
-
-.select-tasting select option {
-  color: #223254;
-}
-
-.select-tasting select option[value=""][disabled] {
-  display: none;
-}
-
-.select-tasting select:focus {
-  outline: none;
-  border-color: #07f;
-  box-shadow: 0 0 0 2px rgba(0,119,255,0.2);
-}
-
-/* END STYLES FORM > SELECT */
-
-
-
+/* STYLE MAIN */
 
 .intro-title {
   font-size: 50px;
@@ -278,7 +181,6 @@ a {
   margin-left: 10px;
 }
 
-
 .parallax1 h3 {
   font-size: 50px;
 }
@@ -303,3 +205,113 @@ a {
   border-radius: 10px;
   box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.25);
 }
+
+/* END STYLE MAIN */
+
+
+/* STYLES PROPOSALS */
+
+  /* STYLES SWIPER */
+    .mySwiper {
+      z-index: 99999;
+    }
+  /* END STYLES SWIPER */
+
+.proposal {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+.proposal h1 {
+  text-align: center;
+  color: white;
+}
+
+.proposal img {
+  width: 50%;
+  height: 70%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.parallax-proposal-1 {
+  background-image: linear-gradient(rgba(5, 0, 0, 0.5), rgba(5, 0, 0, 0.5)), url("https://res.cloudinary.com/dl38nyo08/image/upload/v1654615348/Roccolo%20del%20Lago/degustazioni_zs5pmi.png");
+}
+
+.parallax-proposal-2 {
+  background-image: linear-gradient(rgba(5, 0, 0, 0.5), rgba(5, 0, 0, 0.5)), url("https://res.cloudinary.com/dl38nyo08/image/upload/v1654615348/Roccolo%20del%20Lago/degustazioni_zs5pmi.png");
+}
+
+.parallax-proposal-3 {
+  background-image: linear-gradient(rgba(5, 0, 0, 0.5), rgba(5, 0, 0, 0.5)), url("https://res.cloudinary.com/dl38nyo08/image/upload/v1654615348/Roccolo%20del%20Lago/degustazioni_zs5pmi.png");
+}
+
+/* END STYLES PROPOSALS */
+
+
+/* STYLE VERTICAL STEPPER FORM */
+
+/* .css-16r9pk3 {
+  max-width: 1000px;
+  width: 100%;
+} */
+
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepper span,
+.css-1hv8oq8-MuiStepLabel-label.Mui-active,
+.css-1hv8oq8-MuiStepLabel-label.Mui-completed {
+  color: white;
+  font-size: large;
+}
+
+  /* STYLES FORM > SELECT */
+
+  .select-tasting {
+    position: relative;
+  }
+
+  .select-tasting select {
+    -webkit-appearance: none;
+    padding: 7px 40px 7px 12px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #e8eaed;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 1px 3px -2px #9098a9;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    transition: all 150ms ease;
+  }
+
+  .select-tasting select:required:invalid {
+    color: #5a667f;
+  }
+
+  .select-tasting select option {
+    color: #223254;
+  }
+
+  .select-tasting select option[value=""][disabled] {
+    display: none;
+  }
+
+  .select-tasting select:focus {
+    outline: none;
+    border-color: #07f;
+    box-shadow: 0 0 0 2px rgba(0,119,255,0.2);
+  }
+
+  /* END STYLES FORM > SELECT */
+
+/* END STYLE VERTICAL STEPPER FORM */
+
