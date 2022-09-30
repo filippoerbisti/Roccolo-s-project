@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import useTranslation from 'next-translate/useTranslation';
 import toast from 'react-hot-toast';
 import Form from './Form';
+import Proposals from './Proposals';
 
 const Main = () => {
     const { t } = useTranslation('common');
@@ -31,7 +32,7 @@ const Main = () => {
 
             {/* Box history & vineyards (txt + img) */}
             <section className="box-container">
-                <div className='mr-2.5'>
+                <div className='w-1/2 mr-2.5'>
                     <h2 className='text-center text-2xl my-5 font-bold'>La storia dell'antico Roccolo</h2>
                     <div className='box-intro'>
                         <div className='box-txt-img'>
@@ -53,7 +54,7 @@ const Main = () => {
                     </div>
                 </div>
                 
-                <div className='ml-2.5'>
+                <div className='w-1/2 ml-2.5'>
                     <h2 className='text-center text-2xl my-5 font-bold'>I Vigneti</h2>
                     <div className='box-intro'>
                         <div className='box-txt-img'>
@@ -95,8 +96,8 @@ const Main = () => {
 
             {/* Box Selected Tastings */}
             <h2 className='text-center text-2xl my-5 font-bold'>Degustazioni</h2>
-            <section className="section-background parallax2 flex flex-col">
-                <h3 className='text-2xl p-5'>3 proposte</h3>
+            <section >
+                <Proposals />
             </section>
                 
             {/* Box Form */}
