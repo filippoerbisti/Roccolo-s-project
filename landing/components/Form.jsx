@@ -1,5 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import useTranslation from 'next-translate/useTranslation';
+import { useStateContext } from '../context/StateContext';
+
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
@@ -10,6 +14,33 @@ import Button from '@mui/material/Button';
 
 const Form = () => {
     const { t } = useTranslation('common');
+
+    const { signup, createUserDoc } = useStateContext();
+
+    const [data, setData] = useState({
+        name: '',
+        surname: '',
+        email: '',
+        newsletter: false,
+        tastingPackage: '',
+        nPeople: 0,
+        nTasting: 0,
+        dateBooking: '',
+        totalPaid: 0
+      });
+    
+      const handleSignup = async (e) => {
+        e.preventDefault();
+    
+        try {
+          await signup(data.email);
+          await createUserDoc(data);
+        } catch (err) {
+          console.log(err)
+        }
+    
+        console.log(data)
+      }
 
     const [activeStep, setActiveStep] = useState(0);
 
@@ -30,22 +61,63 @@ const Form = () => {
                         {t('formSubTitle1')}
                     </StepLabel>
                     <StepContent>
-                        <form>
+                        <form onSubmit={handleSignup}>
                             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                                <input type="text" placeholder={t('name')} required
+                                <input 
+                                    type="text" 
+                                    placeholder={t('name')} 
+                                    onChange={(e) =>
+                                        setData({
+                                            ...data,
+                                            name: e.target.value,
+                                        })
+                                    }
+                                    value={data.name}
+                                    required
                                     style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}}
                                 />
-                                <input type="text" placeholder={t('surname')} required
+                                <input 
+                                    type="text" 
+                                    placeholder={t('surname')} 
+                                    onChange={(e) =>
+                                        setData({
+                                            ...data,
+                                            surname: e.target.value,
+                                        })
+                                    }
+                                    value={data.surname}
+                                    required
                                     style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}}
                                 />
                             </div>
                             <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px'}}>
-                                <input type="email" placeholder={t('email')} required
+                                <input 
+                                    type="email" 
+                                    placeholder={t('email')} 
+                                    onChange={(e) =>
+                                        setData({
+                                            ...data,
+                                            email: e.target.value,
+                                        })
+                                    }
+                                    value={data.email}
+                                    required
                                     style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}}
                                 />
                             </div>
                             <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px', marginTop: '10px'}}>
-                                <input type="checkbox" id="newsletter" name="newsletter" />
+                                <input 
+                                    type="checkbox" 
+                                    id="newsletter" 
+                                    name="newsletter" 
+                                    onChange={(e) =>
+                                        setData({
+                                            ...data,
+                                            newsletter: e.target.checked,
+                                        })
+                                    }
+                                    value={data.newsletter}
+                                />
                                 <label htmlFor="newsletter" style={{marginLeft: '10px'}}>{t('newsletterChkbx')}</label>
                             </div>
                             <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px', marginTop: '10px'}}>
@@ -73,20 +145,63 @@ const Form = () => {
                     <StepContent>
                         <form>
                             <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px', marginTop: '10px'}}>
-                                <label class="select-tasting" htmlFor="tastings">
-                                    <select id="tastings" required="required">
+                                <label className="select-tasting" htmlFor="tastings">
+                                    <select 
+                                        id="tastings" 
+                                        required="required"
+                                        onChange={(e) =>
+                                            setData({
+                                                ...data,
+                                                tastingPackage: e.target.value,
+                                            })
+                                        }
+                                        defaultValue={data.tastingPackage}
+                                    >
                                         <option value="" disabled="disabled" selected="selected">{t('selectTasting')}</option>
-                                        <option value="degustazione1">{t('proposal1')} (15€)</option>
-                                        <option value="degustazione2">{t('proposal2')} (30€)</option>
-                                        <option value="degustazione3">{t('proposal3')} (45€)</option>
+                                        <option value={t('proposal1')}>{t('proposal1')} (15€)</option>
+                                        <option value={t('proposal2')}>{t('proposal2')} (30€)</option>
+                                        <option value={t('proposal3')}>{t('proposal3')} (45€)</option>
                                     </select>
                                 </label>
                             </div>
+                            <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px', marginTop: '10px'}}>
+                                <DatePicker 
+                                    selected={data.dateBooking} 
+                                    onChange={(date) => 
+                                        setData({
+                                            ...data,
+                                            dateBooking: date,
+                                        })
+                                    } 
+                                    placeholderText="Please select a date"
+                                    style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}}
+                                />
+                            </div>
                             <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px'}}>
-                                <input type="number" placeholder={t('totPerson')} required
+                                <input 
+                                    type="number" 
+                                    placeholder={t('totPerson')} 
+                                    onChange={(e) =>
+                                        setData({
+                                            ...data,
+                                            nPeople: e.target.value,
+                                        })
+                                    }
+                                    // value={data.nPeople}
+                                    required
                                     style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}} 
                                 />
-                                <input type="number" placeholder={t('totPackage')} required
+                                <input 
+                                    type="number" 
+                                    placeholder={t('totPackage')} 
+                                    onChange={(e) =>
+                                            setData({
+                                                ...data,
+                                                nTasting: e.target.value,
+                                            })
+                                    }
+                                    // value={data.nTasting}
+                                    required
                                     style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}}
                                 />
                             </div>
@@ -94,7 +209,7 @@ const Form = () => {
                         <div>
                             <Button
                                 variant="contained"
-                                onClick={handleNext}
+                                onClick={handleSignup}
                                 sx={{ mt: 1, mr: 1 }}
                             >
                                 {t('formContinueBtn')}
@@ -116,7 +231,7 @@ const Form = () => {
                     </StepLabel>
                     <StepContent>
                         <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px'}}>
-                            <h4>{t('total')}: <span>100€</span></h4>
+                            <h4>{t('total')}: <span>{data.totalPaid} €</span></h4>
                         </div>
                         <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px'}}>
                             <button 
