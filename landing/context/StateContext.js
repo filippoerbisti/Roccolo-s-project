@@ -40,6 +40,13 @@ export const StateContext = ({ children }) => {
 
   const createUserDoc = (data) => {
     if(data !== null) {
+        let datebooking = data.dateBooking.getUTCDate() + "/" + (data.dateBooking.getUTCMonth() + 1) + "/" + data.dateBooking.getUTCFullYear();
+        
+        let date = new Date();
+        let timestampEndAccessApp = date.setDate(data.dateBooking.getDate() + 6)
+        let datetimeEndAccessApp = new Date(Number(timestampEndAccessApp))
+        let dateEndAccessApp = datetimeEndAccessApp.getUTCDate() + "/" + (datetimeEndAccessApp.getUTCMonth() + 1) + "/" + datetimeEndAccessApp.getUTCFullYear();
+        
         setDoc(doc(database, "user_document", data.email), {
             name: data.name,
             surname: data.surname,
@@ -48,8 +55,8 @@ export const StateContext = ({ children }) => {
             tastingPackage: data.tastingPackage,
             nPeople: data.nPeople,
             nTasting: data.nTasting,
-            dateBooking: data.dateBooking,
-            dateEndAccessApp: data.dateEndAccessApp,
+            dateBooking: datebooking,
+            dateEndAccessApp: dateEndAccessApp,
             totalPaid: data.totalPaid,
             nPathsToComplete: 6,
             path1: false,
