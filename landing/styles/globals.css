@@ -304,6 +304,7 @@ form input {
     border: 1px solid #e8eaed;
     border-radius: 5px;
     background: #fff;
+    color: black;
     box-shadow: 0 1px 3px -2px #9098a9;
     cursor: pointer;
     font-family: inherit;
