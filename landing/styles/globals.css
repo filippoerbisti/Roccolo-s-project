@@ -286,6 +286,10 @@ a {
   font-size: large;
 }
 
+form input {
+  color: black;
+}
+
   /* STYLES FORM > SELECT */
 
   .select-tasting {
