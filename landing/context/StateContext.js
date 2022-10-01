@@ -13,40 +13,45 @@ const Context = createContext();
 
 export const StateContext = ({ children }) => {
 
-    const [user, setUser] = useState(null);
+    // const [user, setUser] = useState(null);
 
-    useEffect(() => {
-        // onAuthStateChanged
-        const unsubscribe = onAuthStateChanged(auth, (user, data) => {
-            if (user !== null) 
-                setUser({
-                  uid: user.uid,
-                  email: user.email
-                });
-            else
-                setUser(null);
-        })
-        return () => unsubscribe();
-    });
+    // useEffect(() => {
+    //     // onAuthStateChanged
+    //     const unsubscribe = onAuthStateChanged(auth, (user, data) => {
+    //         if (user !== null) 
+    //             setUser({
+    //               uid: user.uid,
+    //               email: user.email
+    //             });
+    //         else
+    //             setUser(null);
+    //     })
+    //     return () => unsubscribe();
+    // });
 
-  const signup = (email) => {
+  const signup = (data) => {
+    console.log(data)
+    createUserDoc(data);
+
+   let email = data.email;
    let password = email.split('@')[0];
     return createUserWithEmailAndPassword(auth, email, password)
   }
 
-  const createUserDoc = (user, data) => {
-    // if(user !== null && data !== "undefined") {
-        setDoc(doc(database, "user_document", user.email), {
-            // userId: user.uid,
+  const createUserDoc = (data) => {
+    if(data !== null) {
+        let datebooking = data.dateBooking.getUTCDate() + "/" + (data.dateBooking.getUTCMonth() + 1) + "/" + data.dateBooking.getUTCFullYear();
+        let dateEndAccessApp = (data.dateBooking.getUTCDate() + 6) + "/" + (data.dateBooking.getUTCMonth() + 1) + "/" + data.dateBooking.getUTCFullYear();
+        setDoc(doc(database, "user_document", data.email), {
             name: data.name,
             surname: data.surname,
-            email: user.email,
+            email: data.email,
             newsletter: data.newsletter,
             tastingPackage: data.tastingPackage,
             nPeople: data.nPeople,
             nTasting: data.nTasting,
-            dateBooking: data.dateBooking,
-            dateEndAccessApp: (data.dateBooking), //+ 6 day
+            dateBooking: datebooking,
+            dateEndAccessApp: dateEndAccessApp,
             totalPaid: data.totalPaid,
             nPathsToComplete: 6,
             path1: false,
@@ -56,7 +61,7 @@ export const StateContext = ({ children }) => {
             path5: false,
             path6: false,
         });
-    // }
+    }
   }
 
   return (

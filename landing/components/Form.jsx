@@ -33,13 +33,10 @@ const Form = () => {
         e.preventDefault();
     
         try {
-          await signup(data.email);
-          await createUserDoc(data);
+          await signup(data);
         } catch (err) {
           console.log(err)
         }
-    
-        console.log(data)
       }
 
     const [activeStep, setActiveStep] = useState(0);
