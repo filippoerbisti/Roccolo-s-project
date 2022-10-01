@@ -34,7 +34,7 @@ export const StateContext = ({ children }) => {
     createUserDoc(data);
 
    let email = data.email;
-   let password = email.substring(0, 4) + 'R23!;
+   let password = email.substring(0, 4) + 'R23!';
     return createUserWithEmailAndPassword(auth, email, password)
   }
 
