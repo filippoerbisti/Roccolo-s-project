@@ -319,7 +319,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 10px 0;
+    margin: 30px 0;
   }
 
   #home .btn {
@@ -353,6 +353,19 @@ body {
   #home p {
     font-size: medium;
     text-align: center;
+  }
+
+  #home .box-info-tasting {
+    width: 80%;
+    background: linear-gradient(rgba(5, 0, 0, 0.5), rgba(5, 0, 0, 0.5));
+    margin: 30px auto;
+    border-radius: 10px;
+    padding: 10px 20px;
+  }
+
+  #home .box-info-tasting ul {
+    text-align: center;
+    font-size: 15px;
   }
 
     /* STYLES PATHS CARD */
@@ -679,11 +692,13 @@ body {
     right: 10px;
     display: flex;
     justify-content: flex-end;
+    z-index: 999999999;
   }
 
   .qr-reader {
-    z-index: 20;
+    z-index: 999999999;
     border: 2px solid #fff;
+    background: white;
     border-radius: 50%;
     height: 70px;
     width: 70px;
