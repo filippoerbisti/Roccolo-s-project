@@ -267,6 +267,7 @@ body {
       height: 100%; /* height tabbar  CHECK TODO */
       padding-right: 10px;
       padding-left: 10px;
+      padding-bottom: 70px;
     }
     
     .swiper-path {
@@ -358,7 +359,7 @@ body {
   #home .box-info-tasting {
     width: 80%;
     background: linear-gradient(rgba(5, 0, 0, 0.5), rgba(5, 0, 0, 0.5));
-    margin: 30px auto;
+    margin: 20px auto;
     border-radius: 10px;
     padding: 10px 20px;
   }
@@ -366,6 +367,7 @@ body {
   #home .box-info-tasting ul {
     text-align: center;
     font-size: 15px;
+    color: white;
   }
 
     /* STYLES PATHS CARD */
