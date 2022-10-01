@@ -1,27 +1,21 @@
 import React from 'react';
 import useTranslation from 'next-translate/useTranslation';
 
-const Info = ({ user, authorizedDates }) => {
+const Info = ({ user, userDoc }) => {
   const { t } = useTranslation('common');
 
   // Start Date authorizedDates
-  var dayStart = new Date(authorizedDates.start_date.toDate()).getUTCDate();
-  var monthStart = new Date(authorizedDates.start_date.toDate()).getUTCMonth() + 1;
-  var yearStart = new Date(authorizedDates.start_date.toDate()).getUTCFullYear();
-  var start = dayStart + "/" + monthStart + "/" + yearStart;
+  let dateBooking = userDoc.dateBooking.getUTCDate() + "/" + (userDoc.dateBooking.getUTCMonth() + 1) + "/" + userDoc.dateBooking.getUTCFullYear();
 
   // End Date authorizedDates
-  var dayEnd = new Date(authorizedDates.end_date.toDate()).getUTCDate();
-  var monthEnd = new Date(authorizedDates.end_date.toDate()).getUTCMonth() + 1;
-  var yearEnd = new Date(authorizedDates.end_date.toDate()).getUTCFullYear();
-  var end = dayEnd + "/" + monthEnd + "/" + yearEnd;
+  let dateEndBooking = userDoc.dateEndAccessApp.getUTCDate() + "/" + (userDoc.dateEndAccessApp.getUTCMonth() + 1) + "/" + userDoc.dateEndAccessApp.getUTCFullYear();
 
   return (
     <div className='info'>
       <p style={{textAlign: 'center'}}>
         {t('helloInfo')} {user.email}, 
         <br /> {t('periodInfo')}: 
-        <br /> <span style={{fontWeight: 'bold'}}>{start} - {end}</span>
+        <br /> <span style={{fontWeight: 'bold'}}>{dateBooking} - {dateEndBooking}</span>
       </p>
       <br />
       <p>

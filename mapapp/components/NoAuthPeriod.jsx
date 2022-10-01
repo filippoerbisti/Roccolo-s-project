@@ -1,19 +1,19 @@
 import React from 'react';
 import useTranslation from 'next-translate/useTranslation';
 
-const NoAuthPeriod = ({ user, authorizedDates })  => {
+const NoAuthPeriod = ({ user, userDoc })  => {
     const { t } = useTranslation('common');
 
     // Start Date authorizedDates
-    var dayStart = new Date(authorizedDates.start_date.toDate()).getUTCMonth() + 1;
-    var monthStart = new Date(authorizedDates.start_date.toDate()).getUTCDate();
-    var yearStart = new Date(authorizedDates.start_date.toDate()).getUTCFullYear();
+    var dayStart = new Date(userDoc.datebooking.toDate()).getUTCMonth() + 1;
+    var monthStart = new Date(userDoc.datebooking.toDate()).getUTCDate();
+    var yearStart = new Date(userDoc.datebooking.toDate()).getUTCFullYear();
     var start = dayStart + "/" + monthStart + "/" + yearStart;
     
     // End Date authorizedDates
-    var dayEnd = new Date(authorizedDates.end_date.toDate()).getUTCMonth() + 1;
-    var monthEnd = new Date(authorizedDates.end_date.toDate()).getUTCDate();
-    var yearEnd = new Date(authorizedDates.end_date.toDate()).getUTCFullYear();
+    var dayEnd = new Date(userDoc.dateEndAccessApp.toDate()).getUTCMonth() + 1;
+    var monthEnd = new Date(userDoc.dateEndAccessApp.toDate()).getUTCDate();
+    var yearEnd = new Date(userDoc.dateEndAccessApp.toDate()).getUTCFullYear();
     var end = dayEnd + "/" + monthEnd + "/" + yearEnd;
 
     return (

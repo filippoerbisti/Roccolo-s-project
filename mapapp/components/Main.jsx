@@ -20,7 +20,7 @@ import "swiper/css/effect-creative";
 // import required modules
 import { EffectCreative } from "swiper";
 
-const Main = ({ user, authorizedDates, paths }) => {
+const Main = ({ user, userDoc }) => {
   const { t } = useTranslation('common');
 
   const fakePaths = dataFakePath;
@@ -33,14 +33,14 @@ const Main = ({ user, authorizedDates, paths }) => {
 
   useEffect(() => {
     // Authorizated dates to access
-    if (authorizedDates) {
-      var start = new Date(authorizedDates.start_date.toDate()).getTime();
-      var end = new Date(authorizedDates.end_date.toDate()).getTime();
-      var today = new Date().getTime();
+    // if (userDoc) {
+    //   var start = userDoc;
+    //   var end = new Date(authorizedDates.end_date.toDate()).getTime();
+    //   var today = new Date().getTime();
 
-      if (today >= start && today <= end)
-        setIsAuthPeriod(true);
-    }
+    //   if (today >= start && today <= end)
+    //     setIsAuthPeriod(true);
+    // }
 
     // Modal QR
     modalQR = document.getElementById("modalQR");
@@ -244,15 +244,6 @@ const Main = ({ user, authorizedDates, paths }) => {
     node.classList.add(className);
   }
 
-  const i = 0;
-  const [ok, setOk] = useState(true);
-
-  useEffect(() => {
-    if (i === 0) {
-      setOk(false);
-    }
-  });
-
   return (
     <>
       {/* If logged in && Date.Now is BETWEEN the fixed initial date (choose by user on pay) and the following 6 days (inclusive) */}
@@ -315,8 +306,8 @@ const Main = ({ user, authorizedDates, paths }) => {
                           </span>
                         </div>
                         <div className="checkbox-round">
-                          {paths && 
-                            <input type="checkbox" id='checkbox' defaultChecked={paths[fakePath.path]} disabled />
+                          {userDoc && 
+                            <input type="checkbox" id='checkbox' defaultChecked={userDoc[fakePath.path]} disabled />
                           }
                           <label htmlFor="checkbox"></label>
                         </div>
@@ -394,13 +385,13 @@ const Main = ({ user, authorizedDates, paths }) => {
       }
 
       {/* If logged in, but authorizedDates == null (loading) */}
-      {(!authorizedDates || !paths) || (!authorizedDates && !paths) &&
+      {!userDoc &&
         <Loader />
       }
 
       {/* If logged in && Date.Now is NOT BETWEEN the fixed initial date (choose by user on pay) and the following 6 days (inclusive) */}
       {!isAuthPeriod &&
-        <NoAuthPeriod user={user} authorizedDates={authorizedDates} />
+        <NoAuthPeriod user={user} userDoc={userDoc} />
       }
     </>
   )

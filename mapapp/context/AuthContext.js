@@ -1,14 +1,12 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import {
   onAuthStateChanged,
-  createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
 } from 'firebase/auth';
 import { 
   doc,  
-  getDoc,
-  setDoc 
+  getDoc
 } from 'firebase/firestore';
 import { auth, database } from '../utils/firebase';
 
@@ -19,8 +17,7 @@ export const useAuth = () => useContext(AuthContext);
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [authorizedDates, setAuthorizedDates] = useState(null);
-  const [paths, setPaths] = useState(null);
+  const [userDoc, setUserDoc] = useState(null);
 
   useEffect(() => {
     // onAuthStateChanged
@@ -30,16 +27,13 @@ export const AuthContextProvider = ({ children }) => {
           uid: user.uid,
           email: user.email
         });
-        if (user.uid) {
-          if (authorizedDates == null)
-            getAuthorizedDate(user);
-          if (paths == null)
-            getPaths(user);
+        if (user.email) {
+          if (userDoc == null)
+            getUserDoc(user);
         }
       } else {
         setUser(null);
-        setAuthorizedDates(null);
-        setPaths(null);
+        setUserDoc(null);
       }
       setLoading(false);
     })
@@ -47,60 +41,13 @@ export const AuthContextProvider = ({ children }) => {
     return () => unsubscribe();
   });
 
-  const getAuthorizedDate = (user) => {
+  const getUserDoc = (user) => {
     if(user !== null) {
-      getDoc(doc(database, "user_authorized_dates", user.email)).then(docSnap => {
+      getDoc(doc(database, "user_document", user.email)).then(docSnap => {
         if (docSnap.exists())
-          setAuthorizedDates(docSnap.data());
-
-          //TODO: create on registration
-        // else {
-        //   setDoc(doc(database, "user_authorized_dates", user.email), {
-        //     id: user.uid,
-        //     path1: false,
-        //     path2: false,
-        //     path3: false,
-        //     path4: false,
-        //     path5: false,
-        //     path6: false,
-        //     userId: user.uid,
-        //     userMail: user.email
-        //   });
-        //   getDoc(doc(database, "user_paths", user.email)).then(docSnap => {
-        //     setPaths(docSnap.data());
-        //   });
-        // }
+          setUserDoc(docSnap.data());
       })
     }
-  }
-
-  const getPaths = (user) => {
-    if(user !== null) {
-      getDoc(doc(database, "user_paths", user.email)).then(docSnap => {
-        if (docSnap.exists())
-          setPaths(docSnap.data());
-        else {
-          setDoc(doc(database, "user_paths", user.email), {
-            id: user.uid,
-            path1: false,
-            path2: false,
-            path3: false,
-            path4: false,
-            path5: false,
-            path6: false,
-            userId: user.uid,
-            userMail: user.email
-          });
-          getDoc(doc(database, "user_paths", user.email)).then(docSnap => {
-            setPaths(docSnap.data());
-          });
-        }
-      })
-    }
-  }
-
-  const signup = (email, password) => {    
-    return createUserWithEmailAndPassword(auth, email, password)
   }
 
   const login = (email, password) => {
@@ -110,13 +57,12 @@ export const AuthContextProvider = ({ children }) => {
   const logout = async () => {
     window.location.reload();
     setUser(null);
-    setAuthorizedDates(null);
-    setPaths(null);
+    setUserDoc(null);
     await signOut(auth);
   }
 
   return (
-    <AuthContext.Provider value={{ user, authorizedDates, paths, login, signup, logout }}>
+    <AuthContext.Provider value={{ user, userDoc, login, logout }}>
       {loading ? null : children}
     </AuthContext.Provider>
   )

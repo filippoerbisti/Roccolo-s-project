@@ -6,8 +6,7 @@ import { useAuth } from '../context/AuthContext';
 export default function Index() {
 
   const { user } = useAuth();
-  const { authorizedDates } = useAuth();
-  const { paths } = useAuth();
+  const { userDoc } = useAuth();
   
   return (
     <div>
@@ -17,8 +16,8 @@ export default function Index() {
       }
 
       {/* If logged in -> show main */}
-      {user && authorizedDates && paths &&
-        <Main user={user} authorizedDates={authorizedDates} paths={paths} />
+      {user && userDoc &&
+        <Main user={user} userDoc={userDoc} />
       }
     </div>
   )
