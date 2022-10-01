@@ -31,16 +31,23 @@ const Main = ({ user, userDoc }) => {
   const [data, setData] = useState("No result");
   const [isAuthPeriod, setIsAuthPeriod] = useState(false);
 
+  const convertToDate = (d) => {
+    const [day, month, year] = d.split("/");
+    return new Date(year, month - 1, day);
+  }
+
   useEffect(() => {
     // Authorizated dates to access
-    // if (userDoc) {
-    //   var start = userDoc;
-    //   var end = new Date(authorizedDates.end_date.toDate()).getTime();
-    //   var today = new Date().getTime();
+    if (userDoc) {
+      var today = new Date();
+      let formatToday = today.getUTCDate() + "/" + (today.getUTCMonth() + 1) + "/" + today.getUTCFullYear();
 
-    //   if (today >= start && today <= end)
-    //     setIsAuthPeriod(true);
-    // }
+      if (convertToDate(userDoc.dateBooking) < convertToDate(formatToday) 
+          &&
+          convertToDate(userDoc.dateEndAccessApp) >= convertToDate(formatToday)
+      )
+        setIsAuthPeriod(true);
+    }
 
     // Modal QR
     modalQR = document.getElementById("modalQR");
@@ -270,7 +277,8 @@ const Main = ({ user, userDoc }) => {
               <SwiperSlide>
                   <div className='swiper-start'>
                     <h1>{t('welcome')}</h1>
-                    <h3>Esplora il nostro roccolo</h3>
+                    <h3>Esplora il nostro Roccolo</h3>
+                    <h3>Scopri i QR nascosti tra le nostre colline</h3>
                     <div className='btn-container'>
                       <button className='btn-start' onClick={navigateMap}>
                         {/* <Link href={'#map'}> */}
@@ -278,9 +286,19 @@ const Main = ({ user, userDoc }) => {
                         {/* </Link> */}
                       </button>
                     </div>
-                    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '50px'}}>
+                    <p style={{marginTop: '30px'}}>Tappe da completare: {userDoc.nPathsToComplete}</p>
+                    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '30px'}}>
                       <p style={{marginRight: '10px'}}>Trascina per vedere le tappe</p>
                       <CgArrowLongRight style={{fontSize: '25px'}} />
+                    </div>
+                    <div className='box-info-tasting'>
+                      <p>Prenotazione:</p>
+                      <ul>
+                        <li>Numero persone totali: {userDoc.nPeople}</li>
+                        <li>Numero Degustazioni: {userDoc.nTasting}</li>
+                        <li>Degustazione: {userDoc.tastingPackage}</li>
+                      </ul>
+                      <p style={{fontWeight: 'bold'}}>La degustazione si terrà alle ore 11.00</p>
                     </div>
                     <div className='btn-container' style={{marginTop: '50px'}}>
                       <button className='btn' onClick={navigateHelp}>
@@ -325,7 +343,7 @@ const Main = ({ user, userDoc }) => {
             </div>
             <div id='help' className='content novis'>
               <h1>{t('info')}</h1>
-              <Info user={user} authorizedDates={authorizedDates} />
+              <Info user={user} userDoc={userDoc} />
               <h2>FAQ:</h2>
               <FAQ />
               <pre style={{textAlign: 'center'}}>{t('version')} v.1.6</pre>
