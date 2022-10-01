@@ -5,6 +5,7 @@ import useTranslation from 'next-translate/useTranslation';
 import CookieConsent, { getCookieConsentValue  } from "react-cookie-consent"; // Cookies
 
 import '../styles/globals.css';
+import { StateContext } from '../context/StateContext';
 import { Layout } from '../components';
 
 
@@ -15,7 +16,7 @@ function MyApp({ Component, pageProps }) {
   const isSetCookie = getCookieConsentValue(cookieName);
 
   return (
-    // <StateContext>
+    <StateContext>
       <Layout>
         <Component {...pageProps} />
 
@@ -71,7 +72,7 @@ function MyApp({ Component, pageProps }) {
         <Script src="https://kit.fontawesome.com/60aa6b5946.js" crossOrigin="anonymous"></Script>
       </Layout>
       
-    // </StateContext>
+    </StateContext>
   )
 }
 
