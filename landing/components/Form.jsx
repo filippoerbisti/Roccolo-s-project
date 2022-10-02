@@ -14,10 +14,14 @@ import StepLabel from '@mui/material/StepLabel';
 import StepContent from '@mui/material/StepContent';
 import Button from '@mui/material/Button';
 
+import { useRouter } from 'next/router';
+
 const Form = () => {
     const { t } = useTranslation('common');
 
     const { signup, createUserDoc } = useStateContext();
+
+    let router = useRouter();
 
     const [data, setData] = useState({
         name: '',
@@ -35,12 +39,13 @@ const Form = () => {
         e.preventDefault();
 
         try {
-            await signup(data).then((result) => {
-                createUserDoc(result.user, data);
-                sendEmail(data);
-            }, (error) => {
-                // toast.error(`${t('emailErr')}`);
-            });
+            sendEmail(data)
+            // await signup(data).then((result) => {
+            //     createUserDoc(result.user, data);
+            //     sendEmail(data);
+            // }, (error) => {
+            //     // toast.error(`${t('emailErr')}`);
+            // });
         } catch (err) {
             console.log(err)
         }
@@ -51,13 +56,24 @@ const Form = () => {
     }
     
     const sendEmail = async () => {
+        let subject;
+        let message;
+
         if (data) {  
             const fullname = capitalizeFirstLetter(data.name) + " " + capitalizeFirstLetter(data.surname); 
             let datebooking = data.dateBooking.getUTCDate() + "/" + (data.dateBooking.getUTCMonth() + 1) + "/" + data.dateBooking.getUTCFullYear(); 
-            const subject = `Degustazione ${datebooking} - Roccolo del Lago`;
-            const message = `
-                Hai prenotato la degustazione ${data.tastingPackage} per ${data.nTasting} su ${data.nPeople} totali il giorno ${datebooking}
-            `;
+            if (router.locale == 'it') {
+                subject = `Degustazione Prenotata - Roccolo del Lago`;
+                message = ('Hai prenotato la degustazione ' + data.tastingPackage+ 
+                ' per ' + data.nTasting+' su ' +data.nPeople + 'persone totali il giorno ' + datebooking + "Credenziali di accesso all'app: email:" + data.email + 
+                ', password:' + data.email.substring(0, 4) + 'R23!');
+            } else if (router.locale == 'en') {
+                subject = `Booked Tasting - Roccolo del Lago`;
+                message = `
+                    Hai prenotato la degustazione ${data.tastingPackage} per ${data.nTasting} su ${data.nPeople} totali il giorno ${datebooking}
+                    Credenziali di accesso: email: ${data.email}, password ${data.email.substring(0, 4) + 'R23!'}
+                `;
+            }
             const templateParams = {
                 from_name: fullname,
                 from_email: data.email,
@@ -97,7 +113,8 @@ const Form = () => {
             if (data.newsletter) {
                 const res = await fetch('/api/newsletter', {
                     body: JSON.stringify({
-                        email: data.email
+                        email: data.email,
+                        status: 'subscribed'
                     }),
                     headers: {
                         'Content-Type': 'application/json'
@@ -130,9 +147,10 @@ const Form = () => {
                     </StepLabel>
                     <StepContent>
                         <form onSubmit={handleSignup}>
-                            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                            <div className='inputs-form'>
                                 <input 
                                     type="text" 
+                                    className='txt-input'
                                     placeholder={t('name')} 
                                     onChange={(e) =>
                                         setData({
@@ -142,10 +160,10 @@ const Form = () => {
                                     }
                                     value={data.name}
                                     required
-                                    style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}}
                                 />
                                 <input 
                                     type="text" 
+                                    className='txt-input'
                                     placeholder={t('surname')} 
                                     onChange={(e) =>
                                         setData({
@@ -155,12 +173,12 @@ const Form = () => {
                                     }
                                     value={data.surname}
                                     required
-                                    style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}}
                                 />
                             </div>
-                            <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px'}}>
+                            <div className='inputs-form'>
                                 <input 
                                     type="email" 
+                                    className='txt-input'
                                     placeholder={t('email')} 
                                     onChange={(e) =>
                                         setData({
@@ -170,7 +188,6 @@ const Form = () => {
                                     }
                                     value={data.email}
                                     required
-                                    style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}}
                                 />
                             </div>
                             <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px', marginTop: '10px'}}>
@@ -212,7 +229,7 @@ const Form = () => {
                     </StepLabel>
                     <StepContent>
                         <form>
-                            <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px', marginTop: '10px'}}>
+                            <div className='inputs-form mt-2.5'>
                                 <label className="select-tasting" htmlFor="tastings">
                                     <select 
                                         id="tastings" 
@@ -232,9 +249,10 @@ const Form = () => {
                                     </select>
                                 </label>
                             </div>
-                            <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px', marginTop: '10px'}}>
+                            <div className='inputs-form'>
                                 <DatePicker 
                                     selected={data.dateBooking} 
+                                    className='txt-input'
                                     onChange={(date) => 
                                         setData({
                                             ...data,
@@ -242,12 +260,12 @@ const Form = () => {
                                         })
                                     } 
                                     placeholderText="Please select a date"
-                                    style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}}
                                 />
                             </div>
-                            <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px'}}>
+                            <div className='inputs-form'>
                                 <input 
                                     type="number" 
+                                    className='txt-input'
                                     placeholder={t('totPerson')} 
                                     onChange={(e) =>
                                         setData({
@@ -257,10 +275,10 @@ const Form = () => {
                                     }
                                     // value={data.nPeople}
                                     required
-                                    style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}} 
                                 />
                                 <input 
                                     type="number" 
+                                    className='txt-input'
                                     placeholder={t('totPackage')} 
                                     onChange={(e) =>
                                             setData({
@@ -270,7 +288,6 @@ const Form = () => {
                                     }
                                     // value={data.nTasting}
                                     required
-                                    style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px'}}
                                 />
                             </div>
                         </form>

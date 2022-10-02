@@ -29,7 +29,7 @@ const Main = () => {
 
             {/* Box history & vineyards (txt + img) */}
             <section className="box-container">
-                <div className='w-1/2 mr-2.5'>
+                <div className='height-card'>
                     <h2 className='text-center text-2xl my-5 font-bold'>{t('historyTitle')}</h2>
                     <div className='box-intro'>
                         <div className='box-txt-img'>
@@ -43,7 +43,7 @@ const Main = () => {
                     </div>
                 </div>
                 
-                <div className='w-1/2 ml-2.5'>
+                <div className='height-card'>
                     <h2 className='text-center text-2xl my-5 font-bold'>{t('vineyardTitle')}</h2>
                     <div className='box-intro'>
                         <div className='box-txt-img'>
@@ -58,7 +58,7 @@ const Main = () => {
             </section>
 
             {/* Box Visit */}
-            <h2 className='text-center text-2xl my-5 font-bold'>{t('visitTitle1')}</h2>
+            <h2 className='text-center text-2xl my-5 font-bold visit-title'>{t('visitTitle1')}</h2>
             <section className="section-background parallax1 flex flex-col pb-10">
                 <h3>{t('visitTitle2')}</h3>
                 <h4>{t('visitTitle3')}</h4>
