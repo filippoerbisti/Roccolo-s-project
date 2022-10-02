@@ -13,24 +13,7 @@ const Context = createContext();
 
 export const StateContext = ({ children }) => {
 
-    // const [user, setUser] = useState(null);
-
-    // useEffect(() => {
-    //     // onAuthStateChanged
-    //     const unsubscribe = onAuthStateChanged(auth, (user, data) => {
-    //         if (user !== null) 
-    //             setUser({
-    //               uid: user.uid,
-    //               email: user.email
-    //             });
-    //         else
-    //             setUser(null);
-    //     })
-    //     return () => unsubscribe();
-    // });
-
   const signup = (data) => {
-    console.log(data)
     createUserDoc(data);
 
    let email = data.email;
