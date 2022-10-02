@@ -277,8 +277,8 @@ const Main = ({ user, userDoc }) => {
               <SwiperSlide>
                   <div className='swiper-start'>
                     <h1>{t('welcome')}</h1>
-                    <h3>Esplora il nostro Roccolo</h3>
-                    <h3>Scopri i QR nascosti tra le nostre colline</h3>
+                    <h3>{t('exploreRoccolo')}</h3>
+                    <h3>{t('discoverQR')}</h3>
                     <div className='btn-container'>
                       <button className='btn-start' onClick={navigateMap}>
                         {/* <Link href={'#map'}> */}
@@ -286,25 +286,24 @@ const Main = ({ user, userDoc }) => {
                         {/* </Link> */}
                       </button>
                     </div>
-                    <p style={{marginTop: '20px', color: 'white'}}>Tappe da completare: {userDoc.nPathsToComplete}</p>
+                    <p style={{marginTop: '20px', color: 'white'}}>{t('stageToComplete')}: {userDoc.nPathsToComplete}</p>
                     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '10px', marginBottom: '10px'}}>
-                      <p style={{marginRight: '10px'}}>Trascina per vedere le tappe</p>
+                      <p style={{marginRight: '10px'}}>{t('swipeToPath')}</p>
                       <CgArrowLongRight style={{fontSize: '25px'}} />
                     </div>
                     <div className='box-info-tasting'>
-                      <p>Prenotazione:</p>
+                      <p>{t('booking')} {userDoc.name} {userDoc.surname}:</p>
                       <ul>
-                        <li>Numero persone totali: {userDoc.nPeople}</li>
-                        <li>Numero Degustazioni: {userDoc.nTasting}</li>
-                        <li>Degustazione: {userDoc.tastingPackage}</li>
+                        <li>{t('nPeople')}: {userDoc.nPeople}</li>
+                        <li>{t('nTasting')}: {userDoc.nTasting}</li>
+                        <li>{t('typeTasting')}: {userDoc.tastingPackage}</li>
                       </ul>
-                      <p style={{fontWeight: 'bold'}}>La degustazione si terrà alle ore 11.00</p>
+                      <p style={{fontWeight: 'bold'}}>{t('hourTasting')} 11.00</p>
                     </div>
                     <div className='btn-container' style={{marginTop: '50px'}}>
                       <button className='btn' onClick={navigateHelp}>
                         {/* <Link href={'#help'}> */}
-                          {/* {t('howUseIt')}? */}
-                        Assistenza
+                          {t('help')}?
                         {/* </Link> */}
                       </button>
                     </div>
