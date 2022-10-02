@@ -293,8 +293,9 @@ const Main = ({ user, userDoc }) => {
                       <CgArrowLongRight style={{fontSize: '25px'}} />
                     </div>
                     <div className='box-info-tasting'>
-                      <p>{t('booking')} {userDoc.name} {userDoc.surname}:</p>
+                      <p>{t('booking')}</p>
                       <ul>
+                        <li>Riservato: {userDoc.name} {userDoc.surname}</li>
                         <li>{t('nPeople')}: {userDoc.nPeople}</li>
                         <li>{t('nTasting')}: {userDoc.nTasting}</li>
                         <li>{t('typeTasting')}: {userDoc.tastingPackage}</li>
