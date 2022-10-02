@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import useTranslation from 'next-translate/useTranslation';
 import { useStateContext } from '../context/StateContext';
 
+import * as emailjs from '@emailjs/browser';
+
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -27,17 +29,86 @@ const Form = () => {
         nTasting: 0,
         dateBooking: '',
         totalPaid: 0
-      });
+    });
     
-      const handleSignup = async (e) => {
+    const handleSignup = async (e) => {
         e.preventDefault();
-    
+
         try {
-          await signup(data);
+            await signup(data).then((result) => {
+                createUserDoc(result.user, data);
+                sendEmail(data);
+            }, (error) => {
+                // toast.error(`${t('emailErr')}`);
+            });
         } catch (err) {
-          console.log(err)
+            console.log(err)
         }
-      }
+    }
+
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+    
+    const sendEmail = async () => {
+        if (data) {  
+            const fullname = capitalizeFirstLetter(data.name) + " " + capitalizeFirstLetter(data.surname); 
+            let datebooking = data.dateBooking.getUTCDate() + "/" + (data.dateBooking.getUTCMonth() + 1) + "/" + data.dateBooking.getUTCFullYear(); 
+            const subject = `Degustazione ${datebooking} - Roccolo del Lago`;
+            const message = `
+                Hai prenotato la degustazione ${data.tastingPackage} per ${data.nTasting} su ${data.nPeople} totali il giorno ${datebooking}
+            `;
+            const templateParams = {
+                from_name: fullname,
+                from_email: data.email,
+                to_name: 'Roccolo del Lago',
+                subject: subject,
+                message: message,
+            }
+
+            // Send email to ourselves -> info 
+            // +++
+            //Send email to client -> reminder
+            emailjs.send(
+                process.env.NEXT_PUBLIC_SERVICE_ID,
+                process.env.NEXT_PUBLIC_TEMPLATE_ID,
+                templateParams,
+                process.env.NEXT_PUBLIC_EMAILJS_USER_ID
+            )
+            .then((result) => {
+                setData({
+                    name: '',
+                    surname: '',
+                    email: '',
+                    newsletter: false,
+                    tastingPackage: '',
+                    nPeople: 0,
+                    nTasting: 0,
+                    dateBooking: '',
+                    totalPaid: 0
+                });
+                // toast.dismiss(toastLoading);
+                // toast.success(`${t('emailOk')}`);
+            }, (error) => {
+                // toast.error(`${t('emailErr')}`);
+            });
+
+            //Subscribe Newsletter
+            if (data.newsletter) {
+                const res = await fetch('/api/newsletter', {
+                    body: JSON.stringify({
+                        email: data.email
+                    }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    method: 'POST'
+                });
+            }
+        } else {
+            toast.error('dc');
+        }
+    }
 
     const [activeStep, setActiveStep] = useState(0);
 
