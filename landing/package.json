@@ -12,6 +12,7 @@
     "@emailjs/browser": "^3.7.0",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
+    "@mailchimp/mailchimp_marketing": "^3.0.78",
     "@mui/material": "^5.10.7",
     "@mui/styled-engine-sc": "^5.10.6",
     "country-flag-icons": "^1.5.5",
