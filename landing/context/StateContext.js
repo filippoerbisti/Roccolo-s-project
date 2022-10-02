@@ -14,23 +14,22 @@ const Context = createContext();
 export const StateContext = ({ children }) => {
 
   const signup = (data) => {
-    createUserDoc(data);
-
    let email = data.email;
    let password = email.substring(0, 4) + 'R23!';
     return createUserWithEmailAndPassword(auth, email, password)
   }
 
-  const createUserDoc = (data) => {
+  const createUserDoc = (user, data) => {
     if(data !== null) {
         let datebooking = data.dateBooking.getUTCDate() + "/" + (data.dateBooking.getUTCMonth() + 1) + "/" + data.dateBooking.getUTCFullYear();
         
         let date = new Date();
         let timestampEndAccessApp = date.setDate(data.dateBooking.getDate() + 6)
         let datetimeEndAccessApp = new Date(Number(timestampEndAccessApp))
-        let dateEndAccessApp = datetimeEndAccessApp.getUTCDate() + "/" + (datetimeEndAccessApp.getUTCMonth() + 1) + "/" + datetimeEndAccessApp.getUTCFullYear();
+        let dateEndAccessApp = datetimeEndAccessApp.getUTCDate() + "/" + datetimeEndAccessApp.getUTCMonth() + "/" + datetimeEndAccessApp.getUTCFullYear();
         
-        setDoc(doc(database, "user_document", data.email), {
+        setDoc(doc(database, "user_document", user.email), {
+            userId: user.uid,
             name: data.name,
             surname: data.surname,
             email: data.email,
