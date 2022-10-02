@@ -148,32 +148,38 @@ const Form = () => {
                     <StepContent>
                         <form onSubmit={handleSignup}>
                             <div className='inputs-form'>
-                                <input 
-                                    type="text" 
-                                    className='txt-input'
-                                    placeholder={t('name')} 
-                                    onChange={(e) =>
-                                        setData({
-                                            ...data,
-                                            name: e.target.value,
-                                        })
-                                    }
-                                    value={data.name}
-                                    required
-                                />
-                                <input 
-                                    type="text" 
-                                    className='txt-input'
-                                    placeholder={t('surname')} 
-                                    onChange={(e) =>
-                                        setData({
-                                            ...data,
-                                            surname: e.target.value,
-                                        })
-                                    }
-                                    value={data.surname}
-                                    required
-                                />
+                                <div>
+                                    <input 
+                                        type="text" 
+                                        className='txt-input'
+                                        placeholder={t('name')} 
+                                        onChange={(e) =>
+                                            setData({
+                                                ...data,
+                                                name: e.target.value,
+                                            })
+                                        }
+                                        value={data.name}
+                                        required
+                                    />
+                                    {data.name == '' && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>}
+                                </div>
+                                <div>
+                                    <input 
+                                        type="text" 
+                                        className='txt-input'
+                                        placeholder={t('surname')} 
+                                        onChange={(e) =>
+                                            setData({
+                                                ...data,
+                                                surname: e.target.value,
+                                            })
+                                        }
+                                        value={data.surname}
+                                        required
+                                    />
+                                    {data.surname == '' && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>}
+                                </div>
                             </div>
                             <div className='inputs-form'>
                                 <input 
@@ -189,6 +195,7 @@ const Form = () => {
                                     value={data.email}
                                     required
                                 />
+                                {data.email == '' && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>}
                             </div>
                             <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px', marginTop: '10px'}}>
                                 <input 
@@ -248,6 +255,7 @@ const Form = () => {
                                         <option value={t('proposal3')}>{t('proposal3')} (45€)</option>
                                     </select>
                                 </label>
+                                {data.tastingPackage == '' && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>}
                             </div>
                             <div className='inputs-form'>
                                 <DatePicker 
@@ -261,34 +269,41 @@ const Form = () => {
                                     } 
                                     placeholderText="Please select a date"
                                 />
+                                {data.dateBooking == '' && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>}
                             </div>
                             <div className='inputs-form'>
-                                <input 
-                                    type="number" 
-                                    className='txt-input'
-                                    placeholder={t('totPerson')} 
-                                    onChange={(e) =>
-                                        setData({
-                                            ...data,
-                                            nPeople: e.target.value,
-                                        })
-                                    }
-                                    // value={data.nPeople}
-                                    required
-                                />
-                                <input 
-                                    type="number" 
-                                    className='txt-input'
-                                    placeholder={t('totPackage')} 
-                                    onChange={(e) =>
+                                <div>
+                                    <input 
+                                        type="number" 
+                                        className='txt-input'
+                                        placeholder={t('totPerson')} 
+                                        onChange={(e) =>
                                             setData({
                                                 ...data,
-                                                nTasting: e.target.value,
+                                                nPeople: e.target.value,
                                             })
-                                    }
-                                    // value={data.nTasting}
-                                    required
-                                />
+                                        }
+                                        // value={data.nPeople}
+                                        required
+                                    />
+                                    {data.nPeople == 0 && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>}
+                                </div>
+                                <div>
+                                    <input 
+                                        type="number" 
+                                        className='txt-input'
+                                        placeholder={t('totPackage')} 
+                                        onChange={(e) =>
+                                                setData({
+                                                    ...data,
+                                                    nTasting: e.target.value,
+                                                })
+                                        }
+                                        // value={data.nTasting}
+                                        required
+                                    />
+                                    {data.nTasting == 0 && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>}
+                                </div>
                             </div>
                         </form>
                         <div>
