@@ -286,7 +286,7 @@ const Main = ({ user, userDoc }) => {
                         {/* </Link> */}
                       </button>
                     </div>
-                    <p style={{marginTop: '20px'}}>Tappe da completare: {userDoc.nPathsToComplete}</p>
+                    <p style={{marginTop: '20px', color: 'white'}}>Tappe da completare: {userDoc.nPathsToComplete}</p>
                     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '10px', marginBottom: '10px'}}>
                       <p style={{marginRight: '10px'}}>Trascina per vedere le tappe</p>
                       <CgArrowLongRight style={{fontSize: '25px'}} />
