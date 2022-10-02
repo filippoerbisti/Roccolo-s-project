@@ -36,10 +36,11 @@ const Main = ({ user, userDoc }) => {
     return new Date(year, month - 1, day);
   }
 
+  var today = new Date();
+
   useEffect(() => {
     // Authorizated dates to access
     if (userDoc) {
-      var today = new Date();
       let formatToday = today.getUTCDate() + "/" + (today.getUTCMonth() + 1) + "/" + today.getUTCFullYear();
 
       if (convertToDate(userDoc.dateBooking) < convertToDate(formatToday) 
@@ -298,12 +299,12 @@ const Main = ({ user, userDoc }) => {
                         <li>{t('nTasting')}: {userDoc.nTasting}</li>
                         <li>{t('typeTasting')}: {userDoc.tastingPackage}</li>
                       </ul>
-                      <p style={{fontWeight: 'bold'}}>{t('hourTasting')} 11.00</p>
+                      <p style={{fontWeight: 'bold'}}>{t('hourTasting')} {today.getHours() < 13 ? '11.00' : '16.00'}</p>
                     </div>
                     <div className='btn-container' style={{marginTop: '50px'}}>
                       <button className='btn' onClick={navigateHelp}>
                         {/* <Link href={'#help'}> */}
-                          {t('help')}?
+                          {t('help')}
                         {/* </Link> */}
                       </button>
                     </div>
