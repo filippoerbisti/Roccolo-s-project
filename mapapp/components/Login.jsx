@@ -61,8 +61,7 @@ const Login = () => {
                             }
                             value={data.password}
                             required
-                            //pattern="[a-z0-9]{1,15}"
-                            // title="Password should be digits (0 to 9) or alphabets (a to z)."
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
                             type="password"
                             placeholder="Password"
                             className="form__field"
