@@ -1,10 +1,7 @@
-import { createContext, useContext, useEffect, useState } from 'react';
-import {
-  onAuthStateChanged,
-  createUserWithEmailAndPassword
-} from 'firebase/auth';
+import { createContext, useContext } from 'react';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { 
-  doc,  
+  doc,
   setDoc 
 } from 'firebase/firestore';
 import { auth, database } from '../utils/firebase';
@@ -14,8 +11,8 @@ const Context = createContext();
 export const StateContext = ({ children }) => {
 
   const signup = (data) => {
-   let email = data.email;
-   let password = email.substring(0, 4) + 'R23!';
+    let email = data.email;
+    let password = email.substring(0, 4) + 'R23!';
     return createUserWithEmailAndPassword(auth, email, password)
   }
 
