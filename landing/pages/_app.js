@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Link from "next/link";
 import Script from 'next/script';
 import useTranslation from 'next-translate/useTranslation';
+import { Toaster } from 'react-hot-toast';
 import CookieConsent, { getCookieConsentValue  } from "react-cookie-consent"; // Cookies
 
 import '../styles/globals.css';
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <StateContext>
       <Layout>
+        <Toaster />
         <Component {...pageProps} />
 
         {/* https://www.npmjs.com/package/react-cookie-consent
