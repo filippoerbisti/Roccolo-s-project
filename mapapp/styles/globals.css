@@ -255,7 +255,7 @@ body {
     .swiper {
       margin:  0;
       width: 100%;
-      height: 100%;
+      height: 100vh;
     }
     
     .swiper-start {
@@ -271,6 +271,7 @@ body {
     }
     
     .swiper-path {
+      height: 100vh;
       background-color: #EDCFBC;
       padding-right: 10px;
       padding-left: 10px;
@@ -379,7 +380,7 @@ body {
       align-items: center;
       max-width: 480px;
       border-radius: 15px;
-      margin: 10px 5px;
+      margin: 15px 5px;
       background: #F5F5F5;
       box-shadow: -3px 3px 5px #940E25, -5px 5px 5px rgba(0, 0, 0, 0.45);
       color: white;
@@ -389,10 +390,9 @@ body {
       /* path-card max-width: 480px, img width: 70px + margin-x: 10px 
       == 480 - 70 - 10 - 10 = 300px => max-width: for title & description*/
       width: 100%;
-      max-width: 300px;
+      /* max-width: 300px; */
       display: flex;
       flex-direction: column;
-      /* align-items: flex-start; */
       margin-left: 15px;
     }
 
@@ -418,10 +418,13 @@ body {
     }
 
     .checkbox-round {
+      height: 100%;
+      position: relative;
       display: flex;
-      align-items: center;
+      justify-content: center;
       margin-left: auto;
-      margin-right: 10px;
+      top: -10px;
+      right: -10px;
     }
 
     .checkbox-round label {
@@ -438,7 +441,6 @@ body {
     }
 
     .checkbox-round label:after {
-
       border: 2px solid #fff;
       border-top: none;
       border-right: none;
