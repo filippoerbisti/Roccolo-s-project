@@ -47,7 +47,7 @@ const Form = () => {
 
         try {
             if(data) {
-                getDoc(doc(database, "check_mail", data.email)).then(async docSnap => {
+                getDoc(doc(database, "user_document", data.email)).then(async docSnap => {
                     if (docSnap.exists()) 
                         toast.error(`${t('emailDuplicated')}`);
                     else {
