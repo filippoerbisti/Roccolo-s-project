@@ -1,11 +1,10 @@
 {
+    "navVisit": "VISITE",
+    "navTasting": "DEGUSTAZIONI",
+    "navBooking": "PRENOTAZIONE",
     "navShop": "SHOP",
     "navWineShop": "WINESHOP",
-    "navEvents": "EVENTI",
-    "navWines": "VINI",
-    "navGallery": "GALLERIA",
     "navContact": "CONTATTI",
-    "navTour": "TOUR",
 
     "introTitle1": "Benvenuti al Roccolo",
     "introTitle2": "dove il tempo è il signore del vino",

@@ -1,11 +1,10 @@
 {
+    "navVisit": "VISITS",
+    "navTasting": "TASTINGS",
+    "navBooking": "BOOKING",
     "navShop": "SHOP",
     "navWineShop": "WINESHOP",
-    "navEvents": "EVENTS",
-    "navWines": "WINES",
-    "navGallery": "GALLERY",
     "navContact": "CONTACTS",
-    "navTour": "TOUR",
 
     "introTitle1": "Welcome to Roccolo",
     "introTitle2": "where time is the lord of wine",
