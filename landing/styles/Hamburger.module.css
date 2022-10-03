@@ -1,0 +1,123 @@
+.navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 99999;
+    transition: all 1s ease-in-out;
+    width: 100vw;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.navigation ul {
+    position: relative;
+    margin-top: 30px;
+}
+
+.navigation ul li {
+    text-align: center;
+    list-style: none;
+    padding: 5px 0;
+}
+
+.navigation ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 2em;
+    padding: 5px 0;
+    display: inline-flex;
+    font-weight: 500;
+    transition: 0.5s;
+    letter-spacing: 2px;
+}
+
+.navigation ul:hover li a {
+    color: #0002;
+}
+
+.navigation ul li:hover a {
+    color: #000;
+    background: #fff;
+}
+
+.navigation ul li a:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: #892331;
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 500px;
+    transition: letter-spacing 0.5s, left 0.5s;
+}
+
+.navigation ul li a:hover:before {
+    content: attr(data-text);
+    opacity: 0.3;
+    left: 50%;
+    letter-spacing: 10px;
+    width: 1800px;
+    height: 1800px;
+}
+
+.navigation ul li:nth-child(6n+1) a:before {
+    background: #f5f4f1;
+}
+
+.navigation ul li:nth-child(6n+2) a:before {
+    background: #b9ac8e;
+}
+
+.navigation ul li:nth-child(6n+3) a:before {
+    background: #6bac40;
+}
+
+.navigation ul li:nth-child(6n+4) a:before {
+    background: #97676b;
+}
+
+.navigation ul li:nth-child(6n+5) a:before {
+    background: #7ba05f;
+}
+
+.navigation ul li:nth-child(6n+6) a:before {
+    background: #d4e1bf;
+}
+
+.langContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 30px;
+}
+
+.langIcons {
+    width: 30px;
+    height: 30px;
+    margin: 10px 20px;
+    cursor: pointer;
+}
+
+.credit {
+    text-align: center;
+    font-size: smaller;
+    margin-bottom: 10px;
+}
+
+.poweredBy {
+    border-bottom: 1px solid #892331;
+}
