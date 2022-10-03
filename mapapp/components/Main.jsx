@@ -252,13 +252,6 @@ const Main = ({ user, userDoc }) => {
     node.classList.add(className);
   }
 
-  // Uppercase First Letter
-  function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-
-  const fullname = capitalizeFirstLetter(userDoc.name) + " " + capitalizeFirstLetter(userDoc.surname);
-
   return (
     <>
       {/* If logged in && Date.Now is BETWEEN the fixed initial date (choose by user on pay) and the following 6 days (inclusive) */}
