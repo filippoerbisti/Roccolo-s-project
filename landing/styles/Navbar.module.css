@@ -1,11 +1,15 @@
 
-.menu {
+.menuContainer {
     margin: 0;
     padding: 0;
     display: none;
     align-items: center;
-    justify-content: center;
     width: 100%;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
 }
 
 .menu li {
@@ -30,13 +34,10 @@
     transition: 0.5s;
 }
 
-.menu li a:nth-child(1) {
-    margin-left: 20px;
-}
-
 .navIcon {
     display: flex;
     align-items: center;
+    margin-left: auto;
 }
 
 .langContainer {
@@ -70,17 +71,28 @@
     margin-right: -20px;
 }
 
-@media only screen and (min-width: 1200px) {
-    .menu {
+@media only screen and (min-width: 1025px) {
+    .menuContainer {
         list-style: none;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+    }
+
+    .menuContainer:nth-child(1) {
+        justify-content: flex-end;
+    }
+
+    .menuContainer:nth-child(2) {
+        justify-content: flex-start;
     }
 
     .menu li a:hover {
         color: rgba(137, 35, 49, 0.8);
         opacity: 0.8;
+    }
+
+    .navIcon {
+        margin-left: 0;
     }
     
     .link {
@@ -108,8 +120,16 @@
 }
 
 @media screen and (max-width: 768px) {
+
     .langContainer {
-        display: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 20px 0 10px;
+    }
+
+    .langIcons:last-child {
+        margin-right: 10px;
     }
 }
 
