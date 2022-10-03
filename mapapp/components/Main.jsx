@@ -252,6 +252,13 @@ const Main = ({ user, userDoc }) => {
     node.classList.add(className);
   }
 
+  // Uppercase First Letter
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+  const fullname = capitalizeFirstLetter(userDoc.name) + " " + capitalizeFirstLetter(userDoc.surname);
+
   return (
     <>
       {/* If logged in && Date.Now is BETWEEN the fixed initial date (choose by user on pay) and the following 6 days (inclusive) */}
@@ -295,7 +302,7 @@ const Main = ({ user, userDoc }) => {
                     <div className='box-info-tasting'>
                       <p style={{textTransform: 'uppercase', letterSpacing: '1px'}}>{t('booking')}</p>
                       <ul>
-                        <li style={{paddingTop: '5px'}}>Riservato: {userDoc.name} {userDoc.surname}</li>
+                        <li style={{paddingTop: '5px'}}>Riservato: {fullname}</li>
                         <li style={{paddingTop: '5px'}}>{t('nPeople')}: {userDoc.nPeople}</li>
                         <li style={{paddingTop: '5px'}}>{t('nTasting')}: {userDoc.nTasting}</li>
                         <li style={{paddingTop: '5px'}}>{t('typeTasting')}: {userDoc.tastingPackage}</li>
