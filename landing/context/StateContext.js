@@ -1,4 +1,4 @@
-import { createContext, useContext } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { 
   doc,
@@ -9,6 +9,9 @@ import { auth, database } from '../utils/firebase';
 const Context = createContext();
 
 export const StateContext = ({ children }) => {
+
+  const [showMenu, setShowMenu] = useState(false);
+  const [changeIconHamburgerMenu, setChangeIconHamburgerMenu] = useState(false);
 
   const signup = (data) => {
     let email = data.email;
@@ -49,7 +52,7 @@ export const StateContext = ({ children }) => {
   }
 
   return (
-    <Context.Provider value={{ signup, createUserDoc }}>
+    <Context.Provider value={{ signup, createUserDoc, showMenu, setShowMenu, changeIconHamburgerMenu, setChangeIconHamburgerMenu }}>
       {children}
     </Context.Provider>
   )
