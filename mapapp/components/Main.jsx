@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { FiHome, FiMap, FiHelpCircle } from 'react-icons/fi';
-import { CgArrowLongRight } from 'react-icons/cg';
+import { BsChevronRight } from 'react-icons/bs';
 import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router';
 import { Mapping, Info, FAQ, QReaderIcon, Loader, NoAuthPeriod } from './';
@@ -295,9 +295,13 @@ const Main = ({ user, userDoc }) => {
                       </button>
                     </div>
                     <p style={{marginTop: '20px', color: 'white'}}>{t('stageToComplete')}: {userDoc.nPathsToComplete}</p>
-                    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '10px', marginBottom: '10px', color: 'white'}}>
-                      <p style={{marginRight: '10px'}}>{t('swipeToPath')}</p>
-                      <CgArrowLongRight style={{fontSize: '25px'}} />
+                    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px', marginBottom: '10px', color: 'white'}}>
+                      <p>{t('swipeToPath')}</p>
+                      <div style={{display: 'flex', justifyContent: 'center', marginTop: '5px'}}>
+                        <BsChevronRight style={{fontSize: '40px', marginRight: '-10px', color: 'rgba(255,255,255,0.3)'}} />
+                        <BsChevronRight style={{fontSize: '40px', marginRight: '-10px', color: 'rgba(255,255,255,0.6)'}} />
+                        <BsChevronRight style={{fontSize: '40px', marginRight: '-10px'}} />
+                      </div>
                     </div>
                     <div className='box-info-tasting'>
                       <p style={{textTransform: 'uppercase', letterSpacing: '1px'}}>{t('booking')}</p>
