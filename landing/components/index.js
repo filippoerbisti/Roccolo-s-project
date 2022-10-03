@@ -4,6 +4,9 @@ export {default as Main } from './Main';
 export {default as ScrollToTop } from './ScrollToTop';
 export {default as Footer } from './Footer';
 
+export {default as HamburgerIcon } from './HamburgerIcon';
+export {default as HamburgerMenu } from './HamburgerMenu';
+
 export {default as Proposals } from './Proposals';
 export {default as Form } from './Form';
 
