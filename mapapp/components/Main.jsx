@@ -290,10 +290,16 @@ const Main = ({ user, userDoc }) => {
                     <p style={{marginTop: '20px', color: 'white'}}>{t('stageToComplete')}: {userDoc.nPathsToComplete}</p>
                     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px', marginBottom: '10px', color: 'white'}}>
                       <p>{t('swipeToPath')}</p>
-                      <div style={{display: 'flex', justifyContent: 'center', marginTop: '5px'}}>
-                        <BsChevronRight style={{fontSize: '40px', marginRight: '-10px', color: 'rgba(255,255,255,0.3)'}} />
-                        <BsChevronRight style={{fontSize: '40px', marginRight: '-10px', color: 'rgba(255,255,255,0.6)'}} />
-                        <BsChevronRight style={{fontSize: '40px', marginRight: '-10px'}} />
+                      <div class="animate-arrow">
+                        <span>
+                          <BsChevronRight style={{fontSize: '40px', marginRight: '-10px', color: 'rgba(255,255,255,0.3)'}} />
+                        </span>
+                        <span>
+                          <BsChevronRight style={{fontSize: '40px', marginRight: '-10px', color: 'rgba(255,255,255,0.6)'}} />
+                        </span>
+                        <span>
+                          <BsChevronRight style={{fontSize: '40px', marginRight: '-10px'}} />
+                        </span>
                       </div>
                     </div>
                     {/* <div className='box-info-tasting'>
