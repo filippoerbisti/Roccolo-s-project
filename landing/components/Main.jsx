@@ -104,17 +104,17 @@ const Main = () => {
                     <p className='py-3.5'>
                         <span className='font-bold'>1. {t('visitParagrSpan1')}: </span>
                         {t('visitParagr1')}
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo facere quod nesciunt iste quos sunt facilis soluta consectetur, modi perspiciatis obcaecati corporis delectus corrupti, temporibus repellendus? Itaque provident molestiae recusandae?
+                        Azienda gestione familiare
                     </p>
                     <p className='py-3.5'>
                         <span className='font-bold'>2. {t('visitParagrSpan2')}: </span>
                         {t('visitParagr2')}
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima impedit esse tenetur totam, eligendi, perferendis nam culpa voluptatibus, ipsam consectetur sit mollitia rerum deserunt natus maxime asperiores? Iusto, modi quos.
+                        Immergiti nel verde dei nostri vigneti
                     </p>
                     <p className='py-3.5'>
                         <span className='font-bold'>3. {t('visitParagrSpan3')}: </span>
                         {t('visitParagr3')}
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque suscipit saepe laborum tenetur placeat cumque. Cupiditate beatae earum dignissimos adipisci officiis dolorum dolores laborum, illum quas. Sed provident quae libero!
+                        Scopri i nostri vini nel nostro nuovo wineshop
                     </p>
                 </div>
             </section>
