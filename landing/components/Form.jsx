@@ -162,7 +162,7 @@ const Form = () => {
                                         value={data.name}
                                         required
                                     />
-                                    {data.name == '' && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>}
+                                    {/* {data.name == '' && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>} */}
                                 </div>
                                 <div>
                                     <input 
@@ -178,7 +178,7 @@ const Form = () => {
                                         value={data.surname}
                                         required
                                     />
-                                    {data.surname == '' && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>}
+                                    {/* {data.surname == '' && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>} */}
                                 </div>
                             </div>
                             <div className='inputs-form'>
@@ -195,7 +195,7 @@ const Form = () => {
                                     value={data.email}
                                     required
                                 />
-                                {data.email == '' && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>}
+                                {/* {data.email == '' && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>} */}
                             </div>
                             <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px', marginTop: '10px'}}>
                                 <input 
@@ -218,13 +218,24 @@ const Form = () => {
                             </div>
                         </form>
                         <div>
-                            <Button
-                                variant="contained"
-                                onClick={handleNext}
-                                sx={{ mt: 1, mr: 1 }}
-                            >
-                                {t('formContinueBtn')}
-                            </Button>
+                            {(data.name && data.surname && data.email) &&
+                                <Button
+                                    variant="contained"
+                                    onClick={handleNext}
+                                    sx={{ mt: 1, mr: 1 }}
+                                >
+                                    {t('formContinueBtn')}
+                                </Button>
+                            }
+                            {(!data.name || !data.surname || !data.email) &&
+                                <Button
+                                    variant="contained"
+                                    sx={{ mt: 1, mr: 1 }}
+                                    disabled={true}
+                                >
+                                    {t('formContinueBtn')}
+                                </Button>
+                            }
                         </div>
                     </StepContent>
                 </Step>
@@ -255,7 +266,7 @@ const Form = () => {
                                         <option value={t('proposal3')}>{t('proposal3')} (45€)</option>
                                     </select>
                                 </label>
-                                {data.tastingPackage == '' && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>}
+                                {/* {data.tastingPackage == '' && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>} */}
                             </div>
                             <div className='inputs-form'>
                                 <DatePicker 
@@ -269,7 +280,7 @@ const Form = () => {
                                     } 
                                     placeholderText="Please select a date"
                                 />
-                                {data.dateBooking == '' && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>}
+                                {/* {data.dateBooking == '' && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>} */}
                             </div>
                             <div className='inputs-form'>
                                 <div>
@@ -286,7 +297,7 @@ const Form = () => {
                                         // value={data.nPeople}
                                         required
                                     />
-                                    {data.nPeople == 0 && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>}
+                                    {/* {data.nPeople == 0 && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>} */}
                                 </div>
                                 <div>
                                     <input 
@@ -302,18 +313,29 @@ const Form = () => {
                                         // value={data.nTasting}
                                         required
                                     />
-                                    {data.nTasting == 0 && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>}
+                                    {/* {data.nTasting == 0 && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>} */}
                                 </div>
                             </div>
                         </form>
                         <div>
-                            <Button
-                                variant="contained"
-                                onClick={handleSignup}
-                                sx={{ mt: 1, mr: 1 }}
-                            >
-                                {t('formContinueBtn')}
-                            </Button>
+                            {(data.tastingPackage && data.dateBooking && data.nPeople != 0 && data.nTasting != 0) &&
+                                <Button
+                                    variant="contained"
+                                    onClick={handleNext}
+                                    sx={{ mt: 1, mr: 1 }}
+                                >
+                                    {t('formContinueBtn')}
+                                </Button>
+                            }
+                            {(!data.tastingPackage || !data.dateBooking || data.nPeople == 0 || data.nTasting == 0) &&
+                                <Button
+                                    variant="contained"
+                                    sx={{ mt: 1, mr: 1 }}
+                                    disabled={true}
+                                >
+                                    {t('formContinueBtn')}
+                                </Button>
+                            }
                             <Button
                                 onClick={handleBack}
                                 sx={{ mt: 1, mr: 1 }}
