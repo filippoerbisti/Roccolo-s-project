@@ -288,21 +288,21 @@ const Main = ({ user, userDoc }) => {
                       </button>
                     </div>
                     <p style={{marginTop: '20px', color: 'white'}}>{t('stageToComplete')}: {userDoc.nPathsToComplete}</p>
-                    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '10px', marginBottom: '10px'}}>
+                    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '10px', marginBottom: '10px', color: 'white'}}>
                       <p style={{marginRight: '10px'}}>{t('swipeToPath')}</p>
                       <CgArrowLongRight style={{fontSize: '25px'}} />
                     </div>
                     <div className='box-info-tasting'>
-                      <p>{t('booking')}</p>
+                      <p style={{textTransform: 'uppercase', letterSpacing: '1px'}}>{t('booking')}</p>
                       <ul>
-                        <li>Riservato: {userDoc.name} {userDoc.surname}</li>
-                        <li>{t('nPeople')}: {userDoc.nPeople}</li>
-                        <li>{t('nTasting')}: {userDoc.nTasting}</li>
-                        <li>{t('typeTasting')}: {userDoc.tastingPackage}</li>
+                        <li style={{paddingTop: '5px'}}>Riservato: {userDoc.name} {userDoc.surname}</li>
+                        <li style={{paddingTop: '5px'}}>{t('nPeople')}: {userDoc.nPeople}</li>
+                        <li style={{paddingTop: '5px'}}>{t('nTasting')}: {userDoc.nTasting}</li>
+                        <li style={{paddingTop: '5px'}}>{t('typeTasting')}: {userDoc.tastingPackage}</li>
                       </ul>
-                      <p style={{fontWeight: 'bold'}}>{t('hourTasting')} {today.getHours() < 13 ? '11.00' : '16.00'}</p>
+                      <p style={{fontWeight: 'bold', paddingTop: '10px', fontSize: 'large'}}>{t('hourTasting')} {today.getHours() < 13 ? '11.00' : '16.00'}</p>
                     </div>
-                    <div className='btn-container' style={{marginTop: '50px'}}>
+                    <div className='btn-container' style={{marginTop: '20px'}}>
                       <button className='btn' onClick={navigateHelp}>
                         {/* <Link href={'#help'}> */}
                           {t('help')}
