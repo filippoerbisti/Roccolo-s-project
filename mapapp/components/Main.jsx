@@ -279,7 +279,7 @@ const Main = ({ user, userDoc }) => {
                   <div className='swiper-start'>
                     <h1>{t('welcome')}</h1>
                     <h3>{t('exploreRoccolo')}</h3>
-                    <h3>{t('discoverQR')}</h3>
+                    {/*<h3>{t('discoverQR')}</h3>*/}
                     <div className='btn-container'>
                       <button className='btn-start' onClick={navigateMap}>
                         {/* <Link href={'#map'}> */}
