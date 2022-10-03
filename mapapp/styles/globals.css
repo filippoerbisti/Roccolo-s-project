@@ -428,8 +428,8 @@ body {
     }
 
     .checkbox-round label {
-      background-color: #fff;
-      border: 1px solid #ccc;
+      background-color: #488F4F;
+      border: 3px solid white;
       border-radius: 50%;
       cursor: pointer;
       height: 30px;
