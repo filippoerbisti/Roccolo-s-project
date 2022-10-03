@@ -514,6 +514,10 @@ form input {
     padding: 50px 0;
   }
 
+  .intro-title {
+    font-size: 45px;
+  }
+
   .box-txt {
     width: 80%;
   }
@@ -541,6 +545,11 @@ form input {
 }
 
 @media screen and (max-width: 1025px) {
+
+  .intro-title {
+    font-size: 40px;
+    padding: 0 15px;
+  }
 
   .parallax1{
     padding: 50px 0;
@@ -595,6 +604,10 @@ form input {
 }
 
 @media screen and (max-width: 768px) {
+  .intro-title {
+    font-size: 35px;
+  }
+
   .box-txt-img p {
     color: black;
   }
