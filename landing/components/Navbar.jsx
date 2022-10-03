@@ -43,8 +43,8 @@ const Navbar = () => {
                         height={100} 
                         objectFit="contain"
                         className='cursor-pointer'
-                        blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1660806591/Roccolo%20del%20Lago/logo_iidjdd.png'
-                        placeholder='blur'
+                        // blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1660806591/Roccolo%20del%20Lago/logo_iidjdd.png'
+                        // placeholder='blur'
                     />
                 </Link>
                 
