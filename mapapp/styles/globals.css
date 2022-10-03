@@ -260,7 +260,7 @@ body {
     
     .swiper-start {
       /* background-color: #EDCFBC; */
-      background: url(https://res.cloudinary.com/dl38nyo08/image/upload/v1664462336/mapapp/roccolo-roccolo_v1pmex.jpg);
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/dl38nyo08/image/upload/v1664462336/mapapp/roccolo-roccolo_v1pmex.jpg);
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
