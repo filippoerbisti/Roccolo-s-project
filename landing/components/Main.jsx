@@ -58,7 +58,7 @@ const Main = () => {
             </section>
 
             {/* Box Visit */}
-            <h2 className='text-center text-2xl my-5 font-bold visit-title'>{t('visitTitle1')}</h2>
+            <h2 id='visit' className='text-center text-2xl my-5 font-bold visit-title'>{t('visitTitle1')}</h2>
             <section className="section-background parallax1 flex flex-col pb-10">
                 <h3>{t('visitTitle2')}</h3>
                 <h4>{t('visitTitle3')}</h4>
@@ -82,13 +82,13 @@ const Main = () => {
             </section>
 
             {/* Box Selected Tastings */}
-            <h2 className='text-center text-2xl my-5 font-bold'>{t('tastingTitle')}</h2>
+            <h2 id='tasting' className='text-center text-2xl my-5 font-bold'>{t('tastingTitle')}</h2>
             <section >
                 <Proposals />
             </section>
                 
             {/* Box Form */}
-            <section className='section-background parallax-form'>
+            <section id='booking' className='section-background parallax-form'>
                 <div className='background-opacity-form'>
                     <h2 className='text-center text-2xl my-5 font-bold'>{t('formTitle')}</h2>
                     <div className="stepper">
