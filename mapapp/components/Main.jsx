@@ -303,7 +303,7 @@ const Main = ({ user, userDoc }) => {
                         <BsChevronRight style={{fontSize: '40px', marginRight: '-10px'}} />
                       </div>
                     </div>
-                    <div className='box-info-tasting'>
+                    {/* <div className='box-info-tasting'>
                       <p style={{textTransform: 'uppercase', letterSpacing: '1px'}}>{t('booking')}</p>
                       <ul>
                         <li style={{paddingTop: '5px'}}>Riservato: {fullname}</li>
@@ -312,7 +312,7 @@ const Main = ({ user, userDoc }) => {
                         <li style={{paddingTop: '5px'}}>{t('typeTasting')}: {userDoc.tastingPackage}</li>
                       </ul>
                       <p style={{fontWeight: 'bold', paddingTop: '10px', fontSize: 'large'}}>{t('hourTasting')} {today.getHours() < 13 ? '11.00' : '16.00'}</p>
-                    </div>
+                    </div> */}
                     <div className='btn-container' style={{marginTop: '20px'}}>
                       <button className='btn' onClick={navigateHelp}>
                         {/* <Link href={'#help'}> */}
