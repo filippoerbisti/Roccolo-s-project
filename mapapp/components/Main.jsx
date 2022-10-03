@@ -290,7 +290,7 @@ const Main = ({ user, userDoc }) => {
                     <p style={{marginTop: '20px', color: 'white'}}>{t('stageToComplete')}: {userDoc.nPathsToComplete}</p>
                     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px', marginBottom: '10px', color: 'white'}}>
                       <p>{t('swipeToPath')}</p>
-                      <div class="animate-arrow">
+                      <div className="animate-arrow">
                         <span>
                           <BsChevronRight style={{fontSize: '40px', marginRight: '-10px', color: 'rgba(255,255,255,0.3)'}} />
                         </span>
