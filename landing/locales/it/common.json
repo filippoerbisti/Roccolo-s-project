@@ -51,6 +51,8 @@
     "total": "Totale",
     "payWith": "Paga con",
     "required": "Obbligatorio",
+    "emailDuplicated": "Email già presente nel sistema",
+    "formSuccess": "Registrazione completata!",
 
     "followUs": "Seguici su",
     "where": "Dove",

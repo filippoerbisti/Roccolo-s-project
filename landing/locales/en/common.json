@@ -51,6 +51,8 @@
     "total": "Total",
     "payWith": "Pay with",
     "required": "Required",
+    "emailDuplicated": "Email already present in the system",
+    "formSuccess": "Registration completed!",
 
     "followUs": "Follow us on",
     "where": "Where",
