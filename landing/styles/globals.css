@@ -515,11 +515,6 @@ form input {
 }
 
 @media screen and (max-width: 1025px) {
-  .nav-logo {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
 
   .parallax1{
     padding: 50px 0;
@@ -614,5 +609,15 @@ form input {
     flex-direction: column;
     align-items: flex-start;
     margin-left: 30px;
+  }
+}
+
+
+/* THIS SECTION MUST FOLLOW THE Navbar.module.css  */
+@media screen and (max-width: 1199px) {
+  .nav-logo {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
 }
