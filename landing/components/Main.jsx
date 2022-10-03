@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import useTranslation from 'next-translate/useTranslation';
-import toast from 'react-hot-toast';
 import Form from './Form';
 import Proposals from './Proposals';
 
@@ -9,12 +8,11 @@ const Main = () => {
     const { t } = useTranslation('common');
     const router = useRouter();
 
-    const mapapp = 'https://mapapproccolo.vercel.app';
-
-    const bookTastingNow = () => {
-        toast.loading('Redirecting...');
-        router.push(mapapp);
-    };
+    // On load check if asPath has value (asPath is equals to #<id_section>)
+    useEffect(() => {
+        if(router.asPath)
+            router.push('/');
+    }, [])
 
     return (
         <div>
