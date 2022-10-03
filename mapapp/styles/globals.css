@@ -361,7 +361,7 @@ body {
   #home .box-info-tasting {
     width: 80%;
     background: linear-gradient(rgba(5, 0, 0, 0.5), rgba(5, 0, 0, 0.5));
-    margin: 0 auto;
+    margin: 20px auto;
     border-radius: 10px;
     padding: 10px 20px;
     color: white;
