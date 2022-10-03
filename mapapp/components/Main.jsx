@@ -324,13 +324,13 @@ const Main = ({ user, userDoc }) => {
               </SwiperSlide>
               <SwiperSlide>
                 <div className='swiper-path'>
-                  <h2>{t('paths')}:</h2>
+                  <h2 style={{color: 'black'}}>{t('paths')}:</h2>
                   {fakePaths.map((fakePath) => {
                     return (
-                      <div key={fakePath.id} className="path-card" style={{background: `linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(${fakePath.img})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center"}}>
+                      <div key={fakePath.id} className="path-card" style={{background: `linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(${fakePath.img})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center"}}>
                         <img src={fakePath.img} />
                         <div className='path-card-txt'>
-                          <h4>{fakePath.title}</h4>
+                          <h4 style={{color: 'white'}}>{fakePath.title}</h4>
                           <span className="detail">
                             <Link href={''}>Vedi dettagli</Link>
                           </span>
