@@ -432,7 +432,7 @@ body {
       border-radius: 15px;
       margin: 15px 5px;
       background: #F5F5F5;
-      box-shadow: -3px 3px 5px #940E25, -5px 5px 5px rgba(0, 0, 0, 0.45);
+      box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.3);
       color: white;
     }
 
