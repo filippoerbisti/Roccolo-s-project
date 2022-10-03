@@ -266,7 +266,7 @@ const Form = () => {
                                 />
                                 {/* {data.email == '' && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>} */}
                             </div>
-                            <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px', marginTop: '10px'}}>
+                            <div className='checkbox-form'>
                                 <input 
                                     type="checkbox" 
                                     id="newsletter" 
@@ -281,7 +281,7 @@ const Form = () => {
                                 />
                                 <label htmlFor="newsletter" style={{marginLeft: '10px'}}>{t('newsletterChkbx')}</label>
                             </div>
-                            <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px', marginTop: '10px'}}>
+                            <div className='checkbox-form'>
                                 <input type="checkbox" id="privacy" name="privacy"  checked disabled />
                                 <label htmlFor="privacy" style={{marginLeft: '10px'}}>{t('privacyChkbx')} <span style={{color: 'red'}}>*</span></label>
                             </div>
