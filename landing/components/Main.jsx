@@ -1,8 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import useTranslation from 'next-translate/useTranslation';
-import Form from './Form';
-import Proposals from './Proposals';
+import {Form, Proposals} from './';
+
+const ReadMore = ({ children }) => {
+    const text = children;
+
+    const { t } = useTranslation('common');
+  
+    const [isReadMore, setIsReadMore] = useState(true);
+  
+    const toggleReadMore = () => {
+      setIsReadMore(!isReadMore);
+    };
+  
+    return (
+        <span>
+            {isReadMore ? text.slice(0, 400) : text}
+            
+            {text.length >= 400 && (
+                <span onClick={toggleReadMore} className='showMore'>
+                    {isReadMore ? `${t('readMore')}` : `${t('showLess')}`}
+                </span>
+            )}
+        </span>
+    )
+}
 
 const Main = () => {
     const { t } = useTranslation('common');
@@ -12,7 +35,10 @@ const Main = () => {
     useEffect(() => {
         if(router.asPath)
             router.push('/');
-    }, [])
+    }, []);
+
+    const paragrToSliceHistory = `${t('historyParagr1')} ${t('historyParagr2')} ${t('historyParagr3')}`;
+    const paragrToSliceVineyard = `${t('vineyardParagr1')} ${t('vineyardParagr2')}`;
 
     return (
         <div>
@@ -32,9 +58,16 @@ const Main = () => {
                     <div className='box-intro'>
                         <div className='box-txt-img'>
                             <div className='box-txt'>
-                                <p>{t('historyParagr1')}</p>
-                                <p>{t('historyParagr2')}</p>
-                                <p>{t('historyParagr3')}</p>
+                                <div className='pc-not-slice-text'>
+                                    <p>{t('historyParagr1')}</p>
+                                    <p>{t('historyParagr2')}</p>
+                                    <p>{t('historyParagr3')}</p>
+                                </div>
+                                <p className='mobile-slice-text'>
+                                    <ReadMore>
+                                        {paragrToSliceHistory}
+                                    </ReadMore>
+                                </p>
                             </div>
                             <img className='box-img' src='https://res.cloudinary.com/dl38nyo08/image/upload/v1664462336/mapapp/roccolo-roccolo_v1pmex.jpg' />
                         </div>
@@ -46,8 +79,15 @@ const Main = () => {
                     <div className='box-intro'>
                         <div className='box-txt-img'>
                             <div className='box-txt'>
-                                <p>{t('vineyardParagr1')}</p>
-                                <p>{t('vineyardParagr2')}</p>
+                                <div className='pc-not-slice-text'>
+                                    <p>{t('vineyardParagr1')}</p>
+                                    <p>{t('vineyardParagr2')}</p>
+                                </div>
+                                <p className='mobile-slice-text'>
+                                    <ReadMore>
+                                        {paragrToSliceVineyard}
+                                    </ReadMore>
+                                </p>
                             </div>
                             <img className='box-img' src='https://res.cloudinary.com/dl38nyo08/image/upload/v1664462336/mapapp/roccolo-roccolo_v1pmex.jpg' />
                         </div>
