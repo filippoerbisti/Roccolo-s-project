@@ -8,12 +8,53 @@ import toast from 'react-hot-toast';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import StepContent from '@mui/material/StepContent';
 import Button from '@mui/material/Button';
+
+const FormButton = styled(Button)({
+    boxShadow: 'none',
+    textTransform: 'none',
+    fontSize: 16,
+    padding: '6px 12px',
+    border: '1px solid',
+    lineHeight: 1.5,
+    backgroundColor: '#0063cc',
+    borderColor: '#0063cc',
+    fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+    '&:hover': {
+      backgroundColor: '#0069d9',
+      borderColor: '#0062cc',
+      boxShadow: 'none',
+    },
+    '&:active': {
+      boxShadow: 'none',
+      backgroundColor: '#0062cc',
+      borderColor: '#005cbf',
+    },
+    '&:focus': {
+      boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
+    },
+    '&:disabled': {
+        borderColor: 'rgba(255,255,255,0.5)',
+        color: 'rgba(255,255,255,0.5)'
+    },
+  });
 
 import { useRouter } from 'next/router';
 
@@ -247,22 +288,22 @@ const Form = () => {
                         </form>
                         <div>
                             {(data.name && data.surname && data.email) &&
-                                <Button
+                                <FormButton
                                     variant="contained"
                                     onClick={handleNext}
                                     sx={{ mt: 1, mr: 1 }}
                                 >
                                     {t('formContinueBtn')}
-                                </Button>
+                                </FormButton>
                             }
                             {(!data.name || !data.surname || !data.email) &&
-                                <Button
+                                <FormButton
                                     variant="contained"
                                     sx={{ mt: 1, mr: 1 }}
                                     disabled={true}
                                 >
                                     {t('formContinueBtn')}
-                                </Button>
+                                </FormButton>
                             }
                         </div>
                     </StepContent>
@@ -347,22 +388,22 @@ const Form = () => {
                         </form>
                         <div>
                             {(data.tastingPackage && data.dateBooking && data.nPeople != 0 && data.nTasting != 0) &&
-                                <Button
+                                <FormButton
                                     variant="contained"
                                     onClick={handleNext}
                                     sx={{ mt: 1, mr: 1 }}
                                 >
                                     {t('formContinueBtn')}
-                                </Button>
+                                </FormButton>
                             }
                             {(!data.tastingPackage || !data.dateBooking || data.nPeople == 0 || data.nTasting == 0) &&
-                                <Button
+                                <FormButton
                                     variant="contained"
                                     sx={{ mt: 1, mr: 1 }}
                                     disabled={true}
                                 >
                                     {t('formContinueBtn')}
-                                </Button>
+                                </FormButton>
                             }
                             <Button
                                 onClick={handleBack}
