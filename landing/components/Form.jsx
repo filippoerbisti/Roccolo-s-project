@@ -3,6 +3,7 @@ import useTranslation from 'next-translate/useTranslation';
 import { useStateContext } from '../context/StateContext';
 
 import * as emailjs from '@emailjs/browser';
+import toast from 'react-hot-toast';
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -15,6 +16,12 @@ import StepContent from '@mui/material/StepContent';
 import Button from '@mui/material/Button';
 
 import { useRouter } from 'next/router';
+
+import { 
+  doc,  
+  getDoc 
+} from 'firebase/firestore';
+import { database } from '../utils/firebase';
 
 const Form = () => {
     const { t } = useTranslation('common');
@@ -29,8 +36,8 @@ const Form = () => {
         email: '',
         newsletter: false,
         tastingPackage: '',
-        nPeople: 0,
-        nTasting: 0,
+        nPeople: '',
+        nTasting: '',
         dateBooking: '',
         totalPaid: 0
     });
@@ -39,13 +46,34 @@ const Form = () => {
         e.preventDefault();
 
         try {
-            sendEmail(data)
-            // await signup(data).then((result) => {
-            //     createUserDoc(result.user, data);
-            //     sendEmail(data);
-            // }, (error) => {
-            //     // toast.error(`${t('emailErr')}`);
-            // });
+            if(data) {
+                getDoc(doc(database, "check_mail", data.email)).then(async docSnap => {
+                    if (docSnap.exists()) 
+                        toast.error(`${t('emailDuplicated')}`);
+                    else {
+                        await signup(data).then((result) => {
+                            createUserDoc(result.user, data);
+                            sendEmail(data);
+
+                            setActiveStep(0);
+                            setData({
+                                name: '',
+                                surname: '',
+                                email: '',
+                                newsletter: false,
+                                tastingPackage: '',
+                                nPeople: '',
+                                nTasting: '',
+                                dateBooking: '',
+                                totalPaid: 0
+                            });
+                            toast.success(`${t('formSuccess')}`, {duration: 3000});
+                        }, (error) => {
+                            // toast.error(`${t('emailErr')}`);
+                        });
+                    }
+                })
+            }
         } catch (err) {
             console.log(err)
         }
@@ -294,7 +322,7 @@ const Form = () => {
                                                 nPeople: e.target.value,
                                             })
                                         }
-                                        // value={data.nPeople}
+                                        value={data.nPeople}
                                         required
                                     />
                                     {/* {data.nPeople == 0 && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>} */}
@@ -310,7 +338,7 @@ const Form = () => {
                                                     nTasting: e.target.value,
                                                 })
                                         }
-                                        // value={data.nTasting}
+                                        value={data.nTasting}
                                         required
                                     />
                                     {/* {data.nTasting == 0 && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>} */}
@@ -357,11 +385,13 @@ const Form = () => {
                         </div>
                         <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px'}}>
                             <button 
+                                onClick={handleSignup}
                                 style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px', color: '#4379FF'}}
                             >
                                 {t('payWith')} Stripe
                             </button>
                             <button 
+                                onClick={handleSignup}
                                 style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginLeft: '10px', marginTop: '10px', color: '#009cde'}}
                             >
                                 {t('payWith')} Paypal
