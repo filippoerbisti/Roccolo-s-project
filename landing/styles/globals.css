@@ -378,6 +378,32 @@ a {
   margin-right: 10px;
 }
 
+
+  /* STYLE READMORE */
+
+  .pc-not-slice-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-slice-text {
+    display: none;
+  }
+
+  .showMore {
+    cursor: pointer;
+    color: #892331;
+    font-size: smaller;
+  }
+
+  .showMore:hover {
+    color: #892331;
+    opacity: 0.8;
+    text-decoration: underline;
+  }
+
+  /* END STYLE READMORE */
+
 /* END STYLE MAIN */
 
 
@@ -587,6 +613,15 @@ form input {
 
   .box-txt-img img {
     display: none;
+  }
+
+  .pc-not-slice-text {
+    display: none;
+  }
+  
+  .mobile-slice-text {
+    display: flex;
+    flex-direction: column;
   }
 
   .parallax1 h3 {
