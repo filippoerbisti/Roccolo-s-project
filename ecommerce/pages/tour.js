@@ -19,8 +19,8 @@ const Tour = () => {
                     width={100}
                     height={75}
                     className={styles.spin3D} 
-                    blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1655208182/Roccolo%20del%20Lago/vr-360-logo_s1uhk0.png'
-                    placeholder='blur'
+                    // blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1655208182/Roccolo%20del%20Lago/vr-360-logo_s1uhk0.png'
+                    // placeholder='blur'
                 />
             </div>
             <div className={styles.row}>
