@@ -102,6 +102,127 @@ a {
 /* END STYLES PROGRESS SCROLLBAR  */
 
 
+/* STYLES NAVBAR */
+
+.nav-logo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+  /* STYLES HAMBURGER MENU ICON */
+
+  .hamburger-menu {
+    z-index: 5000;
+  }
+
+  .svg,
+  .burger,
+  .x {
+    height: 80px;
+    position: absolute;
+    width: 80px;
+  }
+
+  .plate {
+    height: 80px;
+    width: 80px;
+  }
+
+  .burger {
+    filter: url(#gooeyness);
+  }
+
+  .x {
+    transform: scale(0);
+    transition: transform 400ms;
+  }
+
+  .line {
+    fill: none;
+    stroke: black;
+    stroke-width: 6px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transform-origin: 50%;
+    transition: stroke-dasharray 500ms 200ms, stroke-dashoffset 500ms 200ms, transform 500ms 200ms;
+  }
+
+  .active {
+    position: fixed;
+    top: 20px;
+    right: 5px;
+  }
+
+  .x .line {
+    stroke-width: 5.5px;
+  }
+  .active .line {
+    transition: stroke-dasharray 500ms, stroke-dashoffset 500ms, transform 500ms;
+  }
+
+  .active .x {
+    transform: scale(1);
+    transition: transform 400ms 350ms;
+  }
+
+  .plate5 .line {
+    transition: stroke-dasharray 400ms 100ms, stroke-dashoffset 400ms 100ms, transform 400ms 100ms;
+  }
+
+  .plate5 .line1 {
+    stroke-dasharray: 40 40;
+  }
+
+  .plate5 .line2 {
+    stroke-dasharray: 21 39;
+  }
+  .plate5 .line3 {
+    stroke-dasharray: 21 39;
+  }
+
+  .plate5 .line4 {
+    stroke-dasharray: 40 40;
+  }
+
+  .plate5 .x {
+    transition: transform 400ms 50ms;
+  }
+
+  .active.plate5 .line {
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms, transform 400ms;
+  }
+
+  .active.plate5 .line1 {
+    stroke-dasharray: 1 40;
+    stroke-dashoffset: -33px;
+  }
+  .active.plate5 .line2 {
+    stroke-dasharray: 5 39;
+    stroke-dashoffset: -37px;
+  }
+
+  .active.plate5 .line3 {
+    stroke-dasharray: 5 39;
+    stroke-dashoffset: -37px;
+  }
+
+  .active.plate5 .line4 {
+    stroke-dasharray: 1 40;
+    stroke-dashoffset: -33px;
+  }
+
+  .active.plate5 .x {
+    transition: transform 400ms 50ms;
+  }
+
+  /* END STYLES HAMBURGER MENU ICON */
+
+/* STYLES NAVBAR */
+
+
 /* STYLES PARALLAX EFFECT */
 
 .section-background {
@@ -362,6 +483,7 @@ form input {
 
 
 @media screen and (max-width: 1201px) {
+  
   .box-intro {
     padding: 50px 0;
   }
@@ -393,6 +515,12 @@ form input {
 }
 
 @media screen and (max-width: 1025px) {
+  .nav-logo {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
   .parallax1{
     padding: 50px 0;
   }
