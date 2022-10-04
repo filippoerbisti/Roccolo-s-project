@@ -54,7 +54,7 @@ const FormButton = styled(Button)({
         borderColor: 'rgba(255,255,255,0.5)',
         color: 'rgba(255,255,255,0.5)'
     },
-  });
+});
 
 import { useRouter } from 'next/router';
 
@@ -82,7 +82,7 @@ const Form = () => {
         dateBooking: '',
         totalPaid: 0
     });
-    
+
     const handleSignup = async (e) => {
         e.preventDefault();
 
@@ -127,22 +127,29 @@ const Form = () => {
     const sendEmail = async () => {
         let subject;
         let message;
+        let tastingPackage;
 
         if (data) {  
             const fullname = capitalizeFirstLetter(data.name) + " " + capitalizeFirstLetter(data.surname); 
             let datebooking = data.dateBooking.getUTCDate() + "/" + (data.dateBooking.getUTCMonth() + 1) + "/" + data.dateBooking.getUTCFullYear(); 
+            if (data.tastingPackage == 15)
+                tastingPackage = `${t('proposal1')}`;
+            else if (data.tastingPackage == 30)
+                tastingPackage = `${t('proposal2')}`;
+            else if (data.tastingPackage == 45)
+                tastingPackage = `${t('proposal3')}`;
             if (router.locale == 'it') {
                 subject = `Degustazione Prenotata - Roccolo del Lago`;
-                message = ('Hai prenotato la degustazione ' + data.tastingPackage+ 
-                ' per ' + data.nTasting+' su ' +data.nPeople + 'persone totali il giorno ' + datebooking + "Credenziali di accesso all'app: email:" + data.email + 
-                ', password:' + data.email.substring(0, 4) + 'R23!');
+                message = ('Hai prenotato la degustazione ' + tastingPackage + 
+                ' per ' + data.nTasting + ' su ' + data.nPeople + ' persone totali il giorno ' + datebooking + ". Credenziali di accesso all'app: email: " + data.email + 
+                ', password: ' + data.email.substring(0, 4) + 'R23!');
             } else if (router.locale == 'en') {
                 subject = `Booked Tasting - Roccolo del Lago`;
-                message = `
-                    Hai prenotato la degustazione ${data.tastingPackage} per ${data.nTasting} su ${data.nPeople} totali il giorno ${datebooking}
-                    Credenziali di accesso: email: ${data.email}, password ${data.email.substring(0, 4) + 'R23!'}
-                `;
+                message = ('You booked the tasting ' + tastingPackage + 
+                ' for ' + data.nTasting + ' out of ' + data.nPeople + ' total people the day ' + datebooking + ". Access credentials to the app: email: " + data.email + 
+                ', password: ' + data.email.substring(0, 4) + 'R23!');
             }
+
             const templateParams = {
                 from_name: fullname,
                 from_email: data.email,
@@ -175,7 +182,7 @@ const Form = () => {
                 // toast.dismiss(toastLoading);
                 // toast.success(`${t('emailOk')}`);
             }, (error) => {
-                // toast.error(`${t('emailErr')}`);
+                toast.error(`${t('emailError')}`);
             });
 
             //Subscribe Newsletter
@@ -192,13 +199,19 @@ const Form = () => {
                 });
             }
         } else {
-            toast.error('dc');
+            toast.error(`${t('dataRequired')}`);
         }
     }
 
     const [activeStep, setActiveStep] = useState(0);
 
     const handleNext = () => {
+        if(data.tastingPackage && data.nTasting)
+            setData({
+                ...data,
+                totalPaid: data.tastingPackage * data.nTasting,
+            })
+
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
     };
 
@@ -330,9 +343,9 @@ const Form = () => {
                                         defaultValue={data.tastingPackage}
                                     >
                                         <option value="" disabled="disabled" selected="selected">{t('selectTasting')}</option>
-                                        <option value={t('proposal1')}>{t('proposal1')} (15€)</option>
-                                        <option value={t('proposal2')}>{t('proposal2')} (30€)</option>
-                                        <option value={t('proposal3')}>{t('proposal3')} (45€)</option>
+                                        <option value={15}>{t('proposal1')} (15€)</option>
+                                        <option value={30}>{t('proposal2')} (30€)</option>
+                                        <option value={45}>{t('proposal3')} (45€)</option>
                                     </select>
                                 </label>
                                 {/* {data.tastingPackage == '' && <p style={{fontSize: 'small', color: 'red', opacity: '0.6'}}>{t('required')}</p>} */}
