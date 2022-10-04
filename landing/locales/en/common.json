@@ -53,8 +53,11 @@
     "total": "Total",
     "payWith": "Pay with",
     "required": "Required",
+
     "emailDuplicated": "Email already present in the system",
     "formSuccess": "Registration completed!",
+    "emailError": "Error sending email",
+    "dataRequired": "Enter all fields",
 
     "followUs": "Follow us on",
     "where": "Where",
