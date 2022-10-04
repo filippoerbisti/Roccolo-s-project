@@ -5,10 +5,13 @@ import {
   setDoc 
 } from 'firebase/firestore';
 import { auth, database } from '../utils/firebase';
+import useTranslation from 'next-translate/useTranslation';
 
 const Context = createContext();
 
 export const StateContext = ({ children }) => {
+
+  const { t } = useTranslation('common');
 
   const [showMenu, setShowMenu] = useState(false);
   const [changeIconHamburgerMenu, setChangeIconHamburgerMenu] = useState(false);
@@ -27,14 +30,22 @@ export const StateContext = ({ children }) => {
         let timestampEndAccessApp = date.setDate(data.dateBooking.getDate() + 6)
         let datetimeEndAccessApp = new Date(Number(timestampEndAccessApp))
         let dateEndAccessApp = datetimeEndAccessApp.getUTCDate() + "/" + datetimeEndAccessApp.getUTCMonth() + "/" + datetimeEndAccessApp.getUTCFullYear();
-        
+
+        let tastingPackage;
+        if (data.tastingPackage == 15)
+          tastingPackage = `${t('proposal1')}`;
+        else if (data.tastingPackage == 30)
+          tastingPackage = `${t('proposal2')}`;
+        else if (data.tastingPackage == 45)
+          tastingPackage = `${t('proposal3')}`;
+
         setDoc(doc(database, "user_document", user.email), {
             userId: user.uid,
             name: data.name,
             surname: data.surname,
             email: data.email,
             newsletter: data.newsletter,
-            tastingPackage: data.tastingPackage,
+            tastingPackage: tastingPackage,
             nPeople: data.nPeople,
             nTasting: data.nTasting,
             dateBooking: datebooking,
