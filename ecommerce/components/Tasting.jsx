@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 import useTranslation from 'next-translate/useTranslation';
 
 import styles from '../styles/Event.module.css';
@@ -50,11 +51,11 @@ const Tasting = () => {
         {t('tastingIntro2')}
       </h3>
       <p className={styles.paragraph}>
-        <ReadMore>
+        {/* <ReadMore>
           {pTastingParagraph}
-        </ReadMore>
+        </ReadMore> */}
       </p>
-      <div className={styles.row}>
+      {/* <div className={styles.row}>
         <div className={styles.left}>
           <h3 className={styles.titlePromoTasting}>{t('tastingPromo1')}</h3>
           <p className={styles.paragraphPromoTasting}>
@@ -85,6 +86,9 @@ const Tasting = () => {
             <span className={styles.bold}>{t('tastingPromoTitle4')}</span> - {t('tastingPromoParagraph4')} {t('tastingPromo2More')}
           </p>
         </div>
+      </div> */}
+      <div className={styles.row}>
+        ADD CARD TASTING PACKAGE
       </div>
       <div className={styles.footerTasting}>
         <div className={styles.btnContainer}>
