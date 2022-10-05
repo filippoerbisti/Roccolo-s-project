@@ -28,7 +28,6 @@ const Login = () => {
         btnOpenModalRecPsw.onclick = function() {
             modalRecPsw.style.display = "flex";
             modalRecPsw.style.alignItems = "center";
-            // modalRecPsw.style.justifyContent = "center";
         }
 
         closeModalRecPsw.onclick = function() {
