@@ -747,11 +747,11 @@ body {
     right: 10px;
     display: flex;
     justify-content: flex-end;
-    z-index: 999999999;
+    z-index: 999;
   }
 
   .qr-reader {
-    z-index: 999999999;
+    z-index: 999;
     border: 2px solid #fff;
     background: white;
     border-radius: 50%;
@@ -778,7 +778,7 @@ body {
   .modal-qr {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 30; /* Sit on top */
+    z-index: 1000; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
