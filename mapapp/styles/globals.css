@@ -1036,9 +1036,18 @@ body {
 
 .no-auth-period {
   width: 100%;
-  padding-top: 100px;
+  /* padding-top: 100px; */
   height: 100vh;
   display: flex;
-  /* align-items: center; */
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+}
+
+.no-auth-period h2 {
+  font-size: medium;
+  color: white;
+  padding: 40px 20px;
+  border-radius: 20px;
+  background: #421B1B;
 }
