@@ -280,14 +280,14 @@ const Main = ({ user, userDoc }) => {
                     <h1>{t('welcome')}</h1>
                     <h3>{t('exploreRoccolo')}</h3>
                     {/*<h3>{t('discoverQR')}</h3>*/}
-                    <div className='btn-container'>
+                    <div className='btn-container' style={{margin: '20px 0'}}>
                       <button className='btn-start' onClick={navigateMap}>
                         {/* <Link href={'#map'}> */}
                           {t('start')}
                         {/* </Link> */}
                       </button>
                     </div>
-                    <p style={{marginTop: '20px', color: 'white'}}>{t('stageToComplete')}: {userDoc.nPathsToComplete}</p>
+                    <p style={{color: 'white'}}>{t('stageToComplete')}: {userDoc.nPathsToComplete}</p>
                     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px', marginBottom: '10px', color: 'white'}}>
                       <p>{t('swipeToPath')}</p>
                       <div className="animate-arrow">
