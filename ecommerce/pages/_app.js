@@ -78,12 +78,13 @@ function MyApp({ Component, pageProps }) {
               padding: "5px"
             }}
             buttonStyle={{ 
-              padding: '10px',
+              padding: '10px 30px',
               margin: '-10px 5px 5px 0',
               cursor: "pointer",
               color: "#fff", 
               backgroundColor: "#892331",
-              fontSize: "14px"
+              fontSize: "14px",
+              borderRadius: '10px'
             }}
             overlay
             expires={30} // 30 days before expired
