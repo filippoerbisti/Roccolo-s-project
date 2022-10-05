@@ -2,7 +2,11 @@
     "loading": "Chargement",
 
     "errorCredential": "Les identifiants sont incorrects",
+    "errorEmail": "EErreur lors de l'envoi de l'e-mail, réessayez",
     "startTour": "Commencez la visite",
+    "recoveryPassword": "Mot de passe oublié?",
+    "modalRecoveryText": "Entrez l'e-mail avec lequel vous vous êtes inscrit, nous vous enverrons le mot de passe.",
+    "send": "Soumettre",
 
     "greetings": "Salut",
     "activeLicense": "Nous vous informons que la licence de Mapapp sera actif",

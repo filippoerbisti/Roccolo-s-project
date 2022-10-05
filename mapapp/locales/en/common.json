@@ -2,7 +2,11 @@
     "loading": "Loading",
 
     "errorCredential": "The credentials are incorrect",
-    "startTour": "Start the tour ",
+    "errorEmail": "Error sending email, try again",
+    "startTour": "Start the tour",
+    "recoveryPassword": "Forgot password?",
+    "modalRecoveryText": "Enter the email with which you registered, we will send you the password.",
+    "send": "Send",
 
     "greetings": "Greetings",
     "activeLicense": "We inform you that the license for the Mapapp will be active",

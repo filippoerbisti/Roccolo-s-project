@@ -2,7 +2,11 @@
     "loading": "Wird geladen",
 
     "errorCredential": "Die Anmeldeinformationen sind falsch",
+    "errorEmail": "Fehler beim Senden der E-Mail, versuchen Sie es erneut",
     "startTour": "Tour starten",
+    "recoveryPassword": "Passwort vergessen?",
+    "modalRecoveryText": "Geben Sie die E-Mail ein, mit der Sie sich registriert haben, wir senden Ihnen das Passwort zu.",
+    "send": "Senden",
 
     "greetings": "Grüße",
     "activeLicense": "Wir informieren Sie, dass die Lizenz für die Mapapp wird aktiv sein",
