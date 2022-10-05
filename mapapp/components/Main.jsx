@@ -43,7 +43,7 @@ const Main = ({ user, userDoc }) => {
 
     let formatToday = today.getUTCDate() + "/" + (today.getUTCMonth() + 1) + "/" + today.getUTCFullYear();
 
-    let dateBookingHourMin = (userDoc.dateBooking.getHours + today.getHours() < 13 ? 11 : 18);
+    let dateBookingHourMin = (userDoc.dateBooking.getHours + today.getHours() < 13 ? 11 : 19);
     console.log(today.getHours())
     // Modal Tasting Hour to remember the hour of tasting
     modalTastingH = document.getElementById("modalTastingHour");
