@@ -161,7 +161,7 @@ body {
   box-shadow: none;
 }
 
-.login form button {
+.login .form-button-login {
   width: 100%;
   max-width: 300px;
   padding: 5px 0px;
@@ -177,6 +177,71 @@ body {
   transform: scale(1, 1);
   transition: transform 0.5s ease;
 }
+
+  /* STYLE MODAL RECOVERY PASSWORD */
+
+  .btn-link-rec-psw {
+    width: 100%;
+    padding-right: 10px;
+    text-align: right;
+  }
+
+  .modal-rec-psw {
+    display: none; 
+    position: fixed; 
+    z-index: 6; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+
+  .modal-content-rec-psw {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fefefe;
+    border-radius: 10px;
+    margin: auto;
+    padding: 0 12px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 200px;
+  }
+
+  .modal-content-rec-psw > div {
+    padding: 0 10px;
+  }
+
+  .btn-send-rec-psw {
+    width: 60%;
+    margin-top: 20px;
+    background: #940E25;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 10px;
+    color: white;
+    text-transform: uppercase;
+  }
+
+  .close-modal-rec-psw {
+    color: #aaaaaa;
+    margin-left: auto;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close-modal-rec-psw:hover,
+  .close-modal-rec-psw:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* STYLE MODAL RECOVERY PASSWORD */
 
 /* END STYLES LOGIN */
 
