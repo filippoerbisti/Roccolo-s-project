@@ -697,7 +697,7 @@ body {
       .accordion__item {
         margin: 10px 0;
         background: #F5F5F5;
-        box-shadow: -8px 8px 35px rgba(0, 0, 0, 0.45);
+        box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.45);
         border-radius: 5px;
       }
 
