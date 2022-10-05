@@ -166,7 +166,57 @@ const Main = ({ products }) => {
 
       <hr className={styles.hr} />
 
+      <div className={styles.textContainerRight}>
+        <div className={styles.w50mx40}>
+          <h1 className={styles.title} style={{marginTop: '10px'}}>
+            <Link href='/event#tasting'>{t('tastingTitle')}</Link>
+          </h1>
+          <p className={styles.paragraph}>
+            {/* <ReadMore>
+              {pTastingParagraph}
+            </ReadMore> */}
+            {pTastingParagraph} : <br />
+            - {t('tastingParagraphProposal1')} (add small descr) <br />
+            - {t('tastingParagraphProposal2')} (add small descr) <br />
+            - {t('tastingParagraphProposal3')} (add small descr) <br />
+          </p>
+          <div className={styles.btnContainer}>
+            <Link href='/event#tasting'>
+              <button className={styles.btn} type='button'> 
+                {t('tastingButton')}
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className={`${styles.w50mx40} ${styles.mob}`}>
+          <Image 
+            src='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394256/Roccolo%20del%20Lago/casual%20img/pexels-ray-piedra-1545529_tv7i7l.jpg' 
+            alt="tasting_img" 
+            width={700} 
+            height={400} 
+            layout="responsive" 
+            objectFit="cover"
+            // blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394256/Roccolo%20del%20Lago/casual%20img/pexels-ray-piedra-1545529_tv7i7l.jpg'
+            // placeholder='blur'
+          />
+        </div>
+      </div>
+
+      <hr className={styles.hr} />
+
       <div className={styles.textContainerLeft}>
+        <div className={`${styles.w50mx40} ${styles.mob}`}>
+          <Image 
+            src='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394256/Roccolo%20del%20Lago/casual%20img/pexels-pixabay-434311_dbuhns.jpg' 
+            alt="wineshop_img" 
+            width={700} 
+            height={400} 
+            layout="responsive" 
+            objectFit="cover"
+            // blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394256/Roccolo%20del%20Lago/casual%20img/pexels-pixabay-434311_dbuhns.jpg'
+            // placeholder='blur'
+          />
+        </div>
         <div className={styles.w50mx40}>
           <h1 className={styles.title}>
             <Link href='/wineshop'>{t('wineshopTitle')}</Link>
@@ -184,59 +234,13 @@ const Main = ({ products }) => {
             </Link>
           </div>
         </div>
-        <div className={`${styles.w50mx40} ${styles.mob}`}>
-          <Image 
-            src='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394256/Roccolo%20del%20Lago/casual%20img/pexels-pixabay-434311_dbuhns.jpg' 
-            alt="wineshop_img" 
-            width={700} 
-            height={400} 
-            layout="responsive" 
-            objectFit="cover"
-            // blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394256/Roccolo%20del%20Lago/casual%20img/pexels-pixabay-434311_dbuhns.jpg'
-            // placeholder='blur'
-          />
-        </div>
       </div>
 
       <hr className={styles.hr} />
 
       <div className={styles.textContainerRight}>
-        <div className={`${styles.w50mx40} ${styles.mob}`}>
-          <Image 
-            src='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394256/Roccolo%20del%20Lago/casual%20img/pexels-ray-piedra-1545529_tv7i7l.jpg' 
-            alt="tasting_img" 
-            width={700} 
-            height={400} 
-            layout="responsive" 
-            objectFit="cover"
-            // blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394256/Roccolo%20del%20Lago/casual%20img/pexels-ray-piedra-1545529_tv7i7l.jpg'
-            // placeholder='blur'
-          />
-        </div>
         <div className={styles.w50mx40}>
-          <h1 className={styles.title}>
-            <Link href='/event#tasting'>{t('tastingTitle')}</Link>
-          </h1>
-          <p className={styles.paragraph}>
-            <ReadMore>
-              {pTastingParagraph}
-            </ReadMore>
-          </p>
-          <div className={styles.btnContainer}>
-            <Link href='/event#tasting'>
-              <button className={styles.btn} type='button'> 
-                {t('tastingButton')}
-              </button>
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      <hr className={styles.hr} />
-
-      <div className={styles.textContainerLeft}>
-        <div className={styles.w50mx40}>
-          <h1 className={styles.title}>
+          <h1 className={styles.title} style={{marginTop: '10px'}}>
             <Link href='/event#wedding'>{t('weddingTitle')}</Link>
           </h1>
           <p className={styles.paragraph}>
