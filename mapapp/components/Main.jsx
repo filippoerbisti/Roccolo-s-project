@@ -259,93 +259,93 @@ const Main = ({ user, userDoc }) => {
         <div>
           <div id="tab-content" className='tab-content'>
             <div id='home' className='content vis'>
-            <Swiper
-              grabCursor={true}
-              effect={"creative"}
-              creativeEffect={{
-                prev: {
-                  shadow: true,
-                  translate: [0, 0, -400]
-                },
-                next: {
-                  translate: ["100%", 0, 0]
-                }
-              }}
-              modules={[EffectCreative]}
-              className="mySwiper"
-              style={{ display: "flex" }}
-            >
-              <SwiperSlide>
-                  <div className='swiper-start'>
-                    <h1>{t('welcome')}</h1>
-                    <h3>{t('exploreRoccolo')}</h3>
-                    {/*<h3>{t('discoverQR')}</h3>*/}
-                    <div className='btn-container' style={{margin: '30px 0'}}>
-                      <button className='btn-start' onClick={navigateMap}>
-                        {/* <Link href={'#map'}> */}
-                          {t('start')}
-                        {/* </Link> */}
-                      </button>
-                    </div>
-                    <p style={{color: 'white'}}>{t('stageToComplete')}: {userDoc.nPathsToComplete}</p>
-                    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '30px', marginBottom: '10px', color: 'white'}}>
-                      <p>{t('swipeToPath')}</p>
-                      <div className="animate-arrow">
-                        <span>
-                          <BsChevronRight style={{fontSize: '40px', marginRight: '-10px', color: 'rgba(255,255,255,0.3)'}} />
-                        </span>
-                        <span>
-                          <BsChevronRight style={{fontSize: '40px', marginRight: '-10px', color: 'rgba(255,255,255,0.6)'}} />
-                        </span>
-                        <span>
-                          <BsChevronRight style={{fontSize: '40px', marginRight: '-10px'}} />
-                        </span>
+              <Swiper
+                grabCursor={true}
+                effect={"creative"}
+                creativeEffect={{
+                  prev: {
+                    shadow: true,
+                    translate: [0, 0, -400]
+                  },
+                  next: {
+                    translate: ["100%", 0, 0]
+                  }
+                }}
+                modules={[EffectCreative]}
+                className="mySwiper"
+                style={{ display: "flex" }}
+              >
+                <SwiperSlide>
+                    <div className='swiper-start'>
+                      <h1>{t('welcome')}</h1>
+                      <h3>{t('exploreRoccolo')}</h3>
+                      {/*<h3>{t('discoverQR')}</h3>*/}
+                      <div className='btn-container' style={{margin: '30px 0'}}>
+                        <button className='btn-start' onClick={navigateMap}>
+                          {/* <Link href={'#map'}> */}
+                            {t('start')}
+                          {/* </Link> */}
+                        </button>
                       </div>
-                    </div>
-                    {/* <div className='box-info-tasting'>
-                      <p style={{textTransform: 'uppercase', letterSpacing: '1px'}}>{t('booking')}</p>
-                      <ul>
-                        <li style={{paddingTop: '5px'}}>Riservato: {fullname}</li>
-                        <li style={{paddingTop: '5px'}}>{t('nPeople')}: {userDoc.nPeople}</li>
-                        <li style={{paddingTop: '5px'}}>{t('nTasting')}: {userDoc.nTasting}</li>
-                        <li style={{paddingTop: '5px'}}>{t('typeTasting')}: {userDoc.tastingPackage}</li>
-                      </ul>
-                      <p style={{fontWeight: 'bold', paddingTop: '10px', fontSize: 'large'}}>{t('hourTasting')} {today.getHours() < 13 ? '11.00' : '16.00'}</p>
-                    </div> */}
-                    <div className='btn-container' style={{marginTop: '20px'}}>
-                      <button className='btn' onClick={navigateHelp}>
-                        {/* <Link href={'#help'}> */}
-                          {t('help')}
-                        {/* </Link> */}
-                      </button>
-                    </div>
-                  </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className='swiper-path'>
-                  <h2 style={{color: 'black'}}>{t('paths')}:</h2>
-                  {fakePaths.map((fakePath) => {
-                    return (
-                      <div key={fakePath.id} className="path-card" style={{background: `linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(${fakePath.img})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center"}}>
-                        <img src={fakePath.img} />
-                        <div className='path-card-txt'>
-                          <h4 style={{color: 'white'}}>{fakePath.title}</h4>
-                          <span className="detail">
-                            <Link href={''}>Vedi dettagli</Link>
+                      <p style={{color: 'white'}}>{t('stageToComplete')}: {userDoc.nPathsToComplete}</p>
+                      <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '30px', marginBottom: '10px', color: 'white'}}>
+                        <p>{t('swipeToPath')}</p>
+                        <div className="animate-arrow">
+                          <span>
+                            <BsChevronRight style={{fontSize: '40px', marginRight: '-10px', color: 'rgba(255,255,255,0.3)'}} />
+                          </span>
+                          <span>
+                            <BsChevronRight style={{fontSize: '40px', marginRight: '-10px', color: 'rgba(255,255,255,0.6)'}} />
+                          </span>
+                          <span>
+                            <BsChevronRight style={{fontSize: '40px', marginRight: '-10px'}} />
                           </span>
                         </div>
-                        <div className="checkbox-round">
-                          {userDoc && 
-                            <input type="checkbox" id='checkbox' defaultChecked={userDoc[fakePath.path]} disabled />
-                          }
-                          <label htmlFor="checkbox"></label>
-                        </div>
                       </div>
-                    )
-                  })}
-                </div>
-              </SwiperSlide>
-            </Swiper>
+                      {/* <div className='box-info-tasting'>
+                        <p style={{textTransform: 'uppercase', letterSpacing: '1px'}}>{t('booking')}</p>
+                        <ul>
+                          <li style={{paddingTop: '5px'}}>Riservato: {fullname}</li>
+                          <li style={{paddingTop: '5px'}}>{t('nPeople')}: {userDoc.nPeople}</li>
+                          <li style={{paddingTop: '5px'}}>{t('nTasting')}: {userDoc.nTasting}</li>
+                          <li style={{paddingTop: '5px'}}>{t('typeTasting')}: {userDoc.tastingPackage}</li>
+                        </ul>
+                        <p style={{fontWeight: 'bold', paddingTop: '10px', fontSize: 'large'}}>{t('hourTasting')} {today.getHours() < 13 ? '11.00' : '16.00'}</p>
+                      </div> */}
+                      <div className='btn-container' style={{marginTop: '20px'}}>
+                        <button className='btn' onClick={navigateHelp}>
+                          {/* <Link href={'#help'}> */}
+                            {t('help')}
+                          {/* </Link> */}
+                        </button>
+                      </div>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className='swiper-path'>
+                    <h2 style={{color: 'black'}}>{t('paths')}:</h2>
+                    {fakePaths.map((fakePath) => {
+                      return (
+                        <div key={fakePath.id} className="path-card" style={{background: `linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(${fakePath.img})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center"}}>
+                          <img src={fakePath.img} />
+                          <div className='path-card-txt'>
+                            <h4 style={{color: 'white'}}>{fakePath.title}</h4>
+                            <span className="detail">
+                              <Link href={''}>Vedi dettagli</Link>
+                            </span>
+                          </div>
+                          <div className="checkbox-round">
+                            {userDoc && 
+                              <input type="checkbox" id='checkbox' defaultChecked={userDoc[fakePath.path]} disabled />
+                            }
+                            <label htmlFor="checkbox"></label>
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </SwiperSlide>
+              </Swiper>
             </div>
             <div id='map' className='content novis'>
               <h1>Mapapp</h1>
