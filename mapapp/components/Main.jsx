@@ -27,6 +27,7 @@ const Main = ({ user, userDoc }) => {
 
   const router = useRouter();
   var modalQR;
+  var modalTastingH;
 
   const [data, setData] = useState("No result");
   const [isAuthPeriod, setIsAuthPeriod] = useState(false);
@@ -39,13 +40,27 @@ const Main = ({ user, userDoc }) => {
   var today = new Date();
 
   useEffect(() => {
+
+    let formatToday = today.getUTCDate() + "/" + (today.getUTCMonth() + 1) + "/" + today.getUTCFullYear();
+
+    let dateBookingHourMin = (userDoc.dateBooking.getHours + today.getHours() < 13 ? 11 : 16);
+    console.log(today.getHours())
+    // Modal Tasting Hour to remember the hour of tasting
+    modalTastingH = document.getElementById("modalTastingHour");
+    if (modalTastingH != null) {
+      if(convertToDate(userDoc.dateBooking).getTime() === convertToDate(formatToday).getTime()) {
+        if(dateBookingHourMin == today.getHours()) {
+          modalTastingH.style.display = "flex";
+          modalTastingH.style.alignItems = "center";
+        }
+      }
+    }
+
     // Authorizated dates to access
     if (userDoc) {
-      let formatToday = today.getUTCDate() + "/" + (today.getUTCMonth() + 1) + "/" + today.getUTCFullYear();
-
-      if (convertToDate(userDoc.dateBooking) < convertToDate(formatToday) 
+      if (convertToDate(userDoc.dateBooking).getTime() <= convertToDate(formatToday).getTime() 
           &&
-          convertToDate(userDoc.dateEndAccessApp) >= convertToDate(formatToday)
+          convertToDate(userDoc.dateEndAccessApp).getTime() >= convertToDate(formatToday).getTime()
       )
         setIsAuthPeriod(true);
     }
@@ -252,11 +267,27 @@ const Main = ({ user, userDoc }) => {
     node.classList.add(className);
   }
 
+  const closeModalTastingHour = () => {
+    var modalTastingH = document.getElementById("modalTastingHour");
+    modalTastingH.style.display = "none";
+  }
+
   return (
     <>
       {/* If logged in && Date.Now is BETWEEN the fixed initial date (choose by user on pay) and the following 6 days (inclusive) */}
       {isAuthPeriod &&
         <div>
+
+          <div id="modalTastingHour" className="modal-tasting-hour">
+              <div className="modal-content-tasting-hour">
+                  <span onClick={closeModalTastingHour} className="close-modal-tasting-hour">&times;</span>
+                  <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                      <h2 style={{fontSize: '20px'}}>Si ricorda che la Degustazione si terrà alle ore {today.getHours() < 13 ? '11.00' : '16.00'}</h2>
+                  </div>
+              </div>
+          </div>  
+
+
           <div id="tab-content" className='tab-content'>
             <div id='home' className='content vis'>
               <Swiper
@@ -398,7 +429,6 @@ const Main = ({ user, userDoc }) => {
                             }
                             if (!!error) {
                               // toast.error('Errore lettura QR');
-                              console.info(error);
                             }
                           }}
                           //this is facing mode : "environment " it will open backcamera of the smartphone and if not found will 
