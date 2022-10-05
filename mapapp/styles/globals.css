@@ -314,6 +314,56 @@ body {
     /* min-height: 100vh; */
   }
 
+    /* STYLES MODAL TASTING HOURS */
+
+    .modal-tasting-hour {
+      display: none; 
+      position: fixed; 
+      z-index: 99999999999; 
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* max-width: 500px;  */
+      height: 100%; 
+      overflow: auto; 
+      background-color: rgb(0,0,0); 
+      background-color: rgba(0,0,0,0.4); 
+    }
+
+    .modal-content-tasting-hour {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      background-color: #fefefe;
+      border-radius: 10px;
+      margin: auto;
+      padding: 0 12px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 400px;
+      height: 150px;
+    }
+
+    .modal-content-tasting-hour > div {
+      padding: 0 10px;
+    }
+
+    .close-modal-tasting-hour {
+      color: #aaaaaa;
+      margin-left: auto;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close-modal-tasting-hour:hover,
+    .close-modal-tasting-hour:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* END STYLES MODAL TASTING HOURS */
+
 
   /* STYLES HOME */
 
@@ -992,4 +1042,3 @@ body {
   /* align-items: center; */
   justify-content: center;
 }
-
