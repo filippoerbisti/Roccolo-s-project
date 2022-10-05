@@ -1,5 +1,6 @@
 import React, { useEffect, useState }  from 'react';
 import toast from 'react-hot-toast';
+import * as emailjs from '@emailjs/browser';
 import useTranslation from 'next-translate/useTranslation';
 import { useAuth } from '../context/AuthContext';
 
@@ -27,6 +28,7 @@ const Login = () => {
         btnOpenModalRecPsw.onclick = function() {
             modalRecPsw.style.display = "flex";
             modalRecPsw.style.alignItems = "center";
+            // modalRecPsw.style.justifyContent = "center";
         }
 
         closeModalRecPsw.onclick = function() {
@@ -146,30 +148,31 @@ const Login = () => {
                         />
                         <label htmlFor="password" className="form__label">Password</label>
                     </div>
-                    <div>
-                        <button id="btnRecPsw" className='btn-link-rec-psw'>{t('recoveryPassword')}</button>
-                        <div id="modalRecPsw" className="modal-rec-psw">
-                            <div className="modal-content-rec-psw">
-                                <span className="close-modal-rec-psw">&times;</span>
-                                <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                                    <p style={{fontSize: 'small'}}>{t('modalRecoveryText')}</p>
-                                    <input 
-                                        type="text"
-                                        placeholder="Email" 
-                                        onChange={(e) =>
-                                            setRecEmail(e.target.value)
-                                        }
-                                        value={recEmail}
-                                        className="form__field" 
-                                        style={{width: '80%', marginTop: '10px', color: 'black'}}
-                                    />
-                                    <button className='btn-send-rec-psw' onClick={checkEmailRecPsw}>{t('send')}</button>
-                                </div>
+                    
+                </form>
+                <div style={{display: 'flex'}}>
+                    <button id="btnRecPsw" className='btn-link-rec-psw'>{t('recoveryPassword')}</button>
+                    <div id="modalRecPsw" className="modal-rec-psw">
+                        <div className="modal-content-rec-psw">
+                            <span className="close-modal-rec-psw">&times;</span>
+                            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                                <p style={{fontSize: 'small'}}>{t('modalRecoveryText')}</p>
+                                <input 
+                                    type="text"
+                                    placeholder="Email" 
+                                    onChange={(e) =>
+                                        setRecEmail(e.target.value)
+                                    }
+                                    value={recEmail}
+                                    className="form__field" 
+                                    style={{width: '80%', marginTop: '10px', color: 'black'}}
+                                />
+                                <button className='btn-send-rec-psw' onClick={checkEmailRecPsw}>{t('send')}</button>
                             </div>
                         </div>
                     </div>
-                    <button className='form-button-login' onClick={handleLogin}>{t('startTour')}</button>
-                </form>
+                </div>
+                <button className='form-button-login' onClick={handleLogin}>{t('startTour')}</button>
             </div>
         </div>
     )
