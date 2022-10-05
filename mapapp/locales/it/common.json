@@ -7,6 +7,9 @@
     "recoveryPassword": "Password dimenticata?",
     "modalRecoveryText": "Inserisci l'email con cui si è registrato, le invieremo la password.",
     "send": "Invia",
+    "checkInbox": "Controlla la tua posta elettronica",
+    "notAllowRecPsw": "L'email non corrisponde a quella per accedere al servizio",
+    "missEmail": "Inserire l'email",
 
     "greetings": "Salve",
     "activeLicense": "La informiamo che la licenza per il prodotto Mapapp sarà attiva",

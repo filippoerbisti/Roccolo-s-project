@@ -7,6 +7,9 @@
     "recoveryPassword": "Mot de passe oublié?",
     "modalRecoveryText": "Entrez l'e-mail avec lequel vous vous êtes inscrit, nous vous enverrons le mot de passe.",
     "send": "Soumettre",
+    "checkInbox": "Vérifiez votre messagerie",
+    "notAllowRecPsw": "L'email ne correspond pas à celui pour accéder au service",
+    "missEmail": "Entrez l'e-mail",
 
     "greetings": "Salut",
     "activeLicense": "Nous vous informons que la licence de Mapapp sera actif",
