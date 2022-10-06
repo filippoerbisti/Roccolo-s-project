@@ -29,7 +29,7 @@ export const StateContext = ({ children }) => {
         let date = new Date();
         let timestampEndAccessApp = date.setDate(data.dateBooking.getDate() + 6)
         let datetimeEndAccessApp = new Date(Number(timestampEndAccessApp))
-        let dateEndAccessApp = datetimeEndAccessApp.getUTCDate() + "/" + datetimeEndAccessApp.getUTCMonth() + "/" + datetimeEndAccessApp.getUTCFullYear();
+        let dateEndAccessApp = datetimeEndAccessApp.getUTCDate() + "/" + (datetimeEndAccessApp.getUTCMonth() + 1) + "/" + datetimeEndAccessApp.getUTCFullYear();
 
         let tastingPackage;
         if (data.tastingPackage == 15)
