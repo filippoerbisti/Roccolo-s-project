@@ -188,17 +188,21 @@ const Main = ({ products }) => {
             </Link>
           </div>
         </div>
-        <div className={`${styles.w50mx40} ${styles.mob}`}>
-          <Image 
-            src='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394256/Roccolo%20del%20Lago/casual%20img/pexels-ray-piedra-1545529_tv7i7l.jpg' 
-            alt="tasting_img" 
-            width={700} 
-            height={400} 
-            layout="responsive" 
-            objectFit="cover"
-            // blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394256/Roccolo%20del%20Lago/casual%20img/pexels-ray-piedra-1545529_tv7i7l.jpg'
-            // placeholder='blur'
-          />
+        <div className={`${styles.w50mx40}`}>
+          <Swiper pagination={{clickable: true}} spaceBetween={20} modules={[Pagination]} className="mySwiper">
+            <SwiperSlide style={{display: 'flex', flexDirection: 'column'}}>
+              <h1 className='text-2xl my-5 uppercase'>{t('proposal1')}</h1>
+              <img src="https://res.cloudinary.com/dl38nyo08/image/upload/v1665041204/Landing%20Roccolo/tasting_package_1_dokzq3.png" alt="" />
+            </SwiperSlide>
+            <SwiperSlide className="proposal parallax-proposal-2">
+              <h1 className='text-2xl my-5 uppercase'>{t('proposal2')}</h1>
+              <img src="https://res.cloudinary.com/dl38nyo08/image/upload/v1665041204/Landing%20Roccolo/tasting_package_2_llmpyk.png" alt="" />
+            </SwiperSlide>
+            <SwiperSlide className="proposal parallax-proposal-3">
+              <h1 className='text-2xl my-5 uppercase'>{t('proposal3')}</h1>
+              <img src="https://res.cloudinary.com/dl38nyo08/image/upload/v1665041204/Landing%20Roccolo/tasting_package_3_ojd5kw.png" alt="" />
+            </SwiperSlide>
+          </Swiper>
         </div>
       </div>
 
