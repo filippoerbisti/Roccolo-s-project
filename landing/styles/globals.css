@@ -159,6 +159,7 @@ a {
   .x .line {
     stroke-width: 5.5px;
   }
+
   .active .line {
     transition: stroke-dasharray 500ms, stroke-dashoffset 500ms, transform 500ms;
   }
@@ -179,6 +180,7 @@ a {
   .plate5 .line2 {
     stroke-dasharray: 21 39;
   }
+
   .plate5 .line3 {
     stroke-dasharray: 21 39;
   }
@@ -199,6 +201,7 @@ a {
     stroke-dasharray: 1 40;
     stroke-dashoffset: -33px;
   }
+
   .active.plate5 .line2 {
     stroke-dasharray: 5 39;
     stroke-dashoffset: -37px;
@@ -238,13 +241,13 @@ a {
 }
 
 .parallax {
-  background-image: linear-gradient(rgba(5, 0, 0, 0.5), rgba(5, 0, 0, 0.5)), url("https://res.cloudinary.com/dl38nyo08/image/upload/v1654615348/Roccolo%20del%20Lago/degustazioni_zs5pmi.png"); 
+  background-image: url("https://res.cloudinary.com/dl38nyo08/image/upload/v1665043110/Landing%20Roccolo/Vigneto-Roccolodellago_f0kc19.jpg"); 
   flex-direction: column;
   height: 100vh;
 }
 
 .parallax1 {
-  background-image: linear-gradient(rgba(5, 0, 0, 0.5), rgba(5, 0, 0, 0.5)), url("https://res.cloudinary.com/dl38nyo08/image/upload/v1655394841/Roccolo%20del%20Lago/casual%20img/pexels-andrea-piacquadio-3756623_ruiuh7.jpg");
+  background-image: url("https://res.cloudinary.com/dl38nyo08/image/upload/v1655394250/Roccolo%20del%20Lago/casual%20img/pexels-pixabay-51947_iuzicl.jpg");
   padding: 100px 0;
 }
 
@@ -254,7 +257,7 @@ a {
 }
 
 .parallax-form {
-  background-image:  linear-gradient(rgba(150, 8, 8, 0.4), rgba(117, 4, 4, .6)), url('https://res.cloudinary.com/dl38nyo08/image/upload/v1664527652/Roccolo%20del%20Lago/wine-shop_d5qmyw.jpg');
+  background-image: url('https://res.cloudinary.com/dl38nyo08/image/upload/v1665038673/Landing%20Roccolo/back-form_vpspi9.png');
   margin: 30px 0;
 }
 
@@ -276,11 +279,22 @@ a {
   justify-content: center;
 }
 
-.box-intro {
+.box-intro-history {
   height: 100%;
   width: 100%;
   padding: 100px 0;
-  background: linear-gradient(rgba(5, 0, 0, 0.5), rgba(5, 0, 0, 0.5)), url(https://res.cloudinary.com/dl38nyo08/image/upload/v1664462336/mapapp/roccolo-roccolo_v1pmex.jpg);
+  background: url(https://res.cloudinary.com/dl38nyo08/image/upload/v1665038676/Landing%20Roccolo/back-storia_hv0zfc.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+}
+
+.box-intro-vineyard {
+  height: 100%;
+  width: 100%;
+  padding: 100px 0;
+  background: url(https://res.cloudinary.com/dl38nyo08/image/upload/v1665038672/Landing%20Roccolo/back-vigneti_gyypyg.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -378,7 +392,6 @@ a {
   margin-right: 10px;
 }
 
-
   /* STYLE READMORE */
 
   .pc-not-slice-text {
@@ -412,6 +425,11 @@ a {
   /* STYLES SWIPER */
     .mySwiper {
       z-index: 99999;
+      padding: 5px 0 30px 0;
+    }
+
+    .swiper-pagination {
+      margin-top: 20px;
     }
   /* END STYLES SWIPER */
 
@@ -421,6 +439,7 @@ a {
   background-size: cover;
   display: flex;
   flex-direction: column;
+  padding: 0px 0 20px 0;
 }
 
 .proposal h1 {
@@ -430,21 +449,21 @@ a {
 
 .proposal img {
   width: 50%;
-  height: 70%;
+  height: auto;
   margin: 0 auto;
   margin-bottom: 40px;
 }
 
 .parallax-proposal-1 {
-  background-image: linear-gradient(rgba(5, 0, 0, 0.5), rgba(5, 0, 0, 0.5)), url("https://res.cloudinary.com/dl38nyo08/image/upload/v1654615348/Roccolo%20del%20Lago/degustazioni_zs5pmi.png");
+  background-image: url("https://res.cloudinary.com/dl38nyo08/image/upload/v1665038674/Landing%20Roccolo/back-party_knvbdb.png");
 }
 
 .parallax-proposal-2 {
-  background-image: linear-gradient(rgba(5, 0, 0, 0.5), rgba(5, 0, 0, 0.5)), url("https://res.cloudinary.com/dl38nyo08/image/upload/v1654615348/Roccolo%20del%20Lago/degustazioni_zs5pmi.png");
+  background-image: url("https://res.cloudinary.com/dl38nyo08/image/upload/v1665038674/Landing%20Roccolo/back-romantic_uuqmti.png");
 }
 
 .parallax-proposal-3 {
-  background-image: linear-gradient(rgba(5, 0, 0, 0.5), rgba(5, 0, 0, 0.5)), url("https://res.cloudinary.com/dl38nyo08/image/upload/v1654615348/Roccolo%20del%20Lago/degustazioni_zs5pmi.png");
+  background-image: url("https://res.cloudinary.com/dl38nyo08/image/upload/v1665038675/Landing%20Roccolo/back-picnic_srugqp.png");
 }
 
 /* END STYLES PROPOSALS */
@@ -521,12 +540,43 @@ form input {
 
   /* END STYLES FORM > SELECT */
 
+  .form-total-pay {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+  }
+
+  .form-btn-pay {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+  }
+
+  .btn-stripe {
+    border: 1px solid lightblue;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-top: 10px;
+    color: #4379FF;
+  }
+
+  .btn-paypal {
+    border: 1px solid lightblue;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-top: 10px;
+    color: #009cde;
+  }
+
 /* END STYLE VERTICAL STEPPER FORM */
 
 
 @media screen and (max-width: 1201px) {
   
-  .box-intro {
+  .box-intro-history,
+  .box-intro-vineyard {
     padding: 50px 0;
   }
 
@@ -628,12 +678,10 @@ form input {
     color: black;
   }
 
-  .box-intro {
-    padding: 0;
-  }
-
-  .box-intro {
+  .box-intro-history,
+  .box-intro-vineyard {
     background: none;
+    padding: 0;
   }
 
   .box-txt {
@@ -653,6 +701,15 @@ form input {
     flex-direction: column;
   }
 
+  .parallax1 {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://res.cloudinary.com/dl38nyo08/image/upload/v1665038673/Landing%20Roccolo/vigneti_i90ivg.png");
+  }
+
+  .section-background {
+    background-position: center;
+    background-size: cover;
+  }
+
   .parallax1 h3 {
     font-size: 30px;
   }
@@ -660,6 +717,17 @@ form input {
   .parallax1 h4 {
     font-size: 20px;
     margin: 15px 10px;
+  }
+
+  .parallax-proposal-1,
+  .parallax-proposal-2,
+  .parallax-proposal-3 {
+    background-size: contain;
+  }
+
+  .proposal img {
+    height: auto;
+    width: 90%;
   }
 
   .background-opacity-form {
@@ -672,7 +740,11 @@ form input {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 30px;
+    margin-left: 20px;
+  }
+
+  .checkbox-form {
+    margin-left: 10px;
   }
   
   .checkbox-form input {
@@ -683,6 +755,25 @@ form input {
   .checkbox-form label {
     font-size: smaller;
   }
+
+  .form-total-pay {
+    margin-left: 10px;
+  }
+
+  .form-btn-pay {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10px;
+  }
+
+  .btn-stripe {
+    margin-right: 0px;
+  }
+
+  .btn-paypal {
+    margin-left: 0px;
+  }
 }
 
 
@@ -692,5 +783,11 @@ form input {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1501px) {
+  .proposal img {
+    width: 40%;
   }
 }
