@@ -911,10 +911,10 @@ body {
     position: fixed;
     bottom: 0;
     background-color: #fefefe;
-    height: 100%;
+    /* height: 100%; */
     width: 100%;
     max-width: 500px;
-    top: 150px;
+    padding-bottom: 30px;
     -webkit-animation-name: slideIn;
     -webkit-animation-duration: 1s;
     animation-name: slideIn;
@@ -940,7 +940,11 @@ body {
   }
 
   .modal-body-qr {
-    padding: 2px 16px;
+    padding: 0px 20px;
+  }
+
+  .modal-body-qr h1 {
+    padding-top: 20px;
   }
 
   /* Add Animation */
