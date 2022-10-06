@@ -282,7 +282,7 @@ const Main = ({ user, userDoc }) => {
               <div className="modal-content-tasting-hour">
                   <span onClick={closeModalTastingHour} className="close-modal-tasting-hour">&times;</span>
                   <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                      <h2 style={{fontSize: '20px'}}>Si ricorda che la Degustazione si terrà alle ore {today.getHours() < 13 ? '11.00' : '16.00'}</h2>
+                      <h2 style={{fontSize: '20px'}}>{t('tastingRemember')} {today.getHours() < 13 ? '11.00' : '16.00'}</h2>
                   </div>
               </div>
           </div>  
