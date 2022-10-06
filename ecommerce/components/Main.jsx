@@ -141,7 +141,7 @@ const Main = ({ products }) => {
             </div>
           </div> */}
 
-          <Swiper
+          {/* <Swiper
             slidesPerView={size <= mobileWidth ? n : size > mobileWidth && size <= smallPcWidth ? n : n}
             spaceBetween={20}
             loop={true}
@@ -160,7 +160,7 @@ const Main = ({ products }) => {
                 </div>
               </SwiperSlide>
             )}
-          </Swiper>
+          </Swiper> */}
         </div>
       </div>
 
