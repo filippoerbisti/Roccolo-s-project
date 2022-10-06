@@ -454,6 +454,46 @@ a {
   margin-bottom: 40px;
 }
 
+.proposal button {
+  margin: 10px 0;
+  color: white;
+  text-align: center;
+}
+
+.proposal-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proposal-card-detail {
+  display: none;
+  width: 40%;
+  height: 300px;
+  position: absolute;
+  border-radius: 10px;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  color: white;
+}
+
+.close-proposal-detail {
+  position: absolute;
+  font-size: medium;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.proposal-card-detail h2 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
 .parallax-proposal-1 {
   background-image: url("https://res.cloudinary.com/dl38nyo08/image/upload/v1665038674/Landing%20Roccolo/back-party_knvbdb.png");
 }
@@ -739,6 +779,15 @@ form input {
     width: 90%;
   }
 
+  .proposal-card-detail {
+    width: 80%;
+    height: 250px;
+  }
+
+  .proposal button {
+    color: black;
+  }
+
   .background-opacity-form {
     margin: 10px;
     padding: 10px;
@@ -799,4 +848,21 @@ form input {
   .proposal img {
     width: 40%;
   }
+
+  .proposal-card-detail {
+    width: 30%;
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
