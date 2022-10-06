@@ -55,7 +55,7 @@ const Main = () => {
             <section className="box-container">
                 <div className='height-card'>
                     <h2 className='text-center text-2xl my-5 font-bold'>{t('historyTitle')}</h2>
-                    <div className='box-intro'>
+                    <div className='box-intro-history'>
                         <div className='box-txt-img'>
                             <div className='box-txt'>
                                 <div className='pc-not-slice-text'>
@@ -69,14 +69,14 @@ const Main = () => {
                                     </ReadMore>
                                 </p>
                             </div>
-                            <img className='box-img' src='https://res.cloudinary.com/dl38nyo08/image/upload/v1664462336/mapapp/roccolo-roccolo_v1pmex.jpg' />
+                            <img className='box-img' src='https://res.cloudinary.com/dl38nyo08/image/upload/v1665038674/Landing%20Roccolo/storia_c0imr6.png' />
                         </div>
                     </div>
                 </div>
                 
                 <div className='height-card'>
                     <h2 className='text-center text-2xl my-5 font-bold'>{t('vineyardTitle')}</h2>
-                    <div className='box-intro'>
+                    <div className='box-intro-vineyard'>
                         <div className='box-txt-img'>
                             <div className='box-txt'>
                                 <div className='pc-not-slice-text'>
@@ -89,7 +89,7 @@ const Main = () => {
                                     </ReadMore>
                                 </p>
                             </div>
-                            <img className='box-img' src='https://res.cloudinary.com/dl38nyo08/image/upload/v1664462336/mapapp/roccolo-roccolo_v1pmex.jpg' />
+                            <img className='box-img' src='https://res.cloudinary.com/dl38nyo08/image/upload/v1665038673/Landing%20Roccolo/vigneti_i90ivg.png' />
                         </div>
                     </div>
                 </div>
