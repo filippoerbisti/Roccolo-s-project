@@ -722,7 +722,11 @@ form input {
   .parallax-proposal-1,
   .parallax-proposal-2,
   .parallax-proposal-3 {
-    background-size: contain;
+    background: none;
+  }
+
+  .proposal h1 {
+    color: black;
   }
 
   .proposal img {
