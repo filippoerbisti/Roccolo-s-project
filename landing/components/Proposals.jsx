@@ -51,11 +51,11 @@ const Proposals = () => {
       <Swiper pagination={{clickable: true}} spaceBetween={20} modules={[Pagination]} className="mySwiper">
         <SwiperSlide className="proposal parallax-proposal-1">
           <h1 className='text-2xl my-5 uppercase'>{t('proposal1')}</h1>
-          <button onClick={viewDetail1}>Clicca quì per maggiori dettagli</button>
+          <button onClick={viewDetail1}>{t('clickDetail')}</button>
           <div className='proposal-card'>
             <div id='detail1' className='proposal-card-detail'>
               <span className='close-proposal-detail' onClick={hideDetail1}>X</span>
-              <h2>Dettagli</h2>
+              <h2>{t('detail')}</h2>
               <p>ciao</p>
             </div>
             <img src="https://res.cloudinary.com/dl38nyo08/image/upload/v1665041204/Landing%20Roccolo/tasting_package_1_dokzq3.png" alt="" />
@@ -63,11 +63,11 @@ const Proposals = () => {
         </SwiperSlide>
         <SwiperSlide className="proposal parallax-proposal-2">
           <h1 className='text-2xl my-5 uppercase'>{t('proposal2')}</h1>
-          <button onClick={viewDetail2}>Clicca quì per maggiori dettagli</button>
+          <button onClick={viewDetail2}>{t('clickDetail')}</button>
           <div className='proposal-card'>
             <div id='detail2' className='proposal-card-detail'>
               <span className='close-proposal-detail' onClick={hideDetail2}>X</span>
-              <h2>Dettagli</h2>
+              <h2>{t('detail')}</h2>
               <p>ciao</p>
             </div>
             <img src="https://res.cloudinary.com/dl38nyo08/image/upload/v1665041204/Landing%20Roccolo/tasting_package_2_llmpyk.png" alt="" />
@@ -75,11 +75,11 @@ const Proposals = () => {
         </SwiperSlide>
         <SwiperSlide className="proposal parallax-proposal-3">
           <h1 className='text-2xl my-5 uppercase'>{t('proposal3')}</h1>
-          <button onClick={viewDetail3}>Clicca quì per maggiori dettagli</button>
+          <button onClick={viewDetail3}>{t('clickDetail')}</button>
           <div className='proposal-card'>
             <div id='detail3' className='proposal-card-detail'>
               <span className='close-proposal-detail' onClick={hideDetail3}>X</span>
-              <h2>Dettagli</h2>
+              <h2>{t('detail')}</h2>
               <p>ciao</p>
             </div>
             <img src="https://res.cloudinary.com/dl38nyo08/image/upload/v1665041204/Landing%20Roccolo/tasting_package_3_ojd5kw.png" alt="" />
