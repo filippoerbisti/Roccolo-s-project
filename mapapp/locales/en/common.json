@@ -1,6 +1,9 @@
 {
     "loading": "Loading",
 
+    "tastingRemember": "Please note that the Tasting will take place at",
+    "on": "on",
+
     "errorCredential": "The credentials are incorrect",
     "errorEmail": "Error sending email, try again",
     "startTour": "Start the tour",

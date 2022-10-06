@@ -1,6 +1,9 @@
 {
     "loading": "Chargement",
 
+    "tastingRemember": "Veuillez noter que la dégustation aura lieu à",
+    "on": "le",
+
     "errorCredential": "Les identifiants sont incorrects",
     "errorEmail": "EErreur lors de l'envoi de l'e-mail, réessayez",
     "startTour": "Commencez la visite",

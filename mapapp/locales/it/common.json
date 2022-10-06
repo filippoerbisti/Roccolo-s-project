@@ -1,6 +1,9 @@
 {
     "loading": "Caricamento",
 
+    "tastingRemember": "Si ricorda che la Degustazione si terrà alle ore",
+    "on": "del",
+
     "errorCredential": "Le credenziali sono errate",
     "errorEmail": "Errore nell'invio email, riprovare",
     "startTour": "Inizia il tour",

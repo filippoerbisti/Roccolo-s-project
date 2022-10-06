@@ -1,6 +1,9 @@
 {
     "loading": "Wird geladen",
 
+    "tastingRemember": "Bitte beachten Sie, dass die Verkostung um stattfindet",
+    "on": "am",
+
     "errorCredential": "Die Anmeldeinformationen sind falsch",
     "errorEmail": "Fehler beim Senden der E-Mail, versuchen Sie es erneut",
     "startTour": "Tour starten",
