@@ -243,7 +243,7 @@ a {
 .parallax {
   background-image: url("https://res.cloudinary.com/dl38nyo08/image/upload/v1665043110/Landing%20Roccolo/Vigneto-Roccolodellago_f0kc19.jpg"); 
   flex-direction: column;
-  height: 100vh;
+  height: calc(100vh - 110px); /* 110px = height navbar */
 }
 
 .parallax1 {
@@ -670,6 +670,11 @@ form input {
 }
 
 @media screen and (max-width: 768px) {
+
+  .parallax {
+    background: url("https://res.cloudinary.com/dl38nyo08/image/upload/v1665038674/Landing%20Roccolo/storia_c0imr6.png");
+  }
+
   .intro-title {
     font-size: 35px;
   }
