@@ -1027,14 +1027,10 @@ body {
 /* END STYLES LOADER WALKER */
 
 
+/* STYLE NO AUTH PERIOD */
 
 
-
-
-
-
-
-.no-auth-period {
+.no-auth-period-container {
   width: 100%;
   /* padding-top: 100px; */
   height: 100vh;
@@ -1044,10 +1040,14 @@ body {
   justify-content: center;
 }
 
-.no-auth-period h2 {
+.no-auth-period {
   font-size: medium;
   color: white;
   padding: 40px 20px;
   border-radius: 20px;
-  background: #421B1B;
+  background: #940E25;
+  border: none;
+  box-shadow: -4px 4px 10px #421B1B;
 }
+
+/* END STYLE NO AUTH PERIOD */
