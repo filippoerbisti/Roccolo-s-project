@@ -181,7 +181,7 @@ const Main = ({ products }) => {
             - {t('tastingParagraphProposal3')} (add small descr) <br />
           </p>
           <div className={styles.btnContainer}>
-            <Link href='/event#tasting'>
+            <Link href='https://landingroccolo.vercel.app'>
               <button className={styles.btn} type='button'> 
                 {t('tastingButton')}
               </button>
