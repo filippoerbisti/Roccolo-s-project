@@ -63,24 +63,24 @@ const Tasting = () => {
   }
 
   const viewDetail2 = () => {
-    let detail = document.getElementById('detail1');
+    let detail = document.getElementById('detail2');
     detail.style.display = 'flex';
     detail.style.flexDirection = 'column';
   }
 
   const hideDetail2 = () => {
-    let detail = document.getElementById('detail1');
+    let detail = document.getElementById('detail2');
     detail.style.display = 'none';
   }
 
   const viewDetail3 = () => {
-    let detail = document.getElementById('detail1');
+    let detail = document.getElementById('detail3');
     detail.style.display = 'flex';
     detail.style.flexDirection = 'column';
   }
 
   const hideDetail3 = () => {
-    let detail = document.getElementById('detail1');
+    let detail = document.getElementById('detail3');
     detail.style.display = 'none';
   }
 
@@ -147,7 +147,7 @@ const Tasting = () => {
             <h1 className='text-2xl my-5 uppercase'>{t('proposal2')}</h1>
             <button onClick={viewDetail2}>{t('clickDetail')}</button>
             <div className='proposal-card'>
-              <div id='detail1' className='proposal-card-detail'>
+              <div id='detail2' className='proposal-card-detail'>
                 <span className='close-proposal-detail' onClick={hideDetail2}>X</span>
                 <h2>{t('detail')}</h2>
                 <p>ciao</p>
@@ -159,7 +159,7 @@ const Tasting = () => {
             <h1 className='text-2xl my-5 uppercase'>{t('proposal3')}</h1>
             <button onClick={viewDetail3}>{t('clickDetail')}</button>
             <div className='proposal-card'>
-              <div id='detail1' className='proposal-card-detail'>
+              <div id='detail3' className='proposal-card-detail'>
                 <span className='close-proposal-detail' onClick={hideDetail3}>X</span>
                 <h2>{t('detail')}</h2>
                 <p>ciao</p>
