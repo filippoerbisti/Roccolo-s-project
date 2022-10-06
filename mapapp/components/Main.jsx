@@ -278,6 +278,7 @@ const Main = ({ user, userDoc }) => {
       {isAuthPeriod &&
         <div>
 
+          {/* If dateBooking == today, and hours == 11 || 16 -> show modal with Tasting Hour */}
           <div id="modalTastingHour" className="modal-tasting-hour">
               <div className="modal-content-tasting-hour">
                   <span onClick={closeModalTastingHour} className="close-modal-tasting-hour">&times;</span>
@@ -286,7 +287,6 @@ const Main = ({ user, userDoc }) => {
                   </div>
               </div>
           </div>  
-
 
           <div id="tab-content" className='tab-content'>
             <div id='home' className='content vis'>
