@@ -55,10 +55,10 @@ export const AuthContextProvider = ({ children }) => {
   }
 
   const logout = async () => {
-    window.location.reload();
+    await signOut(auth);
     setUser(null);
     setUserDoc(null);
-    await signOut(auth);
+    window.location.reload();
   }
 
   return (
