@@ -377,7 +377,7 @@ body {
     
     .swiper-start {
       /* background-color: #EDCFBC; */
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/dl38nyo08/image/upload/v1664462336/mapapp/roccolo-roccolo_v1pmex.jpg);
+      background: url(https://res.cloudinary.com/dl38nyo08/image/upload/v1665038676/Landing%20Roccolo/back-storia_hv0zfc.png);
       height: 100%;
       background-repeat: no-repeat;
       background-size: cover;
