@@ -140,14 +140,20 @@ const Form = () => {
                 tastingPackage = `${t('proposal3')}`;
             if (router.locale == 'it') {
                 subject = `Degustazione Prenotata - Roccolo del Lago`;
-                message = ('Hai prenotato la degustazione ' + tastingPackage + 
-                ' per ' + data.nTasting + ' su ' + data.nPeople + ' persone totali il giorno ' + datebooking + ". Credenziali di accesso all'app: email: " + data.email + 
-                ', password: ' + data.email.substring(0, 4) + 'R23!');
+                message = `Hai prenotato la degustazione ${tastingPackage}
+                \n per ${data.nTasting} su ${data.nPeople} persone totali
+                \n per il giorno ${datebooking}.
+                \n \n Credenziali di accesso all'app: 
+                \n email: ${data.email}, 
+                \n password: ${data.email.substring(0, 4)}R23!`;
             } else if (router.locale == 'en') {
                 subject = `Booked Tasting - Roccolo del Lago`;
-                message = ('You booked the tasting ' + tastingPackage + 
-                ' for ' + data.nTasting + ' out of ' + data.nPeople + ' total people the day ' + datebooking + ". Access credentials to the app: email: " + data.email + 
-                ', password: ' + data.email.substring(0, 4) + 'R23!');
+                message = `You booked the tasting ${tastingPackage}
+                \n for ${data.nTasting} out of ${data.nPeople} total people
+                \n for the day ${datebooking}.
+                \n \n Access credentials to the app: 
+                \n email: ${data.email}, 
+                \n password: ${data.email.substring(0, 4)}R23!`;
             }
 
             const templateParams = {
@@ -174,13 +180,37 @@ const Form = () => {
                     email: '',
                     newsletter: false,
                     tastingPackage: '',
-                    nPeople: 0,
-                    nTasting: 0,
+                    nPeople: '',
+                    nTasting: '',
                     dateBooking: '',
                     totalPaid: 0
                 });
-                // toast.dismiss(toastLoading);
-                // toast.success(`${t('emailOk')}`);
+                // Send User's booking to Company Roccolo's email
+                let ourMessage = `Nome completo: ${fullname}
+                    \n Email: ${data.email}
+                    \n Newsletter: ${data.newsletter ? 'Sì' : 'No'}
+                    \n Tipo pacchetto degustazione: ${tastingPackage}
+                    \n Data degustazione: ${datebooking}
+                    \n Numero degustazioni: ${data.nTasting}
+                    \n Numero persone: ${data.nPeople}
+                    \n Totale pagato: ${data.totalPaid}
+                    \n \n Credenziali accesso app:
+                    \n Email: ${data.email}
+                    \n Password: ${data.email.substring(0, 4)}R23!`;
+
+                const ourTemplateParams = {
+                    from_name: fullname,
+                    from_email: 'filippo.erbisti@gmail.com',
+                    to_name: 'Roccolo del Lago',
+                    message: ourMessage,
+                }
+
+                emailjs.send(
+                    process.env.NEXT_PUBLIC_SERVICE_ID_TO_OUR,
+                    process.env.NEXT_PUBLIC_TEMPLATE_ID_TO_OUR,
+                    ourTemplateParams,
+                    process.env.NEXT_PUBLIC_EMAILJS_USER_ID_TO_OUR
+                );
             }, (error) => {
                 toast.error(`${t('emailError')}`);
             });
@@ -434,19 +464,19 @@ const Form = () => {
                         {t('formSubTitle3')}
                     </StepLabel>
                     <StepContent>
-                        <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px'}}>
+                        <div className='form-total-pay'>
                             <h4>{t('total')}: <span>{data.totalPaid} €</span></h4>
                         </div>
-                        <div style={{display: 'flex', alignItems: 'center', marginLeft: '30px'}}>
+                        <div className='form-btn-pay'>
                             <button 
                                 onClick={handleSignup}
-                                style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginRight: '10px', marginTop: '10px', color: '#4379FF'}}
+                                className='btn-stripe'
                             >
                                 {t('payWith')} Stripe
                             </button>
                             <button 
                                 onClick={handleSignup}
-                                style={{border: '1px solid lightblue', padding: '5px 10px', borderRadius: '5px', marginLeft: '10px', marginTop: '10px', color: '#009cde'}}
+                                className='btn-paypal'
                             >
                                 {t('payWith')} Paypal
                             </button>
