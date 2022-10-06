@@ -132,7 +132,7 @@ const Tasting = () => {
       <div>
         <Swiper pagination={{clickable: true}} spaceBetween={20} modules={[Pagination]} className="mySwiperTasting">
           <SwiperSlide style={{display: 'flex', flexDirection: 'column'}}>
-            <h1 className='text-2xl my-5 uppercase'>{t('proposal1')}</h1>
+            <h1 style={{fontSize: 'medium', textTransform: 'uppercase', margin: '10px 0'}}>{t('proposal1')}</h1>
             <button onClick={viewDetail1}>{t('clickDetail')}</button>
             <div className='proposal-card'>
               <div id='detail1' className='proposal-card-detail'>
@@ -144,7 +144,7 @@ const Tasting = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide style={{display: 'flex', flexDirection: 'column'}}>
-            <h1 className='text-2xl my-5 uppercase'>{t('proposal2')}</h1>
+            <h1 style={{fontSize: 'medium', textTransform: 'uppercase', margin: '10px 0'}}>{t('proposal2')}</h1>
             <button onClick={viewDetail2}>{t('clickDetail')}</button>
             <div className='proposal-card'>
               <div id='detail2' className='proposal-card-detail'>
@@ -156,7 +156,7 @@ const Tasting = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide style={{display: 'flex', flexDirection: 'column'}}>
-            <h1 className='text-2xl my-5 uppercase'>{t('proposal3')}</h1>
+            <h1 style={{fontSize: 'medium', textTransform: 'uppercase', margin: '10px 0'}}>{t('proposal3')}</h1>
             <button onClick={viewDetail3}>{t('clickDetail')}</button>
             <div className='proposal-card'>
               <div id='detail3' className='proposal-card-detail'>
