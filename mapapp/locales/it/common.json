@@ -1,6 +1,9 @@
 {
     "loading": "Caricamento",
 
+    "tastingRemember": "Si ricorda che la Degustazione si terrà alle ore",
+    "on": "del",
+
     "errorCredential": "Le credenziali sono errate",
     "errorEmail": "Errore nell'invio email, riprovare",
     "startTour": "Inizia il tour",
@@ -54,6 +57,9 @@
     "faq5PPathViewLi3": "Dalla pagina iniziale: cliccando sopra la tappa desiderata",
     "faq6TPathCompl": "Come è possibile segnare come completata una tappa?",
     "faq6PPathCompl": "Per completare una tappa bisogna trovarsi nella pagina dettagli della stessa tappa, infondo vi sarà un bottone per segnarla completata ",
+
+    "readMore": "... Leggi di più",
+    "showLess": "(Mostra meno)",
 
     "version": "Versione"
 }

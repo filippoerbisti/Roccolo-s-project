@@ -1,6 +1,9 @@
 {
     "loading": "Chargement",
 
+    "tastingRemember": "Veuillez noter que la dégustation aura lieu à",
+    "on": "le",
+
     "errorCredential": "Les identifiants sont incorrects",
     "errorEmail": "EErreur lors de l'envoi de l'e-mail, réessayez",
     "startTour": "Commencez la visite",
@@ -54,6 +57,9 @@
     "faq5PPathViewLi3": "Depuis la page d'accueil : en cliquant sur l'étape souhaitée",
     "faq6TPathCompl": "Comment est-il possible de marquer une étape comme terminée ?",
     "faq6PPathCompl": "Pour terminer une étape, vous devez être sur la page de détails de la même étape, après quoi il y aura un bouton pour la marquer comme terminée",
+
+    "readMore": "... Leggi di più",
+    "showLess": "(Mostra meno)",
 
     "version": "Version"
 }

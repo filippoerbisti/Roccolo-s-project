@@ -43,7 +43,7 @@ const Main = ({ user, userDoc }) => {
 
     let formatToday = today.getUTCDate() + "/" + (today.getUTCMonth() + 1) + "/" + today.getUTCFullYear();
 
-    let dateBookingHourMin = (userDoc.dateBooking.getHours + today.getHours() < 13 ? 11 : 19);
+    let dateBookingHourMin = (userDoc.dateBooking.getHours + today.getHours() < 13 ? 11 : 16);
     console.log(today.getHours())
     // Modal Tasting Hour to remember the hour of tasting
     modalTastingH = document.getElementById("modalTastingHour");
@@ -278,15 +278,15 @@ const Main = ({ user, userDoc }) => {
       {isAuthPeriod &&
         <div>
 
+          {/* If dateBooking == today, and hours == 11 || 16 -> show modal with Tasting Hour */}
           <div id="modalTastingHour" className="modal-tasting-hour">
               <div className="modal-content-tasting-hour">
                   <span onClick={closeModalTastingHour} className="close-modal-tasting-hour">&times;</span>
                   <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                      <h2 style={{fontSize: '20px'}}>Si ricorda che la Degustazione si terrà alle ore {today.getHours() < 13 ? '11.00' : '16.00'}</h2>
+                      <h2 style={{fontSize: '20px'}}>{t('tastingRemember')} {today.getHours() < 13 ? '11.00' : '16.00'}</h2>
                   </div>
               </div>
           </div>  
-
 
           <div id="tab-content" className='tab-content'>
             <div id='home' className='content vis'>
@@ -354,10 +354,10 @@ const Main = ({ user, userDoc }) => {
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className='swiper-path'>
-                    <h2 style={{color: 'black'}}>{t('paths')}:</h2>
+                    <h2 style={{color: 'black'}}>{t('paths')}</h2>
                     {fakePaths.map((fakePath) => {
                       return (
-                        <div key={fakePath.id} className="path-card" style={{background: `linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(${fakePath.img})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center"}}>
+                        <div key={fakePath.id} className="path-card" style={{background: `linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(${fakePath.imgBackground})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center"}}>
                           <img src={fakePath.img} />
                           <div className='path-card-txt'>
                             <h4 style={{color: 'white'}}>{fakePath.title}</h4>
@@ -417,8 +417,9 @@ const Main = ({ user, userDoc }) => {
                   <div className="modal-body-qr">
                       <span className="close-qr" onClick={modalClose}>&times;</span>
                       {/* <ScanReader /> */}
-                      <div style={{marginTop: '10px', paddingLeft: '15px'}}>
-                        <h1 style={{fontSize: "18px", textAlign: "center"}}>SCANNER QR</h1>
+                      <div style={{marginTop: '10px'}}>
+                        <h1 style={{fontSize: "18px", textAlign: "center", paddingLeft: '17px'}}>SCANNER QR</h1>
+                        <p style={{fontSize: '15px', textAlign: "center", paddingLeft: '17px'}}>Inquadra i QR sparsi tra i vigneti</p>
                         <QrReader
                           onResult={(result, error) => {
                             if (!!result) {
@@ -434,7 +435,7 @@ const Main = ({ user, userDoc }) => {
                           //this is facing mode : "environment " it will open backcamera of the smartphone and if not found will 
                           // open the front camera
                           constraints = {{ facingMode:  "environment"  }}
-                          style = {{ width: "50%", height: "50%", backgroundColor: '#000' }}
+                          style = {{ width: "50%", height: "50%" }}
                         />
                       </div>
                   </div>

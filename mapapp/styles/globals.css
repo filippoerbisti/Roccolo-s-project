@@ -75,7 +75,7 @@ body {
   justify-content: center;
   width: 100%;
   opacity: 0.7;
-  background-image: url('../../ecommerce/public/degustazioni.png');
+  background-image: url(https://res.cloudinary.com/dl38nyo08/image/upload/v1665038673/Landing%20Roccolo/vigneti_i90ivg.png);
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
@@ -377,7 +377,7 @@ body {
     
     .swiper-start {
       /* background-color: #EDCFBC; */
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/dl38nyo08/image/upload/v1664462336/mapapp/roccolo-roccolo_v1pmex.jpg);
+      background: url(https://res.cloudinary.com/dl38nyo08/image/upload/v1665038676/Landing%20Roccolo/back-storia_hv0zfc.png);
       height: 100%;
       background-repeat: no-repeat;
       background-size: cover;
@@ -697,7 +697,7 @@ body {
       .accordion__item {
         margin: 10px 0;
         background: #F5F5F5;
-        box-shadow: -8px 8px 35px rgba(0, 0, 0, 0.45);
+        box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.45);
         border-radius: 5px;
       }
 
@@ -911,10 +911,10 @@ body {
     position: fixed;
     bottom: 0;
     background-color: #fefefe;
-    height: 100%;
+    /* height: 100%; */
     width: 100%;
     max-width: 500px;
-    top: 150px;
+    padding-bottom: 30px;
     -webkit-animation-name: slideIn;
     -webkit-animation-duration: 1s;
     animation-name: slideIn;
@@ -940,7 +940,11 @@ body {
   }
 
   .modal-body-qr {
-    padding: 2px 16px;
+    padding: 0px 20px;
+  }
+
+  .modal-body-qr h1 {
+    padding-top: 20px;
   }
 
   /* Add Animation */
@@ -1027,14 +1031,10 @@ body {
 /* END STYLES LOADER WALKER */
 
 
+/* STYLE NO AUTH PERIOD */
 
 
-
-
-
-
-
-.no-auth-period {
+.no-auth-period-container {
   width: 100%;
   /* padding-top: 100px; */
   height: 100vh;
@@ -1044,10 +1044,84 @@ body {
   justify-content: center;
 }
 
-.no-auth-period h2 {
+.no-auth-period {
   font-size: medium;
   color: white;
   padding: 40px 20px;
   border-radius: 20px;
-  background: #421B1B;
+  background: #940E25;
+  border: none;
+  box-shadow: -4px 4px 10px #421B1B;
+}
+
+/* END STYLE NO AUTH PERIOD */
+
+
+
+
+
+.detail-container {
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+.detail-container img {
+  height: auto;
+  width: 100%;
+}
+
+.detail-container h1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-transform: uppercase;
+  color: white;
+  background: rgba(0,0,0,.4);
+  padding: 5px 15px;
+  font-size: large;
+}
+
+.detail-txt {
+  padding: 20px;
+  font-size: medium;
+}
+
+.detail-btn {
+  padding: 5px 20px 15px 20px;
+  font-size: medium;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail-complete-btn {
+  background: #940E25;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+}
+
+
+
+
+
+
+
+.mySwiperGalleryPath {
+  width: 100%;
+  height: auto;
+  border: none;
+}
+
+.mySwiperGalleryPath img {
+  width: 100%;
+  height: 300px;
+}
+
+.swiper-button-next,
+.swiper-button-prev,
+.swiper-pagination-bullet-active {
+  color: white;
 }

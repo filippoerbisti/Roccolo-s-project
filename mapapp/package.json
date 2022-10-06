@@ -22,7 +22,6 @@
     "react-icons": "^4.4.0",
     "react-qr-code": "^2.0.7",
     "react-qr-reader": "^3.0.0-beta-1",
-    "react-quick-pinch-zoom": "^4.5.0",
     "react-sortablejs": "^6.1.4",
     "sortablejs": "^1.15.0",
     "styled-components": "^5.3.5",
