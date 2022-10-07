@@ -4,12 +4,12 @@ import { FiHome, FiMap, FiHelpCircle } from 'react-icons/fi';
 import { BsChevronRight } from 'react-icons/bs';
 import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router';
-import { Mapping, Info, FAQ, QReaderIcon, Loader, NoAuthPeriod } from './';
+import { Mapping, Info, FAQ, QReaderIcon, Loader, NoAuthPeriod, Path } from './';
 
 import { QrReader } from "react-qr-reader";
 import toast from 'react-hot-toast';
 
-import dataFakePath from '../store/dataFakePath';
+import { urlFor } from '../lib/client';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -20,17 +20,16 @@ import "swiper/css/effect-creative";
 // import required modules
 import { EffectCreative } from "swiper";
 
-const Main = ({ user, userDoc }) => {
+const Main = ({ user, userDoc, stages }) => {
   const { t } = useTranslation('common');
 
-  const fakePaths = dataFakePath;
+  const [isAuthPeriod, setIsAuthPeriod] = useState(false);
 
   const router = useRouter();
   var modalQR;
   var modalTastingH;
 
   const [data, setData] = useState("No result");
-  const [isAuthPeriod, setIsAuthPeriod] = useState(false);
 
   const convertToDate = (d) => {
     const [day, month, year] = d.split("/");
@@ -44,7 +43,6 @@ const Main = ({ user, userDoc }) => {
     let formatToday = today.getUTCDate() + "/" + (today.getUTCMonth() + 1) + "/" + today.getUTCFullYear();
 
     let dateBookingHourMin = (userDoc.dateBooking.getHours + today.getHours() < 13 ? 11 : 16);
-    console.log(today.getHours())
     // Modal Tasting Hour to remember the hour of tasting
     modalTastingH = document.getElementById("modalTastingHour");
     if (modalTastingH != null) {
@@ -355,19 +353,28 @@ const Main = ({ user, userDoc }) => {
                 <SwiperSlide>
                   <div className='swiper-path'>
                     <h2 style={{color: 'black'}}>{t('paths')}</h2>
-                    {fakePaths.map((fakePath) => {
+                    {stages.map((stage) => {
                       return (
-                        <div key={fakePath.id} className="path-card" style={{background: `linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(${fakePath.imgBackground})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center"}}>
-                          <img src={fakePath.img} />
+                        <div 
+                          key={stage._id} 
+                          className="path-card" 
+                          style={{background: `linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(${urlFor(stage.image[0])})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center"}}
+                        >
+                          <img src={urlFor(stage.icon)} />
                           <div className='path-card-txt'>
-                            <h4 style={{color: 'white'}}>{fakePath.title}</h4>
+                            <h4 style={{color: 'white'}}>{stage.name}</h4>
                             <span className="detail">
-                              <Link href={''}>Vedi dettagli</Link>
+                              <Link 
+                                href={{
+                                  pathname: '/stage/[slug]',
+                                  query: { slug: stage.slug.current }
+                                }}
+                              >Vedi dettagli</Link>
                             </span>
                           </div>
                           <div className="checkbox-round">
                             {userDoc && 
-                              <input type="checkbox" id='checkbox' defaultChecked={userDoc[fakePath.path]} disabled />
+                              <input type="checkbox" id='checkbox' defaultChecked={userDoc[stage.path]} disabled />
                             }
                             <label htmlFor="checkbox"></label>
                           </div>
