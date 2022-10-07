@@ -1,9 +1,11 @@
 import React from 'react';
-import { Login, Loader, Main } from '../components';
+import { Login, Main } from '../components';
+
+import { client } from '../lib/client';
 
 import { useAuth } from '../context/AuthContext';
 
-export default function Index() {
+export default function Index({ stages }) {
 
   const { user } = useAuth();
   const { userDoc } = useAuth();
@@ -17,8 +19,17 @@ export default function Index() {
 
       {/* If logged in -> show main */}
       {user && userDoc &&
-        <Main user={user} userDoc={userDoc} />
+        <Main user={user} userDoc={userDoc} stages={stages} />
       }
     </div>
   )
+}
+
+export const getServerSideProps = async () => {
+  const query = '*[_type == "stage"]';
+  const stages = await client.fetch(query);
+
+  return {
+    props: { stages }
+  }
 }
