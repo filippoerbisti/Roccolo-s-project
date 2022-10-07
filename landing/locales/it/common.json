@@ -37,6 +37,13 @@
     "proposal1": "Pacchetto ragazzi",
     "proposal2": "Pacchetto coppia",
     "proposal3": "Pacchetto famiglia",
+    "cost": "Costo",
+    "forPerson": "a persona",
+    "trisWine": "Tris di Bollicine",
+    "whiteWine": "Vino Bianco",
+    "roseWine": "Vino Rosè",
+    "proseccoWine": "Vino Prosecco",
+    "food": "Cibo",
 
     "formTitle": "Prenota la tua degustazione",
     "formContinueBtn": "Continua",
