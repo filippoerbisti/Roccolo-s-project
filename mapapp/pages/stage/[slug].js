@@ -49,8 +49,8 @@ const StageDetails = ({ stage }) => {
                 <img src={urlFor(image[0])} alt="" />
             </div>
             <audio style={{width: '100%', margin: '0 auto'}} controls>
-                <source src={audio} type="audio/ogg" />
-                <source src={audio} type="audio/mpeg" />
+                <source src={urlFor(audio)} type="audio/ogg" />
+                <source src={urlFor(audio)} type="audio/mpeg" />
                 Your browser does not support the audio tag.
             </audio> 
             <div className='detail-txt'>
