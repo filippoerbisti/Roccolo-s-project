@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.7.0",
+    "@sanity/client": "^3.4.1",
     "country-flag-icons": "^1.5.5",
     "firebase": "^9.9.4",
     "next": "12.2.5",
