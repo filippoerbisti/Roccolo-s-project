@@ -75,7 +75,7 @@ const StageDetails = ({ stage }) => {
                     className="mySwiperGalleryPath"
                 >
                     {image?.map((img) => 
-                        <SwiperSlide>
+                        <SwiperSlide key={img._id}>
                             <img src={urlFor(img)} alt="" />
                         </SwiperSlide>
                     )}
