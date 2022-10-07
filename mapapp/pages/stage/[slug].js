@@ -46,11 +46,11 @@ const StageDetails = ({ stage }) => {
         <div className='detail-container'>
             <div style={{position: 'relative'}}>
                 <h1>{name}</h1>
-                <img src="https://res.cloudinary.com/dl38nyo08/image/upload/v1655394258/Roccolo%20del%20Lago/casual%20img/pexels-pixabay-39511_nkcwju.jpg" alt="" />
+                <img src={urlFor(image[0])} alt="" />
             </div>
             <audio style={{width: '100%', margin: '0 auto'}} controls>
-                <source src="horse.ogg" type="audio/ogg" />
-                <source src="horse.mp3" type="audio/mpeg" />
+                <source src={audio} type="audio/ogg" />
+                <source src={audio} type="audio/mpeg" />
                 Your browser does not support the audio tag.
             </audio> 
             <div className='detail-txt'>
