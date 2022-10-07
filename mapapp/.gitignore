@@ -2,12 +2,13 @@
 
 .env
 
+/sanityproduct/node_modules
+
 # compiled build output
 /public/sw*
 /public/workbox*
 
 # dependencies
-/node_modules
 node_modules
 /.pnp
 .pnp.js
