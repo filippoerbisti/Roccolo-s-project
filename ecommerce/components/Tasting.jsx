@@ -138,7 +138,16 @@ const Tasting = () => {
               <div id='detail1' className='proposal-card-detail'>
                 <span className='close-proposal-detail' onClick={hideDetail1}>X</span>
                 <h2>{t('detail')}</h2>
-                <p>ciao</p>
+                <div style={{height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                  <p style={{ paddingBottom: '10px', textAlign: 'center'}}>
+                    {t('cost')}: 15€ / {t('forPerson')}
+                    <br /><br />
+                    {t('trisWine')}:
+                    <br /> - {t('whiteWine')}
+                    <br /> - {t('roseWine')}
+                    <br /> - {t('proseccoWine')}
+                  </p>
+                </div>
               </div>
               <img src="https://res.cloudinary.com/dl38nyo08/image/upload/v1665041204/Landing%20Roccolo/tasting_package_1_dokzq3.png" alt="" />
             </div>
@@ -150,7 +159,17 @@ const Tasting = () => {
               <div id='detail2' className='proposal-card-detail'>
                 <span className='close-proposal-detail' onClick={hideDetail2}>X</span>
                 <h2>{t('detail')}</h2>
-                <p>ciao</p>
+                <div style={{height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                  <p style={{ paddingBottom: '10px', textAlign: 'center'}}>
+                    {t('cost')}: 30€ / {t('forPerson')}
+                    <br /><br />
+                    {t('trisWine')}:
+                    <br /> - {t('whiteWine')}
+                    <br /> - {t('roseWine')}
+                    <br /> - {t('proseccoWine')}
+                    <br /> + {t('food')}
+                  </p>
+                </div>
               </div>
               <img src="https://res.cloudinary.com/dl38nyo08/image/upload/v1665041204/Landing%20Roccolo/tasting_package_2_llmpyk.png" alt="" />
             </div>
@@ -162,7 +181,18 @@ const Tasting = () => {
               <div id='detail3' className='proposal-card-detail'>
                 <span className='close-proposal-detail' onClick={hideDetail3}>X</span>
                 <h2>{t('detail')}</h2>
-                <p>ciao</p>
+                <div style={{height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                  <p style={{ paddingBottom: '10px', textAlign: 'center'}}>
+                    {t('cost')}: 45€ / {t('forPerson')}
+                    <br /><br />
+                    {t('trisWine')}:
+                    <br /> - {t('whiteWine')}
+                    <br /> - {t('roseWine')}
+                    <br /> - {t('proseccoWine')}
+                    <br /> + {t('food')}
+                    <br /> + Dessert
+                  </p>
+                </div>
               </div>
               <img src="https://res.cloudinary.com/dl38nyo08/image/upload/v1665041204/Landing%20Roccolo/tasting_package_3_ojd5kw.png" alt="" />
             </div>
