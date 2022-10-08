@@ -176,9 +176,9 @@ const Main = ({ products }) => {
               {pTastingParagraph}
             </ReadMore> */}
             {pTastingParagraph} : <br />
-            - {t('tastingParagraphProposal1')} (add small descr) <br />
-            - {t('tastingParagraphProposal2')} (add small descr) <br />
-            - {t('tastingParagraphProposal3')} (add small descr) <br />
+            - {t('tastingParagraphProposal1')} {t('trisWine')} ({t('whiteWine')}, {t('roseWine')}, {t('proseccoWine')}) <br />
+            - {t('tastingParagraphProposal2')} {t('trisWine')} ({t('whiteWine')}, {t('roseWine')}, {t('proseccoWine')}), {t('food')} <br />
+            - {t('tastingParagraphProposal3')} {t('trisWine')} ({t('whiteWine')}, {t('roseWine')}, {t('proseccoWine')}), {t('food')}, Dessert <br />
           </p>
           <div className={styles.btnContainer}>
             <Link href='https://landingroccolo.vercel.app'>
