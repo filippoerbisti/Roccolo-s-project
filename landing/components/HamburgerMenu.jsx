@@ -123,7 +123,7 @@ const HamburgerMenu = () => {
           <FR title="Français" className={styles.langIcons}/>
         </Link> */}
       </div>
-      <p className={styles.credit}>{t('poweredBy')} <a href="https://filippoerbisti.netlify.app" target="_blank" rel="noreferrer" className={styles.poweredBy}>Filippo Erbisti</a></p>
+      {/* <p className={styles.credit}>{t('poweredBy')} <a href="https://filippoerbisti.netlify.app" target="_blank" rel="noreferrer" className={styles.poweredBy}>Filippo Erbisti</a></p> */}
     </div>
   )
 }
