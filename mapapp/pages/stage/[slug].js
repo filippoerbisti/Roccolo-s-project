@@ -54,7 +54,7 @@ const StageDetails = ({ stage }) => {
     const completePath = async (userDoc) => {
         if(userDoc !== null) {
             updateDoc(doc(database, "user_document", userDoc.email), {nPathsToComplete: increment(-1)})
-            updateDoc(doc(database, "user_document", userDoc.email), {path2: false})
+            updateDoc(doc(database, "user_document", userDoc.email), {path6: false})
             userDoc[path] = true;
         }
     }
