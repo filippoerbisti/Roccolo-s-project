@@ -6,6 +6,11 @@ export default {
     type: 'document',
     fields: [ 
         {
+            name: 'id',
+            title: 'Id',
+            type: 'number',
+        },
+        {
             name: 'image',
             title: 'Image',
             type: 'array',
@@ -50,6 +55,11 @@ export default {
             options: {
                 accept: 'audio/*',
             },
-        }
+        },
+        {
+            name: 'nextStage',
+            title: 'NextStage',
+            type: 'string',
+        },
     ]
 }
