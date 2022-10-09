@@ -88,9 +88,11 @@ const StageDetails = ({ stage }) => {
                 >
                     Completa tappa
                 </button>
-                <Link href={nextStage} style={{cursor: 'pointer'}}>
-                    <p style={{textDecoration: 'underline'}}>Prossima tappa &gt;</p>
-                </Link>
+                {nextStage &&
+                    <Link href={nextStage} style={{cursor: 'pointer'}}>
+                        <p style={{textDecoration: 'underline'}}>Prossima tappa &gt;</p>
+                    </Link>
+                }
             </div>
         </div>
     )
