@@ -40,7 +40,7 @@ const ReadMore = ({ children }) => {
 
 const StageDetails = ({ stage }) => {
 
-    const { image, name, description, audio } = stage;
+    const { image, name, description, audio, nextStage } = stage;
 
     return (
         <div className='detail-container'>
@@ -49,8 +49,8 @@ const StageDetails = ({ stage }) => {
                 <img src={urlFor(image[0])} alt="" />
             </div>
             <audio style={{width: '100%', margin: '0 auto'}} controls>
-                <source src={urlFor(audio)} type="audio/ogg" />
-                <source src={urlFor(audio)} type="audio/mpeg" />
+                <source src={audio} type="audio/ogg" />
+                <source src={audio} type="audio/mpeg" />
                 Your browser does not support the audio tag.
             </audio> 
             <div className='detail-txt'>
@@ -82,8 +82,13 @@ const StageDetails = ({ stage }) => {
                 </Swiper>
             </div>
             <div className='detail-btn'>
-                <button className='detail-complete-btn'>Completa tappa</button>
-                <Link href={''}>
+                <button 
+                    className='detail-complete-btn' 
+                    style={{cursor: 'pointer'}}
+                >
+                    Completa tappa
+                </button>
+                <Link href={nextStage} style={{cursor: 'pointer'}}>
                     <p style={{textDecoration: 'underline'}}>Prossima tappa &gt;</p>
                 </Link>
             </div>
