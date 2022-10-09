@@ -114,7 +114,7 @@ const StageDetails = ({ stage }) => {
                     </button>
                 }
                 {nextStage &&
-                    <Link href={nextStage} style={{cursor: 'pointer'}}>
+                    <Link href={'/stage' + nextStage} style={{cursor: 'pointer'}}>
                         <p style={{textDecoration: 'underline', cursor: 'pointer'}}>Prossima tappa &gt;</p>
                     </Link>
                 }
