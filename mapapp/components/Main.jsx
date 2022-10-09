@@ -115,7 +115,7 @@ const Main = ({ user, userDoc, stages }) => {
           } 
 
           let pageId = target.attributes[1].value; //get data-where of li to then compared
-          router.push('#' + pageId);
+          // router.push('#' + pageId);
 
           const divsMain = document.getElementsByClassName("content");
           // show section (id) or hidden
@@ -154,7 +154,7 @@ const Main = ({ user, userDoc, stages }) => {
     // change background color 
     document.body.style.backgroundColor = "#EDCFBC";
     const pageId = 'home'
-    router.push('#' + pageId);
+    // router.push('#' + pageId);
     const divsMain = document.getElementsByClassName("content");
     // show section (id) or hidden
     for(let i = 0; i < divsMain.length; i++) {
@@ -190,7 +190,7 @@ const Main = ({ user, userDoc, stages }) => {
     // change background color 
     document.body.style.backgroundColor = "#C4D7BD";
     const pageId = 'map';
-    router.push('#' + pageId);
+    // router.push('#' + pageId);
     const divsMain = document.getElementsByClassName("content");
     // show section (id) or hidden
     for(let i = 0; i < divsMain.length; i++) {
@@ -226,7 +226,7 @@ const Main = ({ user, userDoc, stages }) => {
     // change background color 
     document.body.style.backgroundColor = "#D6C6DD";
     const pageId = 'help';
-    router.push('#' + pageId);
+    // router.push('#' + pageId);
     const divsMain = document.getElementsByClassName("content");
     // show section (id) or hidden
     for(let i = 0; i < divsMain.length; i++) {
