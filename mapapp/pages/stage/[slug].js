@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import Link from 'next/link';
 import useTranslation from 'next-translate/useTranslation';
 
+import { useAuth } from '../../context/AuthContext';
+
 import { client, urlFor } from '../../lib/client';
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,6 +15,7 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
+import { updateDoc } from 'firebase/firestore';
 
 const ReadMore = ({ children }) => {
     const text = children;
@@ -39,8 +42,18 @@ const ReadMore = ({ children }) => {
 }
 
 const StageDetails = ({ stage }) => {
+    const { userDoc } = useAuth();
 
-    const { image, name, description, audio, nextStage } = stage;
+    const { image, name, description, audio, path, nextStage } = stage;
+
+    const completePath = (userDoc) => {
+        if(user !== null) {
+            updateDoc(doc(database, "user_document", userDoc.email)).then(docSnap => {
+              if (docSnap.exists())
+                console.log(docSnap)
+            })
+        }
+    }
 
     return (
         <div className='detail-container'>
@@ -82,15 +95,27 @@ const StageDetails = ({ stage }) => {
                 </Swiper>
             </div>
             <div className='detail-btn'>
-                <button 
-                    className='detail-complete-btn' 
-                    style={{cursor: 'pointer'}}
-                >
-                    Completa tappa
-                </button>
+                {!userDoc[path] &&
+                    <button 
+                        className='detail-complete-btn' 
+                        style={{cursor: 'pointer'}}
+                        onClick={completePath}
+                    >
+                        Completa tappa
+                    </button>
+                }
+                {userDoc[path] &&
+                    <button 
+                        className='detail-complete-btn' 
+                        style={{opacity: '0.7', cursor: 'not-allowed'}}
+                        disabled
+                    >
+                        Completata!
+                    </button>
+                }
                 {nextStage &&
                     <Link href={nextStage} style={{cursor: 'pointer'}}>
-                        <p style={{textDecoration: 'underline'}}>Prossima tappa &gt;</p>
+                        <p style={{textDecoration: 'underline', cursor: 'pointer'}}>Prossima tappa &gt;</p>
                     </Link>
                 }
             </div>
