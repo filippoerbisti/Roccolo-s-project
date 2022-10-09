@@ -3,6 +3,12 @@ import Link from 'next/link';
 import useTranslation from 'next-translate/useTranslation';
 
 import { useAuth } from '../../context/AuthContext';
+import { 
+    doc,  
+    increment,  
+    updateDoc
+  } from 'firebase/firestore';
+  import { database } from '../../utils/firebase';
 
 import { client, urlFor } from '../../lib/client';
 
@@ -15,7 +21,6 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
-import { updateDoc } from 'firebase/firestore';
 
 const ReadMore = ({ children }) => {
     const text = children;
@@ -46,12 +51,11 @@ const StageDetails = ({ stage }) => {
 
     const { image, name, description, audio, path, nextStage } = stage;
 
-    const completePath = (userDoc) => {
-        if(user !== null) {
-            updateDoc(doc(database, "user_document", userDoc.email)).then(docSnap => {
-              if (docSnap.exists())
-                console.log(docSnap)
-            })
+    const completePath = async (userDoc) => {
+        if(userDoc !== null) {
+            updateDoc(doc(database, "user_document", userDoc.email), {nPathsToComplete: increment(-1)})
+            updateDoc(doc(database, "user_document", userDoc.email), {path2: false})
+            userDoc[path] = true;
         }
     }
 
