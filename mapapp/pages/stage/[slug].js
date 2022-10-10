@@ -41,6 +41,7 @@ const ReadMore = ({ children }) => {
 }
 
 const StageDetails = ({ stage }) => {
+    const { t } = useTranslation('common');
 
     const currentLang = useRouter().locale;
 
@@ -50,6 +51,10 @@ const StageDetails = ({ stage }) => {
 
     const map = '#map';
 
+    const assetAudio = audio.asset._ref.split('-'); // return array 3 object ("file", id, format)
+    const idAudio = assetAudio[1];
+    const formatAudio = assetAudio[2];
+    const audioUrl = `https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${idAudio}.${formatAudio}`;
 
     return (
         <div className='detail-container'>
@@ -61,8 +66,8 @@ const StageDetails = ({ stage }) => {
                 {/* <img src={urlFor(image[0])} alt="" /> */}
             </div>
             <audio style={{width: '100%', margin: '0 auto'}} controls>
-                <source src={audio} type="audio/ogg" />
-                <source src={audio} type="audio/mpeg" />
+                <source src={audioUrl} type="audio/ogg" />
+                <source src={audioUrl} type="audio/mpeg" />
                 Your browser does not support the audio tag.
             </audio> 
             <div className='detail-txt'>
