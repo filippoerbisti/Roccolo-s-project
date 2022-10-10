@@ -61,5 +61,9 @@
     "readMore": "... Read more",
     "showLess": "(Show less)",
 
+    "stageCompleted": "Completed",
+    "stageToBeComplete": "Complete stage",
+    "nextStage": "Next stage",
+
     "version": "Version"
 }
