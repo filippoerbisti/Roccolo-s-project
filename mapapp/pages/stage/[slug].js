@@ -44,9 +44,9 @@ const StageDetails = ({ stage }) => {
 
     return (
         <div className='detail-container'>
-            <div style={{position: 'relative'}}>
+            <div style={{position: 'relative', backgroundImage: `url(${urlFor(image[0])})`, backgroundAttachment: 'fixed', backgroundPosition: 'top', backgroundRepeat: 'no-repeat', backgroundSize: '500px 350px', height: '250px'}}>
                 <h1>{name}</h1>
-                <img src={urlFor(image[0])} alt="" />
+                {/* <img src={urlFor(image[0])} alt="" /> */}
             </div>
             <audio style={{width: '100%', margin: '0 auto'}} controls>
                 <source src={audio} type="audio/ogg" />
@@ -57,6 +57,11 @@ const StageDetails = ({ stage }) => {
                 <h2 style={{textTransform: 'uppercase', marginBottom: '10px', textAlign: 'center'}}>{name}</h2>
                 <p>
                     <ReadMore>{description}</ReadMore>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, incidunt nobis est numquam facere perferendis ex tempora molestias asperiores sed praesentium eligendi repellendus corrupti ducimus alias dolorem dolore ab quidem.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, incidunt nobis est numquam facere perferendis ex tempora molestias asperiores sed praesentium eligendi repellendus corrupti ducimus alias dolorem dolore ab quidem.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, incidunt nobis est numquam facere perferendis ex tempora molestias asperiores sed praesentium eligendi repellendus corrupti ducimus alias dolorem dolore ab quidem.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, incidunt nobis est numquam facere perferendis ex tempora molestias asperiores sed praesentium eligendi repellendus corrupti ducimus alias dolorem dolore ab quidem.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, incidunt nobis est numquam facere perferendis ex tempora molestias asperiores sed praesentium eligendi repellendus corrupti ducimus alias dolorem dolore ab quidem.
                 </p>
             </div>
             <div>
