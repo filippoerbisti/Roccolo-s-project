@@ -104,17 +104,14 @@ const Main = () => {
                     <p className='py-3.5'>
                         <span className='font-bold'>1. {t('visitParagrSpan1')}: </span>
                         {t('visitParagr1')}
-                        Azienda gestione familiare
                     </p>
                     <p className='py-3.5'>
                         <span className='font-bold'>2. {t('visitParagrSpan2')}: </span>
                         {t('visitParagr2')}
-                        Immergiti nel verde dei nostri vigneti
                     </p>
                     <p className='py-3.5'>
                         <span className='font-bold'>3. {t('visitParagrSpan3')}: </span>
                         {t('visitParagr3')}
-                        Scopri i nostri vini nel nostro nuovo wineshop
                     </p>
                 </div>
             </section>
