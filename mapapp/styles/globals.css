@@ -853,12 +853,12 @@ body {
   /* STYLES QR READER ICON*/
 
   .qr-reader-container {
-    position: relative;
     width: 70px;
     height: 70px;
     position: fixed;
     bottom: 80px;
-    right: 10px;
+    /* right: 10px; */
+    margin-left: 420px; /* 500 - (70 + 10) */
     display: flex;
     justify-content: flex-end;
     z-index: 999;
