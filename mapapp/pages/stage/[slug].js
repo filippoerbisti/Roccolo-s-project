@@ -5,6 +5,8 @@ import { useRouter } from 'next/router';
 
 import { client, urlFor } from '../../lib/client';
 import { useAuth } from '../../context/AuthContext';
+import { doc, increment, updateDoc } from "firebase/firestore";
+import { database } from '../../utils/firebase';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -56,6 +58,54 @@ const StageDetails = ({ stage }) => {
     const formatAudio = assetAudio[2];
     const audioUrl = `https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${idAudio}.${formatAudio}`;
 
+    const completeStage = async() => {
+        if(userDoc) {
+            const stageRef = doc(database, "user_document", userDoc.email);
+
+            switch (path) {
+                case 'path1':
+                    await updateDoc(stageRef, {
+                        path1: true,
+                        nPathsToComplete: increment(-1)
+                    });
+                    break;
+                case 'path2':
+                    await updateDoc(stageRef, {
+                        path2: true,
+                        nPathsToComplete: increment(-1)
+                    });
+                    break;
+                case 'path3':
+                    await updateDoc(stageRef, {
+                        path3: true,
+                        nPathsToComplete: increment(-1)
+                    });
+                    break;
+                case 'path4':
+                    await updateDoc(stageRef, {
+                        path4: true,
+                        nPathsToComplete: increment(-1)
+                    });
+                    break;
+                case 'path5':
+                    await updateDoc(stageRef, {
+                        path5: true,
+                        nPathsToComplete: increment(-1)
+                    });
+                    break;
+                case 'path6':
+                    await updateDoc(stageRef, {
+                        path6: true,
+                        nPathsToComplete: increment(-1)
+                    });
+                    break;
+                default:
+                    break;
+            }
+            userDoc[path] = true;
+        }
+    }
+
     return (
         <div className='detail-container'>
             <div style={{position: 'relative', backgroundImage: `url(${urlFor(image[0])})`, backgroundAttachment: 'fixed', backgroundPosition: 'top', backgroundRepeat: 'no-repeat', backgroundSize: '500px 350px', height: '250px'}}>
@@ -73,12 +123,12 @@ const StageDetails = ({ stage }) => {
             <div className='detail-txt'>
                 <h2 style={{textTransform: 'uppercase', marginBottom: '10px', textAlign: 'center'}}>{name}</h2>
                 <p>
-                    <ReadMore>{description}</ReadMore>
+                    <ReadMore>{description}
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, incidunt nobis est numquam facere perferendis ex tempora molestias asperiores sed praesentium eligendi repellendus corrupti ducimus alias dolorem dolore ab quidem.
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, incidunt nobis est numquam facere perferendis ex tempora molestias asperiores sed praesentium eligendi repellendus corrupti ducimus alias dolorem dolore ab quidem.
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, incidunt nobis est numquam facere perferendis ex tempora molestias asperiores sed praesentium eligendi repellendus corrupti ducimus alias dolorem dolore ab quidem.
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, incidunt nobis est numquam facere perferendis ex tempora molestias asperiores sed praesentium eligendi repellendus corrupti ducimus alias dolorem dolore ab quidem.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, incidunt nobis est numquam facere perferendis ex tempora molestias asperiores sed praesentium eligendi repellendus corrupti ducimus alias dolorem dolore ab quidem.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, incidunt nobis est numquam facere perferendis ex tempora molestias asperiores sed praesentium eligendi repellendus corrupti ducimus alias dolorem dolore ab quidem.</ReadMore>
                 </p>
             </div>
             <div>
@@ -108,6 +158,7 @@ const StageDetails = ({ stage }) => {
                     <button 
                         className='detail-complete-btn' 
                         style={{cursor: 'pointer'}}
+                        onClick={completeStage}
                     >
                         {t('stageToBeComplete')}
                     </button>
@@ -116,6 +167,7 @@ const StageDetails = ({ stage }) => {
                     <button 
                         className='detail-complete-btn' 
                         style={{cursor: 'not-allowed', opacity: '0.7'}}
+                        disabled
                     >
                         {t('stageCompleted')}!
                     </button>
