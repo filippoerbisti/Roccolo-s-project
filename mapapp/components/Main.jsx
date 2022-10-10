@@ -270,6 +270,12 @@ const Main = ({ user, userDoc, stages }) => {
     modalTastingH.style.display = "none";
   }
 
+  function orderStagesId(a, b) {
+    return a.id - b.id;
+}
+
+  // console.log(stages.sort(orderStagesId))
+
   return (
     <>
       {/* If logged in && Date.Now is BETWEEN the fixed initial date (choose by user on pay) and the following 6 days (inclusive) */}
@@ -353,7 +359,7 @@ const Main = ({ user, userDoc, stages }) => {
                 <SwiperSlide>
                   <div className='swiper-path'>
                     <h2 style={{color: 'black'}}>{t('paths')}</h2>
-                    {stages.map((stage) => {
+                    {stages.sort(orderStagesId).map((stage) => {
                       return (
                         <div 
                           key={stage._id} 
