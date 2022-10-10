@@ -483,7 +483,7 @@ a {
 .close-proposal-detail {
   position: absolute;
   font-size: medium;
-  right: 10px;
+  right: 15px;
   top: 10px;
   cursor: pointer;
 }
