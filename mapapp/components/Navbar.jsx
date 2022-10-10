@@ -45,7 +45,6 @@ const Navbar = () => {
             className='logout'
             onClick={() => {
               logout();
-              router.push('/');
             }}
           >
             <FiLogOut />

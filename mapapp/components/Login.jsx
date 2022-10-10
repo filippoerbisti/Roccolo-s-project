@@ -9,9 +9,12 @@ import {
     getDoc 
   } from 'firebase/firestore';
 import { database } from '../utils/firebase';
+import { useRouter } from 'next/router';
 
 const Login = () => {
     const { t } = useTranslation('common');
+
+    const router = useRouter();
 
     const { user, login } = useAuth();
     const [data, setData] = useState({
@@ -45,6 +48,7 @@ const Login = () => {
       e.preventDefault();
       try {
         await login(data.email, data.password);
+        router.push('/#home');
       } catch (err) {
         console.log(err);
         toast.error(`${t('errorCredential')}`);

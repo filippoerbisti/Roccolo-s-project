@@ -25,8 +25,10 @@
     "help": "Hilfe",
     "start": "Anfang",
     "paths": "Stufen",
+    "viewDetail": "Siehe Einzelheiten",
     "exploreRoccolo": "Entdecken Sie unser Roccolo",
     "discoverQR": "Entdecken Sie den in unseren Hügeln versteckten QR",
+    "frameQR": "Rahmen Sie die zwischen den Weinbergen verstreuten QRs ein",
     "booking": "Buchung",
     "nPeople": "Anzahl Personen",
     "nTasting": "Anzahl Verkostungen",
@@ -60,6 +62,10 @@
 
     "readMore": "... Leggi di più",
     "showLess": "(Mostra meno)",
+
+    "stageCompleted": "Completata",
+    "stageToBeComplete": "Completa tappa",
+    "nextStage": "Prossima tappa",
 
     "version": "Ausführung"
 }

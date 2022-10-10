@@ -23,6 +23,7 @@ import { EffectCreative } from "swiper";
 const Main = ({ user, userDoc, stages }) => {
   const { t } = useTranslation('common');
 
+  const [isLoaded, setIsLoaded] = useState(false);    
   const [isAuthPeriod, setIsAuthPeriod] = useState(false);
 
   const router = useRouter();
@@ -39,6 +40,7 @@ const Main = ({ user, userDoc, stages }) => {
   var today = new Date();
 
   useEffect(() => {
+    setTimeout(() => setIsLoaded(true), 1000);
 
     let formatToday = today.getUTCDate() + "/" + (today.getUTCMonth() + 1) + "/" + today.getUTCFullYear();
 
@@ -72,6 +74,14 @@ const Main = ({ user, userDoc, stages }) => {
         modalQR.style.display = "none";
       }
     }
+
+    // Onreload show correct section based on url
+    if(router.asPath == '/' || router.asPath == '/#home')
+      navigateHome();
+    else if(router.asPath == '/#map')
+      navigateMap();
+    else if(router.asPath == '/#help')
+      navigateHelp();
 
     // Tabbar
     const uls = document.querySelectorAll("ul");
@@ -115,7 +125,7 @@ const Main = ({ user, userDoc, stages }) => {
           } 
 
           let pageId = target.attributes[1].value; //get data-where of li to then compared
-          // router.push('#' + pageId);
+          router.push('#' + pageId);
 
           const divsMain = document.getElementsByClassName("content");
           // show section (id) or hidden
@@ -133,7 +143,7 @@ const Main = ({ user, userDoc, stages }) => {
         });
       });
     });
-  }, [isAuthPeriod]);
+  }, [isAuthPeriod, isLoaded]);
 
   // Navigate home = simulation click on li with className="home"
   const navigateHome = () => {
@@ -153,7 +163,7 @@ const Main = ({ user, userDoc, stages }) => {
 
     // change background color 
     document.body.style.backgroundColor = "#EDCFBC";
-    const pageId = 'home'
+    const pageId = 'home';
     // router.push('#' + pageId);
     const divsMain = document.getElementsByClassName("content");
     // show section (id) or hidden
@@ -270,10 +280,19 @@ const Main = ({ user, userDoc, stages }) => {
     modalTastingH.style.display = "none";
   }
 
+  function orderStagesId(a, b) {
+    return a.id - b.id;
+  }
+
   return (
     <>
+      {!isLoaded && 
+        <Loader />
+      }
+
+
       {/* If logged in && Date.Now is BETWEEN the fixed initial date (choose by user on pay) and the following 6 days (inclusive) */}
-      {isAuthPeriod &&
+      {isAuthPeriod && isLoaded &&
         <div>
 
           {/* If dateBooking == today, and hours == 11 || 16 -> show modal with Tasting Hour */}
@@ -311,9 +330,9 @@ const Main = ({ user, userDoc, stages }) => {
                       {/*<h3>{t('discoverQR')}</h3>*/}
                       <div className='btn-container' style={{margin: '30px 0'}}>
                         <button className='btn-start' onClick={navigateMap}>
-                          {/* <Link href={'#map'}> */}
+                          <Link href={'#map'}>
                             {t('start')}
-                          {/* </Link> */}
+                          </Link>
                         </button>
                       </div>
                       <p style={{color: 'white'}}>{t('stageToComplete')}: {userDoc.nPathsToComplete}</p>
@@ -343,9 +362,9 @@ const Main = ({ user, userDoc, stages }) => {
                       </div> */}
                       <div className='btn-container' style={{marginTop: '20px'}}>
                         <button className='btn' onClick={navigateHelp}>
-                          {/* <Link href={'#help'}> */}
+                          <Link href={'#help'}>
                             {t('help')}
-                          {/* </Link> */}
+                          </Link>
                         </button>
                       </div>
                     </div>
@@ -353,7 +372,7 @@ const Main = ({ user, userDoc, stages }) => {
                 <SwiperSlide>
                   <div className='swiper-path'>
                     <h2 style={{color: 'black'}}>{t('paths')}</h2>
-                    {stages.map((stage) => {
+                    {stages.sort(orderStagesId).map((stage) => {
                       return (
                         <div 
                           key={stage._id} 
@@ -369,7 +388,7 @@ const Main = ({ user, userDoc, stages }) => {
                                   pathname: '/stage/[slug]',
                                   query: { slug: stage.slug.current }
                                 }}
-                              >Vedi dettagli</Link>
+                              >{t('viewDetail')}</Link>
                             </span>
                           </div>
                           <div className="checkbox-round">
@@ -426,7 +445,7 @@ const Main = ({ user, userDoc, stages }) => {
                       {/* <ScanReader /> */}
                       <div style={{marginTop: '10px'}}>
                         <h1 style={{fontSize: "18px", textAlign: "center", paddingLeft: '17px'}}>SCANNER QR</h1>
-                        <p style={{fontSize: '15px', textAlign: "center", paddingLeft: '17px'}}>Inquadra i QR sparsi tra i vigneti</p>
+                        <p style={{fontSize: '15px', textAlign: "center", paddingLeft: '17px'}}>{t('frameQR')}</p>
                         <QrReader
                           onResult={(result, error) => {
                             if (!!result) {
@@ -452,12 +471,12 @@ const Main = ({ user, userDoc, stages }) => {
       }
 
       {/* If logged in, but authorizedDates == null (loading) */}
-      {!userDoc &&
+      {!userDoc && !stages && isLoaded &&
         <Loader />
       }
 
       {/* If logged in && Date.Now is NOT BETWEEN the fixed initial date (choose by user on pay) and the following 6 days (inclusive) */}
-      {!isAuthPeriod &&
+      {!isAuthPeriod && isLoaded &&
         <NoAuthPeriod user={user} userDoc={userDoc} />
       }
     </>

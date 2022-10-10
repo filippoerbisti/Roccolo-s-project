@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Link from 'next/link';
 import useTranslation from 'next-translate/useTranslation';
+import { useRouter } from 'next/router';
 
 import { useAuth } from '../../context/AuthContext';
 import { 
@@ -11,6 +12,9 @@ import {
   import { database } from '../../utils/firebase';
 
 import { client, urlFor } from '../../lib/client';
+import { useAuth } from '../../context/AuthContext';
+import { doc, increment, updateDoc } from "firebase/firestore";
+import { database } from '../../utils/firebase';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -47,33 +51,92 @@ const ReadMore = ({ children }) => {
 }
 
 const StageDetails = ({ stage }) => {
+    const { t } = useTranslation('common');
+
+    const currentLang = useRouter().locale;
+
     const { userDoc } = useAuth();
 
     const { image, name, description, audio, path, nextStage } = stage;
 
-    const completePath = async (userDoc) => {
-        if(userDoc !== null) {
-            updateDoc(doc(database, "user_document", userDoc.email), {nPathsToComplete: increment(-1)})
-            updateDoc(doc(database, "user_document", userDoc.email), {path6: false})
+    const map = '#map';
+
+    const assetAudio = audio.asset._ref.split('-'); // return array 3 object ("file", id, format)
+    const idAudio = assetAudio[1];
+    const formatAudio = assetAudio[2];
+    const audioUrl = `https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${idAudio}.${formatAudio}`;
+
+    const completeStage = async() => {
+        if(userDoc) {
+            const stageRef = doc(database, "user_document", userDoc.email);
+
+            switch (path) {
+                case 'path1':
+                    await updateDoc(stageRef, {
+                        path1: true,
+                        nPathsToComplete: increment(-1)
+                    });
+                    break;
+                case 'path2':
+                    await updateDoc(stageRef, {
+                        path2: true,
+                        nPathsToComplete: increment(-1)
+                    });
+                    break;
+                case 'path3':
+                    await updateDoc(stageRef, {
+                        path3: true,
+                        nPathsToComplete: increment(-1)
+                    });
+                    break;
+                case 'path4':
+                    await updateDoc(stageRef, {
+                        path4: true,
+                        nPathsToComplete: increment(-1)
+                    });
+                    break;
+                case 'path5':
+                    await updateDoc(stageRef, {
+                        path5: true,
+                        nPathsToComplete: increment(-1)
+                    });
+                    break;
+                case 'path6':
+                    await updateDoc(stageRef, {
+                        path6: true,
+                        nPathsToComplete: increment(-1)
+                    });
+                    break;
+                default:
+                    break;
+            }
             userDoc[path] = true;
         }
     }
 
     return (
         <div className='detail-container'>
-            <div style={{position: 'relative'}}>
+            <div style={{position: 'relative', backgroundImage: `url(${urlFor(image[0])})`, backgroundAttachment: 'fixed', backgroundPosition: 'top', backgroundRepeat: 'no-repeat', backgroundSize: '500px 350px', height: '250px'}}>
                 <h1>{name}</h1>
-                <img src={urlFor(image[0])} alt="" />
+                <Link href={'/' + currentLang + map}>
+                    <span className='x-stage-detail'>X</span>
+                </Link>
+                {/* <img src={urlFor(image[0])} alt="" /> */}
             </div>
             <audio style={{width: '100%', margin: '0 auto'}} controls>
-                <source src={audio} type="audio/ogg" />
-                <source src={audio} type="audio/mpeg" />
+                <source src={audioUrl} type="audio/ogg" />
+                <source src={audioUrl} type="audio/mpeg" />
                 Your browser does not support the audio tag.
             </audio> 
             <div className='detail-txt'>
                 <h2 style={{textTransform: 'uppercase', marginBottom: '10px', textAlign: 'center'}}>{name}</h2>
                 <p>
-                    <ReadMore>{description}</ReadMore>
+                    <ReadMore>{description}
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, incidunt nobis est numquam facere perferendis ex tempora molestias asperiores sed praesentium eligendi repellendus corrupti ducimus alias dolorem dolore ab quidem.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, incidunt nobis est numquam facere perferendis ex tempora molestias asperiores sed praesentium eligendi repellendus corrupti ducimus alias dolorem dolore ab quidem.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, incidunt nobis est numquam facere perferendis ex tempora molestias asperiores sed praesentium eligendi repellendus corrupti ducimus alias dolorem dolore ab quidem.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, incidunt nobis est numquam facere perferendis ex tempora molestias asperiores sed praesentium eligendi repellendus corrupti ducimus alias dolorem dolore ab quidem.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, incidunt nobis est numquam facere perferendis ex tempora molestias asperiores sed praesentium eligendi repellendus corrupti ducimus alias dolorem dolore ab quidem.</ReadMore>
                 </p>
             </div>
             <div>
@@ -103,23 +166,23 @@ const StageDetails = ({ stage }) => {
                     <button 
                         className='detail-complete-btn' 
                         style={{cursor: 'pointer'}}
-                        onClick={completePath}
+                        onClick={completeStage}
                     >
-                        Completa tappa
+                        {t('stageToBeComplete')}
                     </button>
                 }
                 {userDoc[path] &&
                     <button 
                         className='detail-complete-btn' 
-                        style={{opacity: '0.7', cursor: 'not-allowed'}}
+                        style={{cursor: 'not-allowed', opacity: '0.7'}}
                         disabled
                     >
-                        Completata!
+                        {t('stageCompleted')}!
                     </button>
                 }
                 {nextStage &&
                     <Link href={'/stage' + nextStage} style={{cursor: 'pointer'}}>
-                        <p style={{textDecoration: 'underline', cursor: 'pointer'}}>Prossima tappa &gt;</p>
+                        <p style={{textDecoration: 'underline', cursor: 'pointer'}}>{t('nextStage')} &gt;</p>
                     </Link>
                 }
             </div>
