@@ -388,7 +388,7 @@ const Main = ({ user, userDoc, stages }) => {
                                   pathname: '/stage/[slug]',
                                   query: { slug: stage.slug.current }
                                 }}
-                              >Vedi dettagli</Link>
+                              >{t('viewDetail')}</Link>
                             </span>
                           </div>
                           <div className="checkbox-round">
@@ -445,7 +445,7 @@ const Main = ({ user, userDoc, stages }) => {
                       {/* <ScanReader /> */}
                       <div style={{marginTop: '10px'}}>
                         <h1 style={{fontSize: "18px", textAlign: "center", paddingLeft: '17px'}}>SCANNER QR</h1>
-                        <p style={{fontSize: '15px', textAlign: "center", paddingLeft: '17px'}}>Inquadra i QR sparsi tra i vigneti</p>
+                        <p style={{fontSize: '15px', textAlign: "center", paddingLeft: '17px'}}>{t('frameQR')}</p>
                         <QrReader
                           onResult={(result, error) => {
                             if (!!result) {
