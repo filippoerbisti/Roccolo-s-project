@@ -23,6 +23,7 @@ import { EffectCreative } from "swiper";
 const Main = ({ user, userDoc, stages }) => {
   const { t } = useTranslation('common');
 
+  const [isLoaded, setIsLoaded] = useState(false);    
   const [isAuthPeriod, setIsAuthPeriod] = useState(false);
 
   const router = useRouter();
@@ -39,6 +40,7 @@ const Main = ({ user, userDoc, stages }) => {
   var today = new Date();
 
   useEffect(() => {
+    setTimeout(() => setIsLoaded(true), 1000);
 
     let formatToday = today.getUTCDate() + "/" + (today.getUTCMonth() + 1) + "/" + today.getUTCFullYear();
 
@@ -133,7 +135,7 @@ const Main = ({ user, userDoc, stages }) => {
         });
       });
     });
-  }, [isAuthPeriod]);
+  }, [isAuthPeriod, isLoaded]);
 
   // Navigate home = simulation click on li with className="home"
   const navigateHome = () => {
@@ -272,14 +274,17 @@ const Main = ({ user, userDoc, stages }) => {
 
   function orderStagesId(a, b) {
     return a.id - b.id;
-}
-
-  // console.log(stages.sort(orderStagesId))
+  }
 
   return (
     <>
+      {!isLoaded && 
+        <Loader />
+      }
+
+
       {/* If logged in && Date.Now is BETWEEN the fixed initial date (choose by user on pay) and the following 6 days (inclusive) */}
-      {isAuthPeriod &&
+      {isAuthPeriod && isLoaded &&
         <div>
 
           {/* If dateBooking == today, and hours == 11 || 16 -> show modal with Tasting Hour */}
@@ -458,12 +463,12 @@ const Main = ({ user, userDoc, stages }) => {
       }
 
       {/* If logged in, but authorizedDates == null (loading) */}
-      {!userDoc &&
+      {!userDoc && !stages && isLoaded &&
         <Loader />
       }
 
       {/* If logged in && Date.Now is NOT BETWEEN the fixed initial date (choose by user on pay) and the following 6 days (inclusive) */}
-      {!isAuthPeriod &&
+      {!isAuthPeriod && isLoaded &&
         <NoAuthPeriod user={user} userDoc={userDoc} />
       }
     </>
