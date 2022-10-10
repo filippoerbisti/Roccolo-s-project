@@ -3,6 +3,7 @@ import Link from 'next/link';
 import useTranslation from 'next-translate/useTranslation';
 
 import { client, urlFor } from '../../lib/client';
+import { useAuth } from '../../context/AuthContext';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -40,7 +41,9 @@ const ReadMore = ({ children }) => {
 
 const StageDetails = ({ stage }) => {
 
-    const { image, name, description, audio, nextStage } = stage;
+    const { userDoc } = useAuth();
+
+    const { image, name, description, audio, path, nextStage } = stage;
 
     return (
         <div className='detail-container'>
@@ -87,12 +90,22 @@ const StageDetails = ({ stage }) => {
                 </Swiper>
             </div>
             <div className='detail-btn'>
-                <button 
-                    className='detail-complete-btn' 
-                    style={{cursor: 'pointer'}}
-                >
-                    Completa tappa
-                </button>
+                {!userDoc[path] &&
+                    <button 
+                        className='detail-complete-btn' 
+                        style={{cursor: 'pointer'}}
+                    >
+                        Completa tappa
+                    </button>
+                }
+                {userDoc[path] &&
+                    <button 
+                        className='detail-complete-btn' 
+                        style={{cursor: 'not-allowed', opacity: '0.7'}}
+                    >
+                        Completata!
+                    </button>
+                }
                 {nextStage &&
                     <Link href={'/stage' + nextStage} style={{cursor: 'pointer'}}>
                         <p style={{textDecoration: 'underline'}}>Prossima tappa &gt;</p>
