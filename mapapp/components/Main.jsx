@@ -75,6 +75,14 @@ const Main = ({ user, userDoc, stages }) => {
       }
     }
 
+    // Onreload show correct section based on url
+    if(router.asPath == '/' || router.asPath == '/#home')
+      navigateHome();
+    else if(router.asPath == '/#map')
+      navigateMap();
+    else if(router.asPath == '/#help')
+      navigateHelp();
+
     // Tabbar
     const uls = document.querySelectorAll("ul");
     uls.forEach((ul) => {
@@ -155,8 +163,8 @@ const Main = ({ user, userDoc, stages }) => {
 
     // change background color 
     document.body.style.backgroundColor = "#EDCFBC";
-    const pageId = 'home'
-    router.push('#' + pageId);
+    const pageId = 'home';
+    // router.push('#' + pageId);
     const divsMain = document.getElementsByClassName("content");
     // show section (id) or hidden
     for(let i = 0; i < divsMain.length; i++) {
@@ -192,7 +200,7 @@ const Main = ({ user, userDoc, stages }) => {
     // change background color 
     document.body.style.backgroundColor = "#C4D7BD";
     const pageId = 'map';
-    router.push('#' + pageId);
+    // router.push('#' + pageId);
     const divsMain = document.getElementsByClassName("content");
     // show section (id) or hidden
     for(let i = 0; i < divsMain.length; i++) {
@@ -228,7 +236,7 @@ const Main = ({ user, userDoc, stages }) => {
     // change background color 
     document.body.style.backgroundColor = "#D6C6DD";
     const pageId = 'help';
-    router.push('#' + pageId);
+    // router.push('#' + pageId);
     const divsMain = document.getElementsByClassName("content");
     // show section (id) or hidden
     for(let i = 0; i < divsMain.length; i++) {
@@ -322,9 +330,9 @@ const Main = ({ user, userDoc, stages }) => {
                       {/*<h3>{t('discoverQR')}</h3>*/}
                       <div className='btn-container' style={{margin: '30px 0'}}>
                         <button className='btn-start' onClick={navigateMap}>
-                          {/* <Link href={'#map'}> */}
+                          <Link href={'#map'}>
                             {t('start')}
-                          {/* </Link> */}
+                          </Link>
                         </button>
                       </div>
                       <p style={{color: 'white'}}>{t('stageToComplete')}: {userDoc.nPathsToComplete}</p>
@@ -354,9 +362,9 @@ const Main = ({ user, userDoc, stages }) => {
                       </div> */}
                       <div className='btn-container' style={{marginTop: '20px'}}>
                         <button className='btn' onClick={navigateHelp}>
-                          {/* <Link href={'#help'}> */}
+                          <Link href={'#help'}>
                             {t('help')}
-                          {/* </Link> */}
+                          </Link>
                         </button>
                       </div>
                     </div>
