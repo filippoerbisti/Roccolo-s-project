@@ -39,14 +39,14 @@ const Layout = ({ children }) => {
         {/* Open Graph Tags */}
         <meta property="og:title" content={t('title')} />
         <meta property="og:site_name" data-page-subject="true" content={t('title')} />
-        <meta property="og:url" content="https://roccolodellago.vercel.app" />
+        <meta property="og:url" content="https://landingroccolo.vercel.app" />
         <meta property="og:description" name="description" content={t('description')} />
-        <meta property="og:image" content="https://roccolodellago.vercel.app/logo.png" />
+        <meta property="og:image" content="https://landingroccolo.vercel.app/icon.png" />
 
         {/* Twitter Tags */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://roccolodellago.vercel.app" />
-        <meta name="twitter:image" content="https://roccolodellago.vercel.app/logo.png" />
+        <meta property="twitter:url" content="https://landingroccolo.vercel.app" />
+        <meta name="twitter:image" content="https://landingroccolo.vercel.app/icon.png" />
         <meta name="twitter:title" content={t('title')} />
         <meta name="twitter:description" content={t('description')} />
       </Head>
