@@ -49,7 +49,6 @@ const StageDetails = ({ stage }) => {
     const { image, name, description, audio, path, nextStage } = stage;
 
     const map = '#map';
-    // console.log(currentLang + '/' + home)
 
 
     return (
@@ -105,7 +104,7 @@ const StageDetails = ({ stage }) => {
                         className='detail-complete-btn' 
                         style={{cursor: 'pointer'}}
                     >
-                        Completa tappa
+                        {t('stageToBeComplete')}
                     </button>
                 }
                 {userDoc[path] &&
@@ -113,12 +112,12 @@ const StageDetails = ({ stage }) => {
                         className='detail-complete-btn' 
                         style={{cursor: 'not-allowed', opacity: '0.7'}}
                     >
-                        Completata!
+                        {t('stageCompleted')}!
                     </button>
                 }
                 {nextStage &&
                     <Link href={'/stage' + nextStage} style={{cursor: 'pointer'}}>
-                        <p style={{textDecoration: 'underline'}}>Prossima tappa &gt;</p>
+                        <p style={{textDecoration: 'underline'}}>{t('nextStage')} &gt;</p>
                     </Link>
                 }
             </div>
