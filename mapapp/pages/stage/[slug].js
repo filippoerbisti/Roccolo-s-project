@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Link from 'next/link';
 import useTranslation from 'next-translate/useTranslation';
+import { useRouter } from 'next/router';
 
 import { client, urlFor } from '../../lib/client';
 import { useAuth } from '../../context/AuthContext';
@@ -41,14 +42,23 @@ const ReadMore = ({ children }) => {
 
 const StageDetails = ({ stage }) => {
 
+    const currentLang = useRouter().locale;
+
     const { userDoc } = useAuth();
 
     const { image, name, description, audio, path, nextStage } = stage;
+
+    const map = '#map';
+    // console.log(currentLang + '/' + home)
+
 
     return (
         <div className='detail-container'>
             <div style={{position: 'relative', backgroundImage: `url(${urlFor(image[0])})`, backgroundAttachment: 'fixed', backgroundPosition: 'top', backgroundRepeat: 'no-repeat', backgroundSize: '500px 350px', height: '250px'}}>
                 <h1>{name}</h1>
+                <Link href={'/' + currentLang + map}>
+                    <span className='x-stage-detail'>X</span>
+                </Link>
                 {/* <img src={urlFor(image[0])} alt="" /> */}
             </div>
             <audio style={{width: '100%', margin: '0 auto'}} controls>
