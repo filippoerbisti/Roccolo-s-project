@@ -3,14 +3,6 @@ import Link from 'next/link';
 import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router';
 
-import { useAuth } from '../../context/AuthContext';
-import { 
-    doc,  
-    increment,  
-    updateDoc
-  } from 'firebase/firestore';
-  import { database } from '../../utils/firebase';
-
 import { client, urlFor } from '../../lib/client';
 import { useAuth } from '../../context/AuthContext';
 import { doc, increment, updateDoc } from "firebase/firestore";
