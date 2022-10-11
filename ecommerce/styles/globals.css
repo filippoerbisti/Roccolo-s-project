@@ -956,3 +956,110 @@ span#collapsible-trigger-1662290408103.Collapsible__trigger.is-open {
   background-color: transparent;
   cursor: default;
 }
+
+
+
+/* STYLE SWIPER TASTING IN MAIN PAGE */
+
+.mySwiper {
+  height: 450px;
+  width: auto;
+}
+
+.mySwiper img {
+  width: auto;
+  height: 350px;
+}
+
+.mySwiper h1 {
+  position: absolute;
+  top: 0;
+}
+
+/* STYLE SWIPER TASTING IN MAIN PAGE */
+
+
+/* STYLE SWIPER IN TASTING PAGE */
+
+.mySwiperTasting {
+  height: 650px;
+  width: auto;
+}
+
+.mySwiperTasting img {
+  width: auto;
+  height: 550px;
+}
+
+.mySwiperTasting h1 {
+  position: absolute;
+  top: 0;
+}
+
+.mySwiperTasting button {
+  margin: 40px 0 10px 0;
+  color: black;
+  text-align: center;
+  border: none;
+  background: none;
+}
+
+.proposal-card {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proposal-card-detail {
+  display: none;
+  width: 40%;
+  height: 300px;
+  position: absolute;
+  border-radius: 10px;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  color: white;
+}
+
+.close-proposal-detail {
+  position: absolute;
+  font-size: medium;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.proposal-card-detail h2 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  .proposal-card-detail {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .mySwiperTasting {
+    height: 450px;
+    width: auto;
+  }
+  
+  .mySwiperTasting img {
+    width: auto;
+    height: 350px;
+  }
+  
+  .proposal-card-detail {
+    width: 90%;
+    height: 250px;
+  }
+}
+
+/* END STYLE SWIPER IN TASTING PAGE */

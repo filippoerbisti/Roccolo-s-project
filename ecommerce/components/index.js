@@ -10,6 +10,7 @@ export {default as Footer } from './Footer';
 
 export {default as Product } from './Product';
 export {default as View360 } from './View360';
+export {default as View3602 } from './View3602';
 export {default as WineShop } from './WineShop';
 export {default as Tasting } from './Tasting';
 export {default as Wedding } from './Wedding';

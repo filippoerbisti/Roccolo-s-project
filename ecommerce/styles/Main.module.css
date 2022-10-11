@@ -96,11 +96,11 @@
     }
     
     .textContainerLeft {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 
     .textContainerRight {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
     .w50mx40 {
@@ -142,6 +142,7 @@
 
     .hr {
         margin-top: 20px;
+        margin-bottom: 20px;
     }
 }
 

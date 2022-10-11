@@ -1,5 +1,15 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 import useTranslation from 'next-translate/useTranslation';
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+// import required modules
+import { Pagination } from "swiper";
 
 import styles from '../styles/Event.module.css';
 
@@ -39,7 +49,40 @@ const Tasting = () => {
   const phoneNumber = "3482359226";
   const introMessageWhatsapp = "Azienda Agricola Roccolo del Lago. Località Saline, 9 - 37017 Lazise (VR). Ti aspettiamo tutti i giorni esclusa Domenica dalle ore 9:00 alle 18:00 per i tuoi acquisti al Wineshop, (da Aprile ad Ottobre), una visita alla tenuta o per il tuo evento speciale. Contattaci per richiedere informazioni e disponibilità per la tua prenotazione. Email: info@roccolodellago.it Tel. +39.0457581077";
   const space = "                                                                    ";
-  const messageWhatsapp = "Salve, La contatto per ( inserisci qui il messaggio ). Grazie e arrivederci. Roccolo del Lago"
+  const messageWhatsapp = "Salve, La contatto per ( inserisci qui il messaggio ). Grazie e arrivederci. Roccolo del Lago";
+
+  const viewDetail1 = () => {
+    let detail = document.getElementById('detail1');
+    detail.style.display = 'flex';
+    detail.style.flexDirection = 'column';
+  }
+
+  const hideDetail1 = () => {
+    let detail = document.getElementById('detail1');
+    detail.style.display = 'none';
+  }
+
+  const viewDetail2 = () => {
+    let detail = document.getElementById('detail2');
+    detail.style.display = 'flex';
+    detail.style.flexDirection = 'column';
+  }
+
+  const hideDetail2 = () => {
+    let detail = document.getElementById('detail2');
+    detail.style.display = 'none';
+  }
+
+  const viewDetail3 = () => {
+    let detail = document.getElementById('detail3');
+    detail.style.display = 'flex';
+    detail.style.flexDirection = 'column';
+  }
+
+  const hideDetail3 = () => {
+    let detail = document.getElementById('detail3');
+    detail.style.display = 'none';
+  }
 
   return (
     <div className={styles.mx60}>
@@ -50,11 +93,11 @@ const Tasting = () => {
         {t('tastingIntro2')}
       </h3>
       <p className={styles.paragraph}>
-        <ReadMore>
+        {/* <ReadMore>
           {pTastingParagraph}
-        </ReadMore>
+        </ReadMore> */}
       </p>
-      <div className={styles.row}>
+      {/* <div className={styles.row}>
         <div className={styles.left}>
           <h3 className={styles.titlePromoTasting}>{t('tastingPromo1')}</h3>
           <p className={styles.paragraphPromoTasting}>
@@ -85,6 +128,76 @@ const Tasting = () => {
             <span className={styles.bold}>{t('tastingPromoTitle4')}</span> - {t('tastingPromoParagraph4')} {t('tastingPromo2More')}
           </p>
         </div>
+      </div> */}
+      <div>
+        <Swiper pagination={{clickable: true}} spaceBetween={20} modules={[Pagination]} className="mySwiperTasting">
+          <SwiperSlide style={{display: 'flex', flexDirection: 'column'}}>
+            <h1 style={{fontSize: 'medium', textTransform: 'uppercase', margin: '10px 0'}}>{t('proposal1')}</h1>
+            <button onClick={viewDetail1}>{t('clickDetail')}</button>
+            <div className='proposal-card'>
+              <div id='detail1' className='proposal-card-detail'>
+                <span className='close-proposal-detail' onClick={hideDetail1}>X</span>
+                <h2>{t('detail')}</h2>
+                <div style={{height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                  <p style={{ paddingBottom: '10px', textAlign: 'center'}}>
+                    {t('cost')}: 15€ / {t('forPerson')}
+                    <br /><br />
+                    {t('trisWine')}:
+                    <br /> - {t('whiteWine')}
+                    <br /> - {t('roseWine')}
+                    <br /> - {t('proseccoWine')}
+                  </p>
+                </div>
+              </div>
+              <img src="https://res.cloudinary.com/dl38nyo08/image/upload/v1665041204/Landing%20Roccolo/tasting_package_1_dokzq3.png" alt="" />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide style={{display: 'flex', flexDirection: 'column'}}>
+            <h1 style={{fontSize: 'medium', textTransform: 'uppercase', margin: '10px 0'}}>{t('proposal2')}</h1>
+            <button onClick={viewDetail2}>{t('clickDetail')}</button>
+            <div className='proposal-card'>
+              <div id='detail2' className='proposal-card-detail'>
+                <span className='close-proposal-detail' onClick={hideDetail2}>X</span>
+                <h2>{t('detail')}</h2>
+                <div style={{height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                  <p style={{ paddingBottom: '10px', textAlign: 'center'}}>
+                    {t('cost')}: 30€ / {t('forPerson')}
+                    <br /><br />
+                    {t('trisWine')}:
+                    <br /> - {t('whiteWine')}
+                    <br /> - {t('roseWine')}
+                    <br /> - {t('proseccoWine')}
+                    <br /> + {t('food')}
+                  </p>
+                </div>
+              </div>
+              <img src="https://res.cloudinary.com/dl38nyo08/image/upload/v1665041204/Landing%20Roccolo/tasting_package_2_llmpyk.png" alt="" />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide style={{display: 'flex', flexDirection: 'column'}}>
+            <h1 style={{fontSize: 'medium', textTransform: 'uppercase', margin: '10px 0'}}>{t('proposal3')}</h1>
+            <button onClick={viewDetail3}>{t('clickDetail')}</button>
+            <div className='proposal-card'>
+              <div id='detail3' className='proposal-card-detail'>
+                <span className='close-proposal-detail' onClick={hideDetail3}>X</span>
+                <h2>{t('detail')}</h2>
+                <div style={{height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                  <p style={{ paddingBottom: '10px', textAlign: 'center'}}>
+                    {t('cost')}: 45€ / {t('forPerson')}
+                    <br /><br />
+                    {t('trisWine')}:
+                    <br /> - {t('whiteWine')}
+                    <br /> - {t('roseWine')}
+                    <br /> - {t('proseccoWine')}
+                    <br /> + {t('food')}
+                    <br /> + Dessert
+                  </p>
+                </div>
+              </div>
+              <img src="https://res.cloudinary.com/dl38nyo08/image/upload/v1665041204/Landing%20Roccolo/tasting_package_3_ojd5kw.png" alt="" />
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </div>
       <div className={styles.footerTasting}>
         <div className={styles.btnContainer}>

@@ -27,8 +27,8 @@ const HamburgerMenu = () => {
             {setShowMenu(!showMenu) 
             setChangeIconHamburgerMenu(!showMenu)}
           } 
-          blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1660806591/Roccolo%20del%20Lago/logo_iidjdd.png'
-          placeholder='blur'
+          // blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1660806591/Roccolo%20del%20Lago/logo_iidjdd.png'
+          // placeholder='blur'
         />
       </Link>
       <ul>
@@ -112,12 +112,12 @@ const HamburgerMenu = () => {
         <Link href={currentRoute} locale="en">
           <GB title="English" className={styles.langIcons}/>
         </Link>
-        <Link href={currentRoute} locale="de">
+        {/* <Link href={currentRoute} locale="de">
           <DE title="Deutsch" className={styles.langIcons}/>
         </Link>
         <Link href={currentRoute} locale="fr">
           <FR title="Français" className={styles.langIcons}/>
-        </Link>
+        </Link> */}
       </div>
       <p className={styles.credit}>{t('poweredBy')} <a href="https://filippoerbisti.netlify.app" target="_blank" className={styles.poweredBy}>Filippo Erbisti</a></p>
     </div>

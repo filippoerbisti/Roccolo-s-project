@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import useTranslation from 'next-translate/useTranslation';
-import { client } from '../lib/client';
 import { Product, Slider } from '../components';
 
 import styles from '../styles/Main.module.css';
@@ -87,7 +86,7 @@ const Main = ({ products }) => {
 
   const pWedding = `${t('weddingParagraph')}`;
   const pWeddingParagraph = pWedding.replace(/xxx/gi, '\n\r');
-  
+
   return (
     <div className={styles.mx20}>      
       <Slider />
@@ -123,7 +122,7 @@ const Main = ({ products }) => {
 
       <hr className={styles.hr} />
 
-      <div className={styles.pb10}>
+      {/* <div className={styles.pb10}>
         <div className={marquee['maylike-products-wrapper']}>
           <h2 className={styles.title}>I NOSTRI VINI</h2>
           <div className={styles.btnContainer}>
@@ -133,14 +132,14 @@ const Main = ({ products }) => {
                 </button>
               </Link>
             </div>
-          {/* <div className={marquee['marquee']}>
+          <div className={marquee['marquee']}>
             <div className={`${marquee['maylike-products-container']} ${marquee.track}`}>
               {products?.map((product) => (
                 <Product key={product._id} 
                   product={product} />
               ))}
             </div>
-          </div> */}
+          </div>
 
           <Swiper
             slidesPerView={size <= mobileWidth ? n : size > mobileWidth && size <= smallPcWidth ? n : n}
@@ -155,12 +154,54 @@ const Main = ({ products }) => {
             className="mySwiper"
           >
             {products?.map((product) => 
-                <SwiperSlide key={product._id}>
-                    <div className={styles.py} key={product._id}>
-                        <Product product={product} />
-                    </div>
-                </SwiperSlide>
+              <SwiperSlide key={product._id}>
+                <div className={styles.py}>
+                  <Product key={product._id} product={product} />
+                </div>
+              </SwiperSlide>
             )}
+          </Swiper>
+        </div>
+      </div> */}
+
+      {/* <hr className={styles.hr} /> */}
+
+      <div className={styles.textContainerRight}>
+        <div className={styles.w50mx40}>
+          <h1 className={styles.title} style={{marginTop: '10px'}}>
+            <Link href='/event#tasting'>{t('tastingTitle')}</Link>
+          </h1>
+          <p className={styles.paragraph}>
+            {/* <ReadMore>
+              {pTastingParagraph}
+            </ReadMore> */}
+            {pTastingParagraph} : <br />
+            - {t('tastingParagraphProposal1')} {t('trisWine')} ({t('whiteWine')}, {t('roseWine')}, {t('proseccoWine')}) <br />
+            - {t('tastingParagraphProposal2')} {t('trisWine')} ({t('whiteWine')}, {t('roseWine')}, {t('proseccoWine')}), {t('food')} <br />
+            - {t('tastingParagraphProposal3')} {t('trisWine')} ({t('whiteWine')}, {t('roseWine')}, {t('proseccoWine')}), {t('food')}, Dessert <br />
+          </p>
+          <div className={styles.btnContainer}>
+            <Link href='https://landingroccolo.vercel.app'>
+              <button className={styles.btn} type='button'> 
+                {t('tastingButton')}
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className={`${styles.w50mx40}`}>
+          <Swiper pagination={{clickable: true}} spaceBetween={20} modules={[Pagination]} className="mySwiper">
+            <SwiperSlide style={{display: 'flex', flexDirection: 'column'}}>
+              <h1 className='text-2xl my-5 uppercase'>{t('proposal1')}</h1>
+              <img src="https://res.cloudinary.com/dl38nyo08/image/upload/v1665041204/Landing%20Roccolo/tasting_package_1_dokzq3.png" alt="" />
+            </SwiperSlide>
+            <SwiperSlide className="proposal parallax-proposal-2">
+              <h1 className='text-2xl my-5 uppercase'>{t('proposal2')}</h1>
+              <img src="https://res.cloudinary.com/dl38nyo08/image/upload/v1665041204/Landing%20Roccolo/tasting_package_2_llmpyk.png" alt="" />
+            </SwiperSlide>
+            <SwiperSlide className="proposal parallax-proposal-3">
+              <h1 className='text-2xl my-5 uppercase'>{t('proposal3')}</h1>
+              <img src="https://res.cloudinary.com/dl38nyo08/image/upload/v1665041204/Landing%20Roccolo/tasting_package_3_ojd5kw.png" alt="" />
+            </SwiperSlide>
           </Swiper>
         </div>
       </div>
@@ -168,6 +209,18 @@ const Main = ({ products }) => {
       <hr className={styles.hr} />
 
       <div className={styles.textContainerLeft}>
+        <div className={`${styles.w50mx40} ${styles.mob}`}>
+          <Image 
+            src='https://res.cloudinary.com/dl38nyo08/image/upload/v1664527652/Roccolo%20del%20Lago/wine-shop_d5qmyw.jpg' 
+            alt="wineshop_img" 
+            width={700} 
+            height={400} 
+            layout="responsive" 
+            objectFit="cover"
+            // blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1664527652/Roccolo%20del%20Lago/wine-shop_d5qmyw.jpg'
+            // placeholder='blur'
+          />
+        </div>
         <div className={styles.w50mx40}>
           <h1 className={styles.title}>
             <Link href='/wineshop'>{t('wineshopTitle')}</Link>
@@ -185,59 +238,13 @@ const Main = ({ products }) => {
             </Link>
           </div>
         </div>
-        <div className={`${styles.w50mx40} ${styles.mob}`}>
-          <Image 
-            src='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394256/Roccolo%20del%20Lago/casual%20img/pexels-pixabay-434311_dbuhns.jpg' 
-            alt="wineshop_img" 
-            width={700} 
-            height={400} 
-            layout="responsive" 
-            objectFit="cover"
-            blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394256/Roccolo%20del%20Lago/casual%20img/pexels-pixabay-434311_dbuhns.jpg'
-            placeholder='blur'
-          />
-        </div>
       </div>
 
       <hr className={styles.hr} />
 
       <div className={styles.textContainerRight}>
-        <div className={`${styles.w50mx40} ${styles.mob}`}>
-          <Image 
-            src='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394256/Roccolo%20del%20Lago/casual%20img/pexels-ray-piedra-1545529_tv7i7l.jpg' 
-            alt="tasting_img" 
-            width={700} 
-            height={400} 
-            layout="responsive" 
-            objectFit="cover"
-            blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394256/Roccolo%20del%20Lago/casual%20img/pexels-ray-piedra-1545529_tv7i7l.jpg'
-            placeholder='blur'
-          />
-        </div>
         <div className={styles.w50mx40}>
-          <h1 className={styles.title}>
-            <Link href='/event#tasting'>{t('tastingTitle')}</Link>
-          </h1>
-          <p className={styles.paragraph}>
-            <ReadMore>
-              {pTastingParagraph}
-            </ReadMore>
-          </p>
-          <div className={styles.btnContainer}>
-            <Link href='/event#tasting'>
-              <button className={styles.btn} type='button'> 
-                {t('tastingButton')}
-              </button>
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      <hr className={styles.hr} />
-
-      <div className={styles.textContainerLeft}>
-        <div className={styles.w50mx40}>
-          <h1 className={styles.title}>
+          <h1 className={styles.title} style={{marginTop: '10px'}}>
             <Link href='/event#wedding'>{t('weddingTitle')}</Link>
           </h1>
           <p className={styles.paragraph}>
@@ -255,14 +262,14 @@ const Main = ({ products }) => {
         </div>
         <div className={`${styles.w50mx40} ${styles.mob}`}>
           <Image 
-            src='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394713/Roccolo%20del%20Lago/casual%20img/pexels-duan%C3%A9-viljoen-12412480_xryskx.jpg'
+            src='https://res.cloudinary.com/dl38nyo08/image/upload/v1665473807/Roccolo%20del%20Lago/wedding__composit-a__1_ihcpvi.jpg'
             alt="wineshop_img" 
             width={700} 
             height={400} 
             layout="responsive" 
             objectFit="cover"
-            blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394713/Roccolo%20del%20Lago/casual%20img/pexels-duan%C3%A9-viljoen-12412480_xryskx.jpg'
-            placeholder='blur'
+            // blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1665473807/Roccolo%20del%20Lago/wedding__composit-a__1_ihcpvi.jpg'
+            // placeholder='blur'
           />
         </div>
       </div>

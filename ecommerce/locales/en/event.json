@@ -17,6 +17,19 @@
     "tastingFooter": "For more information and booking: ",
     "tastingButton": "Book tasting",
 
+    "clickDetail": "Click here for more details",
+    "detail": "Details",
+    "proposal1": "Young package",
+    "proposal2": "Couple package",
+    "proposal3": "Family package",
+    "cost": "Cost",
+    "forPerson": "per person",
+    "trisWine": "Trio of bubbles",
+    "whiteWine": "White Wine",
+    "roseWine": "Rosé Wine",
+    "proseccoWine": "Prosecco Wine",
+    "food": "Food",
+
     "sendMsg": "Send a message",
     "sendEmail": "Send an email",
     

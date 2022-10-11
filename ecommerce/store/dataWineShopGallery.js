@@ -1,10 +1,14 @@
 const dataWineShopGallery = [
-    { css: 'https://res.cloudinary.com/dl38nyo08/image/upload/v1655394248/Roccolo%20del%20Lago/casual%20img/pexels-timur-saglambilek-87224_xav8ls.jpg', height: 250 },
-    { css: 'https://res.cloudinary.com/dl38nyo08/image/upload/v1655394248/Roccolo%20del%20Lago/casual%20img/pexels-elina-sazonova-1841591_z7gstl.jpg', height: 250 },
-    { css: 'https://res.cloudinary.com/dl38nyo08/image/upload/v1655394252/Roccolo%20del%20Lago/casual%20img/pexels-bruno-cantu%C3%A1ria-774455_c92vci.jpg', height: 250 },
-    { css: 'https://res.cloudinary.com/dl38nyo08/image/upload/v1655394256/Roccolo%20del%20Lago/casual%20img/pexels-pixabay-434311_dbuhns.jpg', height: 250 },
-    { css: 'https://res.cloudinary.com/dl38nyo08/image/upload/v1655394254/Roccolo%20del%20Lago/casual%20img/pexels-pixabay-290316_eqrapv.jpg', height: 250 },
-    { css: 'https://res.cloudinary.com/dl38nyo08/image/upload/v1655394263/Roccolo%20del%20Lago/casual%20img/pexels-brett-sayles-1374552_dobpxq.jpg', height: 250 },
-  ];
+  { css: 'https://res.cloudinary.com/dl38nyo08/image/upload/v1665080686/Roccolo%20del%20Lago/IMG_3397_ysutbw.jpg', height: 300 },
+  { css: 'https://res.cloudinary.com/dl38nyo08/image/upload/v1665080681/Roccolo%20del%20Lago/IMG_5891_ba0qkr.jpg', height: 300 },
+  { css: 'https://res.cloudinary.com/dl38nyo08/image/upload/v1665080680/Roccolo%20del%20Lago/IMG_3380_gnhikq.jpg', height: 300 },
+  { css: 'https://res.cloudinary.com/dl38nyo08/image/upload/v1665080677/Roccolo%20del%20Lago/IMG_5581_b8pfpt.jpg', height: 300 },
+  { css: 'https://res.cloudinary.com/dl38nyo08/image/upload/v1665080679/Roccolo%20del%20Lago/IMG_3441_k6jml2.jpg', height: 300 },
+  { css: 'https://res.cloudinary.com/dl38nyo08/image/upload/v1665080666/Roccolo%20del%20Lago/IMG_3431_rwdfju.jpg', height: 300 },
+  { css: 'https://res.cloudinary.com/dl38nyo08/image/upload/v1665080666/Roccolo%20del%20Lago/IMG_3468_catyi3.jpg', height: 300 },
+  { css: 'https://res.cloudinary.com/dl38nyo08/image/upload/v1665080664/Roccolo%20del%20Lago/IMG_3437_w0fimv.jpg', height: 300 },
+  { css: 'https://res.cloudinary.com/dl38nyo08/image/upload/v1665080667/Roccolo%20del%20Lago/IMG_5233_up0agp.jpg', height: 300 },
+  { css: 'https://res.cloudinary.com/dl38nyo08/image/upload/v1665080670/Roccolo%20del%20Lago/IMG_5240_r8v4bc.jpg', height: 300 },
+];
 
-  export default dataWineShopGallery
+export default dataWineShopGallery

@@ -6,8 +6,8 @@ import { Html, Preload, OrbitControls } from '@react-three/drei';
 import styles from '../styles/Tour.module.css';
 
 const store = [
-  { name: 'Outside', color: 'lightpink', position: [10, 0, -15], url: 'https://res.cloudinary.com/dl38nyo08/image/upload/v1660638352/Roccolo%20del%20Lago/2294472375_24a3b8ef46_o_lppw9n.jpg', link: 1 },
-  { name: 'Inside', color: 'lightblue', position: [15, 0, 0], url: 'https://res.cloudinary.com/dl38nyo08/image/upload/v1660638352/Roccolo%20del%20Lago/Photosphere1_fddta7.jpg', link: 0 }
+  { name: '', color: 'lightpink', position: [10, 0, -15], url: 'https://res.cloudinary.com/dl38nyo08/image/upload/v1665080638/Roccolo%20del%20Lago/360/F3211714-83AE-436A-8411-7578A6295C7D_ll88hs.jpg', link: 1 },
+  // { name: 'Inside', color: 'lightblue', position: [15, 0, 0], url: 'https://res.cloudinary.com/dl38nyo08/image/upload/v1665080636/Roccolo%20del%20Lago/360/0E056A27-51D9-4374-A7E5-6B250ED70C26_hxkghh.jpg', link: 0 }
 ]
 
 const Dome = ({ name, position, texture, onClick }) => {
@@ -17,13 +17,13 @@ const Dome = ({ name, position, texture, onClick }) => {
         <sphereBufferGeometry args={[500, 60, 40]} />
         <meshBasicMaterial map={texture} side={THREE.BackSide} />
       </mesh>
-      <mesh position={position}>
+      {/* <mesh position={position}>
         <sphereGeometry args={[1.25, 32, 32]} />
         <meshBasicMaterial color="white" />
         <Html center>
           <a className={styles.zindex} onClick={onClick}>{name}</a>
         </Html>
-      </mesh>
+      </mesh> */}
     </group>
   )
 }
