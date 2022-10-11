@@ -179,7 +179,7 @@ const StageDetails = ({ stage }) => {
                 }
                 {nextStage &&
                     <Link href={'/stage' + nextStage} style={{cursor: 'pointer'}}>
-                        <p style={{textDecoration: 'underline'}}>{t('nextStage')} &gt;</p>
+                        <p style={{textDecoration: 'underline', cursor: 'pointer'}}>{t('nextStage')} &gt;</p>
                     </Link>
                 }
             </div>
