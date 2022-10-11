@@ -1057,8 +1057,24 @@ body {
 /* END STYLE NO AUTH PERIOD */
 
 
+/* STYLES READMORE */
+
+.showMore {
+  cursor: pointer;
+  color: #892331;
+  font-size: smaller;
+}
+
+.showMore:hover {
+  color: #892331;
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* END STYLE SHOW MORE */
 
 
+/* STYLE PATH DETAIL */
 
 .detail-container {
   padding-top: 80px;
@@ -1121,25 +1137,25 @@ body {
   color: white;
 }
 
+  /* STYLE SWIPER PATH DETAIL */
 
+  .mySwiperGalleryPath {
+    width: 100%;
+    height: auto;
+    border: none;
+  }
 
+  .mySwiperGalleryPath img {
+    width: 100%;
+    height: 300px;
+  }
 
+  .swiper-button-next,
+  .swiper-button-prev,
+  .swiper-pagination-bullet-active {
+    color: white;
+  }
 
+  /* END STYLE SWIPER PATH DETAIL */
 
-
-.mySwiperGalleryPath {
-  width: 100%;
-  height: auto;
-  border: none;
-}
-
-.mySwiperGalleryPath img {
-  width: 100%;
-  height: 300px;
-}
-
-.swiper-button-next,
-.swiper-button-prev,
-.swiper-pagination-bullet-active {
-  color: white;
-}
+/* STYLE PATH DETAIL */
