@@ -68,41 +68,46 @@ const StageDetails = ({ stage }) => {
                         path1: true,
                         nPathsToComplete: increment(-1)
                     });
+                    userDoc[path] = true;
                     break;
                 case 'path2':
                     await updateDoc(stageRef, {
                         path2: true,
                         nPathsToComplete: increment(-1)
                     });
+                    userDoc[path] = true;
                     break;
                 case 'path3':
                     await updateDoc(stageRef, {
                         path3: true,
                         nPathsToComplete: increment(-1)
                     });
+                    userDoc[path] = true;
                     break;
                 case 'path4':
                     await updateDoc(stageRef, {
                         path4: true,
                         nPathsToComplete: increment(-1)
                     });
+                    userDoc[path] = true;
                     break;
                 case 'path5':
                     await updateDoc(stageRef, {
                         path5: true,
                         nPathsToComplete: increment(-1)
                     });
+                    userDoc[path] = true;
                     break;
                 case 'path6':
                     await updateDoc(stageRef, {
                         path6: true,
                         nPathsToComplete: increment(-1)
                     });
+                    userDoc[path] = true;
                     break;
                 default:
                     break;
             }
-            userDoc[path] = true;
         }
     }
 
