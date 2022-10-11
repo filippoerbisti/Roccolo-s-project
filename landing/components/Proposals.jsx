@@ -50,8 +50,10 @@ const Proposals = () => {
     <>
       <Swiper pagination={{clickable: true}} spaceBetween={20} modules={[Pagination]} className="mySwiper">
         <SwiperSlide className="proposal parallax-proposal-1">
-          <h1 className='text-2xl my-5 uppercase'>{t('proposal1')}</h1>
-          <button onClick={viewDetail1}>{t('clickDetail')}</button>
+          <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+            <h1 className='text-2xl my-5 uppercase'>{t('proposal1')}</h1>
+            <button onClick={viewDetail1}>{t('clickDetail')}</button>
+          </div>
           <div className='proposal-card'>
             <div id='detail1' className='proposal-card-detail'>
               <span className='close-proposal-detail' onClick={hideDetail1}>X</span>
