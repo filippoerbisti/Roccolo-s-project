@@ -262,13 +262,13 @@ const Main = ({ products }) => {
         </div>
         <div className={`${styles.w50mx40} ${styles.mob}`}>
           <Image 
-            src='https://res.cloudinary.com/dl38nyo08/image/upload/v1665473689/Roccolo%20del%20Lago/wedding__composit-a_bsxxku.jpg'
+            src='https://res.cloudinary.com/dl38nyo08/image/upload/v1665473807/Roccolo%20del%20Lago/wedding__composit-a__1_ihcpvi.jpg'
             alt="wineshop_img" 
             width={700} 
             height={400} 
             layout="responsive" 
             objectFit="cover"
-            // blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1665473689/Roccolo%20del%20Lago/wedding__composit-a_bsxxku.jpg'
+            // blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1665473807/Roccolo%20del%20Lago/wedding__composit-a__1_ihcpvi.jpg'
             // placeholder='blur'
           />
         </div>
