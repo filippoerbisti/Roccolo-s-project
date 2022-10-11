@@ -34,9 +34,9 @@ const Tour = () => {
                 </div>
                 <div className={styles.colmx20}>
                     <h2 className={styles.title2}>
-                        <Link href="/event">{t('titleFarm')}</Link>
+                        <Link href="/event">{t('titleVineyard')}</Link>
                     </h2>
-                    <p className={styles.paragraph}>{t('paragraphFarm')}</p>
+                    <p className={styles.paragraph}>{t('paragraphVineyard')}</p>
                     <View3602 className={styles.main360vr} />
                 </div>
                 {/* <div className={styles.colmx20}>
