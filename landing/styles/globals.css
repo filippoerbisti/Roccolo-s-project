@@ -529,6 +529,10 @@ a {
   font-size: large;
 }
 
+.css-2fdkz6.Mui-active {
+  color: white;
+}
+
 form input {
   color: black;
 }
