@@ -6,8 +6,8 @@ import { Html, Preload, OrbitControls } from '@react-three/drei';
 import styles from '../styles/Tour.module.css';
 
 const store = [
-  { name: '', color: 'lightpink', position: [10, 0, -15], url: 'https://res.cloudinary.com/dl38nyo08/image/upload/v1665080638/Roccolo%20del%20Lago/360/F3211714-83AE-436A-8411-7578A6295C7D_ll88hs.jpg', link: 1 },
-  // { name: 'Inside', color: 'lightblue', position: [15, 0, 0], url: 'https://res.cloudinary.com/dl38nyo08/image/upload/v1665080636/Roccolo%20del%20Lago/360/0E056A27-51D9-4374-A7E5-6B250ED70C26_hxkghh.jpg', link: 0 }
+  // { name: '', color: 'lightpink', position: [10, 0, -15], url: 'https://res.cloudinary.com/dl38nyo08/image/upload/v1665080638/Roccolo%20del%20Lago/360/F3211714-83AE-436A-8411-7578A6295C7D_ll88hs.jpg', link: 1 },
+  { name: '', color: 'lightblue', position: [15, 0, 0], url: 'https://res.cloudinary.com/dl38nyo08/image/upload/v1665080636/Roccolo%20del%20Lago/360/0E056A27-51D9-4374-A7E5-6B250ED70C26_hxkghh.jpg', link: 0 }
 ]
 
 const Dome = ({ name, position, texture, onClick }) => {
@@ -38,7 +38,7 @@ const Portals = () => {
   )
 }
 
-const View360 = () => {
+const View3602 = () => {
     return (
         <Canvas frameloop="demand" camera={{ position: [0, 0, 0.1] }}>
             <OrbitControls 
@@ -57,4 +57,4 @@ const View360 = () => {
         </Canvas>
     )
 }
-export default View360
+export default View3602
