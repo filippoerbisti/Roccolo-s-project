@@ -857,8 +857,8 @@ body {
     height: 70px;
     position: fixed;
     bottom: 80px;
-    /* right: 10px; */
-    margin-left: 420px; /* 500 - (70 + 10) */
+    right: 10px;
+    /* margin-left: 420px; 500 - (70 + 10) */
     display: flex;
     justify-content: flex-end;
     z-index: 999;
