@@ -128,12 +128,7 @@ const StageDetails = ({ stage }) => {
             <div className='detail-txt'>
                 <h2 style={{textTransform: 'uppercase', marginBottom: '10px', textAlign: 'center'}}>{name}</h2>
                 <p>
-                    <ReadMore>{description}
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, incidunt nobis est numquam facere perferendis ex tempora molestias asperiores sed praesentium eligendi repellendus corrupti ducimus alias dolorem dolore ab quidem.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, incidunt nobis est numquam facere perferendis ex tempora molestias asperiores sed praesentium eligendi repellendus corrupti ducimus alias dolorem dolore ab quidem.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, incidunt nobis est numquam facere perferendis ex tempora molestias asperiores sed praesentium eligendi repellendus corrupti ducimus alias dolorem dolore ab quidem.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, incidunt nobis est numquam facere perferendis ex tempora molestias asperiores sed praesentium eligendi repellendus corrupti ducimus alias dolorem dolore ab quidem.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, incidunt nobis est numquam facere perferendis ex tempora molestias asperiores sed praesentium eligendi repellendus corrupti ducimus alias dolorem dolore ab quidem.</ReadMore>
+                    <ReadMore>{description}</ReadMore>
                 </p>
             </div>
             <div>
@@ -147,7 +142,7 @@ const StageDetails = ({ stage }) => {
                     pagination={{
                         clickable: true,
                     }}
-                    navigation={true}
+                    // navigation={true}
                     modules={[Autoplay, Pagination, Navigation]}
                     className="mySwiperGalleryPath"
                 >
