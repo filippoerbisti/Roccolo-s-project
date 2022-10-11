@@ -211,13 +211,13 @@ const Main = ({ products }) => {
       <div className={styles.textContainerLeft}>
         <div className={`${styles.w50mx40} ${styles.mob}`}>
           <Image 
-            src='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394256/Roccolo%20del%20Lago/casual%20img/pexels-pixabay-434311_dbuhns.jpg' 
+            src='https://res.cloudinary.com/dl38nyo08/image/upload/v1664527652/Roccolo%20del%20Lago/wine-shop_d5qmyw.jpg' 
             alt="wineshop_img" 
             width={700} 
             height={400} 
             layout="responsive" 
             objectFit="cover"
-            // blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394256/Roccolo%20del%20Lago/casual%20img/pexels-pixabay-434311_dbuhns.jpg'
+            // blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1664527652/Roccolo%20del%20Lago/wine-shop_d5qmyw.jpg'
             // placeholder='blur'
           />
         </div>
@@ -262,13 +262,13 @@ const Main = ({ products }) => {
         </div>
         <div className={`${styles.w50mx40} ${styles.mob}`}>
           <Image 
-            src='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394713/Roccolo%20del%20Lago/casual%20img/pexels-duan%C3%A9-viljoen-12412480_xryskx.jpg'
+            src='https://res.cloudinary.com/dl38nyo08/image/upload/v1665473689/Roccolo%20del%20Lago/wedding__composit-a_bsxxku.jpg'
             alt="wineshop_img" 
             width={700} 
             height={400} 
             layout="responsive" 
             objectFit="cover"
-            // blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1655394713/Roccolo%20del%20Lago/casual%20img/pexels-duan%C3%A9-viljoen-12412480_xryskx.jpg'
+            // blurDataURL='https://res.cloudinary.com/dl38nyo08/image/upload/v1665473689/Roccolo%20del%20Lago/wedding__composit-a_bsxxku.jpg'
             // placeholder='blur'
           />
         </div>
