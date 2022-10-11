@@ -122,7 +122,7 @@ const Main = ({ products }) => {
 
       <hr className={styles.hr} />
 
-      <div className={styles.pb10}>
+      {/* <div className={styles.pb10}>
         <div className={marquee['maylike-products-wrapper']}>
           <h2 className={styles.title}>I NOSTRI VINI</h2>
           <div className={styles.btnContainer}>
@@ -132,16 +132,16 @@ const Main = ({ products }) => {
                 </button>
               </Link>
             </div>
-          {/* <div className={marquee['marquee']}>
+          <div className={marquee['marquee']}>
             <div className={`${marquee['maylike-products-container']} ${marquee.track}`}>
               {products?.map((product) => (
                 <Product key={product._id} 
                   product={product} />
               ))}
             </div>
-          </div> */}
+          </div>
 
-          {/* <Swiper
+          <Swiper
             slidesPerView={size <= mobileWidth ? n : size > mobileWidth && size <= smallPcWidth ? n : n}
             spaceBetween={20}
             loop={true}
@@ -160,11 +160,11 @@ const Main = ({ products }) => {
                 </div>
               </SwiperSlide>
             )}
-          </Swiper> */}
+          </Swiper>
         </div>
-      </div>
+      </div> */}
 
-      <hr className={styles.hr} />
+      {/* <hr className={styles.hr} /> */}
 
       <div className={styles.textContainerRight}>
         <div className={styles.w50mx40}>
