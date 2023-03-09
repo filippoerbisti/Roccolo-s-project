@@ -90,7 +90,7 @@ const Footer = () => {
           REAVR-366731 - P. Iva 03802970230 - Cap. Sociale 100.000.00 €
           </p>
         <p>2022 © Roccolo del Lago. {t('rightsReserved')} <br />
-          {t('poweredBy')} <a href="https://www.upskill40.it/" target="_blank" rel="noreferrer" className={styles.poweredBy}>Upskill 4.0</a>
+          {t('poweredBy')} <a href="https://filippoerbisti.vercel.app/" target="_blank" rel="noreferrer" className={styles.poweredBy}>Filippo Erbisti</a>
           <span className={styles.privacyPolicy}>
             <Link href="/privacy-policy"> Privacy/Policy</Link>
           </span>
